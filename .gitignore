@@ -1,1 +1,8 @@
+# 环境变量
 .env
+
+# macOS系统文件
+.DS_Store
+
+# node_modules
+node_modules/
