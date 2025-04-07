@@ -1,0 +1,613 @@
+[
+  {
+    "exam_id": 202305,
+    "number": 1,
+    "text": "1 A program uses a bubble sort to sort data into ascending numerical order. The data is stored in a 0-indexed 1-dimensional array.",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": [
+      {
+        "letter": "a",
+        "text": "Show each stage of a bubble sort to sort this data into ascending numerical order: 1 5 3 9 2 7 You should clearly show and label each pass in your answer. .............................................................................................................................................. [4]",
+        "question_type": "short_answer",
+        "marks": 4,
+        "keypoints": [],
+        "extensions": {
+          "code_block": [],
+          "table_data": {},
+          "trace_steps": [],
+          "diagram_ref": "",
+          "options": [],
+          "structure_type": ""
+        },
+        "subsub_questions": []
+      },
+      {
+        "letter": "b",
+        "text": "A programmer has partially developed a bubble sort algorithm in pseudocode. This will partially sort an array of numbers called numbers that is passed as a parameter. 01 procedure bubbleSort(numbers : byRef) 02 flag = true 03 for x = 0 to numbers.length – 1 04 if numbers[x] > numbers[x + 1] then 05 holdValue = numbers[x] 06 numbers[x] = numbers[x + 1] 07 numbers[x + 1] = holdValue 08 flag = false 09 endif 10 next x 11 endprocedure",
+        "question_type": "short_answer",
+        "marks": null,
+        "keypoints": [],
+        "extensions": {
+          "code_block": [
+            "A programmer has partially developed a bubble sort algorithm in pseudocode. This will partially sort an array of numbers called numbers that is passed as a parameter. 01 procedure bubbleSort(numbers : byRef) 02 flag = true 03 for x = 0 to numbers.length – 1 04 if numbers[x] > numbers[x + 1] then 05 holdValue = numbers[x] 06 numbers[x] = numbers[x + 1] 07 numbers[x + 1] = holdValue 08 flag = false 09 endif 10 next x 11 endprocedure"
+          ],
+          "table_data": {},
+          "trace_steps": [],
+          "diagram_ref": "",
+          "options": [],
+          "structure_type": ""
+        },
+        "subsub_questions": []
+      },
+      {
+        "letter": "i",
+        "text": "Explain why the procedure bubbleSort accepts the array numbers by reference and not by value. ...................................................................................................................................... [3]",
+        "question_type": "short_answer",
+        "marks": 3,
+        "keypoints": [],
+        "extensions": {
+          "code_block": [
+            "Explain why the procedure bubbleSort accepts the array numbers by reference and not by value. ...................................................................................................................................... [3]"
+          ],
+          "table_data": {},
+          "trace_steps": [],
+          "diagram_ref": "",
+          "options": [],
+          "structure_type": ""
+        },
+        "subsub_questions": [
+          {
+            "roman": "ii",
+            "text": "(ii) The programmer has used a for loop on line 3 in the procedure bubbleSort. A for loop is a count controlled loop. State what is meant by the term ‘count controlled loop’. ...................................................................................................................................... [1]",
+            "question_type": "short_answer",
+            "marks": 1,
+            "keypoints": [],
+            "extensions": {
+              "code_block": [
+                "(ii) The programmer has used a for loop on line 3 in the procedure bubbleSort. A for loop is a count controlled loop. State what is meant by the term ‘count controlled loop’. ...................................................................................................................................... [1]"
+              ],
+              "table_data": {},
+              "trace_steps": [],
+              "diagram_ref": "",
+              "options": [],
+              "structure_type": ""
+            }
+          },
+          {
+            "roman": "iii",
+            "text": "(iii) State the purpose of the variable holdValue in the procedure bubbleSort. ...................................................................................................................................... [3]",
+            "question_type": "short_answer",
+            "marks": 3,
+            "keypoints": [],
+            "extensions": {
+              "code_block": [
+                "(iii) State the purpose of the variable holdValue in the procedure bubbleSort. ...................................................................................................................................... [3]"
+              ],
+              "table_data": {},
+              "trace_steps": [],
+              "diagram_ref": "",
+              "options": [],
+              "structure_type": ""
+            }
+          },
+          {
+            "roman": "iv",
+            "text": "(iv) The procedure bubbleSort will only partially sort the array numbers into order. Describe what the programmer would need to add to the algorithm to enable it to fully sort the numbers into order. ...................................................................................................................................... [2]",
+            "question_type": "short_answer",
+            "marks": 2,
+            "keypoints": [],
+            "extensions": {
+              "code_block": [
+                "(iv) The procedure bubbleSort will only partially sort the array numbers into order. Describe what the programmer would need to add to the algorithm to enable it to fully sort the numbers into order. ...................................................................................................................................... [2]"
+              ],
+              "table_data": {},
+              "trace_steps": [],
+              "diagram_ref": "",
+              "options": [],
+              "structure_type": ""
+            }
+          }
+        ]
+      },
+      {
+        "letter": "c",
+        "text": "",
+        "question_type": "short_answer",
+        "marks": null,
+        "keypoints": [],
+        "extensions": {
+          "code_block": [],
+          "table_data": {},
+          "trace_steps": [],
+          "diagram_ref": "",
+          "options": [],
+          "structure_type": ""
+        },
+        "subsub_questions": []
+      },
+      {
+        "letter": "i",
+        "text": "The array numbers contains 356 numbers to be sorted by the bubble sort algorithm. State the maximum number of passes a bubble sort would need to complete to sort 356 numbers into order. ...................................................................................................................................... [1]",
+        "question_type": "short_answer",
+        "marks": 1,
+        "keypoints": [],
+        "extensions": {
+          "code_block": [],
+          "table_data": {},
+          "trace_steps": [],
+          "diagram_ref": "",
+          "options": [],
+          "structure_type": ""
+        },
+        "subsub_questions": [
+          {
+            "roman": "ii",
+            "text": "(ii) State the name of one other sorting algorithm. ...................................................................................................................................... [1]",
+            "question_type": "short_answer",
+            "marks": 1,
+            "keypoints": [],
+            "extensions": {
+              "code_block": [],
+              "table_data": {},
+              "trace_steps": [],
+              "diagram_ref": "",
+              "options": [],
+              "structure_type": ""
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "exam_id": 202305,
+    "number": 2,
+    "text": "2 Taylor is designing a program for a client who would like to simulate earthquakes on major cities around the world in 3D. The client would like to be able to view any stage of an earthquake such as: 1. the build-up of the earthquake 2. the earthquake taking place 3. the aftershocks of the earthquake. The client would also like to be able to play the simulation at different speeds. For example, a slow, normal or fast speed.",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [
+        "2 Taylor is designing a program for a client who would like to simulate earthquakes on major cities around the world in 3D. The client would like to be able to view any stage of an earthquake such as: 1. the build-up of the earthquake 2. the earthquake taking place 3. the aftershocks of the earthquake. The client would also like to be able to play the simulation at different speeds. For example, a slow, normal or fast speed."
+      ],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": [
+      {
+        "letter": "a",
+        "text": "Give three examples of where abstraction can be used in the design of this program. 1 ................................................................................................................................................ 2 ................................................................................................................................................ 3 ................................................................................................................................................ [3]",
+        "question_type": "short_answer",
+        "marks": 3,
+        "keypoints": [],
+        "extensions": {
+          "code_block": [],
+          "table_data": {},
+          "trace_steps": [],
+          "diagram_ref": "",
+          "options": [],
+          "structure_type": ""
+        },
+        "subsub_questions": []
+      },
+      {
+        "letter": "b",
+        "text": "The program will need to accept inputs from the user before playing the simulation.",
+        "question_type": "short_answer",
+        "marks": null,
+        "keypoints": [],
+        "extensions": {
+          "code_block": [],
+          "table_data": {},
+          "trace_steps": [],
+          "diagram_ref": "",
+          "options": [],
+          "structure_type": ""
+        },
+        "subsub_questions": []
+      },
+      {
+        "letter": "i",
+        "text": "Identify two different inputs for this program. 1 ........................................................................................................................................ 2 ........................................................................................................................................ [2]",
+        "question_type": "short_answer",
+        "marks": 2,
+        "keypoints": [],
+        "extensions": {
+          "code_block": [
+            "Identify two different inputs for this program. 1 ........................................................................................................................................ 2 ........................................................................................................................................ [2]"
+          ],
+          "table_data": {},
+          "trace_steps": [],
+          "diagram_ref": "",
+          "options": [],
+          "structure_type": ""
+        },
+        "subsub_questions": [
+          {
+            "roman": "ii",
+            "text": "(ii) One decision point in the program will be to decide if the user inputs are suitable or not. Identify two other example decision points in this program. 1 ........................................................................................................................................ 2 ........................................................................................................................................ [2]",
+            "question_type": "short_answer",
+            "marks": 2,
+            "keypoints": [],
+            "extensions": {
+              "code_block": [
+                "(ii) One decision point in the program will be to decide if the user inputs are suitable or not. Identify two other example decision points in this program. 1 ........................................................................................................................................ 2 ........................................................................................................................................ [2]"
+              ],
+              "table_data": {},
+              "trace_steps": [],
+              "diagram_ref": "",
+              "options": [],
+              "structure_type": ""
+            }
+          }
+        ]
+      },
+      {
+        "letter": "c",
+        "text": "Taylor is deciding which software development methodology to use to write the program. The client has stated that they would like the program as soon as possible and want to be heavily involved during the program creation.",
+        "question_type": "short_answer",
+        "marks": null,
+        "keypoints": [],
+        "extensions": {
+          "code_block": [],
+          "table_data": {},
+          "trace_steps": [],
+          "diagram_ref": "",
+          "options": [],
+          "structure_type": ""
+        },
+        "subsub_questions": []
+      },
+      {
+        "letter": "i",
+        "text": "Describe the difference between the spiral model and the waterfall model. ...................................................................................................................................... [4]",
+        "question_type": "short_answer",
+        "marks": 4,
+        "keypoints": [],
+        "extensions": {
+          "code_block": [],
+          "table_data": {},
+          "trace_steps": [],
+          "diagram_ref": "",
+          "options": [],
+          "structure_type": ""
+        },
+        "subsub_questions": [
+          {
+            "roman": "ii",
+            "text": "(ii) Give two reasons why the waterfall model is not suitable for Taylor. 1 ......................................................................................................................................... 2 ......................................................................................................................................... [2]",
+            "question_type": "short_answer",
+            "marks": 2,
+            "keypoints": [],
+            "extensions": {
+              "code_block": [
+                "(ii) Give two reasons why the waterfall model is not suitable for Taylor. 1 ......................................................................................................................................... 2 ......................................................................................................................................... [2]"
+              ],
+              "table_data": {},
+              "trace_steps": [],
+              "diagram_ref": "",
+              "options": [],
+              "structure_type": ""
+            }
+          },
+          {
+            "roman": "iii",
+            "text": "(iii) Name and describe one other model of software development. Name  ................................................................................................................................. Description  ........................................................................................................................ [2] 3* Nina is writing a computer game using an Integrated Development Environment (IDE). Her friend, James, is writing a computer game using a text-editor which will allow James to create and edit text. James will use a separate compiler. Discuss the differences between writing and debugging a program using an IDE and a text-editor. You should include the following in your answer: • features that are used when writing code • features that are used when debugging code • the benefits of using an IDE instead of a text-editor. ..................................................................................................................................................... [9]",
+            "question_type": "short_answer",
+            "marks": 2,
+            "keypoints": [],
+            "extensions": {
+              "code_block": [],
+              "table_data": {},
+              "trace_steps": [],
+              "diagram_ref": "",
+              "options": [],
+              "structure_type": ""
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "exam_id": 202305,
+    "number": 4,
+    "text": "4 A function, toBinary(), is needed to calculate the binary value of a denary integer between 0 and 255. toBinary() needs to: • take an integer value as a parameter • divide the number by 2 repeatedly, storing a 1 if it has a remainder and a 0 if it doesn’t • combine the remainder values (first to last running right to left) to create the binary number • return the binary number. For example, to convert 25 to a binary number the steps are as follows: 25 / 2 = 12 remainder 1 12 / 2 = 6 remainder 0 6 / 2 = 3 remainder 0 3 / 2 = 1 remainder 1 1 / 2 = 0 remainder 1 return value = 11001",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [
+        "4 A function, toBinary(), is needed to calculate the binary value of a denary integer between 0 and 255. toBinary() needs to: • take an integer value as a parameter • divide the number by 2 repeatedly, storing a 1 if it has a remainder and a 0 if it doesn’t • combine the remainder values (first to last running right to left) to create the binary number • return the binary number. For example, to convert 25 to a binary number the steps are as follows: 25 / 2 = 12 remainder 1 12 / 2 = 6 remainder 0 6 / 2 = 3 remainder 0 3 / 2 = 1 remainder 1 1 / 2 = 0 remainder 1 return value = 11001"
+      ],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": [
+      {
+        "letter": "a",
+        "text": "Write the function toBinary(). You should write your function using pseudocode or program code. .............................................................................................................................................. [6]",
+        "question_type": "short_answer",
+        "marks": 6,
+        "keypoints": [],
+        "extensions": {
+          "code_block": [],
+          "table_data": {},
+          "trace_steps": [],
+          "diagram_ref": "",
+          "options": [],
+          "structure_type": ""
+        },
+        "subsub_questions": []
+      },
+      {
+        "letter": "b",
+        "text": "The main program: • asks the user to enter a denary number between 1 and 255 • checks that the input is valid between 1 and 255 • If valid call the function toBinary() and pass the input as a parameter • outputs the return value • If not valid, repeatedly asks the user to input a number until the number is valid. Write the algorithm for the main program. You should write your algorithm using pseudocode or program code. .............................................................................................................................................. [4]",
+        "question_type": "short_answer",
+        "marks": 4,
+        "keypoints": [],
+        "extensions": {
+          "code_block": [
+            "The main program: • asks the user to enter a denary number between 1 and 255 • checks that the input is valid between 1 and 255 • If valid call the function toBinary() and pass the input as a parameter • outputs the return value • If not valid, repeatedly asks the user to input a number until the number is valid. Write the algorithm for the main program. You should write your algorithm using pseudocode or program code. .............................................................................................................................................. [4]"
+          ],
+          "table_data": {},
+          "trace_steps": [],
+          "diagram_ref": "",
+          "options": [],
+          "structure_type": ""
+        },
+        "subsub_questions": []
+      }
+    ]
+  },
+  {
+    "exam_id": 202305,
+    "number": 5,
+    "text": "5 Layla writes a pseudocode algorithm to: • input 20 positive numbers into a 0-indexed 1-dimensional array • output the average (mean) number as a decimal • output the smallest number • output the largest number. The pseudocode algorithm is shown. It contains various errors. 01 total = 1 02 smallest = 9999 03 largest = -1 04 for x = 0 to 21 05 dataArray[x] = input(\"Enter a number\") 06 total = total + dataArray[x] 07 if dataArray[x] < largest then 08 largest = dataArray[x] 09 endif 10 if dataArray[x] < smallest then 11 smallest = dataArray[x] 12 endif 13 next x 14 print(\"Average = \" + total * 20) 15 print(\"Smallest = \" + smallest) 16 print(\"Largest = \" + largest)",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [
+        "5 Layla writes a pseudocode algorithm to: • input 20 positive numbers into a 0-indexed 1-dimensional array • output the average (mean) number as a decimal • output the smallest number • output the largest number. The pseudocode algorithm is shown. It contains various errors. 01 total = 1 02 smallest = 9999 03 largest = -1 04 for x = 0 to 21 05 dataArray[x] = input(\"Enter a number\") 06 total = total + dataArray[x] 07 if dataArray[x] < largest then 08 largest = dataArray[x] 09 endif 10 if dataArray[x] < smallest then 11 smallest = dataArray[x] 12 endif 13 next x 14 print(\"Average = \" + total * 20) 15 print(\"Smallest = \" + smallest) 16 print(\"Largest = \" + largest)"
+      ],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": [
+      {
+        "letter": "a",
+        "text": "",
+        "question_type": "short_answer",
+        "marks": null,
+        "keypoints": [],
+        "extensions": {
+          "code_block": [],
+          "table_data": {},
+          "trace_steps": [],
+          "diagram_ref": "",
+          "options": [],
+          "structure_type": ""
+        },
+        "subsub_questions": []
+      },
+      {
+        "letter": "i",
+        "text": "Identify the construct used on lines 01 to 03 in the algorithm. ...................................................................................................................................... [1]",
+        "question_type": "short_answer",
+        "marks": 1,
+        "keypoints": [],
+        "extensions": {
+          "code_block": [],
+          "table_data": {},
+          "trace_steps": [],
+          "diagram_ref": "",
+          "options": [],
+          "structure_type": ""
+        },
+        "subsub_questions": [
+          {
+            "roman": "ii",
+            "text": "(ii) Identify the construct used on lines 10 to 12 in the algorithm. ...................................................................................................................................... [1]",
+            "question_type": "short_answer",
+            "marks": 1,
+            "keypoints": [],
+            "extensions": {
+              "code_block": [],
+              "table_data": {},
+              "trace_steps": [],
+              "diagram_ref": "",
+              "options": [],
+              "structure_type": ""
+            }
+          }
+        ]
+      },
+      {
+        "letter": "b",
+        "text": "Identify two variables used in this algorithm. 1 ................................................................................................................................................ 2 ................................................................................................................................................ [2]",
+        "question_type": "short_answer",
+        "marks": 2,
+        "keypoints": [],
+        "extensions": {
+          "code_block": [],
+          "table_data": {},
+          "trace_steps": [],
+          "diagram_ref": "",
+          "options": [],
+          "structure_type": ""
+        },
+        "subsub_questions": []
+      },
+      {
+        "letter": "c",
+        "text": "The algorithm that Layla has written has many errors. Identify the line number of four different errors and write the corrected line of code. Error 1 line number ...................... Error 1 correction  ...................................................................................................................... Error 2 line number ...................... Error 2 correction  ...................................................................................................................... Error 3 line number ...................... Error 3 correction  ...................................................................................................................... Error 4 line number ...................... Error 4 correction  ...................................................................................................................... [4]",
+        "question_type": "short_answer",
+        "marks": 4,
+        "keypoints": [],
+        "extensions": {
+          "code_block": [],
+          "table_data": {},
+          "trace_steps": [],
+          "diagram_ref": "",
+          "options": [],
+          "structure_type": ""
+        },
+        "subsub_questions": []
+      },
+      {
+        "letter": "d",
+        "text": "dataArray is defined as a local variable within the main program.",
+        "question_type": "short_answer",
+        "marks": null,
+        "keypoints": [],
+        "extensions": {
+          "code_block": [],
+          "table_data": {},
+          "trace_steps": [],
+          "diagram_ref": "",
+          "options": [],
+          "structure_type": ""
+        },
+        "subsub_questions": []
+      },
+      {
+        "letter": "i",
+        "text": "State what is meant by a ‘local variable’. ...................................................................................................................................... [1]",
+        "question_type": "short_answer",
+        "marks": 1,
+        "keypoints": [],
+        "extensions": {
+          "code_block": [],
+          "table_data": {},
+          "trace_steps": [],
+          "diagram_ref": "",
+          "options": [],
+          "structure_type": ""
+        },
+        "subsub_questions": [
+          {
+            "roman": "ii",
+            "text": "(ii) Give one benefit and one drawback of declaring dataArray as a local variable in the main program. Benefit  ............................................................................................................................... Drawback  .......................................................................................................................... [2]",
+            "question_type": "short_answer",
+            "marks": 2,
+            "keypoints": [],
+            "extensions": {
+              "code_block": [],
+              "table_data": {},
+              "trace_steps": [],
+              "diagram_ref": "",
+              "options": [],
+              "structure_type": ""
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "exam_id": 202305,
+    "number": 6,
+    "text": "6 A program stores data in a 1-dimensional array.",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": [
+      {
+        "letter": "a",
+        "text": "The program needs to search the array for a number that is input by the user.",
+        "question_type": "short_answer",
+        "marks": null,
+        "keypoints": [],
+        "extensions": {
+          "code_block": [
+            "The program needs to search the array for a number that is input by the user."
+          ],
+          "table_data": {},
+          "trace_steps": [],
+          "diagram_ref": "",
+          "options": [],
+          "structure_type": ""
+        },
+        "subsub_questions": []
+      },
+      {
+        "letter": "i",
+        "text": "Describe how a linear search will search the data in the array for a number that has been input. ...................................................................................................................................... [5]",
+        "question_type": "short_answer",
+        "marks": 5,
+        "keypoints": [],
+        "extensions": {
+          "code_block": [
+            "Describe how a linear search will search the data in the array for a number that has been input. ...................................................................................................................................... [5]"
+          ],
+          "table_data": {},
+          "trace_steps": [],
+          "diagram_ref": "",
+          "options": [],
+          "structure_type": ""
+        },
+        "subsub_questions": [
+          {
+            "roman": "ii",
+            "text": "(ii) State why you would use a linear search rather than a binary search. ...................................................................................................................................... [1]",
+            "question_type": "short_answer",
+            "marks": 1,
+            "keypoints": [],
+            "extensions": {
+              "code_block": [],
+              "table_data": {},
+              "trace_steps": [],
+              "diagram_ref": "",
+              "options": [],
+              "structure_type": ""
+            }
+          }
+        ]
+      },
+      {
+        "letter": "b",
+        "text": "Describe how an array can be used to store and access data in a stack data structure. .............................................................................................................................................. [4] END OF QUESTION PAPER",
+        "question_type": "short_answer",
+        "marks": 4,
+        "keypoints": [],
+        "extensions": {
+          "code_block": [],
+          "table_data": {},
+          "trace_steps": [],
+          "diagram_ref": "",
+          "options": [],
+          "structure_type": ""
+        },
+        "subsub_questions": []
+      }
+    ]
+  }
+]

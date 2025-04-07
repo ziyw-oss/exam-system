@@ -1,0 +1,229 @@
+{
+  "table": [
+    {
+      "question_id": "1 (a)",
+      "main": "1",
+      "sub": "a",
+      "subsub": null,
+      "answer": "1 mark per bullet\n• 1st swap of 5 and 3\n• Remainder of first pass\n• Pass 2\n• Pass 3\n1 5 3 9 2 7\n1 3 5 9 2 7\n1 3 5 2 9 7\n1 3 5 2 7 9 End of pass 1\n1 3 2 5 7 9 End of pass 2\n1 2 3 5 7 9 End of pass 3",
+      "mark": "4",
+      "guidance": "Candidates do not need to show each\nswap, so if the candidate has clearly shown\nthe end of pass 1, they have met the first\ntwo marking points.\nMarks can be awarded for correctly\nshowing the results of each pass."
+    },
+    {
+      "question_id": "1 (b) (i)",
+      "main": "1",
+      "sub": "b",
+      "subsub": "i",
+      "answer": "1 mark per bullet\n• by reference will reorder the contents of the array\n• …so the new order can be accessed by the main\nprogram // so will be saved when the procedure ends\n• by value will change the array only in this procedure\n• … and so would need to return the array.",
+      "mark": "3",
+      "guidance": ""
+    },
+    {
+      "question_id": "1 (b) (ii)",
+      "main": "1",
+      "sub": "b",
+      "subsub": "ii",
+      "answer": "• A loop that repeats a fixed / set number of times",
+      "mark": "1",
+      "guidance": ""
+    },
+    {
+      "question_id": "1 (b) (iii)",
+      "main": "1",
+      "sub": "b",
+      "subsub": "iii",
+      "answer": "• To temporarily hold a value (for numbers[x])…\n• …while it is being transferred from one position to\nanother…\n• ….in the array numbers\n• To stop values over writing each other\n3\n3\n3\n3\n2",
+      "mark": "3",
+      "guidance": "\n\n\n\n\n"
+    },
+    {
+      "question_id": "1 (b) (iv)",
+      "main": "1",
+      "sub": "b",
+      "subsub": "iv",
+      "answer": "• Add a (second outer) loop\n• That will repeat for each pass // repeat until the flag is\nset to true at the end of a pass",
+      "mark": "2",
+      "guidance": ""
+    },
+    {
+      "question_id": "1 (c) (i)",
+      "main": "1",
+      "sub": "c",
+      "subsub": "i",
+      "answer": "• 355",
+      "mark": "1",
+      "guidance": ""
+    },
+    {
+      "question_id": "1 (c) (ii)",
+      "main": "1",
+      "sub": "c",
+      "subsub": "ii",
+      "answer": "• Insertion sort",
+      "mark": "1",
+      "guidance": "Accept any valid sorting algorithm\ne.g. Merge sort, Quick sort"
+    },
+    {
+      "question_id": "2 (a)",
+      "main": "2",
+      "sub": "a",
+      "subsub": null,
+      "answer": "1 mark per bullet to max 3\nAny reasonable abstraction\ne.g.\n• will not be to scale not life size\n• will exclude features e.g. people, road markings etc\n• will only show what is relevant e.g. buildings",
+      "mark": "3",
+      "guidance": ""
+    },
+    {
+      "question_id": "2 (b) (i)",
+      "main": "2",
+      "sub": "b",
+      "subsub": "i",
+      "answer": "1 mark per bullet e.g.\n• stage (e.g. stage 1, stage 2, stage 3)\n• city name (e.g. London)\n• speed (e.g. slow, normal, fast)",
+      "mark": "2",
+      "guidance": ""
+    },
+    {
+      "question_id": "2 (b) (ii)",
+      "main": "2",
+      "sub": "b",
+      "subsub": "ii",
+      "answer": "1 mark per bullet to max 2, e.g.\n• Does the build-up stage need to be shown?\n• Does the earthquake taking place needs to be shown?\n• Does the aftershock stage needs to be shown?",
+      "mark": "2",
+      "guidance": "Allow other suitable examples"
+    },
+    {
+      "question_id": "2 (c) (i)",
+      "main": "2",
+      "sub": "c",
+      "subsub": "i",
+      "answer": "1 mark per bullet to max 4, e.g.\n• spiral works on a small set of requirements…\n• …waterfall starts with all requirements\n• spiral repeats from the start of the cycle each time…\n• …waterfall to repeat needs to reverse through previous\nstages first\n• Spiral focuses on risk mitigation…\n• … Waterfall focuses on the delivery of the project as a\nwhole.",
+      "mark": "4",
+      "guidance": "Max 2 marks if no explicit differences\nidentified between the models."
+    },
+    {
+      "question_id": "2 (c) (ii)",
+      "main": "2",
+      "sub": "c",
+      "subsub": "ii",
+      "answer": "1 mark e.g.\n• The client needs the program quickly\n• The client wants to be heavily involved\n• The project is only small\n• The project is low risk",
+      "mark": "2",
+      "guidance": ""
+    },
+    {
+      "question_id": "2 (c) (iii)",
+      "main": "2",
+      "sub": "c",
+      "subsub": "iii",
+      "answer": "1 mark for name 1 mark for description\ne.g.\n• agile/rapid application development\n• building/use of prototypes\n• extreme programming\n• type of agile // has subsequent releases of new features",
+      "mark": "2",
+      "guidance": "Accept any sensible methodology and\ndescription,"
+    },
+    {
+      "question_id": "3",
+      "main": "3",
+      "sub": null,
+      "subsub": null,
+      "answer": "Mark Band 3–High Level\n(7-9 marks)\nThe candidate demonstrates thorough knowledge and\nunderstanding of IDEs; the material is generally accurate and\ndetailed.\nThe candidate is able to apply their knowledge and\nunderstanding directly and consistently to the context provided.\nEvidence/examples will be explicitly relevant to the explanation.\nThe candidate provides a thorough discussion which is well-\nbalanced. Evaluative comments are consistently relevant and\nwell-considered.\nThere is a well-developed line of reasoning which is clear and\nlogically structured. The information presented is relevant and\nsubstantiated.\nMark Band 2-Mid Level\n(4-6 marks)\nThe candidate demonstrates reasonable knowledge and\nunderstanding of IDEs; the material is generally accurate but at\ntimes underdeveloped.\nThe candidate is able to apply their knowledge and\nunderstanding directly to the context provided although one or\ntwo opportunities are missed. Evidence/examples are for the\nmost part implicitly relevant to the explanation.\nThe candidate provides a reasonable discussion, the majority\nof which is focused. Evaluative comments are for the most part\nappropriate, although one or two opportunities for development\nare missed.\nThere is a line of reasoning presented with some structure. The\ninformation presented is in the most part relevant and\nsupported by some evidence.\nMark Band 1-Low Level\n(1-3 marks)\nThe candidate demonstrates a basic knowledge of IDEs, with\nlimited understanding shown; the material is basic and contains\nsome inaccuracies. The candidate makes a limited attempt to\napply acquired knowledge and understanding to the context\nprovided.\nThe candidate provides a limited discussion which is narrow in\nfocus. Judgments if made are weak and unsubstantiated.\nThe information is basic and communicated in an unstructured\nway. The information is supported by limited evidence and the\nrelationship to the evidence may not be clear.\n0 marks\nNo attempt to answer the question or response is not worthy of\ncredit.",
+      "mark": "9",
+      "guidance": "AO1: Knowledge and Understanding\ne.g.\nIDE:\n• pretty print / syntax highlighting\n• auto-complete\n• auto-correction\n• breakpoints\n• stepping\nEditor:\n• no helpful writing/debugging features\n• no excess features/interface\nAO2.1: Application\ne.g.\nIDE\n• identify syntax errors as writing\n• …saves trying to find them\n• easier debugging as can step through a program\n• auto-indenting avoids errors from incorrect\nindentation\n• May have built in unit testing to automate testing\nand avoid new errors being introduced.\nEditor\n• does not offer suggestions on code corrections\n• Has a lower footprint on memory/CPU which\nmay be suited to quick alterations or working on\nlowed spec’d systems.\n• May be better when learning to program as it\nforces the user to type everything in full / doesn’t\ngive suggestions, helping things stick in\nmemory.\nAO3.3: Evaluation\ne.g.\n• IDE is helpful in reducing original errors\n• IDE is helpful in finding and correcting errors\n• Editor is a simpler system to use e.g. less\nmemory needed to run it, does not try and auto-\ncorrect incorrectly or introduce errors that the\nprogrammer has not made."
+    },
+    {
+      "question_id": "4 (a)",
+      "main": "4",
+      "sub": "a",
+      "subsub": null,
+      "answer": "1 mark per bullet to max 6\n• function header taking parameter\n• looping appropriately e.g. until value is 0\n• dividing by 2 and finding remainder e.g. MOD\n• adding 1 or 0 correctly\n• …appending to a value to be returned // final string\nreversed\n• reducing value to use within loop\n• returning calculated value\ne.g.\nfunction toBinary(denary)\nbinaryValue=\"\"\nwhile denary > 0\ntemp = denary MOD 2\nif temp == 1 then\nbinaryValue = \"1\" + binaryValue\nelse\nbinaryValue = \"0\" + binaryValue\nendif\ndenary = denary DIV 2\nendwhile\nreturn binaryValue\nendfunction",
+      "mark": "6",
+      "guidance": "Award a recursive algorithm as equivalent"
+    },
+    {
+      "question_id": "4 (b)",
+      "main": "4",
+      "sub": "b",
+      "subsub": null,
+      "answer": "1 mark per bullet to max 4\n• taking value as input\n• looping until valid between 1 and 255\n• calling function with correct parameter\n• outputting return value\ndenary = -1\nwhile denary < 1 or denary > 255\ndenary = input(\"Enter denary value between 1\nand 255\")\nendwhile\nprint(toBinary(denary))",
+      "mark": "4",
+      "guidance": "Allow other checks for a valid number. For\nexample\ndenary.isInteger == False"
+    },
+    {
+      "question_id": "5 (a) (i)",
+      "main": "5",
+      "sub": "a",
+      "subsub": "i",
+      "answer": "• sequence",
+      "mark": "1",
+      "guidance": ""
+    },
+    {
+      "question_id": "5 (a) (ii)",
+      "main": "5",
+      "sub": "a",
+      "subsub": "ii",
+      "answer": "• selection // branching",
+      "mark": "1",
+      "guidance": ""
+    },
+    {
+      "question_id": "5 (b)",
+      "main": "5",
+      "sub": "b",
+      "subsub": null,
+      "answer": "1 mark each to max 2\n• total\n• smallest\n• largest\n• x\n• dataArray",
+      "mark": "2",
+      "guidance": ""
+    },
+    {
+      "question_id": "5 (c)",
+      "main": "5",
+      "sub": "c",
+      "subsub": null,
+      "answer": "1 mark for each line and correction\n• Line 01\ntotal = 0\n• Line 02\n• smallest = dataArray[0]\n• Line 04\nfor x = 0 to 19 (accept 20)\n• Line 07\nif dataArray[x] > largest then\n• Line 14\nprint(\"Average = \" + total / 20)",
+      "mark": "4",
+      "guidance": "Do not award a mark for the line number\nalone without correction."
+    },
+    {
+      "question_id": "5 (d) (i)",
+      "main": "5",
+      "sub": "d",
+      "subsub": "i",
+      "answer": "it can only be accessed within the subroutine//block in which it is\ndeclared",
+      "mark": "1",
+      "guidance": ""
+    },
+    {
+      "question_id": "5 (d) (ii)",
+      "main": "5",
+      "sub": "d",
+      "subsub": "ii",
+      "answer": "1 mark for benefit\ne.g.\n• Increases data integrity\n• More efficient memory usage\n• Stops other subroutines accidently altering variable\n1 mark for drawback\ne.g.\n• Cannot be accessed directly by other subroutines\n• It has to be passed into a subroutine as a parameter",
+      "mark": "2",
+      "guidance": ""
+    },
+    {
+      "question_id": "6 (a) (i)",
+      "main": "6",
+      "sub": "a",
+      "subsub": "i",
+      "answer": "1 mark per bullet\n• Start with the first element\n• Compare it to the number input\n• If it is equal, return the index // True\n• If not equal, move to the next element and repeat\n• Repeat until it is found, or the end of the array is reached\n• If found, return the index where the data was found\n• If the end of the list was reached, return -1 // False // “not\nfound” message",
+      "mark": "5",
+      "guidance": ""
+    },
+    {
+      "question_id": "6 (a) (ii)",
+      "main": "6",
+      "sub": "a",
+      "subsub": "ii",
+      "answer": "1 mark per bullet\n• If the data is not in any order // binary search requires the\ndata to be in order\n• When the number of items to search is small",
+      "mark": "1",
+      "guidance": ""
+    },
+    {
+      "question_id": "6 (b)",
+      "main": "6",
+      "sub": "b",
+      "subsub": null,
+      "answer": "1 mark per bullet to max 4\n• (Stack) Pointer points to the last element added to the stack\n/ top of the stack\n• New data is added to the pointer position // pointer+1…\n• …check for overflow condition\n• …pointer is then incremented\n• Data is removed from pointer/pointer-1 position…\n• …check for underflow condition\n• …pointer is then decremented\n• Elements can be accessed through Push() and Pop()\nmethods that are implemented",
+      "mark": "4",
+      "guidance": "Note: Answers must relate to an array\nimplementation which means that a stack\npointer must be implemented."
+    }
+  ]
+}

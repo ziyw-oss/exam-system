@@ -1,0 +1,32 @@
+{
+    "Q1(a)": {
+      "type": "stepwise",
+      "max": 4,
+      "points": [
+        "Pass 1: 1 3 5 2 7 9",
+        "Pass 2: 1 3 2 5 7 9",
+        "Pass 3: 1 2 3 5 7 9",
+        "Final sorted: 1 2 3 5 7 9"
+      ]
+    },
+    "Q3": {
+      "type": "long",
+      "max": 9,
+      "levels": {
+        "Level 3": "Detailed discussion, structured comparison, examples and evaluation",
+        "Level 2": "Basic comparisons, lacks evaluation",
+        "Level 1": "Minimal factual points, no structure"
+      }
+    },
+    "Q4(a)": {
+      "type": "code",
+      "max": 6,
+      "tests": [
+        { "input": 0, "expected": "0" },
+        { "input": 1, "expected": "1" },
+        { "input": 5, "expected": "101" },
+        { "input": 25, "expected": "11001" }
+      ]
+    }
+  }
+  

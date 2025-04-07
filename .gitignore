@@ -6,3 +6,14 @@
 
 # node_modules
 node_modules/
+
+# Ignore outputs
+output.*
+parsed_debug.json
+structured_with_code_blocks.json
+
+# Ignore uploads
+uploads/
+
+# Ignore all .py files under scripts/ that contain 'copy' in the filename
+scripts/*copy*.py

@@ -1,0 +1,7 @@
+exam_id,question_bank_id,level,parent_id,text,question_type,marks,code,sort_order
+18,1,question,,A program uses a bubble sort to sort data into ascending numerical order. The data is stored in a 0-,short_answer,,,1
+18,11,question,,Taylor is designing a program for a client who would like to simulate earthquakes on major cities ar,short_answer,,Taylor is designing a program for a client who would like to simulate earthquakes on major cities around the world in 3D. The client would like to be able to view any stage of an earthquake such as: 1,2
+18,20,question,,"Nina is writing a computer game using an Integrated Development Environment (IDE). Her friend, James",short_answer,9.0,,3
+18,21,question,,"A function, toBinary(), is needed to calculate the binary value of a denary integer between 0 and 25",code_block,,,4
+18,24,question,,Layla writes a pseudocode algorithm to: • input 20 positive numbers into a 0-indexed 1-dimensional a,code_block,,,5
+18,33,question,,A program stores data in a 1-dimensional array.,short_answer,,,6

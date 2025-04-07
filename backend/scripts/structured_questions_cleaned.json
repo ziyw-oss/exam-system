@@ -1,0 +1,604 @@
+[
+  {
+    "exam_id": 7,
+    "question_number": "1",
+    "text": "A program uses a bubble sort to sort data into ascending numerical order.  The data is stored in a 0-indexed 1-dimensional array.",
+    "marks": null,
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": [
+      {
+        "label": "(a)",
+        "text": "Show each stage of a bubble sort to sort this data into ascending numerical order: 1 5 3 9 2 You should clearly show and label each pass in your answer.  ..............................................................................................................................................",
+        "marks": 4,
+        "extensions": {
+          "code_block": [],
+          "table_data": {},
+          "trace_steps": [],
+          "diagram_ref": "",
+          "options": [],
+          "structure_type": ""
+        },
+        "sub_questions": []
+      }
+    ]
+  },
+  {
+    "exam_id": 7,
+    "question_number": "03",
+    "text": "for x = 0 to numbers.length – 1",
+    "marks": null,
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 7,
+    "question_number": "04",
+    "text": "if numbers[x] > numbers[x + 1] then",
+    "marks": null,
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 7,
+    "question_number": "2",
+    "text": "Taylor is designing a program for a client who would like to simulate earthquakes on major cities  around the world in 3D. The client would like to be able to view any stage of an earthquake such as: 1. the build-up of the earthquake 2. the earthquake taking place 3. the aftershocks of the earthquake. The client would also like to be able to play the simulation at different speeds. For example, a slow, normal or fast speed.",
+    "marks": null,
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": [
+      {
+        "label": "(a)",
+        "text": "Give three examples of where abstraction can be used in the design of this program.",
+        "marks": null,
+        "extensions": {
+          "code_block": [],
+          "table_data": {},
+          "trace_steps": [],
+          "diagram_ref": "",
+          "options": [],
+          "structure_type": ""
+        },
+        "sub_questions": []
+      }
+    ]
+  },
+  {
+    "exam_id": 7,
+    "question_number": "1",
+    "text": "................................................................................................................................................",
+    "marks": null,
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 7,
+    "question_number": "2",
+    "text": "................................................................................................................................................",
+    "marks": null,
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 7,
+    "question_number": "3",
+    "text": "................................................................................................................................................  ",
+    "marks": 3,
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 7,
+    "question_number": "1",
+    "text": "........................................................................................................................................",
+    "marks": null,
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": [
+      {
+        "label": "(b)",
+        "text": "The program will need to accept inputs from the user before playing the simulation.",
+        "marks": null,
+        "extensions": {
+          "code_block": [],
+          "table_data": {},
+          "trace_steps": [],
+          "diagram_ref": "",
+          "options": [],
+          "structure_type": ""
+        },
+        "sub_questions": [
+          {
+            "label": "(i)",
+            "text": "Identify two different inputs for this program.",
+            "marks": null,
+            "extensions": {
+              "code_block": [],
+              "table_data": {},
+              "trace_steps": [],
+              "diagram_ref": "",
+              "options": [],
+              "structure_type": ""
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "exam_id": 7,
+    "question_number": "2",
+    "text": "........................................................................................................................................  ",
+    "marks": 2,
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 7,
+    "question_number": "1",
+    "text": "........................................................................................................................................",
+    "marks": null,
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 7,
+    "question_number": "2",
+    "text": "........................................................................................................................................",
+    "marks": null,
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": [
+      {
+        "label": "(c)",
+        "text": "Taylor is deciding which software development methodology to use to write the program. The client has stated that they would like the program as soon as possible and want to be heavily involved during the program creation.",
+        "marks": null,
+        "extensions": {
+          "code_block": [],
+          "table_data": {},
+          "trace_steps": [],
+          "diagram_ref": "",
+          "options": [],
+          "structure_type": ""
+        },
+        "sub_questions": [
+          {
+            "label": "(i)",
+            "text": "Describe the difference between the spiral model and the waterfall model. ......................................................................................................................................",
+            "marks": 4,
+            "extensions": {
+              "code_block": [],
+              "table_data": {},
+              "trace_steps": [],
+              "diagram_ref": "",
+              "options": [],
+              "structure_type": ""
+            }
+          },
+          {
+            "label": "(ii)",
+            "text": "Give two reasons why the waterfall model is not suitable for Taylor.",
+            "marks": null,
+            "extensions": {
+              "code_block": [],
+              "table_data": {},
+              "trace_steps": [],
+              "diagram_ref": "",
+              "options": [],
+              "structure_type": ""
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "exam_id": 7,
+    "question_number": "1",
+    "text": ".........................................................................................................................................",
+    "marks": null,
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 7,
+    "question_number": "2",
+    "text": ".........................................................................................................................................  ",
+    "marks": 2,
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 7,
+    "question_number": "4",
+    "text": "A function, toBinary(), is needed to calculate the binary value of a denary integer between 0  and 255. toBinary() needs to: • take an integer value as a parameter • divide the number by 2 repeatedly, storing a 1 if it has a remainder and a 0 if it doesn’t • combine the remainder values (first to last running right to left) to create the binary number • return the binary number. For example, to convert 25 to a binary number the steps are as follows:",
+    "marks": null,
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 7,
+    "question_number": "25",
+    "text": "/ 2 = 12  remainder 1",
+    "marks": null,
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 7,
+    "question_number": "12",
+    "text": "/ 2 = 6  remainder 0",
+    "marks": null,
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 7,
+    "question_number": "6",
+    "text": "/ 2 = 3  remainder 0",
+    "marks": null,
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 7,
+    "question_number": "3",
+    "text": "/ 2 = 1  remainder 1",
+    "marks": null,
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 7,
+    "question_number": "1",
+    "text": "/ 2 = 0  remainder 1 return value = 11001",
+    "marks": null,
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": [
+      {
+        "label": "(a)",
+        "text": "Write the function toBinary(). You should write your function using pseudocode or program code. ..............................................................................................................................................",
+        "marks": 6,
+        "extensions": {
+          "code_block": [],
+          "table_data": {},
+          "trace_steps": [],
+          "diagram_ref": "",
+          "options": [],
+          "structure_type": ""
+        },
+        "sub_questions": []
+      },
+      {
+        "label": "(b)",
+        "text": "The main program: • asks the user to enter a denary number between 1 and 255 • checks that the input is valid between 1 and 255 • If valid call the function toBinary() and pass the input as a parameter • outputs the return value • If not valid, repeatedly asks the user to input a number until the number is valid. Write the algorithm for the main program. You should write your algorithm using pseudocode or program code. ..............................................................................................................................................",
+        "marks": 4,
+        "extensions": {
+          "code_block": [],
+          "table_data": {},
+          "trace_steps": [],
+          "diagram_ref": "",
+          "options": [],
+          "structure_type": ""
+        },
+        "sub_questions": []
+      }
+    ]
+  },
+  {
+    "exam_id": 7,
+    "question_number": "5",
+    "text": "Layla writes a pseudocode algorithm to:  • input 20 positive numbers into a 0-indexed 1-dimensional array • output the average (mean) number as a decimal • output the smallest number • output the largest number. The pseudocode algorithm is shown. It contains various errors.",
+    "marks": null,
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 7,
+    "question_number": "04",
+    "text": "for x = 0 to 21",
+    "marks": null,
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 7,
+    "question_number": "14",
+    "text": "print(\"Average = \" + total * 20)",
+    "marks": null,
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 7,
+    "question_number": "1",
+    "text": "................................................................................................................................................",
+    "marks": null,
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 7,
+    "question_number": "2",
+    "text": "................................................................................................................................................  ",
+    "marks": 2,
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 7,
+    "question_number": "6",
+    "text": "A program stores data in a 1-dimensional array.",
+    "marks": null,
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": [
+      {
+        "label": "(d)",
+        "text": "dataArray is defined as a local variable within the main program.",
+        "marks": null,
+        "extensions": {
+          "code_block": [],
+          "table_data": {},
+          "trace_steps": [],
+          "diagram_ref": "",
+          "options": [],
+          "structure_type": ""
+        },
+        "sub_questions": [
+          {
+            "label": "(i)",
+            "text": "State what is meant by a ‘local variable’. ......................................................................................................................................",
+            "marks": 1,
+            "extensions": {
+              "code_block": [],
+              "table_data": {},
+              "trace_steps": [],
+              "diagram_ref": "",
+              "options": [],
+              "structure_type": ""
+            }
+          },
+          {
+            "label": "(ii)",
+            "text": "Give one benefit and one drawback of declaring dataArray as a local variable in the main program. Benefit  ............................................................................................................................... Drawback  .......................................................................................................................... ",
+            "marks": 2,
+            "extensions": {
+              "code_block": [],
+              "table_data": {},
+              "trace_steps": [],
+              "diagram_ref": "",
+              "options": [],
+              "structure_type": ""
+            }
+          }
+        ]
+      },
+      {
+        "label": "(a)",
+        "text": "The program needs to search the array for a number that is input by the user.",
+        "marks": null,
+        "extensions": {
+          "code_block": [],
+          "table_data": {},
+          "trace_steps": [],
+          "diagram_ref": "",
+          "options": [],
+          "structure_type": ""
+        },
+        "sub_questions": [
+          {
+            "label": "(i)",
+            "text": "Describe how a linear search will search the data in the array for a number that has been input. ......................................................................................................................................",
+            "marks": 5,
+            "extensions": {
+              "code_block": [],
+              "table_data": {},
+              "trace_steps": [],
+              "diagram_ref": "",
+              "options": [],
+              "structure_type": ""
+            }
+          },
+          {
+            "label": "(ii)",
+            "text": "State why you would use a linear search rather than a binary search. ......................................................................................................................................",
+            "marks": 1,
+            "extensions": {
+              "code_block": [],
+              "table_data": {},
+              "trace_steps": [],
+              "diagram_ref": "",
+              "options": [],
+              "structure_type": ""
+            }
+          }
+        ]
+      },
+      {
+        "label": "(b)",
+        "text": "Describe how an array can be used to store and access data in a stack data structure. END OF QUESTION PAPER ..............................................................................................................................................",
+        "marks": 4,
+        "extensions": {
+          "code_block": [],
+          "table_data": {},
+          "trace_steps": [],
+          "diagram_ref": "",
+          "options": [],
+          "structure_type": ""
+        },
+        "sub_questions": []
+      }
+    ]
+  }
+]

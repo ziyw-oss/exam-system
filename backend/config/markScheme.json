@@ -1,0 +1,135 @@
+{
+    "Q1(a)": {
+      "type": "stepwise",
+      "max": 4,
+      "points": [
+        "Pass 1 correct",
+        "Pass 2 correct",
+        "Pass 3 correct",
+        "Final sorted array correct"
+      ]
+    },
+    "Q1(b)(i)": {
+      "type": "short",
+      "max": 3,
+      "keywords": [
+        "by reference modifies the original array",
+        "by value only modifies a copy",
+        "reference keeps sorting result after function"
+      ]
+    },
+    "Q1(b)(ii)": {
+      "type": "short",
+      "max": 1,
+      "keywords": [
+        "count controlled loop repeats for a fixed number of times"
+      ]
+    },
+    "Q1(b)(iii)": {
+      "type": "short",
+      "max": 3,
+      "keywords": [
+        "holdValue stores value temporarily",
+        "prevents overwrite during swap",
+        "used to facilitate exchange"
+      ]
+    },
+    "Q1(b)(iv)": {
+      "type": "short",
+      "max": 2,
+      "keywords": [
+        "add outer loop",
+        "repeat until no swaps"
+      ]
+    },
+    "Q1(c)(i)": {
+      "type": "short",
+      "max": 1,
+      "keywords": ["355"]
+    },
+    "Q1(c)(ii)": {
+      "type": "short",
+      "max": 1,
+      "keywords": ["insertion sort", "merge sort", "quick sort"]
+    },
+    "Q2(a)": {
+      "type": "short",
+      "max": 3,
+      "keywords": [
+        "exclude pedestrians",
+        "remove weather effects",
+        "simplify 3D building models"
+      ]
+    },
+    "Q2(b)(i)": {
+      "type": "short",
+      "max": 2,
+      "keywords": [
+        "city name",
+        "simulation speed",
+        "stage selection"
+      ]
+    },
+    "Q2(b)(ii)": {
+      "type": "short",
+      "max": 2,
+      "keywords": [
+        "buildings collapse decision",
+        "aftershock intensity judgement"
+      ]
+    },
+    "Q2(c)(i)": {
+      "type": "long",
+      "max": 4,
+      "levels": {
+        "Level 3": "Compares spiral and waterfall clearly with examples",
+        "Level 2": "Some differences explained",
+        "Level 1": "Basic mention of models"
+      }
+    },
+    "Q2(c)(ii)": {
+      "type": "short",
+      "max": 2,
+      "keywords": [
+        "waterfall is not iterative",
+        "client wants involvement",
+        "client wants quick delivery"
+      ]
+    },
+    "Q2(c)(iii)": {
+      "type": "short",
+      "max": 2,
+      "keywords": ["agile", "rapid development with feedback"]
+    },
+    "Q3": {
+      "type": "long",
+      "max": 9,
+      "levels": {
+        "Level 3": "Detailed discussion, structured comparison, examples and evaluation",
+        "Level 2": "Basic comparisons, lacks evaluation",
+        "Level 1": "Minimal factual points, no structure"
+      }
+    },
+    "Q4(a)": {
+      "type": "code",
+      "max": 6,
+      "tests": [
+        { "input": 0, "expected": "0" },
+        { "input": 1, "expected": "1" },
+        { "input": 2, "expected": "10" },
+        { "input": 5, "expected": "101" },
+        { "input": 25, "expected": "11001" },
+        { "input": 255, "expected": "11111111" }
+      ]
+    },
+    "Q4(b)": {
+      "type": "long",
+      "max": 4,
+      "levels": {
+        "Level 3": "Correct validation, loop retry, and output",
+        "Level 2": "Partially valid input logic",
+        "Level 1": "Basic structure or idea present"
+      }
+    }
+  }
+  

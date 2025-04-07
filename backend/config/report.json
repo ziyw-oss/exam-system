@@ -1,0 +1,27 @@
+{
+    "Q1(a)": "Most candidates gained at least some marks. High-scoring responses clearly showed each pass of the bubble sort and explained the swaps made. Weaker answers often gave incorrect swaps or only showed the final list.",
+    "Q1(b)(i)": "Many students correctly explained the difference between passing by value and reference, but some failed to relate it to the effect on the array.",
+    "Q1(b)(ii)": "Students were required to give the state of the array after the second pass. The best answers carefully traced the bubble sort process. Common mistakes included incorrect swaps or only showing the sorted result.",
+    "Q1(b)(iii)": "This was a one-mark recall question. Most students identified the algorithm correctly as bubble sort.",
+    "Q1(b)(iv)": "Stronger responses discussed merge sort’s speed and use of divide-and-conquer. Many gave vague or unrelated advantages. A few confused merge sort with quick sort.",
+    "Q1(c)(i)": "High-scoring answers clearly explained the function of the accumulator in iteration. Some gave overly general answers unrelated to the question.",
+    "Q1(c)(ii)": "Students often misunderstood the loop condition. The best answers showed correct iteration logic. Weaker responses failed to reference the accumulator or gave syntactically invalid code.",
+    "Q2(a)": "Students who scored well recognised the 3D map’s simplification by removing humans, weather effects, and detailed structures. Some answers missed why these were removed.",
+    "Q2(b)(i)": "Most candidates identified city, stage, or speed as valid inputs. Some creative alternatives like earthquake magnitude were also accepted.",
+    "Q2(b)(ii)": "Better responses gave clearly structured conditions for decisions, while weaker ones repeated user input checks or listed calculations vaguely.",
+    "Q2(c)(i)": "Students were expected to compare waterfall and spiral models. Stronger responses identified key differences (risk-focus vs fixed plan) and justified with reasoning.",
+    "Q2(c)(ii)": "Clear responses noted that waterfall was unsuitable due to long delivery time or lack of client interaction. Many failed to contextualize the reason.",
+    "Q2(c)(iii)": "Many could name a valid model like Agile or RAD, but fewer explained its key features or benefits.",
+    "Q3": "Most students attempted to compare IDEs and text editors. High-scoring answers gave balanced comparisons, clear examples, and evaluated which is better for programming. Weaker answers listed features without explanation.",
+    "Q4(a)": "Many students gained full marks by writing correct code to convert decimal to binary. Common errors included off-by-one mistakes or printing instead of returning values.",
+    "Q4(b)": "This question required describing binary search. The best answers included key features like sorted lists and halving the search space. Some missed essential parts or confused it with linear search.",
+    "Q5(a)(i)": "Most students correctly identified the construct as ‘sequence’.",
+    "Q5(a)(ii)": "Nearly all candidates identified ‘selection’ as the construct used.",
+    "Q5(c)": "Context was misunderstood by some candidates, who didn’t realize inputs were positive integers. Few achieved full marks.",
+    "Q5(d)(i)": "Few candidates could define local variable scope accurately. The idea that it belongs to the procedure where it's declared was often missed.",
+    "Q5(d)(ii)": "Some confused local/global variable definitions. Others made incorrect claims about variable accessibility without considering parameter passing.",
+    "Q6(a)(i)": "Many gave clear descriptions of how a linear search works. Vague answers like 'check each value' lacked the detail needed for full marks.",
+    "Q6(a)(ii)": "Most correctly stated that linear search works with unordered lists. Some added valid context like small dataset size.",
+    "Q6(b)": "Candidates struggled to describe array-based stacks. Good answers mentioned stack pointers and static array size, but many confused with Python lists."
+  }
+  
