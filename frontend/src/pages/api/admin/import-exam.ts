@@ -3,7 +3,8 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import formidable from 'formidable';
 import fs from 'fs';
 import path from 'path';
-import { spawnSync, spawn } from 'child_process';
+import { spawn, spawnSync } from 'child_process';
+
 
 export const config = {
   api: {
@@ -35,7 +36,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const serverRoot = path.resolve(process.cwd(), '..');
     const pythonPath = 'python3';
 
-    // Step 1: 临时解析 paper 获取 exam_id
     const tmpOutput = path.join(serverRoot, 'backend', 'outputs', 'tmp');
     fs.mkdirSync(tmpOutput, { recursive: true });
     const probe = spawnSync(pythonPath, ['backend/scripts/parse_pdf.py', paper.filepath, tmpOutput], { cwd: serverRoot });
@@ -53,7 +53,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return res.status(500).json({ error: '解析 output.json 失败', detail: e.message });
     }
 
-    // Step 2: 移动上传文件到 uploads/{examId}
     const finalUploadDir = path.join(serverRoot, 'uploads', examId);
     fs.mkdirSync(finalUploadDir, { recursive: true });
 
@@ -67,68 +66,80 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const finalMarkPath = moveFile(markscheme, 'markscheme.pdf');
     const finalReportPath = moveFile(report, 'report.pdf');
 
-    // Step 3: 重新解析主试卷
     const finalOutputDir = path.join(serverRoot, 'backend', 'outputs', examId);
     fs.mkdirSync(finalOutputDir, { recursive: true });
 
+    const markResult = spawnSync(pythonPath, ['backend/scripts/parse_markscheme.py', finalMarkPath, finalOutputDir], {
+      cwd: serverRoot,
+    });
+    const markstdout = markResult.stdout.toString();
+    const markstderr = markResult.stderr.toString();
+    
+    console.log("📥 markscheme stdout:", markstdout);
+    console.error("❌ markscheme stderr:", markstderr); 
+    
     const python = spawn(pythonPath, ['backend/scripts/parse_pdf.py', finalPaperPath, finalOutputDir], {
       cwd: serverRoot,
       env: { ...process.env, PYTHONUNBUFFERED: '1' },
-    });
-    
+    }); 
+
     let stdout = '', stderr = '';
-    
+
     python.stdout.on('data', (data) => {
       stdout += data.toString();
-      console.log("📥 python stdout:", data.toString());
     });
-    
+
     python.stderr.on('data', (data) => {
       stderr += data.toString();
       console.error("❌ python stderr:", data.toString());
     });
-    
-    python.on('close', (code) => {
-      console.log("📦 python exited:", code);
-      console.log("🟢 总 stdout:", stdout);
-      console.log("🔴 总 stderr:", stderr);
-    });
 
     python.on('close', (code) => {
       if (code !== 0) {
-        return res.status(500).json({ error: '❌ parse_pdf 执行失败', detail: stderr });
+        return res.status(500).json({ error: '❌ parse_pdf 执行失败', detail: stderr || '未知错误' });
       }
-    
-    // Step 4: 结构化评分标准 / 考官报告
-    console.log("📦 调用 parse_markscheme.py:", finalMarkPath, finalOutputDir);
-    const markschemeJsonPath = path.join(finalOutputDir, 'markscheme.json');
-    const markResult = spawnSync(pythonPath, ['backend/scripts/parse_markscheme.py', finalMarkPath, finalOutputDir], {
-      cwd: serverRoot,
-    });
-    console.log("✅ markscheme stdout:", markResult.stdout.toString());
-    console.error("❌ markscheme stderr:", markResult.stderr.toString());
-    console.log("📦 markscheme exit:", markResult.status);
 
-    console.log("📦 调用 parse_report.py:", finalReportPath, finalOutputDir);
-    const reportJsonPath = path.join(finalOutputDir, 'report.json');
-    const reportResult = spawnSync(pythonPath, ['backend/scripts/parse_report.py', finalReportPath, finalOutputDir], {
-      cwd: serverRoot,
-    });
-    console.log("✅ report stdout:", reportResult.stdout.toString());
-    console.error("❌ report stderr:", reportResult.stderr.toString());
-    console.log("📦 report exit:", reportResult.status);
+      
+      const markschemeJsonPath = path.join(finalOutputDir, 'markscheme.json');
+      const markResult = spawnSync(pythonPath, ['backend/scripts/parse_markscheme.py', finalMarkPath, finalOutputDir], {
+        cwd: serverRoot,
+      });
 
-      // ✅ Step 5: 返回最终结构化数据
+
+      const markstderr = markResult.stderr.toString();
+      console.error("❌ markscheme stderr:", markstderr);
+
+      const reportJsonPath = path.join(finalOutputDir, 'report.json');
+      const reportResult = spawnSync(pythonPath, ['backend/scripts/parse_report.py', finalReportPath, finalOutputDir], {
+        cwd: serverRoot,
+      });
+      const reportstderr = reportResult.stderr.toString();
+      console.error("❌ report stderr:", reportstderr);
+
       try {
         const structured = JSON.parse(
           fs.readFileSync(path.join(finalOutputDir, 'output.json'), 'utf-8')
         );
-        return res.status(200).json({ structured, uuid: examId });
+        return res.status(200).json({
+          structured,
+          uuid: examId,
+          logs: {
+            parse_pdf: stderr,
+            parse_markscheme: markstderr,
+            parse_report: reportstderr
+          }
+        });
       } catch (e: any) {
-        return res.status(500).json({ error: '读取结构化数据失败', detail: e.message });
+        return res.status(500).json({
+          error: '读取结构化数据失败',
+          detail: e.message,
+          logs: {
+            parse_pdf: stderr,
+            parse_markscheme: markstderr,
+            parse_report: reportstderr
+          }
+        });
       }
     });
-
-   
   });
 }

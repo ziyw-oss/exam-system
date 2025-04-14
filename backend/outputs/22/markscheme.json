@@ -1,0 +1,227 @@
+[
+  {
+    "question_id": "1 (a)",
+    "main": "1",
+    "sub": "a",
+    "subsub": null,
+    "answer": "• Clock Speed …\n• … The speed at which the fetch decode execute\ncycle is completed/ the speed a single core can\nexecute instructions\n• Number of cores/ independent processing units\n…\n• …that can fetch decode execute at the same\ntime\n• Cache size…\n• … memory that contains recently/frequently\nused instructions/data\n• …memory that has a faster R/W speed than\nRAM\n• …memory that is closer to/onboard the CPU",
+    "mark": 4,
+    "guidance": "One mark for stating the factor, mark for expanding the\nfactor\n- Accept cycles for “FDE Cycles”"
+  },
+  {
+    "question_id": "1 (b)",
+    "main": "1",
+    "sub": "b",
+    "subsub": null,
+    "answer": "• CISC has a larger instruction set\n• RISC has a smaller instruction set\n• CISC is difficult to pipeline\n• RISC is easier to pipeline\n• CISC tends to have more addressing modes\n• RISC tends to have fewer addressing modes\n• CISC instructions may take multiple clock\ncycles to execute\n• RISC instructions take one clock cycle to\nexecute\n• CISC has complex circuitry/more transistors.\n• RISC has less complex/simple circuitry\n• CISC uses less RAM\n• RISC uses more RAM",
+    "mark": 2,
+    "guidance": "Accept any other valid points\nMark in pairs\n"
+  },
+  {
+    "question_id": "1 (c)",
+    "main": "1",
+    "sub": "c",
+    "subsub": null,
+    "answer": "• Parallel processing will allow multiple separate\njobs/instructions/FDE cycles to run concurrently.\n• Longer rendering jobs can be split, shortening\nthe overall time taken.\n• Different CPUs/cores can tackle different\nframes/sections/components of the video\nsimultaneously.",
+    "mark": 3,
+    "guidance": ""
+  },
+  {
+    "question_id": "1 (d)",
+    "main": "1",
+    "sub": "d",
+    "subsub": null,
+    "answer": "• A piece of software which allows\nhardware/device to communicate…\n• …with the operating system",
+    "mark": 2,
+    "guidance": ""
+  },
+  {
+    "question_id": "1 (e) (i)",
+    "main": "1",
+    "sub": "e",
+    "subsub": "i",
+    "answer": "• Monitor\n• Speakers//Headphones",
+    "mark": 2,
+    "guidance": "Must be output devices.\nMust be suitable for video editing."
+  },
+  {
+    "question_id": "1 (e) (ii)",
+    "main": "1",
+    "sub": "e",
+    "subsub": "ii",
+    "answer": "Mark Band 3–High Level\n(7-9 marks)\nThe candidate will provide a range of accurate benefits and\ndrawbacks of both magnetic and flash devices.\nThe candidate is able to apply their knowledge and\nunderstanding directly and consistently to the context provided.\nEvidence/examples will be explicitly relevant to the explanation.\nThe candidate will come to a clear conclusion that must be\njustified by their comments\nThere is a well-developed line of reasoning which is clear and\nlogically structured. The information presented is relevant and\nsubstantiated.\nMark Band 2-Mid Level\n(4-6 marks)\nThe candidate will provide drawbacks or benefits about both\nmagnetic and flash methods. These will be for the most part\nrelevant. The candidate is able to apply their knowledge and\nunderstanding directly to the context provided although one or\ntwo opportunities are missed.\nEvidence/examples are for the most part implicitly relevant to\nthe explanation.\nThe candidate will attempt to come to a conclusion, although it\nmay not be fully justified by their answer,\nThere is a line of reasoning presented with some structure.\nThe information presented is in the most part relevant and\nsupported by some evidence.\nMark Band 1-Low Level\n(1-3 marks)\nThe candidate has provided some drawbacks or benefits of\nmagnetic or flash methods. The material is basic and contains\nsome inaccuracies.\nThe candidate makes a limited attempt to apply acquired\nknowledge and understanding to the context provided.\nThe candidate provides nothing more than an unsupported\nassertion.\nThe information is basic and communicated in an unstructured\nway. The information is supported by limited evidence and the\nrelationship to the evidence may not be clear.\n0 marks\nNo attempt to answer the question or response is not worthy of\ncredit.",
+    "mark": 9,
+    "guidance": "AO1\nMagnetic Benefits:\n• Lower price per GB\n• As standard comes in high capacity\nMagnetic Drawbacks:\n• Lower R/W speed\n• Higher power consumption\n• Moving parts /less durable\nFlash Benefits:\n• Higher R/W speed\n• No moving parts/more durable\n• Lower power consumption\n• Can have a higher capacity.\nFlash Drawbacks:\n• Higher cost per GB\n• At higher capacities prices rise exponentially.\nAO2:\nSuitability of Magnetic:\n• Video files are very large, benefiting magnetics low cost\nper GB\n• Can be used to archive the different video elements after\nit’s been rendered\n• Could possibly get damaged while being transported\nbetween the different filming sites\n• Slow R/W speeds may take it longer to load into the\nsoftware\nSuitability of flash:\n• Very fast R/W speeds therefore reducing the amount of\nloading time during the editing process/giving smoother\nplayback\n• If money is not a barrier, flash can be bought in sufficient\ncapacities for videos.\nAO3:\nCandidates can conclude either method, but to score in the top\nMB must have a clear line of reasoning to justify their choice."
+  },
+  {
+    "question_id": "2 (a) (i)",
+    "main": "2",
+    "sub": "a",
+    "subsub": "i",
+    "answer": "☑ First In First Out",
+    "mark": 1,
+    "guidance": ""
+  },
+  {
+    "question_id": "2 (a) (ii)",
+    "main": "2",
+    "sub": "a",
+    "subsub": "ii",
+    "answer": "Ben Sundip Tom Charlie Ling Sara\n1 Mark: Adding, Charlie, Ling and Sara in correct order\n1 Mark: Exclusively removing Alex and Kofi.",
+    "mark": 2,
+    "guidance": "Accept:\nBen Sundip Tom Charlie Ling Sara"
+  },
+  {
+    "question_id": "2 (b) (i)",
+    "main": "2",
+    "sub": "b",
+    "subsub": "i",
+    "answer": "function pop()\nif top == 0 then\nreturn -1\nelse\nitem = items[top]\ntop = top - 1\nreturn item\nendif\nend function",
+    "mark": 4,
+    "guidance": ""
+  },
+  {
+    "question_id": "2 (b) (ii)",
+    "main": "2",
+    "sub": "b",
+    "subsub": "ii",
+    "answer": "• Correctly declaring the function reverse to include\npassing in name as a parameter\n• Correct logic to calculate the number of pushes\nrequired\n• Correct use of a loop to push all characters onto the\nstack separately\n• Creating a local variable reverseName to hold the\nreversed string\n• Correct use of a loop to pop all characters from the\nstack (in the reverse order)\n• Correct logic to add each popped character to the\nreverseName variable\n• Correctly returning the reverseName variable",
+    "mark": 7,
+    "guidance": "Example solution\nfunction reverse(name)\nreverseName = \"\"\nfor nameCount = 0 to name.Length-1\ntheStack.push(name[nameCount])\nnext nameCount\nfor nameCount = 0 to name.Length-1\nreverseName = reverseName + theStack.pop()\nnext nameCount\nreturn reverseName\nend function\nGive full marks for alternative solutions that would work fully.\nAllow FT for any duplicate identifiers named incorrectly or\nusing the incorrect case"
+  },
+  {
+    "question_id": "3 (a)",
+    "main": "3",
+    "sub": "a",
+    "subsub": null,
+    "answer": "• List/mapping of characters (that can be\nunderstood by the hardware/software/computer)\n• Each character is given a unique\nbinary/numeric code that is stored instead of the\ncharacter.",
+    "mark": 2,
+    "guidance": "Allow a list of letters /symbols"
+  },
+  {
+    "question_id": "3 (b) (i)",
+    "main": "3",
+    "sub": "b",
+    "subsub": "i",
+    "answer": "• 102 (correct answer)\n• Suitable working out",
+    "mark": 2,
+    "guidance": ""
+  },
+  {
+    "question_id": "3 (b) (ii)",
+    "main": "3",
+    "sub": "b",
+    "subsub": "ii",
+    "answer": "• Hexadecimal values are shorter than binary as 4\nbits/nibble can be represented by one hex\ncharacter.\n• Hexadecimal values are faster / more reliable to\ncommunicate / enter / write down / read.",
+    "mark": 2,
+    "guidance": "Do not accept Hexadecimal is “easy”\ncommunicate/enter etc…"
+  },
+  {
+    "question_id": "3 (c)",
+    "main": "3",
+    "sub": "c",
+    "subsub": null,
+    "answer": "• Fixed point is 0110.01\n• Mantissa becomes 0.11001\n• Exponent of three needed (represented at 011)",
+    "mark": 3,
+    "guidance": "Final Answer 011001 011\nCorrect answer with any working gets full marks"
+  },
+  {
+    "question_id": "3 (d)",
+    "main": "3",
+    "sub": "d",
+    "subsub": null,
+    "answer": "• Allows for more accuracy/precision from the\ngiven number of bits\n• The representation of each binary value is\nunique",
+    "mark": 1,
+    "guidance": ""
+  },
+  {
+    "question_id": "4 (a)",
+    "main": "4",
+    "sub": "a",
+    "subsub": null,
+    "answer": "• Relational data allows for less redundancy of\ndata/less repeated data\n• Relational databases improve the consistency\nof data\n• Relational databases allow for complex\nqueries and/or searches to be performed",
+    "mark": 2,
+    "guidance": ""
+  },
+  {
+    "question_id": "4 (b)",
+    "main": "4",
+    "sub": "b",
+    "subsub": null,
+    "answer": "1 mark for each bullet point to max 2 marks:\n• One customer to many orders\n• Many orders to many products // One order to\nmany orderLines and many orderLines to one\nproduct\nSolution 1:\nSolution 2:",
+    "mark": 2,
+    "guidance": "Ignore any relationship between customer and product.\nAccept any suitable alternative name for the OrderLine\nentity.\nAdditional guidance:\nFor MP2, candidates may have avoided the use of\nmany-to-many relationships, due to the information in\npart c). Therefore, allow one product to many orders."
+  },
+  {
+    "question_id": "4 (c) (i)",
+    "main": "4",
+    "sub": "c",
+    "subsub": "i",
+    "answer": "• A primary key will only appear once in a\ntable/is a unique identifier\n• A foreign key may appear multiple times a\ntable/may not be unique",
+    "mark": 2,
+    "guidance": "Accept entity for table\n"
+  },
+  {
+    "question_id": "4 (c) (ii)",
+    "main": "4",
+    "sub": "c",
+    "subsub": "ii",
+    "answer": "• CustomerID\n• ProductID",
+    "mark": 1,
+    "guidance": "Correct answer only"
+  },
+  {
+    "question_id": "4 (c) (iii)",
+    "main": "4",
+    "sub": "c",
+    "subsub": "iii",
+    "answer": "• There may be duplicate values.",
+    "mark": 1,
+    "guidance": ""
+  },
+  {
+    "question_id": "5 (a)",
+    "main": "5",
+    "sub": "a",
+    "subsub": null,
+    "answer": "• Stores instructions / programs currently\nrunning\n• Stores data currently in use",
+    "mark": 1,
+    "guidance": ""
+  },
+  {
+    "question_id": "5 (b)",
+    "main": "5",
+    "sub": "b",
+    "subsub": null,
+    "answer": "• If the amount of RAM available is insufficient…\n• …Used to store instructions/data\n• …Using secondary storage.\n• Likely to be loading large image files (which may\nexceed her RAM)\n• Likely to be loading large programs (which may\nexceed her RAM)",
+    "mark": 2,
+    "guidance": ""
+  },
+  {
+    "question_id": "6 (a) (i)",
+    "main": "6",
+    "sub": "a",
+    "subsub": "i",
+    "answer": "• In circuit switching dedicated hardware\nresources are used for each connection\n• In packet switching hardware is used for multiple\ndifferent connections.\n• In circuit switching the data is sent along one\nroute/stream.\n• In packet switching packets of data may be sent\nalong multiple different routes/packets may not\nbe in order\n• Circuit switching is less secure if data is\nintercepted\n• Packet switching, data is more secure if\nintercepted/not all packets will be intercepted",
+    "mark": 2,
+    "guidance": "Marks answers in pairs\n"
+  },
+  {
+    "question_id": "6 (a) (ii)",
+    "main": "6",
+    "sub": "a",
+    "subsub": "ii",
+    "answer": "• Computer networks would involve multiple\nconnections happening concurrently\n• In packet switching hardware is not tied up with\neach unique connection // can handle multiple\nconnections simultaneously\n• Computers pass vast amounts of data which\nmay encounter transmission errors\n• Packet switching means only resending\nindividual packets instead of the whole data\nstream\n• Computers may be transmitting business critical\ndata\n• Packet switching means any network hardware\nfailures can be mitigated by routing around it.",
+    "mark": 2,
+    "guidance": ""
+  },
+  {
+    "question_id": "6 (b)",
+    "main": "6",
+    "sub": "b",
+    "subsub": null,
+    "answer": "Mark Band 3–High Level\n(7-9 marks)\nThe candidate demonstrates a thorough knowledge and\nunderstanding of both peer to peer and client server\nand can give valid application of both in this scenario.\nAll detail are generally accurate and relevant\nThe candidate is able to apply their knowledge and\nunderstanding directly and consistently to the context\nprovided. Evidence/examples will be explicitly relevant\nto the explanation.\nThere is a well-developed line of reasoning which is\nclear and logically structured. The information\npresented is relevant and substantiated.\nMark Band 2-Mid Level\n(4-6 marks)\nThe candidate demonstrates reasonable knowledge\nand understanding of client server and peer to peer; the\nmaterial is generally accurate but at times\nunderdeveloped. The candidate may not have applied\nboth to this scenario.\nThe candidate is able to apply their knowledge and\nunderstanding directly to the context provided although\none or two opportunities are missed.\nEvidence/examples are for the most part implicitly\nrelevant to the explanation.\nThere is a line of reasoning presented with some\nstructure. The information presented is in the most part\nrelevant and supported by some evidence.\nMark Band 1-Low Level\n(1-3 marks)\nThe candidate demonstrates a basic knowledge of\nclient/server or peer to peer and has made some\nattempt at applying this knowledge. the material is basic\nand contains some inaccuracies.\nThe candidate makes a limited attempt to apply\nacquired knowledge and understanding to the context\nprovided.\nThe candidate provides nothing more than an\nunsupported assertion.\nThe information is basic and communicated in an\nunstructured way. The information is supported by\nlimited evidence and the relationship to the evidence\nmay not be clear.\n0 marks\nNo attempt to answer the question or response is not\nworthy of credit.",
+    "mark": 9,
+    "guidance": "AO1\nP2P:\n• Each computer can act independently\n• Each computer is responsible for it’s own\nsecurity and login\n• Each computer will maintain and possibly share\nits own connected hardware (printer/external\nstorage/internet connection)\n• Each computer will maintain and possibly share\nits own secondary storage\n• If a computer is powered down it’s shared\nresources will not be available.\n• There are no resources not shared by a peer\nmachine\n• Adding a machine is simple\n• Very little administration is needed\nClient Server:\n• All network functionality can be provided by\nservers.\n• A server is a process running on a machine,\nusually dedicated to providing these services.\n• A server machine is designed to never be\npowered down.\n• Login/security is handled centrally\n• Shared storage may be managed by a server\n• Shared resources (printer/internet connection\netc) my be managed by a server\n• If a server process or machine fails, network\nfunctionality, including the ability login is lost\n• Adding a new machine can mean installing\nspecialist client software and setting up OS\npolicies.\n• IT skills and a lot of time are needed to\nadminister a client server network\nAO2\nP2P:\n• As Zak is looking to expand his staff, P2P would\noffer flexibility in adding staff ad hoc.\n• Zak’s company is still small and may struggle to\npay for the IT administrator skills needed for a\nclient server\nClient Server:\n• As Zak’s firm is an accountancy firm it will have\nsensitive customer data\n• Client server would allow stronger centralised\nsecurity\n• As Zak is taking on multiple staff, they may wish\nto work collaboratively, which shared storage\nwould allow.\n• Zak could share a single printer/other hardware\nwith all staff and not worry about an individual\ncomputer being switched on."
+  }
+]

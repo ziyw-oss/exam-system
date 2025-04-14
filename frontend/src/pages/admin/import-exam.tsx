@@ -70,7 +70,7 @@ export default function ImportExamPage() {
         console.log("📦 structured:", data.structured);
         resetInputs();
         // 这里可以选择直接跳转到预览页面
-        setTimeout(() => router.push(`/admin/import-preview?uuid=${data.uuid}`), 1200);
+        setTimeout(() => router.push(`/admin/import-preview?uuid=${data.uuid}`), 0);
       } else {
         setMessage("❌ 导入失败: " + (data?.error || "未知错误"));
       }

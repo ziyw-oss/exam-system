@@ -193,7 +193,7 @@ def parse_line_structure(line: str) -> dict:
 
 
 # ✅ 模块：提取 PDF 文件中的试题文本内容（支持题号识别与结构分割）
-def extract_text_from_pdf(pdf_path: str) -> str:
+def extract_text_from_pdf(pdf_path: str, debug=False) -> str:
     import fitz  # PyMuPDF
     doc = fitz.open(pdf_path)
     questions = [] # 存储提取的题目文本
@@ -201,13 +201,15 @@ def extract_text_from_pdf(pdf_path: str) -> str:
     in_question = False # 是否在题目文本中
 
     for i, page in enumerate(doc):# 遍历每一页
-        print(f"\n📄 开始处理第 {i+1} 页")
+        if debug:
+            print(f"\n📄 开始处理第 {i+1} 页")
 
         found_new_question = False
         found_score_only = False
         raw_text = page.get_text("text")
         if not raw_text.strip():
-            print(f"⚠️ 第 {i+1} 页提取失败，内容为空")
+            if debug:
+                print(f"⚠️ 第 {i+1} 页提取失败，内容为空")
             continue
 
         original_lines = raw_text.split("\n")
@@ -217,46 +219,54 @@ def extract_text_from_pdf(pdf_path: str) -> str:
             stripped = line.strip()
             if stripped:
                 if re.fullmatch(r"\d{1,3}", stripped):
-                    print(f"🧾 移除疑似页码行: '{stripped}'")
+                    if debug:
+                        print(f"🧾 移除疑似页码行: '{stripped}'")
                     original_lines.pop(idx)
                 break
 
         cleaned_lines = filter_page_noise(original_lines, debug=True, is_last_page=(i == len(doc) - 1))
-        print(f"📄 清洗后行数: {len(cleaned_lines)}")
+        if debug:    
+            print(f"📄 清洗后行数: {len(cleaned_lines)}")
         if not cleaned_lines:
             continue
 
-        merged_lines = merge_question_number_and_text(cleaned_lines, debug=True)
+        merged_lines = merge_question_number_and_text(cleaned_lines, debug=False)
         #print(f"📄 合并后行数: {len(merged_lines)}")
 
         def start_new_question(line):
             nonlocal found_new_question, current_question, questions, seen_score
             if re.fullmatch(r"\[\d+\]", line.strip()):
-                print(f"⚠️ 跳过孤立分数行: {line}")
+                if debug:
+                    print(f"⚠️ 跳过孤立分数行: {line}")
                 return
             if current_question and seen_score:
                 end_current_question()
             elif current_question and not seen_score:
-                print(f"🔄 当前题未结束，继续追加行: {line}")
+                if debug:
+                    print(f"🔄 当前题未结束，继续追加行: {line}")
                 current_question.append(line)
                 return
             current_question = [line]
             seen_score = False
             found_new_question = True
-            print(f"🆕 开始新题块: {line}")
+            if debug:
+                print(f"🆕 开始新题块: {line}")
 
         def end_current_question():
             nonlocal current_question, questions, seen_score
             if not seen_score:
-                print(f"⚠️ 当前题未出现分数标识，不结束: {' | '.join(current_question)}")
+                if debug:
+                    print(f"⚠️ 当前题未出现分数标识，不结束: {' | '.join(current_question)}")
                 return
             if len(current_question) == 1 and re.fullmatch(r"[-_=~•·.\\s\\[\\]0-9]+", current_question[0]):
-                print("⚠️ 跳过伪题目：仅包含装饰线 + 分数")
+                if debug:
+                    print("⚠️ 跳过伪题目：仅包含装饰线 + 分数")
                 current_question = []
                 return
             marks_match = re.search(r"\[(\d+)\]", " ".join(current_question))
             marks_text = f" [分数: {marks_match.group(1)}]" if marks_match else ""
-            print(f"🏁 题目结束: {' | '.join(current_question)}{marks_text}")
+            if debug:
+                print(f"🏁 题目结束: {' | '.join(current_question)}{marks_text}")
             questions.append(" ".join(current_question))
             current_question = []
             seen_score = False
@@ -267,16 +277,19 @@ def extract_text_from_pdf(pdf_path: str) -> str:
                 seen_score = True
 
             structure = parse_line_structure(line)
-            print(f"🔍 检测结构类型: {structure['type']} 内容: {line}")
-            print(f"🔍 分析结构: {structure}")
+            if debug:
+                print(f"🔍 检测结构类型: {structure['type']} 内容: {line}")
+                print(f"🔍 分析结构: {structure}")
             if structure.get("score") is not None:
-                print(f"🔍 题目分数: {structure['score']}")
+                if debug:
+                    print(f"🔍 题目分数: {structure['score']}")
             
             
 
             if structure["type"] == "combo":
                 if current_question:
-                    print(f"⚠️ combo 遇到主+子组合题，强制结束上一题（即使没有分数）")
+                    if debug:
+                        print(f"⚠️ combo 遇到主+子组合题，强制结束上一题（即使没有分数）")
                     seen_score = True
                     end_current_question()
 
@@ -295,7 +308,8 @@ def extract_text_from_pdf(pdf_path: str) -> str:
                 
             elif structure["type"] == "combo_sub_only":
                 if current_question:
-                    print(f"⚠️ combo_sub_only 遇到子题组合，强制结束上一题（即使没有分数）")
+                    if debug:
+                        print(f"⚠️ combo_sub_only 遇到子题组合，强制结束上一题（即使没有分数）")
                     seen_score = True
                     end_current_question()
 
@@ -312,7 +326,8 @@ def extract_text_from_pdf(pdf_path: str) -> str:
             elif structure["type"] == "sub":
                # ✅ 如果当前题目未结束，但遇到新子题，应该结束上一个
                 if current_question:
-                    print(f"⚠️ 遇到子题 ({structure['sub']})，强制结束上一题（即使没有分数）")
+                    if debug:
+                        print(f"⚠️ 遇到子题 ({structure['sub']})，强制结束上一题（即使没有分数）")
                     seen_score = True
                     end_current_question()
 
@@ -330,21 +345,25 @@ def extract_text_from_pdf(pdf_path: str) -> str:
                 if in_question:
                     current_question.append(line)
                 else:
-                    print(f"⚠️ 忽略未挂载的分数行: {line}")
+                    if debug:
+                        print(f"⚠️ 忽略未挂载的分数行: {line}")
 
             else:
                 if in_question:
-                    print(f"➕ 追加内容: {line}")
+                    if debug:
+                        print(f"➕ 追加内容: {line}")
                     current_question.append(line)
 
         if current_question and seen_score:
             end_current_question()
         elif current_question and not seen_score:
-            print("⚠️ 未结束的题目，但未发现分数标识")
+            if debug:
+                print("⚠️ 未结束的题目，但未发现分数标识")
 
-    print("\n🧪 [DEBUG] extract_text_from_pdf() 最终返回内容如下：")
-    for idx, q in enumerate(questions, 1):
-        print(f"{idx:02d}: {q}")
+    if debug:
+        print("\n🧪 [DEBUG] extract_text_from_pdf() 最终返回内容如下：")
+    #for idx, q in enumerate(questions, 1):
+        #print(f"{idx:02d}: {q}")
 
     return "\n".join(questions)
 
@@ -425,7 +444,7 @@ def convert_to_structured_json(parsed_questions: list, exam_id: int) -> list[dic
 # ✅ 标准结构分析函数（主结构入口）
 # - 支持主 + 子 + 子子层级
 # - 使用标准字段：sub_questions + subsub_questions
-def parse_questions(text: str) -> List[Dict[str, Any]]:
+def parse_questions(text: str, debug=False) -> List[Dict[str, Any]]:
     lines = text.strip().split("\n")
     questions = []
     current_q, current_sub, current_subsub = None, None, None
@@ -457,7 +476,8 @@ def parse_questions(text: str) -> List[Dict[str, Any]]:
             seen_sub_letters = {current_sub["letter"]}  # ✅ 重置子题集
             current_q["sub_questions"].append(current_sub)
             current_subsub = None
-            print(f"🟢 识别主问题（组合）: {q_number}")
+            if debug:
+                print(f"🟢 识别主问题（组合）: {q_number}")
             continue
 
         # ✅ 标准主问题，如 "3 Describe..."
@@ -474,7 +494,8 @@ def parse_questions(text: str) -> List[Dict[str, Any]]:
             }
             seen_sub_letters = set()
             current_sub, current_subsub = None, None
-            print(f"🟢 识别主问题（标准）: {q_number}")
+            if debug:
+                print(f"🟢 识别主问题（标准）: {q_number}")
             continue
 
         # ✅ 主问题变种：如 "3* Some long question"
@@ -492,7 +513,8 @@ def parse_questions(text: str) -> List[Dict[str, Any]]:
             }
             seen_sub_letters = set()
             current_sub, current_subsub = None, None
-            print(f"🟢 识别主问题（星号）: {q_number}")
+            if debug:
+                print(f"🟢 识别主问题（星号）: {q_number}")
             continue
 
         # ✅ 单独编号行（如 "3"）表示新主问题（下一行是题干或子题）
@@ -508,7 +530,8 @@ def parse_questions(text: str) -> List[Dict[str, Any]]:
             }
             seen_sub_letters = set()
             current_sub, current_subsub = None, None
-            print(f"🟢 识别主问题（单独编号行）: {q_number}")
+            if debug:
+                print(f"🟢 识别主问题（单独编号行）: {q_number}")
             continue
 
         # 子+子子结构，如 "(a) (i) text"
@@ -861,7 +884,7 @@ if __name__ == "__main__":
 
     # 2. 结构化解析题目
     year, paper_type = infer_year_and_paper_type_from_path(pdf_path)
-    full_text = extract_text_from_pdf(pdf_path)
+    full_text = extract_text_from_pdf(pdf_path, debug=False)
 
     with open(os.path.join(output_dir, "output.txt"), "w", encoding="utf-8") as f:
         f.write(full_text)
@@ -885,17 +908,39 @@ if __name__ == "__main__":
 
     # 5. 生成 SQL 语句
     sql = generate_question_bank_sql(structured)
-    
-    try:
-        for stmt in sql.split(';'):
-            stmt = stmt.strip()
-            if stmt:
-                cursor.execute(stmt)
-        db.commit()
-    
-        print("🎉 新题库SQL 语句已执行成功")
-    except mysql.connector.Error as e:
-        print(f"❌ 新题库SQL 语句执行失败: {e}")
+
+    # 保存 SQL 文件，便于调试
+    sql_file_path = os.path.join(output_dir, "generated_question_bank.sql")
+    with open(sql_file_path, "w", encoding="utf-8") as f:
+        f.write(sql)
+    print(f"📝 所有 SQL 语句已保存到 {sql_file_path}")
+
+    error_stmts = []
+    total_stmts = 0
+    for stmt in sql.split(';'):
+        stmt = stmt.strip()
+        if not stmt:
+            continue
+        total_stmts += 1
+        try:
+            cursor.execute(stmt)
+        except mysql.connector.Error as e:
+            error_stmts.append((stmt, str(e)))
+
+    db.commit()
+
+    success_count = total_stmts - len(error_stmts)
+    print(f"📊 SQL 执行统计：共 {total_stmts} 条，成功 {success_count} 条，失败 {len(error_stmts)} 条")
+
+    if error_stmts:
+        print(f"\n❌ 有 {len(error_stmts)} 条 SQL 执行失败：")
+        for i, (bad_stmt, err_msg) in enumerate(error_stmts, 1):
+            print(f"  {i:02d}. 错误: {err_msg}")
+            print(f"      SQL: {bad_stmt}")
+    else:
+        print("🎉 所有 SQL 执行成功")
+
+
 
     # 6. 从数据库加载试卷文本
     paper_lines = load_exam_text_from_mysql(18, cursor)

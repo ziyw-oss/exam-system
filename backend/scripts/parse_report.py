@@ -2,6 +2,11 @@ import os
 import sys
 import json
 import pdfplumber
+
+#静默 pdfminer 日志
+import logging
+logging.getLogger("pdfminer").setLevel(logging.ERROR)
+
 import re
 
 FOOTER_KEYWORDS = [
@@ -61,14 +66,14 @@ def extract_examiner_report(pdf_path: str) -> dict:
     question_pattern = re.compile(r"^Question\s+(\d+(?:\s*\([a-zA-Zivxlcdm]+\))*)", re.IGNORECASE)
     current_key = None
     buffer = []
-    in_appendix = False
+    in_exemplar = False
+    exemplar_buffer = []
 
     with pdfplumber.open(pdf_path) as pdf:
         for page_num, page in enumerate(pdf.pages):
             lines = page.extract_text().split("\n") if page.extract_text() else []
             lines = clean_lines(lines)
 
-            # 判断是否包含附录关键词，且该页无任何题号，则退出
             has_question = any(question_pattern.match(line) for line in lines)
             has_appendix = any(any(kw in line.lower() for kw in APPENDIX_KEYWORDS) for line in lines)
             if not has_question and has_appendix:
@@ -76,25 +81,49 @@ def extract_examiner_report(pdf_path: str) -> dict:
                 break
 
             for line in lines:
-                if in_appendix:
-                    continue
-                lowered = line.lower()
                 if line.lower().startswith("exemplar"):
+                    in_exemplar = True
                     continue
+
+                if in_exemplar and current_key:
+                    if question_pattern.match(line):
+                        # stop exemplar block
+                        if buffer:
+                            entry = output.setdefault(current_key, {})
+                            entry["text"] = " ".join(buffer).strip()
+                        if exemplar_buffer:
+                            output[current_key]["exemplar"] = " ".join(exemplar_buffer).strip()
+                        exemplar_buffer = []
+                        buffer = []
+                        in_exemplar = False
+
+                    else:
+                        exemplar_buffer.append(line)
+                        continue
+
                 match = question_pattern.match(line)
                 if match:
-                    if current_key and buffer:
-                        output[current_key] = " ".join(buffer).strip()
+                    if current_key:
+                        if buffer:
+                            entry = output.setdefault(current_key, {})
+                            entry["text"] = " ".join(buffer).strip()
+                        if exemplar_buffer:
+                            output[current_key]["exemplar"] = " ".join(exemplar_buffer).strip()
                         buffer = []
+                        exemplar_buffer = []
                     raw_key = match.group(1)
                     normalized = re.sub(r"\s+", "", raw_key)
                     normalized = normalized.replace(")(", ") (")
                     current_key = normalized
+                    in_exemplar = False
                 elif current_key:
                     buffer.append(line)
 
-        if current_key and buffer:
-            output[current_key] = " ".join(buffer).strip()
+        if current_key:
+            if buffer:
+                output.setdefault(current_key, {})["text"] = " ".join(buffer).strip()
+            if exemplar_buffer:
+                output[current_key]["exemplar"] = " ".join(exemplar_buffer).strip()
 
     return output
 
