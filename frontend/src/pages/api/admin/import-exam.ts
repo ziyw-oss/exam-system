@@ -98,7 +98,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         return res.status(500).json({ error: '❌ parse_pdf 执行失败', detail: stderr || '未知错误' });
       }
 
-      const reportResult = spawnSync(pythonPath, ['backend/scripts/parse_report.py', finalReportPath, finalOutputDir], {
+      const reportResult = spawnSync(pythonPath, ['backend/scripts/parse_report.py', finalReportPath, finalOutputDir, examId.toString()], {
         cwd: serverRoot,
       });
       const reportstderr = reportResult.stderr.toString();

@@ -12,6 +12,70 @@ import mysql.connector
 # 关闭 pdfminer 的 CropBox 警告
 logging.getLogger("pdfminer").setLevel(logging.ERROR)
 
+def standardize_question_id(qid: Optional[str]) -> str:
+    if not qid or not isinstance(qid, str):
+        print(f"⚠️ 输入非法题号: {qid!r}")
+        return ""
+
+    qid = qid.strip()
+    qid = re.sub(r"\s+", "", qid)
+
+    main_match = re.match(r"^(\d+)", qid)
+    parens = re.findall(r"\(([^)]+)\)", qid)
+
+    parts = [main_match.group(1)] if main_match else []
+    parts.extend(parens)
+
+    result = ".".join(parts).lower()
+    print(f"🧪 标准化结果: {result!r} ← 原始: {qid!r}")
+    return result
+
+def build_question_id_map_by_structure(exam_id: int, cursor) -> dict:
+    cursor.execute("""
+        SELECT qb.id, qb.level, qb.parent_id, qb.text
+        FROM exam_questions eq
+        JOIN question_bank qb ON eq.question_bank_id = qb.id
+        WHERE eq.exam_id = %s
+        ORDER BY qb.id
+    """, (exam_id,))
+    rows = cursor.fetchall()
+
+    id_map = {r["id"]: r for r in rows}
+    for r in rows:
+        r["children"] = []
+    for r in rows:
+        pid = r["parent_id"]
+        if pid in id_map:
+            id_map[pid]["children"].append(r)
+
+    def int_to_letter(n): return chr(ord('a') + n)
+    def int_to_roman(n):
+        romans = ['i', 'ii', 'iii', 'iv', 'v', 'vi', 'vii', 'viii', 'ix', 'x']
+        return romans[n] if n < len(romans) else f"i{n+1}"
+
+    final_map = {}
+    main_counter = 1
+
+    for r in rows:
+        if r["level"] == "question" and not r["parent_id"]:
+            main_key = str(main_counter)
+            final_map[main_key] = r["id"]
+            sub_counter = 0
+            for sub in sorted(r["children"], key=lambda x: x["id"]):
+                sub_key = f"{main_key}.{int_to_letter(sub_counter)}"
+                final_map[sub_key] = sub["id"]
+                subsub_counter = 0
+                for subsub in sorted(sub["children"], key=lambda x: x["id"]):
+                    subsub_key = f"{sub_key}.{int_to_roman(subsub_counter)}"
+                    final_map[subsub_key] = subsub["id"]
+                    subsub_counter += 1
+                sub_counter += 1
+            main_counter += 1
+
+    return final_map
+
+
+
 # ✅ 判断子题是否为 (a)、(b)
 def is_sub_alpha(value: str) -> bool:
     return re.fullmatch(r"\(?[a-zA-Z]\)?", value.strip()) is not None
@@ -319,7 +383,7 @@ def robust_extract_table_from_pdf(pdf_path: str, verbose: bool = False) -> List[
         final_results.append(q)
 
     print(f"{len(final_results)} 题目提取完成")
-    print(json.dumps(final_results, indent=2, ensure_ascii=False))
+    #print(json.dumps(final_results, indent=2, ensure_ascii=False))
 
     return final_results
 
@@ -357,58 +421,18 @@ def save_answers_to_db(exam_id: int, marks_data: List[dict]):
 
     def insert_answer(qid, answer, marks, guidance):
         print(f"📥 SQL → INSERT qid={qid} marks={marks} guidance={bool(guidance)} answer preview={answer[:30]!r}")
-        cursor.execute("""
+        
+        sql = """
             INSERT INTO question_answer (question_bank_id, answer, marks, guidance)
             VALUES (%s, %s, %s, %s)
             ON DUPLICATE KEY UPDATE
               answer = VALUES(answer),
               marks = VALUES(marks),
               guidance = VALUES(guidance)
-        """, (qid, answer, marks, guidance))
-
-    def build_question_id_map_by_structure(exam_id: int, cursor) -> dict:
-        cursor.execute("""
-            SELECT qb.id, qb.level, qb.parent_id, qb.text
-            FROM exam_questions eq
-            JOIN question_bank qb ON eq.question_bank_id = qb.id
-            WHERE eq.exam_id = %s
-            ORDER BY qb.id
-        """, (exam_id,))
-        rows = cursor.fetchall()
-
-        id_map = {r["id"]: r for r in rows}
-        for r in rows:
-            r["children"] = []
-        for r in rows:
-            pid = r["parent_id"]
-            if pid in id_map:
-                id_map[pid]["children"].append(r)
-
-        def int_to_letter(n): return chr(ord('a') + n)
-        def int_to_roman(n):
-            romans = ['i', 'ii', 'iii', 'iv', 'v', 'vi', 'vii', 'viii', 'ix', 'x']
-            return romans[n] if n < len(romans) else f"i{n+1}"
-
-        final_map = {}
-        main_counter = 1
-
-        for r in rows:
-            if r["level"] == "question" and not r["parent_id"]:
-                main_key = str(main_counter)
-                final_map[main_key] = r["id"]
-                sub_counter = 0
-                for sub in sorted(r["children"], key=lambda x: x["id"]):
-                    sub_key = f"{main_key}.{int_to_letter(sub_counter)}"
-                    final_map[sub_key] = sub["id"]
-                    subsub_counter = 0
-                    for subsub in sorted(sub["children"], key=lambda x: x["id"]):
-                        subsub_key = f"{sub_key}.{int_to_roman(subsub_counter)}"
-                        final_map[subsub_key] = subsub["id"]
-                        subsub_counter += 1
-                    sub_counter += 1
-                main_counter += 1
-
-        return final_map
+        """
+        params = (qid, answer, marks, guidance)
+        #print(f"\n📥 SQL INSERT:\n{sql.strip()}\n📌 Params: {params}\n")
+        cursor.execute(sql, params)
 
     question_map = build_question_id_map_by_structure(exam_id, cursor)
     print("🧭 当前卷题号映射 keys:", list(question_map.keys()))
@@ -418,11 +442,8 @@ def save_answers_to_db(exam_id: int, marks_data: List[dict]):
         sub = item.get("sub", "")
         subsub = item.get("subsub", "")
 
-        key = main
-        if sub:
-            key += f".{sub}"
-        if subsub:
-            key += f".{subsub}"
+        raw_id = item.get("question_id", "")
+        key = standardize_question_id(raw_id)
 
         qid = question_map.get(key)
         
@@ -444,6 +465,10 @@ def save_answers_to_db(exam_id: int, marks_data: List[dict]):
     db.close()
 
 
+def normalize_question_id(raw: str) -> str:
+    parts = re.findall(r'\d+|[a-zA-Z]+|[ivxlcdm]+', raw)
+    return ".".join(parts).lower()
+
 # ✅ 命令行入口
 if __name__ == "__main__":
     if len(sys.argv) < 3:
@@ -459,12 +484,24 @@ if __name__ == "__main__":
         sys.exit(1)
     
     print("📄 正在提取评分表格:", pdf_path)
+
+        
     marks_data = robust_extract_table_from_pdf(pdf_path, verbose = False)
     save_json(marks_data, os.path.join(output_dir, "markscheme.json"))
     print("✅ 评分标准已生成 markscheme.json")
+    
     print("📥 正在保存答案到数据库...")
+    
     print(f"📊 标准答案总条数: {len(marks_data)}")
-    for m in marks_data[:5]:
-        print(f"🧾 标准答案 entry: main={m['main']}, sub={m['sub']}, subsub={m['subsub']}")
+    
+    #for item in marks_data:
+        #item["question_id"] = normalize_question_id(item["question_id"])
+
+
     save_answers_to_db(exam_id, marks_data)
     print(f"✅ 答案已成功写入试卷 {exam_id}")
+
+    __all__ = [
+        "build_question_id_map_by_structure",
+        "standardize_question_id"
+    ]

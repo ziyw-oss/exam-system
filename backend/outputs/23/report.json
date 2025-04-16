@@ -1,0 +1,80 @@
+{
+  "6(b)": {
+    "text": "Candidates need to be mindful of the fact that an array is a static data structure with a predetermined size. This meant that responses that explained how lists could be used to append and remove items were not given marks. This is an area where candidates who only have programming experience of using lists in Python often struggle. Implementing a stack in an array requires a stack pointer. Those candidates who appreciated this and who clearly had practical experience of modelling push()/pop() operations on a stack were able to articulate how the stack would access array locations at the stack pointer.",
+    "exemplar": "This exemplar was one of the few responses to show a clear insight as to how an array can be used to store and access a stack. It makes it clear that a stack pointer is required and goes on to explain how the stack pointer is manipulated when push()/pop() operations are performed. Misconception Many candidates were not clear about the difference between an array and a list: • An array is a static structure whose size cannot be changed. • Lists are dynamic and support items being removed or appended."
+  },
+  "1(a)": {
+    "text": "Most candidates clearly showed the steps that would take place in a bubble sort for the date given, with most achieving full marks. Some candidates did not explicitly label each pass as required in the question, but marks were given where the passes could be implied. Few candidates described the principles of a bubble sort instead of applying it to the data given."
+  },
+  "1(b) (i)": {
+    "text": "Many candidates struggled to go beyond recall of definitions for calling by reference and calling by value and struggled to apply it to the code given and to provide a detailed explanation. The bubble sort was defined as a procedure and not a function, so if numbers had been passed by value, a copy of the array would have been passed, and any changes made would not have been kept after the procedure had completed execution."
+  },
+  "1(b) (ii)": {
+    "text": "Most candidates could accurately define a ‘count controlled loop’ as one that repeated a predefined number of times, although some candidates gave an ambiguous response that was equally applicable to a conditional loop."
+  },
+  "1(b) (iii)": {
+    "text": "Many candidates found it difficult to explain the purpose of the holdValue variable in context. Where candidates achieved some of the marks, they most frequently identified holdValue as a temporary store that was required to prevent accidental overwriting of data during the swap process. Relatively few were able to accurately describe how the variable allowed the contents of dataArray[x] and dataArray[x+1] to be swapped.",
+    "exemplar": "This exemplar very clearly states exactly how and why the variable holdValue is required."
+  },
+  "1(b) (iv)": {
+    "text": "Many candidates found it challenging to apply knowledge of a bubble sort to the code given. While a pleasing number identified the need to have an outer loop, there were far fewer who were able to expand on this to explain that this was required to repeat the process for the required number of passes, or until no swaps had occurred during a pass."
+  },
+  "1(c) (i)": {
+    "text": "Many candidates did not appreciate that a bubble sort will require a maximum of n-1 passes in the worst case since the first item in the list will be in position after that number of passes and so would not require an additional pass. The most common incorrect responses were 356, and 3562 which confused the worst case time complexity O(n2) with the number of passes."
+  },
+  "1(c) (ii)": {
+    "text": "Nearly all candidates could identify an additional sorting algorithm with the most common response being ‘Insertion sort’."
+  },
+  "2(a)": {
+    "text": "Most candidates demonstrated that they knew what abstraction was, but a significant number struggled to make clear qualified points. Some candidates gave definitions of abstraction as the removal of unnecessary detail, but this did not answer the question. This was a contextual question that required relevant and qualified points. Responses such as ‘the weather’ were insufficient, whereas ‘removal of the effects of weather’ was a valid qualified point.",
+    "exemplar": "This exemplar shows a response that has unqualified points that do not show how abstraction can be applied. It highlights factors that could be abstracted, but does not tell us how."
+  },
+  "2(b) (i)": {
+    "text": "Most candidates successfully identified the relevant potential inputs of city/stage/speed from the given scenario. Some candidates suggested alternative inputs such as ‘magnitude of earthquake’ which were also given marks as they were valid inputs for a simulation relating to earthquakes."
+  },
+  "2(b) (ii)": {
+    "text": "Few candidates were given full marks for this question. There was some repetition of checking user input values, which was given in the stem of the question. There were also many statements of possible calculations rather than clearly expressed conditions or questions. More successful responses included decisions such as ‘have buildings of a certain type survived the earthquake?’."
+  },
+  "2(c) (i)": {
+    "text": "Most candidates were able to display some knowledge of either the waterfall model or the spiral model of software development and were given some marks for identifying relevant points. However, fewer could analyse the factor they gave and then describe the difference between the two models for that factor."
+  },
+  "2(c) (ii)": {
+    "text": "Candidates who demonstrated application of knowledge were able to interpret the requirements of the question stem to determine valid reasons for why the waterfall model of software development was not valid in the context given. Clear responses stated that the waterfall model was a long process, but that the clients wanted the system as soon as possible."
+  },
+  "2(c) (iii)": {
+    "text": "Many candidates successfully identified another model of software development. The most popular responses were Agile and Rapid Application Development. Fewer candidates were then able to go on to describe features of the model they had selected."
+  },
+  "3": {
+    "text": "A pleasing number of candidates could identify and describe a range of features of an IDE, with most being able to demonstrate sufficient knowledge to achieve mark band Level 2. Few candidates displayed a level of evaluative reasoning of sufficient depth to achieve mark band Level 3. More successful responses clearly explained how relevant debugging tools in an IDE led to much greater productivity than a text editor because of the way that they could assist with finding logical errors in code through the use of stepping and tracing. An acknowledgement of the amount of system resources and the complexity of some IDE environments was less often evaluated. Candidates need to focus on making clear logical arguments with evidence of evaluation (AO3) to be able to achieve mark band 3."
+  },
+  "4(a)": {
+    "text": "Very few candidates were able to produce a working function, but many gained some marks. Some candidates had little idea of the concept of a function and struggled to define one. Many omitted the definition statement or omitted the required parameter and then asked for user input instead. The standard of pseudocode/code was quite weak. Indentation of constructs was often missing or hard to follow. Mid-range marks were achieved when candidates effectively utilised MOD to determine if the remainder on division by two was odd or even, and then using DIV to find the next term in the sequence. More successful responses demonstrated an ability to problem solve, think logically, and present clear working functions."
+  },
+  "4(b)": {
+    "text": "Candidates found Question 4 (b) easier to approach than Question 4 (a). Most could write pseudocode to accept a user input. When validating the input to be a value between 1 and 255, there was incorrect use of relational operators with off-by-one errors on occasion. There was also incorrect use of logical operators where or was used instead of and, and vice-versa. When candidates called toBinary(inputVal), the result was not always stored for later use. Assessment for learning When preparing candidates for the examination, they will benefit from a wide range of programming experience. Questions such as 4 (a) and 4 (b) present an ideal opportunity for developing coded solutions to test and discuss before looking at how the algorithms could be presented as pseudocode."
+  },
+  "5(a) (i)": {
+    "text": "Nearly all candidates correctly identified ‘sequence’ as the correct construct."
+  },
+  "5(a) (ii)": {
+    "text": "Nearly all candidates correctly identified ‘selection’ as the correct construct."
+  },
+  "5(b)": {
+    "text": "Most candidates correctly identified two variables from the given code."
+  },
+  "5(c)": {
+    "text": "Most candidates were given some marks, but fewer achieved full marks. The context of the question indicated that the numbers input were positive integers, but candidates did not always appreciate this."
+  },
+  "5(d) (i)": {
+    "text": "Few candidates were able to clearly define the term 'local variable'. The concept of scope of variables appeared to be poorly understood, with few able to define that a local variable’s scope was that of the function/procedure in which it was declared."
+  },
+  "5(d) (ii)": {
+    "text": "Some candidates confused the terms local variable and global variable and gave definitions the wrong way round. A significant number of responses demonstrated conceptual misconceptions. The contents of dataArray could be used in other parts of the program if it was passed as a parameter to a function/procedure, but could not be referenced directly. Responses such as giving ‘can’t be used anywhere else in the program’ as a disadvantage were, therefore, incorrect."
+  },
+  "6(a) (i)": {
+    "text": "A pleasingly high number of candidates demonstrated a clear understanding of how a linear search operated and used clear and accurate language. More candidates were clearer in the way that they articulated the steps of the search than in previous series. However, there were still a number of candidates who gave vague responses such as ‘check each value until the value input is found’ that did not articulate the required steps. Some candidates gave advantages or disadvantages of using a linear search but such responses did not answer the question."
+  },
+  "6(a) (ii)": {
+    "text": "Many candidates identified the fact that a linear search can operate on an unordered array whereas a binary search cannot. Some candidates alternatively cited the fact that a linear search could be used when the number of items to search was small, which was valid when qualified by the number of items."
+  }
+}
