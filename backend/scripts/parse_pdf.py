@@ -724,7 +724,7 @@ def match_code_blocks_to_questions(structured: List[dict], code_blocks: List[str
 
     return structured
 
-def generate_question_bank_sql(structured: List[Dict[str, Any]]) -> str:
+def generate_question_bank_sql(structured: List[Dict[str, Any]],cursor) -> str:
     bank_sqls = []
     exam_sqls = []
     code_sqls = []
@@ -735,31 +735,54 @@ def generate_question_bank_sql(structured: List[Dict[str, Any]]) -> str:
 
     question_bank_map = {}  # (level, parent_id, text) -> id
 
+    cursor.execute("SELECT MAX(id) FROM question_bank")
+    max_id_result = cursor.fetchone()
+    bank_id_counter = (max_id_result[0] or 0) + 1
+
     def escape(text):
         return text.replace("'", "''") if text else ""
 
     def insert_question(level: str, parent_id: int | None, text: str, qtype: str, marks: int | None) -> int:
         nonlocal bank_id_counter
-        qid = bank_id_counter
-        bank_id_counter += 1
-        question_bank_map[(level, parent_id, text)] = qid
-        bank_sqls.append(
-            f"INSERT INTO question_bank (id, level, parent_id, text, question_type, marks) VALUES ({qid}, '{level}', {parent_id if parent_id else 'NULL'}, '{escape(text)}', '{qtype}', {marks if marks is not None else 'NULL'});"
-        )
-        return qid
+        key = (level, parent_id or 0, text.strip())
+        
+        # ✅ 内存缓存：避免同一轮重复插入
+        if key in question_bank_map:
+            return question_bank_map[key]
 
+        # ✅ 查询数据库中是否已存在
+        cursor.execute("""
+            SELECT id FROM question_bank
+            WHERE level = %s AND text = %s AND (parent_id = %s OR (parent_id IS NULL AND %s IS NULL))
+            LIMIT 1
+        """, (level, text, parent_id, parent_id))
+        result = cursor.fetchone()
+        
+        if result:
+            qid = result[0]  # ✅ 复用已存在的 ID
+        else:
+            qid = bank_id_counter
+            bank_id_counter += 1
+            question_bank_map[key] = qid  # 缓存键值
+
+            bank_sqls.append(
+                f"INSERT INTO question_bank (id, level, parent_id, text, question_type, marks) VALUES "
+                f"({qid}, '{level}', {parent_id if parent_id is not None else 'NULL'}, "
+                f"'{escape(text)}', '{qtype}', {marks if marks is not None else 'NULL'});"
+            )
+        
+        question_bank_map[key] = qid
+        return qid
     def link_question_to_exam(exam_id: int, bank_id: int, sort_order: int):
-        nonlocal exam_id_counter
         exam_sqls.append(
-            f"INSERT INTO exam_questions (id, exam_id, question_bank_id, sort_order) VALUES ({exam_id_counter}, {exam_id}, {bank_id}, {sort_order});"
+            f"INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES ({exam_id}, {bank_id}, {sort_order});"
         )
-        exam_id_counter += 1
 
     def insert_codeblock(bank_id: int, code_lines: List[str]):
         nonlocal code_id_counter
         code = escape('\n'.join(code_lines))
         code_sqls.append(
-            f"INSERT INTO question_codeblock (id, question_bank_id, code) VALUES ({code_id_counter}, {bank_id}, '{code}');"
+            f"INSERT INTO question_codeblock (question_bank_id, code) VALUES ({bank_id}, '{code}');"
         )
         code_id_counter += 1
 
@@ -894,7 +917,6 @@ if __name__ == "__main__":
     structured = convert_to_structured_json(parsed, insert_exam(year, paper_type))
 
     save_json(structured, os.path.join(output_dir, "output.json"))
-    save_json(parsed, os.path.join(output_dir, "parsed_debug.json"))
     print("🎉 所有题目已结构化保存到 output.json",flush=True)
 
     # 3. 匹配代码块进题库结构
@@ -907,13 +929,14 @@ if __name__ == "__main__":
 
 
     # 5. 生成 SQL 语句
-    sql = generate_question_bank_sql(structured)
+    sql = generate_question_bank_sql(structured, cursor)
 
     # 保存 SQL 文件，便于调试
     sql_file_path = os.path.join(output_dir, "generated_question_bank.sql")
     with open(sql_file_path, "w", encoding="utf-8") as f:
         f.write(sql)
     print(f"📝 所有 SQL 语句已保存到 {sql_file_path}")
+    sys.stdout.flush()
 
     error_stmts = []
     total_stmts = 0

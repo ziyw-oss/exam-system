@@ -4,6 +4,13 @@ import sys
 import json
 import pdfplumber
 from typing import List, Dict, Tuple, Optional
+import warnings
+import logging
+import mysql.connector
+
+
+# 关闭 pdfminer 的 CropBox 警告
+logging.getLogger("pdfminer").setLevel(logging.ERROR)
 
 # ✅ 判断子题是否为 (a)、(b)
 def is_sub_alpha(value: str) -> bool:
@@ -87,30 +94,36 @@ def process_main_table(
     results: List[Dict],
     row_to_qid_map: Dict[int, str],
     col_map: Dict[str, int],
-    last_context: Optional[Dict] = None
+    last_context: Optional[Dict] = None,
+    verbose: bool = False #控制输出参数
 ) -> Tuple[Dict, Dict]:
     last_main = last_context.get("main") if last_context else None
     last_sub = last_context.get("sub") if last_context else None
     last_subsub = last_context.get("subsub") if last_context else None
     last_row = last_context.get("row") if last_context else None
 
-    print(f"📊 固定列结构处理评分表格，共 {len(table)} 行")
-    print("🔍 表格原始行内容:")
+    if verbose:
+        print(f"📊 固定列结构处理评分表格，共 {len(table)} 行")
+        print("🔍 表格原始行内容:")
     for i, row in enumerate(table):
-        print(f"  行 {i + 1}: {row} (列数: {len(row)})")
+        if verbose:    
+            print(f"  行 {i + 1}: {row} (列数: {len(row)})")
 
     try:
         for row_index, row in enumerate(table):
-            print(f"\n🔽 正在处理第 {row_index + 1} 行...")
+            if verbose:    
+                print(f"\n🔽 正在处理第 {row_index + 1} 行...")
             FIELD_NAMES = {"question", "answer", "mark", "guidance", "sub", "subsub", "answer/indicative content"}
             normalized_row = [cell.strip().lower() for cell in row if cell]
             is_header_row = all(cell in FIELD_NAMES for cell in normalized_row) and len(normalized_row) >= 3
             if is_header_row:
-                print(f"⚠️ 第 {row_index + 1} 行是字段表头，跳过")
+                if verbose:
+                    print(f"⚠️ 第 {row_index + 1} 行是字段表头，跳过")
                 continue
 
             if not row or len(row) <= col_map["answer"]:
-                print("⚠️ 行为空或缺 answer 列，跳过")
+                if verbose:
+                    print("⚠️ 行为空或缺 answer 列，跳过")
                 continue
 
             answer = row[col_map["answer"]].strip() if row[col_map["answer"]] else ""
@@ -118,22 +131,26 @@ def process_main_table(
             guidance = row[col_map["guidance"]].strip() if col_map["guidance"] != -1 and row[col_map["guidance"]] else ""
 
             if not answer:
-                print("⚠️ 无答案内容，跳过")
+                if verbose:
+                    print("⚠️ 无答案内容，跳过")
                 continue
 
             raw_main = row[col_map["main"]].strip() if row[col_map["main"]] else ""
             raw_sub = row[col_map["sub"]].strip() if col_map["sub"] >= 0 and row[col_map["sub"]] else ""
             raw_subsub = row[col_map["subsub"]].strip() if col_map["subsub"] >= 0 and row[col_map["subsub"]] else ""
 
-            print(f"🔍 raw_main='{raw_main}', raw_sub='{raw_sub}', raw_subsub='{raw_subsub}'")
+            if verbose:
+                print(f"🔍 raw_main='{raw_main}', raw_sub='{raw_sub}', raw_subsub='{raw_subsub}'")
 
             if raw_main and not raw_main.isdigit():
-                print(f"⚠️ 非法 main 字段：'{raw_main}'，跳过行")
+                if verbose:
+                    print(f"⚠️ 非法 main 字段：'{raw_main}'，跳过行")
                 continue
 
             is_append_line = not any([raw_main, raw_sub, raw_subsub])
             if is_append_line and last_row:
-                print(f"📎 作为上一行的续行追加到：{last_row['question_id']}")
+                if verbose:
+                    print(f"📎 作为上一行的续行追加到：{last_row['question_id']}")
                 last_row["answer"] += "\n" + answer
                 last_row["guidance"] += "\n" + guidance
                 if mark:
@@ -142,7 +159,8 @@ def process_main_table(
 
             # 字段继承前，先检查是否是新主题，若是则清空子题上下文
             if raw_main and raw_main.isdigit() and raw_main != last_main:
-                print(f"🆕 新 main 题号: {raw_main}（旧：{last_main}）")
+                if verbose:
+                    print(f"🆕 新 main 题号: {raw_main}（旧：{last_main}）")
                 last_main = raw_main
                 last_sub = None
                 last_subsub = None
@@ -152,14 +170,17 @@ def process_main_table(
             subsub = raw_subsub if raw_subsub and is_subsub_roman(raw_subsub) else None
 
 
-            print(f"✅ 字段继承后: main={main}, sub={sub}, subsub={subsub}")
+            if verbose:
+                print(f"✅ 字段继承后: main={main}, sub={sub}, subsub={subsub}")
 
             if sub != last_sub:
-                print(f"  ↪️ 新 sub 子题: {sub}")
+                if verbose:
+                    print(f"  ↪️ 新 sub 子题: {sub}")
                 last_sub = sub
                 last_subsub = None
             if subsub != last_subsub:
-                print(f"    ↪️ 新 subsub 子子题: {subsub}")
+                if verbose:
+                    print(f"    ↪️ 新 subsub 子子题: {subsub}")
                 last_subsub = subsub
 
             parts = [main] if main else []
@@ -179,13 +200,15 @@ def process_main_table(
                 "guidance": guidance
             }
 
-            print(f"✅ 提取结果：{qid}, 分数: {current['mark']}")
+            if verbose:
+                print(f"✅ 提取结果：{qid}, 分数: {current['mark']}")
             results.append(current)
             last_row = current
             row_to_qid_map[row_index] = qid
 
     except Exception as e:
-        print(f"❌ 表格处理失败: {e}")
+        if verbose:
+            print(f"❌ 表格处理失败: {e}")
 
     return col_map, {
         "main": last_main,
@@ -213,7 +236,7 @@ def looks_like_score_table(table_data: List[List[str]]) -> bool:
     return has_question_id or has_valid_answer
 
 # ✅ 主入口函数，处理 PDF 所有页
-def robust_extract_table_from_pdf(pdf_path: str) -> List[Dict[str, str]]:
+def robust_extract_table_from_pdf(pdf_path: str, verbose: bool = False) -> List[Dict[str, str]]:
     results = []
     fixed_col_map = {
         "main": 0,
@@ -228,9 +251,11 @@ def robust_extract_table_from_pdf(pdf_path: str) -> List[Dict[str, str]]:
 
     with pdfplumber.open(pdf_path) as pdf:
         for page_number, page in enumerate(pdf.pages):
-            print(f"\n📄 正在处理第 {page_number + 1} 页")
+            if verbose:
+                print(f"\n📄 正在处理第 {page_number + 1} 页")
             table_objs = page.find_tables()  # ✅ 使用高级提取，包含坐标 bbox 和 cells
-            print(f"  ➕ 检测到表格数量: {len(table_objs)}")
+            if verbose:
+                print(f"  ➕ 检测到表格数量: {len(table_objs)}")
 
             if not table_objs:
                 continue  # 没有表格，跳过
@@ -244,14 +269,16 @@ def robust_extract_table_from_pdf(pdf_path: str) -> List[Dict[str, str]]:
             if candidate_tables:
                 for idx, main_table_obj in enumerate(candidate_tables):
                     main_table_data = main_table_obj.extract()
-                    print(f"📊 固定列结构处理评分表格（第 {idx + 1} 个主表），共 {len(main_table_data)} 行")
+                    if verbose:
+                        print(f"📊 固定列结构处理评分表格（第 {idx + 1} 个主表），共 {len(main_table_data)} 行")
 
                     col_map, last_context = process_main_table(
                         table=main_table_data,
                         results=results,
                         row_to_qid_map=row_to_qid_map,
                         col_map=fixed_col_map,
-                        last_context=last_context
+                        last_context=last_context,
+                        verbose=False
                     )
 
                 # 🧩 主评分表格之外的表格作为嵌套内容处理
@@ -261,7 +288,8 @@ def robust_extract_table_from_pdf(pdf_path: str) -> List[Dict[str, str]]:
                     handle_multi_table_page(page, other_tables, results, row_to_qid_map)
 
             else:
-                print(f"📄 第 {page_number + 1} 页为评分续页，无主评分表")
+                if verbose:
+                    print(f"📄 第 {page_number + 1} 页为评分续页，无主评分表")
                 handle_multi_table_page(page, table_objs, results, row_to_qid_map)
 
     # ✅ 合并相同 question_id 的内容（答案/指导累加）
@@ -284,10 +312,14 @@ def robust_extract_table_from_pdf(pdf_path: str) -> List[Dict[str, str]]:
             base_prefix = f"{q['main']} ({q['sub']})"
             siblings = [qid for qid in all_qids if qid.startswith(base_prefix)]
             if len(siblings) == 0 :
-                print(f"⚠️ 子子题 {q['question_id']} 无兄弟题，降级为 {base_prefix}")
+                if verbose:
+                    print(f"⚠️ 子子题 {q['question_id']} 无兄弟题，降级为 {base_prefix}")
                 q["question_id"] = base_prefix
                 q["subsub"] = None
         final_results.append(q)
+
+    print(f"{len(final_results)} 题目提取完成")
+    print(json.dumps(final_results, indent=2, ensure_ascii=False))
 
     return final_results
 
@@ -297,19 +329,142 @@ def save_json(data: Dict, path: str):
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
 
+
+
+def extract_question_number(text: str) -> str:
+    match = re.match(r"^(\d+)", text)
+    return match.group(1) if match else ""
+
+
+def extract_sub_letter(text: str) -> str:
+    match = re.match(r"^\(([a-z])\)", text, re.IGNORECASE)
+    return match.group(1).lower() if match else ""
+
+
+def extract_subsub_roman(text: str) -> str:
+    match = re.match(r"^\((i{1,3}|iv|v|vi{0,3}|ix|x)\)", text, re.IGNORECASE)
+    return match.group(1).lower() if match else ""
+
+
+def save_answers_to_db(exam_id: int, marks_data: List[dict]):
+    db = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="",
+        database="exam_system"
+    )
+    cursor = db.cursor(dictionary=True)
+
+    def insert_answer(qid, answer, marks, guidance):
+        print(f"📥 SQL → INSERT qid={qid} marks={marks} guidance={bool(guidance)} answer preview={answer[:30]!r}")
+        cursor.execute("""
+            INSERT INTO question_answer (question_bank_id, answer, marks, guidance)
+            VALUES (%s, %s, %s, %s)
+            ON DUPLICATE KEY UPDATE
+              answer = VALUES(answer),
+              marks = VALUES(marks),
+              guidance = VALUES(guidance)
+        """, (qid, answer, marks, guidance))
+
+    def build_question_id_map_by_structure(exam_id: int, cursor) -> dict:
+        cursor.execute("""
+            SELECT qb.id, qb.level, qb.parent_id, qb.text
+            FROM exam_questions eq
+            JOIN question_bank qb ON eq.question_bank_id = qb.id
+            WHERE eq.exam_id = %s
+            ORDER BY qb.id
+        """, (exam_id,))
+        rows = cursor.fetchall()
+
+        id_map = {r["id"]: r for r in rows}
+        for r in rows:
+            r["children"] = []
+        for r in rows:
+            pid = r["parent_id"]
+            if pid in id_map:
+                id_map[pid]["children"].append(r)
+
+        def int_to_letter(n): return chr(ord('a') + n)
+        def int_to_roman(n):
+            romans = ['i', 'ii', 'iii', 'iv', 'v', 'vi', 'vii', 'viii', 'ix', 'x']
+            return romans[n] if n < len(romans) else f"i{n+1}"
+
+        final_map = {}
+        main_counter = 1
+
+        for r in rows:
+            if r["level"] == "question" and not r["parent_id"]:
+                main_key = str(main_counter)
+                final_map[main_key] = r["id"]
+                sub_counter = 0
+                for sub in sorted(r["children"], key=lambda x: x["id"]):
+                    sub_key = f"{main_key}.{int_to_letter(sub_counter)}"
+                    final_map[sub_key] = sub["id"]
+                    subsub_counter = 0
+                    for subsub in sorted(sub["children"], key=lambda x: x["id"]):
+                        subsub_key = f"{sub_key}.{int_to_roman(subsub_counter)}"
+                        final_map[subsub_key] = subsub["id"]
+                        subsub_counter += 1
+                    sub_counter += 1
+                main_counter += 1
+
+        return final_map
+
+    question_map = build_question_id_map_by_structure(exam_id, cursor)
+    print("🧭 当前卷题号映射 keys:", list(question_map.keys()))
+
+    for item in marks_data:
+        main = item.get("main", "")
+        sub = item.get("sub", "")
+        subsub = item.get("subsub", "")
+
+        key = main
+        if sub:
+            key += f".{sub}"
+        if subsub:
+            key += f".{subsub}"
+
+        qid = question_map.get(key)
+        
+
+        if qid:
+            print(f"✅ 匹配成功: {key} → qid={qid}")
+            insert_answer(
+                qid,
+                item.get("answer", ""),
+                item.get("mark"),
+                item.get("guidance", "")
+            )
+        else:
+            print(f"⚠️ 无法匹配题号: {key}")
+            print(f"🚨 未匹配 item:", item)
+
+    db.commit()
+    cursor.close()
+    db.close()
+
+
 # ✅ 命令行入口
 if __name__ == "__main__":
     if len(sys.argv) < 3:
-        print("Usage: python parse_markscheme.py <pdf_path> <output_dir>")
+        print("Usage: python3 parse_markscheme.py <pdf_path> <output_dir> <exam_id>")
         sys.exit(1)
 
     pdf_path = sys.argv[1]
     output_dir = sys.argv[2]
+    exam_id = int(sys.argv[3]) 
+    
     if not os.path.exists(pdf_path):
         print(f"❌ PDF 不存在: {pdf_path}")
         sys.exit(1)
-
+    
     print("📄 正在提取评分表格:", pdf_path)
-    structured_table = robust_extract_table_from_pdf(pdf_path)
-    save_json(structured_table, os.path.join(output_dir, "markscheme.json"))
+    marks_data = robust_extract_table_from_pdf(pdf_path, verbose = False)
+    save_json(marks_data, os.path.join(output_dir, "markscheme.json"))
     print("✅ 评分标准已生成 markscheme.json")
+    print("📥 正在保存答案到数据库...")
+    print(f"📊 标准答案总条数: {len(marks_data)}")
+    for m in marks_data[:5]:
+        print(f"🧾 标准答案 entry: main={m['main']}, sub={m['sub']}, subsub={m['subsub']}")
+    save_answers_to_db(exam_id, marks_data)
+    print(f"✅ 答案已成功写入试卷 {exam_id}")

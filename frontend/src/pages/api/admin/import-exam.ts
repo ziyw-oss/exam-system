@@ -69,14 +69,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const finalOutputDir = path.join(serverRoot, 'backend', 'outputs', examId);
     fs.mkdirSync(finalOutputDir, { recursive: true });
 
-    const markResult = spawnSync(pythonPath, ['backend/scripts/parse_markscheme.py', finalMarkPath, finalOutputDir], {
+    const markResult = spawnSync(pythonPath, ['backend/scripts/parse_markscheme.py', finalMarkPath, finalOutputDir, examId.toString()], {
       cwd: serverRoot,
     });
     const markstdout = markResult.stdout.toString();
     const markstderr = markResult.stderr.toString();
     
     console.log("📥 markscheme stdout:", markstdout);
-    console.error("❌ markscheme stderr:", markstderr); 
     
     const python = spawn(pythonPath, ['backend/scripts/parse_pdf.py', finalPaperPath, finalOutputDir], {
       cwd: serverRoot,
@@ -91,7 +90,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     python.stderr.on('data', (data) => {
       stderr += data.toString();
-      console.error("❌ python stderr:", data.toString());
+      
     });
 
     python.on('close', (code) => {
@@ -99,22 +98,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         return res.status(500).json({ error: '❌ parse_pdf 执行失败', detail: stderr || '未知错误' });
       }
 
-      
-      const markschemeJsonPath = path.join(finalOutputDir, 'markscheme.json');
-      const markResult = spawnSync(pythonPath, ['backend/scripts/parse_markscheme.py', finalMarkPath, finalOutputDir], {
-        cwd: serverRoot,
-      });
-
-
-      const markstderr = markResult.stderr.toString();
-      console.error("❌ markscheme stderr:", markstderr);
-
-      const reportJsonPath = path.join(finalOutputDir, 'report.json');
       const reportResult = spawnSync(pythonPath, ['backend/scripts/parse_report.py', finalReportPath, finalOutputDir], {
         cwd: serverRoot,
       });
       const reportstderr = reportResult.stderr.toString();
-      console.error("❌ report stderr:", reportstderr);
+      
 
       try {
         const structured = JSON.parse(
@@ -130,7 +118,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           }
         });
       } catch (e: any) {
-        return res.status(500).json({
+        return res.status(200).json({
           error: '读取结构化数据失败',
           detail: e.message,
           logs: {
