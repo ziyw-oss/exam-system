@@ -85,9 +85,13 @@ export default function ExamSetup() {
         payload.keypointIds = selectedKeypoints;
       }
 
-      const response = await axios.post("/api/student/start-exam", payload);
-      const { examId, sessionId } = response.data;
-      router.push(`/student/exam/doing?sessionId=${sessionId || examId}`);
+      const response = await axios.post("/api/student/start-exam", payload, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
+      const { sessionId } = response.data;
+      router.push(`/student/exam/doing?sessionId=${sessionId}`);
     } catch (err) {
       alert("无法开始考试，请重试");
       console.error(err);
@@ -105,6 +109,7 @@ export default function ExamSetup() {
         <div>
           <label className="block font-medium mb-1">选择试卷</label>
           <select
+            className="border p-1 rounded"
             value={selectedExamId ?? ""}
             onChange={(e) => setSelectedExamId(parseInt(e.target.value))}
           >
@@ -123,6 +128,7 @@ export default function ExamSetup() {
           <div>
             <label className="block font-medium">模块（Section）</label>
             <select
+              className="border p-1 rounded"
               value={selectedSection ?? ""}
               onChange={(e) => {
                 setSelectedSection(parseInt(e.target.value));
@@ -141,6 +147,7 @@ export default function ExamSetup() {
             <div>
               <label className="block font-medium">章节（Chapter）</label>
               <select
+                className="border p-1 rounded"
                 value={selectedChapter ?? ""}
                 onChange={(e) => {
                   setSelectedChapter(parseInt(e.target.value));
@@ -188,6 +195,7 @@ export default function ExamSetup() {
           className="border p-1"
           value={duration}
           onChange={(e) => setDuration(parseInt(e.target.value))}
+          min={1}
         />
       </div>
 

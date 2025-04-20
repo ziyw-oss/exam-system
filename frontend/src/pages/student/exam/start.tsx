@@ -10,7 +10,7 @@ export default function ExamStartPage() {
       // 检测未完成考试，提示继续
       const continueExam = window.confirm("检测到你有一次未完成的考试，是否继续？");
       if (continueExam) {
-        router.push(`/student/exam/doing?examId=${session}`);
+        router.push(`/student/exam/doing?sessionId=${session}`);
       }
     }
   }, []);

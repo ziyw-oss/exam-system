@@ -10,7 +10,14 @@ const dbConfig = {
   database: 'exam_system',
 };
 
-const JWT_SECRET = process.env.JWT_SECRET || 'secret';
+// ✅ 更稳妥的方式：在函数中进行检查，避免模块级别抛错影响构建
+const getJwtSecret = (): string => {
+  const secret = process.env.JWT_SECRET;
+  if (!secret) {
+    throw new Error("❌ JWT_SECRET 未设置，请检查 .env 文件");
+  }
+  return secret;
+};
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
@@ -40,7 +47,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     const token = jwt.sign(
       { id: user.id, name: user.name, role: user.role },
-      JWT_SECRET,
+      getJwtSecret(), // ✅ 动态检查
       { expiresIn: '7d' }
     );
 

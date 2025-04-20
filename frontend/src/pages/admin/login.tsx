@@ -27,12 +27,13 @@ export default function LoginPage() {
       if (res.data.token) {
         localStorage.setItem("token", res.data.token);
         alert("登录成功 ✅");
-        router.push("/admin/dashboard");
+        // 登录成功后跳转到考试入口页
+        router.push("/student/exam/start");
       } else {
         setError(res.data.message || "登录失败");
       }
     } catch (err: any) {
-      console.error(err);
+      console.error("登录请求失败:", err);
       setError("登录请求失败，请稍后重试。");
     } finally {
       setLoading(false);

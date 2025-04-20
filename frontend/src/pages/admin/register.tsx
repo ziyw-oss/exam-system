@@ -28,7 +28,7 @@ export default function Register() {
     try {
       await axios.post("/api/admin/register", formData);
       alert("注册成功 ✅，即将跳转登录页面");
-      router.push("/admin/login");
+      router.push("/student/exam/start");
     } catch (err: any) {
       setError(err.response?.data?.message || "注册失败，请稍后再试");
     } finally {
