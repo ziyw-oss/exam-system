@@ -73,6 +73,30 @@ export default function ExamDoing() {
     }
   };
 
+  const handleSubmitExam = async () => {
+    const token = localStorage.getItem("token");
+    if (!token || !sessionId) return;
+    const confirm = window.confirm("确定要提交试卷吗？提交后将无法修改答案。");
+    if (!confirm) return;
+
+    try {
+      const res = await axios.post(
+        "/api/student/submit-exam",
+        { sessionId },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      alert("🎉 试卷已提交，稍后跳转到成绩分析页...");
+      router.push(`/student/exam/result?sessionId=${sessionId}`);
+    } catch (err) {
+      console.error("❌ 提交试卷失败:", err);
+      alert("❌ 提交失败，请重试");
+    }
+  };
+
   return (
     <div className="p-6">
       <h1 className="text-2xl font-bold mb-4">📝 考试进行中</h1>
@@ -107,6 +131,12 @@ export default function ExamDoing() {
             className="mt-6 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
           >
             保存所有答案
+          </button>
+          <button
+            onClick={handleSubmitExam}
+            className="mt-4 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
+          >
+            📤 提交试卷
           </button>
         </>
       )}

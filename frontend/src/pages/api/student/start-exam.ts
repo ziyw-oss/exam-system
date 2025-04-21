@@ -48,7 +48,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       const [rows]: any = await connection.execute(
         `SELECT qb.id, qb.text FROM question_keypoints qk
          JOIN question_bank qb ON qk.question_id = qb.id
-         WHERE qk.keypoint_id IN (${placeholders})
+         WHERE qk.keypoint_id IN (${placeholders}) AND qb.marks > 0
          ORDER BY RAND()
          LIMIT ?`,
         [...keypointIds, questionCount || 10]

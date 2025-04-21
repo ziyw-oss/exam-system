@@ -25,7 +25,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     );
 
     const [keypoints] = await connection.execute(
-      `SELECT id, chapter_id, name FROM keypoints`
+      `SELECT DISTINCT kp.id, kp.chapter_id, kp.name
+       FROM keypoints kp
+       JOIN question_keypoints qk ON kp.id = qk.keypoint_id
+       JOIN question_bank qb ON qk.question_id = qb.id
+       WHERE qb.marks > 0`
     );
 
     await connection.end();
