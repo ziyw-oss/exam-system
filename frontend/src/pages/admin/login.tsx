@@ -1,3 +1,5 @@
+// File: src/pages/admin/login.tsx
+
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -26,33 +28,31 @@ export default function LoginPage() {
       const res = await axios.post("/api/admin/login", form);
       if (res.data.token) {
         localStorage.setItem("token", res.data.token);
-        alert("登录成功 ✅");
-        // 登录成功后跳转到考试入口页
-        router.push("/student/exam/start");
+        router.push("/student/exam/dashboard");
       } else {
-        setError(res.data.message || "登录失败");
+        setError(res.data.message || "Login failed");
       }
     } catch (err: any) {
-      console.error("登录请求失败:", err);
-      setError("登录请求失败，请稍后重试。");
+      console.error("Login request failed:", err);
+      setError("Login failed, please try again later.");
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4 font-sans text-gray-900">
       <div className="bg-white p-8 rounded-lg shadow-md max-w-md w-full space-y-6">
-        <h1 className="text-2xl font-bold text-center">🔐 登录考试系统</h1>
-        <p className="text-sm text-center text-gray-500">请输入您的邮箱和密码进行登录</p>
+        <h3 className="text-2xl font-bold text-center">🔐 Login to Exam System</h3>
+        <p className="text-sm text-center text-gray-500">Please enter your email and password to log in</p>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-sm font-medium">邮箱</label>
+            <label className="block text-sm font-medium">Email</label>
             <Input
               type="email"
               name="email"
-              placeholder="请输入邮箱"
+              placeholder="Enter your email"
               value={form.email}
               onChange={handleChange}
               required
@@ -61,11 +61,11 @@ export default function LoginPage() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium">密码</label>
+            <label className="block text-sm font-medium">Password</label>
             <Input
               type="password"
               name="password"
-              placeholder="请输入密码"
+              placeholder="Enter your password"
               value={form.password}
               onChange={handleChange}
               required
@@ -76,12 +76,15 @@ export default function LoginPage() {
           {error && <div className="text-red-500 text-sm text-center">{error}</div>}
 
           <Button type="submit" className="w-full" disabled={loading}>
-            {loading ? "登录中..." : "登录"}
+            {loading ? "Logging in..." : "Login"}
           </Button>
         </form>
 
         <p className="text-sm text-center">
-          还没有账号？<a href="/admin/register" className="text-blue-600 underline">去注册</a>
+          Don't have an account?{" "}
+          <a href="/admin/register" className="text-blue-600 underline">
+            Register here
+          </a>
         </p>
       </div>
     </div>

@@ -1,3 +1,5 @@
+// File: src/pages/student/exam/setup.tsx
+
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
@@ -33,7 +35,7 @@ interface Exam {
 
 export default function ExamSetup() {
   const router = useRouter();
-  const { mode } = router.query;
+  const { resume, sessionId } = router.query;
 
   const [structure, setStructure] = useState<Section[]>([]);
   const [examList, setExamList] = useState<Exam[]>([]);
@@ -42,47 +44,68 @@ export default function ExamSetup() {
   const [selectedChapter, setSelectedChapter] = useState<number | null>(null);
   const [selectedKeypoints, setSelectedKeypoints] = useState<number[]>([]);
   const [duration, setDuration] = useState(60);
+  const [examMode, setExamMode] = useState<string>("");
+
+  // ✅ 确保 router 准备好后再设置 mode
+  useEffect(() => {
+    if (router.isReady && typeof router.query.mode === "string") {
+      setExamMode(router.query.mode);
+    }
+  }, [router.isReady, router.query.mode]);
+
+  // 🚀 如果是 resume 并且 sessionId 有效，直接跳转 doing 页面
+  useEffect(() => {
+    if (resume && sessionId) {
+      router.push(`/student/exam/doing?sessionId=${sessionId}`);
+    }
+  }, [resume, sessionId]);
 
   useEffect(() => {
-    if (mode === "keypoint") {
+    if (examMode === "keypoint") {
       axios.get("/api/student/keypoint-structure").then((res) => {
         setStructure(res.data);
       });
-    } else if (mode === "exam") {
+    } else if (examMode === "exam") {
       axios.get("/api/student/setupexam").then((res) => {
         setExamList(res.data);
       });
     }
-  }, [mode]);
+  }, [examMode]);
 
   const handleStart = async () => {
     try {
       const token = localStorage.getItem("token");
       if (!token) {
-        alert("请先登录后再开始考试");
+        alert("Please log in first");
         return;
       }
       const decoded = jwtDecode<DecodedToken>(token);
       const userId = decoded.id;
 
+      if (!examMode || (examMode !== "exam" && examMode !== "keypoint")) {
+        alert("Invalid exam mode. Please refresh the page.");
+        return;
+      }
+
       const payload: any = {
         userId,
-        mode,
+        mode: examMode,
         duration,
       };
 
-      if (mode === "exam") {
+      if (examMode === "exam") {
         if (!selectedExamId) {
-          alert("请选择试卷后再开始考试");
+          alert("Please select an exam before starting");
           return;
         }
         payload.examId = selectedExamId;
-      } else if (mode === "keypoint") {
+      } else if (examMode === "keypoint") {
         if (selectedKeypoints.length === 0) {
-          alert("请至少选择一个知识点");
+          alert("Please select at least one keypoint");
           return;
         }
         payload.keypointIds = selectedKeypoints;
+        payload.questionCount = 10;
       }
 
       const response = await axios.post("/api/student/start-exam", payload, {
@@ -93,8 +116,34 @@ export default function ExamSetup() {
       const { sessionId } = response.data;
       router.push(`/student/exam/doing?sessionId=${sessionId}`);
     } catch (err) {
-      alert("无法开始考试，请重试");
+      alert("Failed to start exam. Please try again.");
       console.error(err);
+    }
+  };
+
+  const handleResume = async () => {
+    const sessionId = localStorage.getItem("in_progress_session_id");
+    if (!sessionId) {
+      alert("No unfinished exam found.");
+      return;
+    }
+
+    try {
+      const token = localStorage.getItem("token");
+      const res = await axios.get(`/api/student/validate-session?sessionId=${sessionId}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+
+      if (!res.data.valid) {
+        alert("The previous exam session contains no questions. Please start a new exam.");
+        localStorage.removeItem("in_progress_session_id");
+        return;
+      }
+
+      router.push(`/student/exam/setup?resume=1&sessionId=${sessionId}&mode=exam`);
+    } catch (err) {
+      console.error("Resume validation failed:", err);
+      alert("Error validating session. Please try again.");
     }
   };
 
@@ -103,17 +152,26 @@ export default function ExamSetup() {
 
   return (
     <div className="p-6 space-y-4">
-      <h1 className="text-2xl font-bold">🧪 考试设置</h1>
+      <h1 className="text-2xl font-bold">🧪 Exam Setup</h1>
 
-      {mode === "exam" && (
+      <p className="text-sm text-gray-400">Current Mode: {examMode}</p>
+
+      <button
+        onClick={handleResume}
+        className="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600"
+      >
+        📌 Resume Previous Exam
+      </button>
+
+      {examMode === "exam" && (
         <div>
-          <label className="block font-medium mb-1">选择试卷</label>
+          <label className="block font-medium mb-1">Select Exam</label>
           <select
             className="border p-1 rounded"
             value={selectedExamId ?? ""}
             onChange={(e) => setSelectedExamId(parseInt(e.target.value))}
           >
-            <option value="">请选择试卷</option>
+            <option value="">Please select an exam</option>
             {examList.map((exam: Exam) => (
               <option key={exam.id} value={exam.id}>
                 {exam.name}
@@ -123,10 +181,10 @@ export default function ExamSetup() {
         </div>
       )}
 
-      {mode === "keypoint" && (
+      {examMode === "keypoint" && (
         <>
           <div>
-            <label className="block font-medium">模块（Section）</label>
+            <label className="block font-medium">Section</label>
             <select
               className="border p-1 rounded"
               value={selectedSection ?? ""}
@@ -136,7 +194,7 @@ export default function ExamSetup() {
                 setSelectedKeypoints([]);
               }}
             >
-              <option value="">请选择模块</option>
+              <option value="">Select Section</option>
               {structure.map((s: Section) => (
                 <option key={s.id} value={s.id}>{s.name}</option>
               ))}
@@ -145,7 +203,7 @@ export default function ExamSetup() {
 
           {section && (
             <div>
-              <label className="block font-medium">章节（Chapter）</label>
+              <label className="block font-medium">Chapter</label>
               <select
                 className="border p-1 rounded"
                 value={selectedChapter ?? ""}
@@ -154,7 +212,7 @@ export default function ExamSetup() {
                   setSelectedKeypoints([]);
                 }}
               >
-                <option value="">请选择章节</option>
+                <option value="">Select Chapter</option>
                 {section.chapters.map((c: Chapter) => (
                   <option key={c.id} value={c.id}>{c.name}</option>
                 ))}
@@ -164,7 +222,7 @@ export default function ExamSetup() {
 
           {chapter && (
             <div>
-              <label className="block font-medium">知识点（Keypoints）</label>
+              <label className="block font-medium">Keypoints</label>
               <div className="grid grid-cols-2 gap-2">
                 {chapter.keypoints.map((kp: Keypoint) => (
                   <label key={kp.id} className="flex items-center gap-2">
@@ -189,7 +247,7 @@ export default function ExamSetup() {
       )}
 
       <div>
-        <label className="block font-medium">考试时长（分钟）</label>
+        <label className="block font-medium">Duration (minutes)</label>
         <input
           type="number"
           className="border p-1"
@@ -201,10 +259,10 @@ export default function ExamSetup() {
 
       <button
         onClick={handleStart}
-        className="bg-black text-white px-4 py-2 rounded disabled:opacity-50"
-        disabled={mode === "keypoint" && selectedKeypoints.length === 0}
+        className="w-full bg-black text-white py-2 rounded hover:bg-gray-800 transition"
+        disabled={examMode === "keypoint" && selectedKeypoints.length === 0}
       >
-        开始考试
+        🚀 Start Exam
       </button>
     </div>
   );

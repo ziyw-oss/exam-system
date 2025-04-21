@@ -1,3 +1,5 @@
+// File: src/pages/student/exam/doing.tsx
+
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
@@ -5,7 +7,7 @@ import axios from "axios";
 interface Question {
   id: number;
   text: string;
-  mark: number; // 含分数字段
+  mark: number;
 }
 
 export default function ExamDoing() {
@@ -16,12 +18,14 @@ export default function ExamDoing() {
   const [answers, setAnswers] = useState<Record<number, string>>({});
   const [timeLeft, setTimeLeft] = useState<number>(0);
   const [loading, setLoading] = useState<boolean>(true);
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [questionTime, setQuestionTime] = useState<number>(0);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     const fetchSession = async () => {
       const token = localStorage.getItem("token");
       if (!token) {
-        alert("请先登录");
         router.push("/login");
         return;
       }
@@ -34,11 +38,11 @@ export default function ExamDoing() {
         });
 
         setQuestions(res.data.questions);
+        setAnswers(res.data.answers || {});
         setTimeLeft(res.data.remainingTime);
         setLoading(false);
       } catch (err) {
-        console.error("加载考试失败", err);
-        alert("考试数据加载失败");
+        console.error("Failed to load exam:", err);
         router.push("/student/exam/start");
       }
     };
@@ -46,19 +50,28 @@ export default function ExamDoing() {
     if (sessionId) fetchSession();
   }, [sessionId]);
 
-  const handleAnswerChange = (qid: number, value: string) => {
-    setAnswers((prev) => ({ ...prev, [qid]: value }));
-  };
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setQuestionTime((prev) => prev + 1);
+    }, 1000);
+    return () => clearInterval(timer);
+  }, [currentIndex]);
 
-  const handleSaveAnswers = async () => {
+  const saveCurrentAnswer = async () => {
     const token = localStorage.getItem("token");
     if (!token || !sessionId) return;
+
+    const currentQuestionId = questions[currentIndex]?.id;
+    if (!currentQuestionId) return;
+
     try {
       await axios.post(
         "/api/student/save-answers",
         {
           sessionId,
-          answers,
+          answers: {
+            [currentQuestionId]: answers[currentQuestionId] || "",
+          },
         },
         {
           headers: {
@@ -66,21 +79,27 @@ export default function ExamDoing() {
           },
         }
       );
-      alert("✅ 答案已保存");
     } catch (err) {
-      console.error("保存答案失败", err);
-      alert("❌ 答案保存失败");
+      console.error("Failed to save answer:", err);
     }
+  };
+
+  const handleAnswerChange = (qid: number, value: string) => {
+    setAnswers((prev) => ({ ...prev, [qid]: value }));
   };
 
   const handleSubmitExam = async () => {
     const token = localStorage.getItem("token");
     if (!token || !sessionId) return;
-    const confirm = window.confirm("确定要提交试卷吗？提交后将无法修改答案。");
+
+    const confirm = window.confirm("Are you sure you want to submit? You can't change answers after submitting.");
     if (!confirm) return;
 
+    setIsSubmitting(true); // 显示 loading 状态
+    await saveCurrentAnswer(); // Save before submitting
+
     try {
-      const res = await axios.post(
+      await axios.post(
         "/api/student/submit-exam",
         { sessionId },
         {
@@ -89,55 +108,94 @@ export default function ExamDoing() {
           },
         }
       );
-      alert("🎉 试卷已提交，稍后跳转到成绩分析页...");
       router.push(`/student/exam/result?sessionId=${sessionId}`);
     } catch (err) {
-      console.error("❌ 提交试卷失败:", err);
-      alert("❌ 提交失败，请重试");
+      console.error("❌ Failed to submit exam:", err);
+      alert("Failed to submit. Please try again.");
+    } finally {
+      setIsSubmitting(false); // 结束 loading
     }
   };
 
   return (
     <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">📝 考试进行中</h1>
+      <p className="text-lg text-gray-600 mb-2 flex items-center gap-2">
+        <span className="text-base">🧑‍🏫</span> Exam In Progress
+      </p>
       {loading ? (
-        <p>加载中...</p>
+        <p>Loading...</p>
       ) : (
         <>
-          <p className="mb-2 text-gray-600">⏱️ 剩余时间：{timeLeft} 秒</p>
-          <div className="space-y-6">
-            {questions.map((q, i) => (
-                <div key={q.id} className="border p-4 rounded shadow-sm bg-white">
-                <div className="text-base font-medium mb-2">
-                    Q{i + 1}: {q.text}
-                    {q.mark > 0 && <span className="ml-2 text-sm text-gray-500">（{q.mark} 分）</span>}
-                </div>
-                
-                {q.mark > 0 && (
-                    <div className="mt-2">
-                    <textarea
-                        className="w-full border p-2 rounded"
-                        rows={4}
-                        value={answers[q.id] || ""}
-                        onChange={(e) => handleAnswerChange(q.id, e.target.value)}
-                    />
-                    </div>
+          <p className="mb-2 text-gray-600">⏱️ Time left: {Math.ceil(timeLeft / 60)} minutes</p>
+          <p className="text-md text-gray-800 mb-2">
+            📌 {questions.length > 0 ? `Question ${currentIndex + 1} of ${questions.length}` : "No questions available."}
+          </p>
+
+          {questions.length === 0 && (
+            <p className="text-red-600 mt-4">
+              No questions found in this exam. Please contact your instructor or try a different exam.
+            </p>
+          )}
+
+          {questions.length > 0 && (
+            <div className="border p-4 rounded shadow-sm bg-white w-full max-w-4xl mx-auto">
+              <p className="text-lg font-medium leading-relaxed bg-gray-50 p-4 rounded border-l-4 border-blue-500">
+                {questions[currentIndex].text.replace(/Q\d+:\s*/, "").replace(/\.+\s*\[\d+\]$/, "")}
+                {questions[currentIndex].mark > 0 ? (
+                  <span className="text-sm text-gray-500 ml-2">({questions[currentIndex].mark} marks)</span>
+                ) : (
+                  <span className="text-sm text-orange-500 ml-2">(Read carefully before answering sub-questions)</span>
                 )}
-                </div>
-            ))}
+              </p>
+              <p className="text-sm text-gray-500 mt-2">Time spent on this question: {questionTime} seconds</p>
+              {questions[currentIndex].mark > 0 && (
+                <textarea
+                  className="w-full border border-gray-300 p-4 rounded-md shadow focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  style={{ width: "100vw", maxWidth: "100%", minHeight: "120px", boxSizing: "border-box" }}
+                  disabled={isSubmitting}
+                  value={answers[questions[currentIndex].id] || ""}
+                  onChange={(e) => handleAnswerChange(questions[currentIndex].id, e.target.value)}
+                />
+              )}
+            </div>
+          )}
+
+          {questions.length > 0 && (
+            <div className="mt-4 flex gap-2">
+              <button
+                disabled={currentIndex === 0}
+                onClick={async () => {
+                  await saveCurrentAnswer();
+                  setCurrentIndex(currentIndex - 1);
+                  setQuestionTime(0);
+                }}
+                className="bg-gray-300 px-4 py-2 rounded disabled:opacity-50"
+              >
+                Previous
+              </button>
+              <button
+                disabled={currentIndex === questions.length - 1}
+                onClick={async () => {
+                  await saveCurrentAnswer();
+                  setCurrentIndex(currentIndex + 1);
+                  setQuestionTime(0);
+                }}
+                className="bg-gray-300 px-4 py-2 rounded disabled:opacity-50"
+              >
+                Next
+              </button>
+            </div>
+          )}
+
+          <div className="mt-6 flex gap-4">
+            <button
+              onClick={handleSubmitExam}
+              disabled={isSubmitting}
+              className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 disabled:opacity-50"
+            >
+              {isSubmitting ? "Submitting and marking..." : "📤 Submit Exam"}
+            </button>
           </div>
-          <button
-            onClick={handleSaveAnswers}
-            className="mt-6 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-          >
-            保存所有答案
-          </button>
-          <button
-            onClick={handleSubmitExam}
-            className="mt-4 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
-          >
-            📤 提交试卷
-          </button>
         </>
       )}
     </div>

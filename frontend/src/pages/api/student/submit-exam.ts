@@ -1,6 +1,9 @@
+// File: src/pages/api/student/submit-exam.ts
+
 import type { NextApiRequest, NextApiResponse } from "next";
 import mysql from "mysql2/promise";
 import jwt from "jsonwebtoken";
+import OpenAI from "openai";
 
 const dbConfig = {
   host: "localhost",
@@ -35,7 +38,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   try {
     const connection = await mysql.createConnection(dbConfig);
 
-    // 验证 session 是否存在并归属当前用户
     const [sessions]: any = await connection.query(
       `SELECT id FROM exam_sessions WHERE id = ? AND user_id = ?`,
       [sessionId, userId]
@@ -45,7 +47,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return res.status(403).json({ message: "无权访问该考试或考试不存在" });
     }
 
-    // 获取答案详情
     const [answers]: any = await connection.query(
       `SELECT
         sa.question_id,
@@ -57,27 +58,57 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         qr.report_text,
         qr.exemplar_text,
         qb.question_type,
-        sa.keypoint_id
+        qk.keypoint_id,
+        kp.name AS keypoint_name
       FROM student_answers sa
       JOIN question_bank qb ON sa.question_id = qb.id
       LEFT JOIN question_answer qa ON qb.id = qa.question_bank_id
       LEFT JOIN question_report qr ON qb.id = qr.question_bank_id
+      LEFT JOIN question_keypoints qk ON qb.id = qk.question_id
+      LEFT JOIN keypoints kp ON qk.keypoint_id = kp.id
       WHERE sa.session_id = ?`,
       [sessionId]
     );
 
+    const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
+
     let totalScore = 0;
     let fullScore = 0;
     const wrongQuestions = [];
-    const keypointStats: Record<number, { total: number; correct: number; correctRate?: number }> = {};
+    const keypointStats: Record<number, { name: string; total: number; correct: number; correctRate?: number }> = {};
     const suggestedKeypoints: number[] = [];
 
     for (const ans of answers) {
-      fullScore += ans.marks || 0;
-      const score = 0; // Assume score calculation logic is here
+      if (!ans.answer_text?.trim() || !ans.marks || ans.marks <= 0) {
+        continue;
+      }
+
+      fullScore += ans.marks;
+
+      const prompt = `你是一位考试评卷官，请根据以下信息为学生作答评分，满分为 ${ans.marks} 分。
+题目：${ans.question_text}
+参考答案：${ans.correct_answer || "无"}
+评分指南：${ans.guidance || "无"}
+考官报告：${ans.report_text || "无"}
+优秀作答示例：${ans.exemplar_text || "无"}
+学生作答：${ans.answer_text || "无"}
+请直接输出一个数字分数（0-${ans.marks}），不要添加解释：`;
+
+      let score = 0;
+      try {
+        const gptRes = await openai.chat.completions.create({
+          model: "gpt-3.5-turbo",
+          messages: [{ role: "user", content: prompt }],
+        });
+        const content = gptRes.choices[0]?.message?.content?.trim() || "0";
+        score = Math.min(parseInt(content), ans.marks);
+      } catch (err) {
+        console.error("评分失败:", err);
+      }
+
       totalScore += score;
 
-      if (score < (ans.marks || 0)) {
+      if (score < ans.marks) {
         wrongQuestions.push({
           question_id: ans.question_id,
           student_answer: ans.answer_text,
@@ -86,16 +117,18 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       }
 
       const keypointId = ans.keypoint_id;
-      if (!keypointStats[keypointId]) {
-        keypointStats[keypointId] = { total: 0, correct: 0 };
-      }
-      keypointStats[keypointId].total += 1;
-      if (score === ans.marks) {
-        keypointStats[keypointId].correct += 1;
+      if (keypointId) {
+        if (!keypointStats[keypointId]) {
+          keypointStats[keypointId] = { name: ans.keypoint_name || "", total: 0, correct: 0 };
+        }
+        keypointStats[keypointId].total += 1;
+        if (score === ans.marks) {
+          keypointStats[keypointId].correct += 1;
+        }
       }
 
       await connection.execute(
-        `INSERT INTO student_scores (session_id, question_id, score) VALUES (?, ?, ?)`,
+        `REPLACE INTO student_scores (session_id, question_id, score) VALUES (?, ?, ?)`,
         [sessionId, ans.question_id, score]
       );
     }
@@ -110,7 +143,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     const percent = fullScore > 0 ? (totalScore / fullScore) * 100 : 0;
 
+    await connection.execute(
+      `UPDATE exam_sessions SET submitted_at = NOW(), status = 'submitted' WHERE id = ?`,
+      [sessionId]
+    );
+
     await connection.end();
+
     return res.status(200).json({
       totalScore,
       fullScore,
@@ -122,6 +161,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     });
   } catch (err) {
     console.error("❌ 提交考试失败:", err);
-    res.status(500).json({ message: "服务器错误，提交失败" });
+    return res.status(500).json({ message: "服务器错误，提交失败" });
   }
 }

@@ -15,6 +15,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   const { mode, duration, examId, keypointIds, questionCount } = req.body;
+  console.log("📨 Incoming body:", req.body);
+  if (!mode || !duration || (mode === "exam" && !examId) || (mode === "keypoint" && (!Array.isArray(keypointIds) || keypointIds.length === 0))) {
+    console.warn("⚠️ 请求字段不完整:", { mode, duration, examId, keypointIds });
+    return res.status(400).json({ message: "缺少必要字段" });
+  }
 
   const token = req.headers.authorization?.split(" ")[1];
   if (!token) {
