@@ -12,7 +12,9 @@ interface Question {
 
 export default function ExamDoing() {
   const router = useRouter();
-  const { sessionId } = router.query;
+  const sessionId = Array.isArray(router.query.sessionId)
+    ? router.query.sessionId[0]
+    : router.query.sessionId;
 
   const [questions, setQuestions] = useState<Question[]>([]);
   const [answers, setAnswers] = useState<Record<number, string>>({});
@@ -23,6 +25,8 @@ export default function ExamDoing() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
+    setQuestions([]);
+    if (!sessionId) return;
     const fetchSession = async () => {
       const token = localStorage.getItem("token");
       if (!token) {
@@ -37,6 +41,7 @@ export default function ExamDoing() {
           },
         });
 
+        console.log("✅ Loaded questions:", res.data.questions);
         setQuestions(res.data.questions);
         setAnswers(res.data.answers || {});
         setTimeLeft(res.data.remainingTime);
@@ -47,7 +52,7 @@ export default function ExamDoing() {
       }
     };
 
-    if (sessionId) fetchSession();
+    fetchSession();
   }, [sessionId]);
 
   useEffect(() => {
@@ -95,8 +100,8 @@ export default function ExamDoing() {
     const confirm = window.confirm("Are you sure you want to submit? You can't change answers after submitting.");
     if (!confirm) return;
 
-    setIsSubmitting(true); // 显示 loading 状态
-    await saveCurrentAnswer(); // Save before submitting
+    setIsSubmitting(true);
+    await saveCurrentAnswer();
 
     try {
       await axios.post(
@@ -113,12 +118,12 @@ export default function ExamDoing() {
       console.error("❌ Failed to submit exam:", err);
       alert("Failed to submit. Please try again.");
     } finally {
-      setIsSubmitting(false); // 结束 loading
+      setIsSubmitting(false);
     }
   };
 
   return (
-    <div className="p-6">
+    <div className="p-6 pb-40 relative min-h-screen">
       <p className="text-lg text-gray-600 mb-2 flex items-center gap-2">
         <span className="text-base">🧑‍🏫</span> Exam In Progress
       </p>
@@ -148,20 +153,40 @@ export default function ExamDoing() {
                 )}
               </p>
               <p className="text-sm text-gray-500 mt-2">Time spent on this question: {questionTime} seconds</p>
-              {questions[currentIndex].mark > 0 && (
-                <textarea
-                  className="w-full border border-gray-300 p-4 rounded-md shadow focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  style={{ width: "100vw", maxWidth: "100%", minHeight: "120px", boxSizing: "border-box" }}
-                  disabled={isSubmitting}
-                  value={answers[questions[currentIndex].id] || ""}
-                  onChange={(e) => handleAnswerChange(questions[currentIndex].id, e.target.value)}
-                />
-              )}
+              
+              <div className="mt-4 mb-40">
+                {questions[currentIndex].mark > 0 ? (
+                    <textarea
+                    className="w-full border border-gray-300 p-4 rounded-md shadow focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    style={{
+                        width: "100vw",
+                        maxWidth: "100%",
+                        minHeight: "120px",
+                        boxSizing: "border-box",
+                    }}
+                    disabled={isSubmitting}
+                    value={answers[questions[currentIndex].id] || ""}
+                    onChange={(e) => handleAnswerChange(questions[currentIndex].id, e.target.value)}
+                    />
+                ) : (
+                    <div
+                    className="w-full border border-gray-300 p-4 rounded-md shadow text-gray-500 text-sm text-center bg-gray-50"
+                    style={{
+                        width: "100vw",
+                        maxWidth: "100%",
+                        minHeight: "120px",
+                        boxSizing: "border-box",
+                    }}
+                    >
+                    📝 This question does not require an answer.
+                    </div>
+                )}
+              </div>
             </div>
           )}
 
-          {questions.length > 0 && (
-            <div className="mt-4 flex gap-2">
+          <div className="fixed bottom-6 left-0 w-full flex flex-col items-center z-10 shadow-lg bg-white bg-opacity-95">
+            <div className="flex gap-2 mb-2">
               <button
                 disabled={currentIndex === 0}
                 onClick={async () => {
@@ -185,13 +210,11 @@ export default function ExamDoing() {
                 Next
               </button>
             </div>
-          )}
 
-          <div className="mt-6 flex gap-4">
             <button
               onClick={handleSubmitExam}
               disabled={isSubmitting}
-              className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 disabled:opacity-50"
+              className="bg-green-600 text-white px-6 py-3 rounded hover:bg-green-700 disabled:opacity-50"
             >
               {isSubmitting ? "Submitting and marking..." : "📤 Submit Exam"}
             </button>
