@@ -3,8 +3,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import mysql from "mysql2/promise";
 import jwt from "jsonwebtoken";
-import OpenAI from "openai";
-
+import { getGptScore } from "@/lib/gptScoring";
 
 const dbConfig = {
   host: "localhost",
@@ -12,8 +11,6 @@ const dbConfig = {
   password: "",
   database: "exam_system",
 };
-
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
 
 // ✅ 封装插入学习进度函数
 async function saveLearningProgress(
@@ -110,23 +107,20 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
       answeredQuestions++;
 
-      const prompt = `你是一位考试评卷官，请根据以下信息为学生作答评分，满分为 ${ans.marks} 分。
-题目：${ans.question_text}
-参考答案：${ans.correct_answer || "无"}
-评分指南：${ans.guidance || "无"}
-考官报告：${ans.report_text || "无"}
-优秀作答示例：${ans.exemplar_text || "无"}
-学生作答：${ans.answer_text || "无"}
-请直接输出一个数字分数（0-${ans.marks}），不要添加解释：`;
-
       let score = 0;
+      let reason = "";
       try {
-        const gptRes = await openai.chat.completions.create({
-          model: "gpt-3.5-turbo",
-          messages: [{ role: "user", content: prompt }],
+        const result = await getGptScore({
+          questionText: ans.question_text,
+          referenceAnswer: ans.correct_answer,
+          guidance: ans.guidance,
+          report: ans.report_text,
+          exemplar: ans.exemplar_text,
+          studentAnswer: ans.answer_text,
+          marks: ans.marks,
         });
-        const content = gptRes.choices[0]?.message?.content?.trim() || "0";
-        score = Math.min(parseInt(content), ans.marks);
+        score = result.score;
+        reason = result.reason;
       } catch (err) {
         console.error("评分失败:", err);
       }
@@ -138,9 +132,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           question_id: ans.question_id,
           student_answer: ans.answer_text,
           correct_answer: ans.correct_answer,
+          reason,
         });
       }
-
+      console.log("Ts 文件里的Reason:",reason);
       const keypointId = ans.keypoint_id;
       if (keypointId) {
         if (!keypointStats[keypointId]) {
@@ -153,14 +148,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       }
 
       await connection.execute(
-        `REPLACE INTO student_scores (session_id, question_id, score) VALUES (?, ?, ?)`,
-        [sessionId, ans.question_id, score]
+        `REPLACE INTO student_scores (session_id, question_id, score, gpt_reasoning) VALUES (?, ?, ?, ?)`,
+        [sessionId, ans.question_id, score, reason]
       );
 
       await saveLearningProgress(connection, sessionId, userId, ans.question_id, ans.keypoint_id, ans.answer_text, score);
     }
 
-    // 查询当前试卷所有需要作答的题目数（非背景题）
     const [qCountRows]: any = await connection.query(
       `SELECT COUNT(*) AS total FROM exam_session_questions esq
        JOIN question_bank qb ON esq.question_id = qb.id
@@ -168,7 +162,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       [sessionId]
     );
     totalQuestions = qCountRows[0]?.total || 0;
-    
 
     for (const keypointId in keypointStats) {
       const stat = keypointStats[+keypointId];
@@ -188,19 +181,19 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     await connection.end();
 
     const result = {
-        totalScore,
-        fullScore,
-        percent,
-        questionCount: answeredQuestions,
-        totalQuestions,
-        keypointStats,
-        wrongQuestions,
-        suggestedKeypoints,
-      };
-      
-      console.log("📤 返回给前端的数据:", result);
-      
-      return res.status(200).json(result);
+      totalScore,
+      fullScore,
+      percent,
+      questionCount: answeredQuestions,
+      totalQuestions,
+      keypointStats,
+      wrongQuestions,
+      suggestedKeypoints,
+    };
+
+    console.log("📤 返回给前端的数据:", result);
+
+    return res.status(200).json(result);
   } catch (err) {
     console.error("❌ 提交考试失败:", err);
     return res.status(500).json({ message: "服务器错误，提交失败" });

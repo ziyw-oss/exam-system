@@ -9,6 +9,8 @@ interface WrongQuestion {
   question_text: string;
   student_answer: string;
   correct_answer: string;
+  reason: string; // ✅ 新增 GPT 给出的评分解释
+  score: number;   // ✅ 新增字段
 }
 
 interface KeypointStat {
@@ -115,9 +117,21 @@ export default function ExamResultPage() {
               <ul className="space-y-4">
                 {pagedQuestions.map((q) => (
                   <li key={q.question_id} className="bg-red-50 p-4 rounded border border-red-300">
-                    <p className="font-medium mb-2">{q.question_text}</p>
-                    <p className="text-sm text-red-600">Your answer: {q.student_answer || "N/A"}</p>
+                    <p className="font-medium mb-2">
+                      {q.question_text}{" "}
+                      <span style={{ color: "red", fontWeight: "bold" }}>[{q.score}]</span>
+                    </p>
+
+                    <p className="text-sm text-red-600">
+                      Your answer: {q.student_answer || "N/A"}
+                      
+                    </p>
                     <p className="text-sm text-green-700">Correct answer: {q.correct_answer || "N/A"}</p>
+                    {q.reason && (
+                    <p className="text-sm text-gray-700 mt-1 italic border-l-4 border-yellow-400 pl-2 bg-yellow-50 rounded">
+                      🤖 GPT Reason: {q.reason}
+                    </p>
+                    )}
                   </li>
                 ))}
               </ul>

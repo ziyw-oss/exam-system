@@ -37,6 +37,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
        WHERE esq.session_id = ? AND qb.marks IS NOT NULL AND qb.marks > 0`,
       [sessionId]
     );
+
+    const [questionCountRows]: any = await connection.query(
+        `SELECT COUNT(*) AS total
+         FROM exam_session_questions esq
+         JOIN question_bank qb ON esq.question_id = qb.id
+         WHERE esq.session_id = ? AND qb.marks IS NOT NULL AND qb.marks > 0`,
+        [sessionId]
+      );
+
     const fullScore = Number(fullScoreRows[0]?.total || 0);
 
     // 获取学生答题成绩
@@ -49,9 +58,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const totalScore = Number(scoreRows[0]?.totalScore || 0);
     const questionCount = Number(scoreRows[0]?.questionCount || 0);
 
-    // 查询答错题信息
+    // 查询答错题信息（带 reason）
     const [wrongQuestions]: any = await connection.query(
-      `SELECT sa.question_id, sa.answer_text AS student_answer, qa.answer AS correct_answer, qb.text AS question_text
+      `SELECT sa.question_id, sa.answer_text AS student_answer, qa.answer AS correct_answer,
+              qb.text AS question_text, ss.gpt_reasoning AS reason,ss.score AS score
        FROM student_scores ss
        JOIN student_answers sa ON ss.session_id = sa.session_id AND ss.question_id = sa.question_id
        JOIN question_answer qa ON ss.question_id = qa.question_bank_id
@@ -88,7 +98,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       fullScore,
       percent: fullScore > 0 ? (totalScore / fullScore) * 100 : 0,
       questionCount,
-      totalQuestions: fullScoreRows[0]?.total ? parseInt(fullScoreRows[0].total) : 0,
+      totalQuestions: Number(questionCountRows[0]?.total || 0),
       wrongQuestions,
       keypointStats,
     });
