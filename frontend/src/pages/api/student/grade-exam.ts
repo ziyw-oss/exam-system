@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import mysql from "mysql2/promise";
 import jwt from "jsonwebtoken";
-import { Configuration, OpenAIApi } from "openai";
+import OpenAI from "openai";
 
 const dbConfig = {
   host: "localhost",
@@ -10,10 +10,9 @@ const dbConfig = {
   database: "exam_system",
 };
 
-const configuration = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY,
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY!,
 });
-const openai = new OpenAIApi(configuration);
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== "POST") {
@@ -76,13 +75,20 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 优秀作答示例：${a.exemplar_text || "无"}
 学生作答：${a.answer_text}
 请直接输出一个数字分数（0-${a.marks}），不要添加解释：`;
+console.log("📤 GPT评分Prompt:\n", prompt); // ✅ 这句会输出到终端
+console.log(`✅ 题目 ${a.question_id} 得分: ${score} / ${a.marks}`);
 
-        const completion = await openai.createChatCompletion({
-          model: "gpt-3.5-turbo",
-          messages: [{ role: "user", content: prompt }],
+        const completion = await openai.chat.completions.create({
+          model: "gpt-4o",
+          messages: [
+            {
+              role: "user",
+              content: "Hello, GPT!",
+            },
+          ],
         });
-
-        const reply = completion.data.choices[0].message?.content || "0";
+        console.log(completion.choices[0].message.content);
+        const reply = completion.choices[0].message?.content || "0";
         score = parseFloat(reply);
         if (isNaN(score)) score = 0;
         score = Math.min(Math.max(score, 0), a.marks);

@@ -29,7 +29,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   let userId: number;
   try {
     const decoded: any = jwt.verify(token, process.env.JWT_SECRET!);
-    console.log("✅ Token decoded:", decoded);
+    //console.log("✅ Token decoded:", decoded);
     userId = decoded.id;
   } catch (err) {
     console.error("❌ Token 解析失败:", err);

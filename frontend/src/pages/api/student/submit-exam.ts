@@ -96,6 +96,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
       let score = 0;
       try {
+        console.log("📤 GPT评分Prompt:\n", prompt);
         const gptRes = await openai.chat.completions.create({
           model: "gpt-3.5-turbo",
           messages: [{ role: "user", content: prompt }],

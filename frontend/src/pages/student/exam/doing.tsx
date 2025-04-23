@@ -5,11 +5,12 @@ import { useRouter } from "next/router";
 import axios from "axios";
 
 interface Question {
-  id: number;
-  text: string;
-  mark: number;
-}
-
+    id: number;
+    text: string;
+    mark: number;
+    question_type?: string;
+    code_block?: string | null;
+  }
 export default function ExamDoing() {
   const router = useRouter();
   const sessionId = Array.isArray(router.query.sessionId)
@@ -153,7 +154,11 @@ export default function ExamDoing() {
                 )}
               </p>
               <p className="text-sm text-gray-500 mt-2">Time spent on this question: {questionTime} seconds</p>
-              
+              {questions[currentIndex].question_type === "code_block" && questions[currentIndex].code_block && (
+                <pre className="bg-gray-900 text-white p-4 rounded my-4 overflow-x-auto text-sm whitespace-pre-wrap">
+                    <code>{questions[currentIndex].code_block}</code>
+                </pre>
+             )}
               <div className="mt-4 mb-40">
                 {questions[currentIndex].mark > 0 ? (
                     <textarea

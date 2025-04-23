@@ -1,3 +1,5 @@
+// File: /api/student/exam-questions.ts
+
 import type { NextApiRequest, NextApiResponse } from "next";
 import mysql from "mysql2/promise";
 import jwt from "jsonwebtoken";
@@ -46,22 +48,24 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     const session = sessions[0];
 
-    // 查询题目信息并附带学生答案
-    // File: /api/student/exam-questions.ts
+    // 查询题目信息 + 学生答案 + code_block 内容
     const [questions]: any = await connection.query(
-        `SELECT qb.id, qb.text, qb.marks AS mark,
-                (SELECT sa.answer_text 
-                 FROM student_answers sa
-                 WHERE sa.session_id = esq.session_id 
-                   AND sa.question_id = esq.question_id
-                 LIMIT 1) AS answer_text
-         FROM exam_session_questions esq
-         JOIN question_bank qb ON esq.question_id = qb.id
-         WHERE esq.session_id = ?`,
-        [sessionId]
-      );
+      `SELECT qb.id, qb.text, qb.marks AS mark, qb.question_type,
+              qc.code AS code_block,
+              (SELECT sa.answer_text 
+               FROM student_answers sa
+               WHERE sa.session_id = esq.session_id 
+                 AND sa.question_id = esq.question_id
+               LIMIT 1) AS answer_text
+       FROM exam_session_questions esq
+       JOIN question_bank qb ON esq.question_id = qb.id
+       LEFT JOIN question_codeblock qc ON qb.id = qc.question_bank_id
+       WHERE esq.session_id = ?`,
+      [sessionId]
+    );
+
     console.log("🔍 Loaded questions count:", questions.length);
-    // 计算剩余时间（秒）
+
     const startedAt = new Date(session.started_at).getTime();
     const now = Date.now();
     const elapsed = Math.floor((now - startedAt) / 1000);
