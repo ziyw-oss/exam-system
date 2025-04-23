@@ -25,7 +25,7 @@ export default function ExamResultPage() {
     fullScore: number;
     percent: number;
     questionCount: number;
-    totalQuestions: number; // ✅ 新增字段
+    totalQuestions: number;
     wrongQuestions: WrongQuestion[];
     keypointStats: Record<string, KeypointStat>;
   } | null>(null);
@@ -43,6 +43,7 @@ export default function ExamResultPage() {
         const res = await axios.get(`/api/student/exam-result?sessionId=${sessionId}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
+        console.log("📦 接收到考试结果数据:", res.data);
         setData(res.data);
       } catch (err) {
         console.error("Failed to fetch exam result:", err);
@@ -80,17 +81,11 @@ export default function ExamResultPage() {
         <div>
           <h3 className="text-xl font-semibold mb-2">📊 Exam Summary</h3>
           <div className="space-y-1 text-base">
-            <p>Total Score: <span className="font-semibold">{data.totalScore}</span></p>
+            <p>Your Score: <span className="font-semibold">{data.totalScore}</span></p>
             <p>Full Score: <span className="font-semibold">{data.fullScore}</span></p>
             <p>Percentage: <span className="font-semibold">{data.percent.toFixed(1)}%</span></p>
-            <p>
-              Questions Answered:{" "}
-              <span className="font-semibold">{data.questionCount}</span>
-            </p>
-            <p>
-              Questions in Exam:{" "}
-              <span className="font-semibold">{data.totalQuestions}</span>
-            </p>
+            <p>You have answered: <span className="font-semibold">{data.questionCount}</span></p>
+            <p>Questions in Exam: <span className="font-semibold">{data.totalQuestions}</span></p>
           </div>
         </div>
 

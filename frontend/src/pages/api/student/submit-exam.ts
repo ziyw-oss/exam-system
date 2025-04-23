@@ -5,6 +5,7 @@ import mysql from "mysql2/promise";
 import jwt from "jsonwebtoken";
 import OpenAI from "openai";
 
+
 const dbConfig = {
   host: "localhost",
   user: "root",
@@ -70,7 +71,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
        WHERE esq.session_id = ? AND qb.marks IS NOT NULL AND qb.marks > 0`,
       [sessionId]
     );
-    const fullScore = markSumRows[0]?.total || 0;
+    const fullScore = Number(markSumRows[0]?.total) || 0;
+    console.log("✅ 试卷总分 fullScore:", fullScore);
 
     const [answers]: any = await connection.query(
       `SELECT
@@ -166,6 +168,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       [sessionId]
     );
     totalQuestions = qCountRows[0]?.total || 0;
+    
 
     for (const keypointId in keypointStats) {
       const stat = keypointStats[+keypointId];
@@ -184,16 +187,20 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     await connection.end();
 
-    return res.status(200).json({
-      totalScore,
-      fullScore,
-      percent,
-      questionCount: answeredQuestions,
-      totalQuestions,
-      keypointStats,
-      wrongQuestions,
-      suggestedKeypoints,
-    });
+    const result = {
+        totalScore,
+        fullScore,
+        percent,
+        questionCount: answeredQuestions,
+        totalQuestions,
+        keypointStats,
+        wrongQuestions,
+        suggestedKeypoints,
+      };
+      
+      console.log("📤 返回给前端的数据:", result);
+      
+      return res.status(200).json(result);
   } catch (err) {
     console.error("❌ 提交考试失败:", err);
     return res.status(500).json({ message: "服务器错误，提交失败" });
