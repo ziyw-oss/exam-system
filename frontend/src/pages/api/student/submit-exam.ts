@@ -12,15 +12,32 @@ const dbConfig = {
   database: "exam_system",
 };
 
+const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
+
+// ✅ 封装插入学习进度函数
+async function saveLearningProgress(
+  connection: mysql.Connection,
+  sessionId: number,
+  userId: number,
+  questionId: number,
+  keypointId: number | null,
+  answerText: string,
+  score: number
+) {
+  await connection.execute(
+    `REPLACE INTO learning_progress (session_id, user_id, question_id, keypoint_id, answer_text, score)
+     VALUES (?, ?, ?, ?, ?, ?)`,
+    [sessionId, userId, questionId, keypointId, answerText, score]
+  );
+}
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Method not allowed" });
   }
 
   const token = req.headers.authorization?.split(" ")[1];
-  if (!token) {
-    return res.status(401).json({ message: "未提供 token" });
-  }
+  if (!token) return res.status(401).json({ message: "未提供 token" });
 
   let userId: number;
   try {
@@ -31,9 +48,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   const { sessionId } = req.body;
-  if (!sessionId) {
-    return res.status(400).json({ message: "缺少 sessionId" });
-  }
+  if (!sessionId) return res.status(400).json({ message: "缺少 sessionId" });
 
   try {
     const connection = await mysql.createConnection(dbConfig);
@@ -46,6 +61,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       await connection.end();
       return res.status(403).json({ message: "无权访问该考试或考试不存在" });
     }
+
+    // ✅ 正确计算整张试卷的满分
+    const [markSumRows]: any = await connection.query(
+      `SELECT SUM(qb.marks) AS total
+       FROM exam_session_questions esq
+       JOIN question_bank qb ON esq.question_id = qb.id
+       WHERE esq.session_id = ? AND qb.marks IS NOT NULL AND qb.marks > 0`,
+      [sessionId]
+    );
+    const fullScore = markSumRows[0]?.total || 0;
 
     const [answers]: any = await connection.query(
       `SELECT
@@ -70,20 +95,18 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       [sessionId]
     );
 
-    const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
-
     let totalScore = 0;
-    let fullScore = 0;
+    let answeredQuestions = 0;
+    let totalQuestions = 0;
+
     const wrongQuestions = [];
     const keypointStats: Record<number, { name: string; total: number; correct: number; correctRate?: number }> = {};
     const suggestedKeypoints: number[] = [];
 
     for (const ans of answers) {
-      if (!ans.answer_text?.trim() || !ans.marks || ans.marks <= 0) {
-        continue;
-      }
+      if (!ans.answer_text?.trim() || !ans.marks || ans.marks <= 0) continue;
 
-      fullScore += ans.marks;
+      answeredQuestions++;
 
       const prompt = `你是一位考试评卷官，请根据以下信息为学生作答评分，满分为 ${ans.marks} 分。
 题目：${ans.question_text}
@@ -96,7 +119,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
       let score = 0;
       try {
-        console.log("📤 GPT评分Prompt:\n", prompt);
         const gptRes = await openai.chat.completions.create({
           model: "gpt-3.5-turbo",
           messages: [{ role: "user", content: prompt }],
@@ -132,7 +154,18 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         `REPLACE INTO student_scores (session_id, question_id, score) VALUES (?, ?, ?)`,
         [sessionId, ans.question_id, score]
       );
+
+      await saveLearningProgress(connection, sessionId, userId, ans.question_id, ans.keypoint_id, ans.answer_text, score);
     }
+
+    // 查询当前试卷所有需要作答的题目数（非背景题）
+    const [qCountRows]: any = await connection.query(
+      `SELECT COUNT(*) AS total FROM exam_session_questions esq
+       JOIN question_bank qb ON esq.question_id = qb.id
+       WHERE esq.session_id = ? AND qb.marks IS NOT NULL AND qb.marks > 0`,
+      [sessionId]
+    );
+    totalQuestions = qCountRows[0]?.total || 0;
 
     for (const keypointId in keypointStats) {
       const stat = keypointStats[+keypointId];
@@ -155,7 +188,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       totalScore,
       fullScore,
       percent,
-      questionCount: answers.length,
+      questionCount: answeredQuestions,
+      totalQuestions,
       keypointStats,
       wrongQuestions,
       suggestedKeypoints,

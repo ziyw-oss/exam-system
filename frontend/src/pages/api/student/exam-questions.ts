@@ -65,6 +65,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     );
 
     console.log("🔍 Loaded questions count:", questions.length);
+    
 
     const startedAt = new Date(session.started_at).getTime();
     const now = Date.now();

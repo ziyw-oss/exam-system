@@ -62,8 +62,16 @@ export default function ExamDoing() {
     }, 1000);
     return () => clearInterval(timer);
   }, [currentIndex]);
+  
+  const answerableQuestions = questions.filter((q) => q.mark > 0);
+  const answerableIndexes = questions
+  .map((q, i) => (q.mark > 0 ? i : -1))
+  .filter(i => i !== -1);
 
-  const saveCurrentAnswer = async () => {
+  const currentAnswerablePosition =
+    answerableIndexes.findIndex(i => i === currentIndex) + 1;
+  
+    const saveCurrentAnswer = async () => {
     const token = localStorage.getItem("token");
     if (!token || !sessionId) return;
 
@@ -134,7 +142,11 @@ export default function ExamDoing() {
         <>
           <p className="mb-2 text-gray-600">⏱️ Time left: {Math.ceil(timeLeft / 60)} minutes</p>
           <p className="text-md text-gray-800 mb-2">
-            📌 {questions.length > 0 ? `Question ${currentIndex + 1} of ${questions.length}` : "No questions available."}
+            {questions[currentIndex]?.mark > 0 ? (
+                <>📌 Question {currentAnswerablePosition} of {answerableIndexes.length}</>
+            ) : (
+                <></>
+            )}
           </p>
 
           {questions.length === 0 && (
@@ -183,7 +195,7 @@ export default function ExamDoing() {
                         boxSizing: "border-box",
                     }}
                     >
-                    📝 This question does not require an answer.
+                    
                     </div>
                 )}
               </div>

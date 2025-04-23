@@ -25,6 +25,7 @@ export default function ExamResultPage() {
     fullScore: number;
     percent: number;
     questionCount: number;
+    totalQuestions: number; // ✅ 新增字段
     wrongQuestions: WrongQuestion[];
     keypointStats: Record<string, KeypointStat>;
   } | null>(null);
@@ -55,7 +56,7 @@ export default function ExamResultPage() {
     const updatePageSize = () => {
       if (containerRef.current) {
         const height = containerRef.current.clientHeight;
-        const questionHeight = 200; // 每题大约 200px
+        const questionHeight = 200;
         const count = Math.floor(height / questionHeight);
         setQuestionsPerPage(Math.max(count, 1));
       }
@@ -82,7 +83,14 @@ export default function ExamResultPage() {
             <p>Total Score: <span className="font-semibold">{data.totalScore}</span></p>
             <p>Full Score: <span className="font-semibold">{data.fullScore}</span></p>
             <p>Percentage: <span className="font-semibold">{data.percent.toFixed(1)}%</span></p>
-            <p>Total Questions: <span className="font-semibold">{data.questionCount}</span></p>
+            <p>
+              Questions Answered:{" "}
+              <span className="font-semibold">{data.questionCount}</span>
+            </p>
+            <p>
+              Questions in Exam:{" "}
+              <span className="font-semibold">{data.totalQuestions}</span>
+            </p>
           </div>
         </div>
 
