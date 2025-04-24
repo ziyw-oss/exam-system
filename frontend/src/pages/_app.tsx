@@ -4,7 +4,7 @@ import "../styles/globals.css";
 import '@fontsource/nunito/400.css';
 import '@fontsource/nunito/700.css';
 
-console.log("🚀 _app.tsx 正在运行！");
+//console.log("🚀 _app.tsx 正在运行！");
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (

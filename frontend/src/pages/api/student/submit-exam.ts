@@ -4,6 +4,24 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import mysql from "mysql2/promise";
 import jwt from "jsonwebtoken";
 import { getGptScore } from "@/lib/gptScoring";
+import fs from "fs";
+import path from "path";
+
+function logGptEvaluation(promptData: any, result: { score: number; reason: string }) {
+    const logDir = path.resolve(process.cwd(), "logs");
+    if (!fs.existsSync(logDir)) {
+      fs.mkdirSync(logDir);
+    }
+  
+    const logPath = path.join(logDir, "gpt_evaluations.log");
+    const logEntry = {
+      timestamp: new Date().toISOString(),
+      prompt: promptData,
+      result,
+    };
+  
+    fs.appendFileSync(logPath, JSON.stringify(logEntry, null, 2) + ",\n", "utf-8");
+  }
 
 const dbConfig = {
   host: "localhost",
@@ -119,6 +137,18 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           studentAnswer: ans.answer_text,
           marks: ans.marks,
         });
+        const promptData = {
+            questionText: ans.question_text,
+            referenceAnswer: ans.correct_answer,
+            guidance: ans.guidance,
+            report: ans.report_text,
+            exemplar: ans.exemplar_text,
+            studentAnswer: ans.answer_text,
+            marks: ans.marks,
+          };
+          
+        logGptEvaluation(promptData, { score, reason });
+        
         score = result.score;
         reason = result.reason;
       } catch (err) {
@@ -191,7 +221,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       suggestedKeypoints,
     };
 
-    console.log("📤 返回给前端的数据:", result);
+    //console.log("📤 返回给前端的数据:", result);
 
     return res.status(200).json(result);
   } catch (err) {

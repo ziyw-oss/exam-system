@@ -3,6 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import { formatToMarkdown } from "@/lib/formatToMarkdown";
 
 interface WrongQuestion {
   question_id: number;
@@ -126,7 +129,18 @@ export default function ExamResultPage() {
                       Your answer: {q.student_answer || "N/A"}
                       
                     </p>
-                    <p className="text-sm text-green-700">Correct answer: {q.correct_answer || "N/A"}</p>
+                    
+                    <div className="text-sm text-green-700">
+                      <div className="text-base font-semibold mb-1">Correct answer:</div>
+                      
+                      <ReactMarkdown
+                        remarkPlugins={[remarkGfm]}
+                      >
+                        {formatToMarkdown(q.correct_answer)}
+                      </ReactMarkdown>
+
+                    </div>
+
                     {q.reason && (
                     <p className="text-sm text-gray-700 mt-1 italic border-l-4 border-yellow-400 pl-2 bg-yellow-50 rounded">
                       🤖 GPT Reason: {q.reason}

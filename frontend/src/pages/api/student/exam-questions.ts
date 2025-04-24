@@ -50,20 +50,26 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     // 查询题目信息 + 学生答案 + code_block 内容
     const [questions]: any = await connection.query(
-      `SELECT qb.id, qb.text, qb.marks AS mark, qb.question_type,
-              qc.code AS code_block,
-              (SELECT sa.answer_text 
-               FROM student_answers sa
-               WHERE sa.session_id = esq.session_id 
-                 AND sa.question_id = esq.question_id
-               LIMIT 1) AS answer_text
-       FROM exam_session_questions esq
-       JOIN question_bank qb ON esq.question_id = qb.id
-       LEFT JOIN question_codeblock qc ON qb.id = qc.question_bank_id
-       WHERE esq.session_id = ?`,
-      [sessionId]
-    );
-
+        `SELECT 
+            qb.id AS question_bank_id,
+            qb.text AS question_text,
+            qb.marks AS mark,
+            qb.question_type,
+            qc.code AS code_block,
+            (
+              SELECT sa.answer_text 
+              FROM student_answers sa
+              WHERE sa.session_id = esq.session_id 
+                AND sa.question_id = esq.question_id
+              LIMIT 1
+            ) AS student_answer
+         FROM exam_session_questions esq
+         JOIN question_bank qb ON esq.question_id = qb.id
+         LEFT JOIN question_codeblock qc ON qb.id = qc.question_bank_id
+         WHERE esq.session_id = ?`,
+        [sessionId]
+      );
+      
     console.log("🔍 Loaded questions count:", questions.length);
     
 
@@ -75,9 +81,18 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     await connection.end();
 
+    // after loading questions...
+    const answers: Record<number, string> = {};
+    questions.forEach((q: any) => {
+    if (q.student_answer) {
+        answers[q.question_bank_id] = q.student_answer;
+    }
+    });
+
     return res.status(200).json({
-      questions,
-      remainingTime,
+    questions,
+    answers,
+    remainingTime,
     });
   } catch (err) {
     console.error("❌ 查询 session 失败:", err);

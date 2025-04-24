@@ -1,0 +1,800 @@
+{
+  "timestamp": "2025-04-23T21:24:11.391Z",
+  "prompt": {
+    "questionText": "Describe two factors that affect the performance of the CPU. 1 ................................................................................................................................................ 2 ................................................................................................................................................ [4]",
+    "referenceAnswer": "• Clock Speed …\n• … The speed at which the fetch decode execute\ncycle is completed/ the speed a single core can\nexecute instructions\n• Number of cores/ independent processing units\n…\n• …that can fetch decode execute at the same\ntime\n• Cache size…\n• … memory that contains recently/frequently\nused instructions/data\n• …memory that has a faster R/W speed than\nRAM\n• …memory that is closer to/onboard the CPU",
+    "guidance": "One mark for stating the factor, mark for expanding the\nfactor\n- Accept cycles for “FDE Cycles”",
+    "report": "Most candidates were able to identify two factors that could affect the performance of the CPU, but many were not given all 4 marks as they did not fully describe why each factor would affect the performance. See Exemplar 1, which was given full marks.",
+    "exemplar": "The candidate gives two valid factors that would affect performance and then explains why each of the two factors would affect performance. They use appropriate terminology in their response.",
+    "studentAnswer": "Number of cores/ independent processing units",
+    "marks": 4
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:07:46.424Z",
+  "prompt": {
+    "questionText": "Describe two factors that affect the performance of the CPU. 1 ................................................................................................................................................ 2 ................................................................................................................................................ [4]",
+    "referenceAnswer": "• Clock Speed …\n• … The speed at which the fetch decode execute\ncycle is completed/ the speed a single core can\nexecute instructions\n• Number of cores/ independent processing units\n…\n• …that can fetch decode execute at the same\ntime\n• Cache size…\n• … memory that contains recently/frequently\nused instructions/data\n• …memory that has a faster R/W speed than\nRAM\n• …memory that is closer to/onboard the CPU",
+    "guidance": "One mark for stating the factor, mark for expanding the\nfactor\n- Accept cycles for “FDE Cycles”",
+    "report": "Most candidates were able to identify two factors that could affect the performance of the CPU, but many were not given all 4 marks as they did not fully describe why each factor would affect the performance. See Exemplar 1, which was given full marks.",
+    "exemplar": "The candidate gives two valid factors that would affect performance and then explains why each of the two factors would affect performance. They use appropriate terminology in their response.",
+    "studentAnswer": "• Clock Speed …\n• … The speed at which the fetch decode execute\ncycle is completed/ the speed a single core can\nexecute instructions\n…that can fetch decode execute at the same\ntime\n• Cache size…\n• … memory that contains recently/frequently\nused instructions/data\n• …memory that has a faster R/W speed than\nRAM\n• …memory that is closer to/onboard the CPU",
+    "marks": 4
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:07:47.726Z",
+  "prompt": {
+    "questionText": "An important design consideration is whether OCRSystems use a CISC processor type or a RISC processor type. Describe one difference between a CISC processor and a RISC processor. .............................................................................................................................................. [2]",
+    "referenceAnswer": "• CISC has a larger instruction set\n• RISC has a smaller instruction set\n• CISC is difficult to pipeline\n• RISC is easier to pipeline\n• CISC tends to have more addressing modes\n• RISC tends to have fewer addressing modes\n• CISC instructions may take multiple clock\ncycles to execute\n• RISC instructions take one clock cycle to\nexecute\n• CISC has complex circuitry/more transistors.\n• RISC has less complex/simple circuitry\n• CISC uses less RAM\n• RISC uses more RAM",
+    "guidance": "Accept any other valid points\nMark in pairs\n",
+    "report": "This question was generally answered well with many candidates describing the number of clock cycles required to execute instructions for RISC and CISC. Some candidates were not given the marks because they did not use the correct terminology.",
+    "exemplar": "",
+    "studentAnswer": "• CISC has a larger instruction set\n• RISC has a smaller instruction set\n• CISC is difficult to pipeline\n• RISC is easier to pipeline",
+    "marks": 2
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:07:48.944Z",
+  "prompt": {
+    "questionText": "OCRSystems are considering using parallel processing in the computer system that will be used for video rendering. Describe how parallel processing would increase the performance of this computer system. .............................................................................................................................................. [3]",
+    "referenceAnswer": "• Parallel processing will allow multiple separate\njobs/instructions/FDE cycles to run concurrently.\n• Longer rendering jobs can be split, shortening\nthe overall time taken.\n• Different CPUs/cores can tackle different\nframes/sections/components of the video\nsimultaneously.",
+    "guidance": "",
+    "report": "To achieve all 3 marks for this question, candidates needed to describe what parallel processing is, and then be clear as to how this would affect the computer system in the question. Many candidates were not given all the available marks as they did not make clear links between parallel processing and the scenario.",
+    "exemplar": "",
+    "studentAnswer": "• CISC has complex circuitry/more transistors.\n• RISC has less complex/simple circuitry\n• CISC uses less RAM\n• RISC uses more RAM",
+    "marks": 3
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:07:50.142Z",
+  "prompt": {
+    "questionText": "The computer system will contain several input and output devices. Explain the role of device drivers when using input and output devices on a computer system. .............................................................................................................................................. [2]",
+    "referenceAnswer": "• A piece of software which allows\nhardware/device to communicate…\n• …with the operating system",
+    "guidance": "",
+    "report": "This question was generally answered well. Some candidates were not given the second mark as they did not make reference to the operating system.",
+    "exemplar": "",
+    "studentAnswer": " Parallel processing will allow multiple separate\njobs/instructions/FDE cycles to run concurrently.\n• Longer rendering jobs can be split, shortening\nthe overall time taken.\n• Different CPUs/cores can tackle different\nframes/sections/components of the video\nsimultaneously.",
+    "marks": 2
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:07:51.165Z",
+  "prompt": {
+    "questionText": "The computer system will contain several input and output devices. Explain the role of device drivers when using input and output devices on a computer system. .............................................................................................................................................. [2]",
+    "referenceAnswer": "• A piece of software which allows\nhardware/device to communicate…\n• …with the operating system",
+    "guidance": "",
+    "report": "This question was generally answered well. Some candidates were not given the second mark as they did not make reference to the operating system.",
+    "exemplar": "",
+    "studentAnswer": " Parallel processing will allow multiple separate\njobs/instructions/FDE cycles to run concurrently.\n• Longer rendering jobs can be split, shortening\nthe overall time taken.\n• Different CPUs/cores can tackle different\nframes/sections/components of the video\nsimultaneously.",
+    "marks": 2
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:07:52.209Z",
+  "prompt": {
+    "questionText": "(i) State two different output devices that could be used when editing the videos. 1 ........................................................................................................................................ 2 ........................................................................................................................................",
+    "referenceAnswer": "• Monitor\n• Speakers//Headphones",
+    "guidance": "Must be output devices.\nMust be suitable for video editing.",
+    "report": "Many candidates answered this question correctly, with most selecting a monitor/screen and headphones/speakers which were both valid responses.",
+    "exemplar": "",
+    "studentAnswer": " A piece of software which allows\nhardware/device to communicate…\n•\n…with the operating system",
+    "marks": 2
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:07:53.475Z",
+  "prompt": {
+    "questionText": "(ii) * A storage device is used to store the individual video elements while they are being captured in different locations and during the video editing process. Discuss the suitability of a flash storage device and a magnetic storage device for storing the different video elements while they are being collected and edited. You should refer to the following in your answer: • the benefits of each type of storage • the drawbacks of each type of storage • the suitability of each type of storage. ......................................................................................................................................",
+    "referenceAnswer": "Mark Band 3–High Level\n(7-9 marks)\nThe candidate will provide a range of accurate benefits and\ndrawbacks of both magnetic and flash devices.\nThe candidate is able to apply their knowledge and\nunderstanding directly and consistently to the context provided.\nEvidence/examples will be explicitly relevant to the explanation.\nThe candidate will come to a clear conclusion that must be\njustified by their comments\nThere is a well-developed line of reasoning which is clear and\nlogically structured. The information presented is relevant and\nsubstantiated.\nMark Band 2-Mid Level\n(4-6 marks)\nThe candidate will provide drawbacks or benefits about both\nmagnetic and flash methods. These will be for the most part\nrelevant. The candidate is able to apply their knowledge and\nunderstanding directly to the context provided although one or\ntwo opportunities are missed.\nEvidence/examples are for the most part implicitly relevant to\nthe explanation.\nThe candidate will attempt to come to a conclusion, although it\nmay not be fully justified by their answer,\nThere is a line of reasoning presented with some structure.\nThe information presented is in the most part relevant and\nsupported by some evidence.\nMark Band 1-Low Level\n(1-3 marks)\nThe candidate has provided some drawbacks or benefits of\nmagnetic or flash methods. The material is basic and contains\nsome inaccuracies.\nThe candidate makes a limited attempt to apply acquired\nknowledge and understanding to the context provided.\nThe candidate provides nothing more than an unsupported\nassertion.\nThe information is basic and communicated in an unstructured\nway. The information is supported by limited evidence and the\nrelationship to the evidence may not be clear.\n0 marks\nNo attempt to answer the question or response is not worthy of\ncredit.",
+    "guidance": "AO1\nMagnetic Benefits:\n• Lower price per GB\n• As standard comes in high capacity\nMagnetic Drawbacks:\n• Lower R/W speed\n• Higher power consumption\n• Moving parts /less durable\nFlash Benefits:\n• Higher R/W speed\n• No moving parts/more durable\n• Lower power consumption\n• Can have a higher capacity.\nFlash Drawbacks:\n• Higher cost per GB\n• At higher capacities prices rise exponentially.\nAO2:\nSuitability of Magnetic:\n• Video files are very large, benefiting magnetics low cost\nper GB\n• Can be used to archive the different video elements after\nit’s been rendered\n• Could possibly get damaged while being transported\nbetween the different filming sites\n• Slow R/W speeds may take it longer to load into the\nsoftware\nSuitability of flash:\n• Very fast R/W speeds therefore reducing the amount of\nloading time during the editing process/giving smoother\nplayback\n• If money is not a barrier, flash can be bought in sufficient\ncapacities for videos.\nAO3:\nCandidates can conclude either method, but to score in the top\nMB must have a clear line of reasoning to justify their choice.",
+    "report": "Candidates were assessed on the quality of their extended response in this question. Most candidates understood the basic differences between flash storage and magnetic storage devices, but did not make clear links to the scenario. Mid-level responses were common, with few candidates giving a balanced discussion and a conclusion with suitable justifications. Assessment for learning Questions with the command word ‘discuss’ require candidates to give a balanced discussion and provided a suitable conclusion which justifies their comments. Opportunities to practise these questions will support candidates to do better on these style questions.",
+    "exemplar": "",
+    "studentAnswer": "• Monitor\n• Speakers//Headphones",
+    "marks": 9
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:07:55.223Z",
+  "prompt": {
+    "questionText": "(ii) * A storage device is used to store the individual video elements while they are being captured in different locations and during the video editing process. Discuss the suitability of a flash storage device and a magnetic storage device for storing the different video elements while they are being collected and edited. You should refer to the following in your answer: • the benefits of each type of storage • the drawbacks of each type of storage • the suitability of each type of storage. ......................................................................................................................................",
+    "referenceAnswer": "Mark Band 3–High Level\n(7-9 marks)\nThe candidate will provide a range of accurate benefits and\ndrawbacks of both magnetic and flash devices.\nThe candidate is able to apply their knowledge and\nunderstanding directly and consistently to the context provided.\nEvidence/examples will be explicitly relevant to the explanation.\nThe candidate will come to a clear conclusion that must be\njustified by their comments\nThere is a well-developed line of reasoning which is clear and\nlogically structured. The information presented is relevant and\nsubstantiated.\nMark Band 2-Mid Level\n(4-6 marks)\nThe candidate will provide drawbacks or benefits about both\nmagnetic and flash methods. These will be for the most part\nrelevant. The candidate is able to apply their knowledge and\nunderstanding directly to the context provided although one or\ntwo opportunities are missed.\nEvidence/examples are for the most part implicitly relevant to\nthe explanation.\nThe candidate will attempt to come to a conclusion, although it\nmay not be fully justified by their answer,\nThere is a line of reasoning presented with some structure.\nThe information presented is in the most part relevant and\nsupported by some evidence.\nMark Band 1-Low Level\n(1-3 marks)\nThe candidate has provided some drawbacks or benefits of\nmagnetic or flash methods. The material is basic and contains\nsome inaccuracies.\nThe candidate makes a limited attempt to apply acquired\nknowledge and understanding to the context provided.\nThe candidate provides nothing more than an unsupported\nassertion.\nThe information is basic and communicated in an unstructured\nway. The information is supported by limited evidence and the\nrelationship to the evidence may not be clear.\n0 marks\nNo attempt to answer the question or response is not worthy of\ncredit.",
+    "guidance": "AO1\nMagnetic Benefits:\n• Lower price per GB\n• As standard comes in high capacity\nMagnetic Drawbacks:\n• Lower R/W speed\n• Higher power consumption\n• Moving parts /less durable\nFlash Benefits:\n• Higher R/W speed\n• No moving parts/more durable\n• Lower power consumption\n• Can have a higher capacity.\nFlash Drawbacks:\n• Higher cost per GB\n• At higher capacities prices rise exponentially.\nAO2:\nSuitability of Magnetic:\n• Video files are very large, benefiting magnetics low cost\nper GB\n• Can be used to archive the different video elements after\nit’s been rendered\n• Could possibly get damaged while being transported\nbetween the different filming sites\n• Slow R/W speeds may take it longer to load into the\nsoftware\nSuitability of flash:\n• Very fast R/W speeds therefore reducing the amount of\nloading time during the editing process/giving smoother\nplayback\n• If money is not a barrier, flash can be bought in sufficient\ncapacities for videos.\nAO3:\nCandidates can conclude either method, but to score in the top\nMB must have a clear line of reasoning to justify their choice.",
+    "report": "Candidates were assessed on the quality of their extended response in this question. Most candidates understood the basic differences between flash storage and magnetic storage devices, but did not make clear links to the scenario. Mid-level responses were common, with few candidates giving a balanced discussion and a conclusion with suitable justifications. Assessment for learning Questions with the command word ‘discuss’ require candidates to give a balanced discussion and provided a suitable conclusion which justifies their comments. Opportunities to practise these questions will support candidates to do better on these style questions.",
+    "exemplar": "",
+    "studentAnswer": "• Monitor\n• Speakers//Headphones",
+    "marks": 9
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:07:56.198Z",
+  "prompt": {
+    "questionText": "(i) Tick one box that describes how a queue operates. Last In First Out First In First Out",
+    "referenceAnswer": "☑ First In First Out",
+    "guidance": "",
+    "report": "Most candidates correctly identified that a queue is a ‘First in First Out’ data structure.",
+    "exemplar": "",
+    "studentAnswer": "First In First Out",
+    "marks": 1
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:07:57.362Z",
+  "prompt": {
+    "questionText": "(ii) The figure below shows a queue data structure that contains a list of names. Alex is at the front of the queue. Alex Kofi Ben Sundip Tom The operations that can be used on the queue are: • enqueue() – This will add data that is passed in as a parameter to the queue. • dequeue() – This will return the first element in the queue. Show the contents of the queue after these operations have been performed: enqueue(\"Charlie\") dequeue() enqueue(\"Ling\") dequeue() enqueue(\"Sara\")",
+    "referenceAnswer": "Ben Sundip Tom Charlie Ling Sara\n1 Mark: Adding, Charlie, Ling and Sara in correct order\n1 Mark: Exclusively removing Alex and Kofi.",
+    "guidance": "Accept:\nBen Sundip Tom Charlie Ling Sara",
+    "report": "This question was generally answered well with most candidates achieving both marks. Some candidates did not correctly dequeue from the front of the queue, or enqueue to the rear.",
+    "exemplar": "",
+    "studentAnswer": "Ben Sundip Tom Charlie Ling Sara",
+    "marks": 2
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:07:58.465Z",
+  "prompt": {
+    "questionText": "(i) Complete the pseudocode function for the pop() operation.",
+    "referenceAnswer": "function pop()\nif top == 0 then\nreturn -1\nelse\nitem = items[top]\ntop = top - 1\nreturn item\nendif\nend function",
+    "guidance": "",
+    "report": "Many candidates were given full marks for this question, although some did not correctly return ‘item’ and incorrectly stated ‘items’ would be returned.",
+    "exemplar": "",
+    "studentAnswer": "function pop()\nif top == 0 then\nreturn -1\nelse\nitem = items[top]\ntop = top - 1\nreturn item\nendif\nend function",
+    "marks": 4
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:08:00.201Z",
+  "prompt": {
+    "questionText": "(ii) A function called reverse uses a stack called theStack to reverse data that is passed in as a parameter called name. For example, the name “Jack” would be returned as “kcaJ” by the function. theStack uses these operations which are already defined as global scope in the program: • push() – This will add data that is passed in as a parameter to the stack. • pop() – This will remove and return the item on top of the stack. Write the function reverse so that it: • accepts the name as a parameter • uses push() to add each character in the name to theStack separately • uses pop() to return each character from theStack and add it to a variable called reverseName • outputs the variable reverseName once all characters have been popped from theStack. You should write your function using pseudocode or program code. ......................................................................................................................................",
+    "referenceAnswer": "• Correctly declaring the function reverse to include\npassing in name as a parameter\n• Correct logic to calculate the number of pushes\nrequired\n• Correct use of a loop to push all characters onto the\nstack separately\n• Creating a local variable reverseName to hold the\nreversed string\n• Correct use of a loop to pop all characters from the\nstack (in the reverse order)\n• Correct logic to add each popped character to the\nreverseName variable\n• Correctly returning the reverseName variable",
+    "guidance": "Example solution\nfunction reverse(name)\nreverseName = \"\"\nfor nameCount = 0 to name.Length-1\ntheStack.push(name[nameCount])\nnext nameCount\nfor nameCount = 0 to name.Length-1\nreverseName = reverseName + theStack.pop()\nnext nameCount\nreturn reverseName\nend function\nGive full marks for alternative solutions that would work fully.\nAllow FT for any duplicate identifiers named incorrectly or\nusing the incorrect case",
+    "report": "Although some candidates answered this question well, others were only given 1 or 2 of the available 7 marks. Many candidates that lost marks did not push and/or pop characters correctly, and many did not return a value for the final mark. Candidates should also be reminded that the correct spelling and case of identifiers are required in questions of this type. Some candidates added spaces in identifier names or used a different case to the identifiers stated in the question and therefore, were not given marks. Assessment for learning Candidates need to understand the importance of maintaining the spelling, case and use of spaces etc in identifiers in questions which ask for functions to be written.",
+    "exemplar": "",
+    "studentAnswer": "Correctly declaring the function reverse to include\npassing in name as a parameter\n• Correct logic to calculate the number of pushes\nrequired\n• Correct use of a loop to push all characters onto the\nstack separately\n• Creating a local variable reverseName to hold the\nreversed string\n• Correct use of a loop to pop all characters from the\nstack (in the reverse order)\n• Correct logic to add each ",
+    "marks": 7
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:08:01.787Z",
+  "prompt": {
+    "questionText": "(ii) A function called reverse uses a stack called theStack to reverse data that is passed in as a parameter called name. For example, the name “Jack” would be returned as “kcaJ” by the function. theStack uses these operations which are already defined as global scope in the program: • push() – This will add data that is passed in as a parameter to the stack. • pop() – This will remove and return the item on top of the stack. Write the function reverse so that it: • accepts the name as a parameter • uses push() to add each character in the name to theStack separately • uses pop() to return each character from theStack and add it to a variable called reverseName • outputs the variable reverseName once all characters have been popped from theStack. You should write your function using pseudocode or program code. ......................................................................................................................................",
+    "referenceAnswer": "• Correctly declaring the function reverse to include\npassing in name as a parameter\n• Correct logic to calculate the number of pushes\nrequired\n• Correct use of a loop to push all characters onto the\nstack separately\n• Creating a local variable reverseName to hold the\nreversed string\n• Correct use of a loop to pop all characters from the\nstack (in the reverse order)\n• Correct logic to add each popped character to the\nreverseName variable\n• Correctly returning the reverseName variable",
+    "guidance": "Example solution\nfunction reverse(name)\nreverseName = \"\"\nfor nameCount = 0 to name.Length-1\ntheStack.push(name[nameCount])\nnext nameCount\nfor nameCount = 0 to name.Length-1\nreverseName = reverseName + theStack.pop()\nnext nameCount\nreturn reverseName\nend function\nGive full marks for alternative solutions that would work fully.\nAllow FT for any duplicate identifiers named incorrectly or\nusing the incorrect case",
+    "report": "Although some candidates answered this question well, others were only given 1 or 2 of the available 7 marks. Many candidates that lost marks did not push and/or pop characters correctly, and many did not return a value for the final mark. Candidates should also be reminded that the correct spelling and case of identifiers are required in questions of this type. Some candidates added spaces in identifier names or used a different case to the identifiers stated in the question and therefore, were not given marks. Assessment for learning Candidates need to understand the importance of maintaining the spelling, case and use of spaces etc in identifiers in questions which ask for functions to be written.",
+    "exemplar": "",
+    "studentAnswer": "Correctly declaring the function reverse to include\npassing in name as a parameter\n• Correct logic to calculate the number of pushes\nrequired\n• Correct use of a loop to push all characters onto the\nstack separately\n• Creating a local variable reverseName to hold the\nreversed string\n• Correct use of a loop to pop all characters from the\nstack (in the reverse order)\n• Correct logic to add each ",
+    "marks": 7
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:08:04.279Z",
+  "prompt": {
+    "questionText": "(ii) A function called reverse uses a stack called theStack to reverse data that is passed in as a parameter called name. For example, the name “Jack” would be returned as “kcaJ” by the function. theStack uses these operations which are already defined as global scope in the program: • push() – This will add data that is passed in as a parameter to the stack. • pop() – This will remove and return the item on top of the stack. Write the function reverse so that it: • accepts the name as a parameter • uses push() to add each character in the name to theStack separately • uses pop() to return each character from theStack and add it to a variable called reverseName • outputs the variable reverseName once all characters have been popped from theStack. You should write your function using pseudocode or program code. ......................................................................................................................................",
+    "referenceAnswer": "• Correctly declaring the function reverse to include\npassing in name as a parameter\n• Correct logic to calculate the number of pushes\nrequired\n• Correct use of a loop to push all characters onto the\nstack separately\n• Creating a local variable reverseName to hold the\nreversed string\n• Correct use of a loop to pop all characters from the\nstack (in the reverse order)\n• Correct logic to add each popped character to the\nreverseName variable\n• Correctly returning the reverseName variable",
+    "guidance": "Example solution\nfunction reverse(name)\nreverseName = \"\"\nfor nameCount = 0 to name.Length-1\ntheStack.push(name[nameCount])\nnext nameCount\nfor nameCount = 0 to name.Length-1\nreverseName = reverseName + theStack.pop()\nnext nameCount\nreturn reverseName\nend function\nGive full marks for alternative solutions that would work fully.\nAllow FT for any duplicate identifiers named incorrectly or\nusing the incorrect case",
+    "report": "Although some candidates answered this question well, others were only given 1 or 2 of the available 7 marks. Many candidates that lost marks did not push and/or pop characters correctly, and many did not return a value for the final mark. Candidates should also be reminded that the correct spelling and case of identifiers are required in questions of this type. Some candidates added spaces in identifier names or used a different case to the identifiers stated in the question and therefore, were not given marks. Assessment for learning Candidates need to understand the importance of maintaining the spelling, case and use of spaces etc in identifiers in questions which ask for functions to be written.",
+    "exemplar": "",
+    "studentAnswer": "Correctly declaring the function reverse to include\npassing in name as a parameter\n• Correct logic to calculate the number of pushes\nrequired\n• Correct use of a loop to push all characters onto the\nstack separately\n• Creating a local variable reverseName to hold the\nreversed string\n• Correct use of a loop to pop all characters from the\nstack (in the reverse order)\n• Correct logic to add each ",
+    "marks": 7
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:08:05.610Z",
+  "prompt": {
+    "questionText": "Describe what is meant by the term ‘character set’. .............................................................................................................................................. [2]",
+    "referenceAnswer": "• List/mapping of characters (that can be\nunderstood by the hardware/software/computer)\n• Each character is given a unique\nbinary/numeric code that is stored instead of the\ncharacter.",
+    "guidance": "Allow a list of letters /symbols",
+    "report": "Most candidates were given at least 1 mark for this question. Some did not gain the second mark as they missed stating that each character has a unique binary value.",
+    "exemplar": "",
+    "studentAnswer": "List/mapping of characters (that can be\nunderstood by the hardware/software/computer)\n• Each character is given a unique\nbinary/numeric code that is stored instead of the\ncharacter",
+    "marks": 2
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:08:11.137Z",
+  "prompt": {
+    "questionText": "(i) Convert the hexadecimal number 66 into a denary number. Show your working. ......................................................................................................................................",
+    "referenceAnswer": "• 102 (correct answer)\n• Suitable working out",
+    "guidance": "",
+    "report": "This question was generally answered well. Candidates tended to be awarded either full or no marks. If the working was correct for calculating the denary value, the response was usually correct as this only required simple addition.",
+    "exemplar": "",
+    "studentAnswer": "102",
+    "marks": 2
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:08:12.195Z",
+  "prompt": {
+    "questionText": "(ii) State two reasons why a programmer would prefer to use hexadecimal numbers rather than binary numbers. 1 ........................................................................................................................................ 2 ........................................................................................................................................",
+    "referenceAnswer": "• Hexadecimal values are shorter than binary as 4\nbits/nibble can be represented by one hex\ncharacter.\n• Hexadecimal values are faster / more reliable to\ncommunicate / enter / write down / read.",
+    "guidance": "Do not accept Hexadecimal is “easy”\ncommunicate/enter etc…",
+    "report": "Many candidates achieved 1 mark for this question. Many candidates correctly stated that hexadecimal numbers are easier/faster to read/write, but were not given the second mark as they didn’t state that hexadecimal numbers are shorter than binary numbers.",
+    "exemplar": "",
+    "studentAnswer": "Hexadecimal values are shorter than binary as 4\nbits/nibble can be represented by one hex\ncharacter.\n• Hexadecimal values are faster / more re",
+    "marks": 2
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:08:13.428Z",
+  "prompt": {
+    "questionText": "Show the denary value 6.25 as a floating point binary number representing the mantissa and exponent. Both of these should be stored in two’s complement representation. You should use as few bits as possible. Show your working. .............................................................................................................................................. [3]",
+    "referenceAnswer": "• Fixed point is 0110.01\n• Mantissa becomes 0.11001\n• Exponent of three needed (represented at 011)",
+    "guidance": "Final Answer 011001 011\nCorrect answer with any working gets full marks",
+    "report": "Many candidates were given the first mark by working out the fixed-point equivalent of 6.25 (0110.01) but were not given further marks because they did not read the question correctly. The question states the response must use as few bits as possible. Although some candidates correctly calculated the mantissa, many had extra digits in the exponent which could have been removed. See Exemplar 2 which was given full marks.",
+    "exemplar": "The candidate clearly shows the fixed-point value of 6.25 to gain the first mark. The second mark is given for showing the mantissa with six bits and the final mark for showing the exponent with three bits. All of these values are displayed clearly, and the candidate uses arrows to demonstrate the movement of the decimal point as additional working.",
+    "studentAnswer": "ixed point is 0110.01\n• Mantissa becomes 0.11001\n• Exponent of three needed (represented at 011)",
+    "marks": 3
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:08:14.650Z",
+  "prompt": {
+    "questionText": "State the benefit of using a normalised form when representing data as a floating point number. .............................................................................................................................................. [1]",
+    "referenceAnswer": "• Allows for more accuracy/precision from the\ngiven number of bits\n• The representation of each binary value is\nunique",
+    "guidance": "",
+    "report": "This question was not answered well as many candidates seemed to misread the question. The majority of candidates that answered this question correctly stated that normalised form allowed for greater accuracy/precision from the number of bits.",
+    "exemplar": "",
+    "studentAnswer": " Allows for more accuracy/precision from the\ngiven number of bits\n• The representation of each binary value is\nunique",
+    "marks": 1
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:08:16.162Z",
+  "prompt": {
+    "questionText": "State the benefit of using a normalised form when representing data as a floating point number. .............................................................................................................................................. [1]",
+    "referenceAnswer": "• Allows for more accuracy/precision from the\ngiven number of bits\n• The representation of each binary value is\nunique",
+    "guidance": "",
+    "report": "This question was not answered well as many candidates seemed to misread the question. The majority of candidates that answered this question correctly stated that normalised form allowed for greater accuracy/precision from the number of bits.",
+    "exemplar": "",
+    "studentAnswer": " Allows for more accuracy/precision from the\ngiven number of bits\n• The representation of each binary value is\nunique",
+    "marks": 1
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:08:17.455Z",
+  "prompt": {
+    "questionText": "State two benefits of using a relational database instead of a flat file database. 1 ................................................................................................................................................ 2 ................................................................................................................................................ [2]",
+    "referenceAnswer": "• Relational data allows for less redundancy of\ndata/less repeated data\n• Relational databases improve the consistency\nof data\n• Relational databases allow for complex\nqueries and/or searches to be performed",
+    "guidance": "",
+    "report": "This question was generally answered well, although some candidates did not use the correct terminology and therefore could not be given all the available marks.",
+    "exemplar": "",
+    "studentAnswer": "Relational data allows for less redundancy of\ndata/less repeated data\n• Relational databases improve the consistency\nof data\n• Relational databases allow for complex\nqueries and/or searches to be performed",
+    "marks": 2
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:08:18.713Z",
+  "prompt": {
+    "questionText": "One customer can order as many different products as they like in the same order. A customer can also place as many orders as they like. One product can be ordered multiple times in the same order or ordered by multiple different customers. Complete the entity relationship diagram to show the relationships between the Product, Customer and Order entities. [2] Customer Product Order",
+    "referenceAnswer": "1 mark for each bullet point to max 2 marks:\n• One customer to many orders\n• Many orders to many products // One order to\nmany orderLines and many orderLines to one\nproduct\nSolution 1:\nSolution 2:",
+    "guidance": "Ignore any relationship between customer and product.\nAccept any suitable alternative name for the OrderLine\nentity.\nAdditional guidance:\nFor MP2, candidates may have avoided the use of\nmany-to-many relationships, due to the information in\npart c). Therefore, allow one product to many orders.",
+    "report": "This question required candidates to correctly draw the relationships between the entities as explained in the question. Candidates were expected to indicate the relationships. Some candidates used either words or other symbols to indicate the relationships, therefore not achieving either of the available marks. Some candidates used a link entity to avoid a many to many relationship between product and order or indicated a relationship of one product to many orders. Either of these responses were acceptable. Assessment for learning Appendices 5c in the specification shows the symbols used for entities and their relationships. Students need to be taught these to use in the exam.",
+    "exemplar": "",
+    "studentAnswer": "One customer to many orders\n• Many orders to many products // One order to\nmany orderLines and many orderLines to one\nproduct",
+    "marks": 2
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:08:21.729Z",
+  "prompt": {
+    "questionText": "One customer can order as many different products as they like in the same order. A customer can also place as many orders as they like. One product can be ordered multiple times in the same order or ordered by multiple different customers. Complete the entity relationship diagram to show the relationships between the Product, Customer and Order entities. [2] Customer Product Order",
+    "referenceAnswer": "1 mark for each bullet point to max 2 marks:\n• One customer to many orders\n• Many orders to many products // One order to\nmany orderLines and many orderLines to one\nproduct\nSolution 1:\nSolution 2:",
+    "guidance": "Ignore any relationship between customer and product.\nAccept any suitable alternative name for the OrderLine\nentity.\nAdditional guidance:\nFor MP2, candidates may have avoided the use of\nmany-to-many relationships, due to the information in\npart c). Therefore, allow one product to many orders.",
+    "report": "This question required candidates to correctly draw the relationships between the entities as explained in the question. Candidates were expected to indicate the relationships. Some candidates used either words or other symbols to indicate the relationships, therefore not achieving either of the available marks. Some candidates used a link entity to avoid a many to many relationship between product and order or indicated a relationship of one product to many orders. Either of these responses were acceptable. Assessment for learning Appendices 5c in the specification shows the symbols used for entities and their relationships. Students need to be taught these to use in the exam.",
+    "exemplar": "",
+    "studentAnswer": "One customer to many orders\n• Many orders to many products // One order to\nmany orderLines and many orderLines to one\nproduct",
+    "marks": 2
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:08:26.858Z",
+  "prompt": {
+    "questionText": "One customer can order as many different products as they like in the same order. A customer can also place as many orders as they like. One product can be ordered multiple times in the same order or ordered by multiple different customers. Complete the entity relationship diagram to show the relationships between the Product, Customer and Order entities. [2] Customer Product Order",
+    "referenceAnswer": "1 mark for each bullet point to max 2 marks:\n• One customer to many orders\n• Many orders to many products // One order to\nmany orderLines and many orderLines to one\nproduct\nSolution 1:\nSolution 2:",
+    "guidance": "Ignore any relationship between customer and product.\nAccept any suitable alternative name for the OrderLine\nentity.\nAdditional guidance:\nFor MP2, candidates may have avoided the use of\nmany-to-many relationships, due to the information in\npart c). Therefore, allow one product to many orders.",
+    "report": "This question required candidates to correctly draw the relationships between the entities as explained in the question. Candidates were expected to indicate the relationships. Some candidates used either words or other symbols to indicate the relationships, therefore not achieving either of the available marks. Some candidates used a link entity to avoid a many to many relationship between product and order or indicated a relationship of one product to many orders. Either of these responses were acceptable. Assessment for learning Appendices 5c in the specification shows the symbols used for entities and their relationships. Students need to be taught these to use in the exam.",
+    "exemplar": "",
+    "studentAnswer": "One customer to many orders\n• Many orders to many products // One order to\nmany orderLines and many orderLines to one\nproduct",
+    "marks": 2
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:08:28.155Z",
+  "prompt": {
+    "questionText": "(i) State the difference between a primary key and a foreign key. ......................................................................................................................................",
+    "referenceAnswer": "• A primary key will only appear once in a\ntable/is a unique identifier\n• A foreign key may appear multiple times a\ntable/may not be unique",
+    "guidance": "Accept entity for table\n",
+    "report": "Many candidates were able to state what a primary key is, but did not state the difference between this and a foreign key and therefore did not achieve both marks.",
+    "exemplar": "",
+    "studentAnswer": "A primary key will only appear once in a\ntable/is a unique identifier",
+    "marks": 2
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:08:29.281Z",
+  "prompt": {
+    "questionText": "(ii) State one foreign key in the order table. ......................................................................................................................................",
+    "referenceAnswer": "• CustomerID\n• ProductID",
+    "guidance": "Correct answer only",
+    "report": "This question was generally answered well, although some candidates lost marks for mis-spelling the foreign key or adding spaces, both of which are not permitted.",
+    "exemplar": "",
+    "studentAnswer": "A foreign key may appear multiple times a\ntable/may not be unique",
+    "marks": 1
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:08:30.525Z",
+  "prompt": {
+    "questionText": "(iii) State why CustomerID would not make a suitable primary key in the order table. ......................................................................................................................................",
+    "referenceAnswer": "• There may be duplicate values.",
+    "guidance": "",
+    "report": "This question was generally answered well with many candidates gaining the mark.",
+    "exemplar": "",
+    "studentAnswer": "CustomerID\n• ProductID",
+    "marks": 1
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:08:31.523Z",
+  "prompt": {
+    "questionText": "State the role of RAM in a computer system. .............................................................................................................................................. [1]",
+    "referenceAnswer": "• Stores instructions / programs currently\nrunning\n• Stores data currently in use",
+    "guidance": "",
+    "report": "This question was answered well, although some candidates stated the role of cache rather than RAM. Misconception That RAM and cache are the same thing within a computer system.",
+    "exemplar": "",
+    "studentAnswer": "There may be duplicate values. ",
+    "marks": 1
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:08:32.873Z",
+  "prompt": {
+    "questionText": "Explain what is meant by the term ‘virtual memory’ and why this may be needed when Amaya is editing her photographs. .............................................................................................................................................. [2]",
+    "referenceAnswer": "• If the amount of RAM available is insufficient…\n• …Used to store instructions/data\n• …Using secondary storage.\n• Likely to be loading large image files (which may\nexceed her RAM)\n• Likely to be loading large programs (which may\nexceed her RAM)",
+    "guidance": "",
+    "report": "Most candidates achieved both of the available marks for this question and linked the scenario in well when writing their response.",
+    "exemplar": "",
+    "studentAnswer": "Stores instructions / programs currently\nrunning\n• Stores data currently in use",
+    "marks": 2
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:08:34.314Z",
+  "prompt": {
+    "questionText": "Explain what is meant by the term ‘virtual memory’ and why this may be needed when Amaya is editing her photographs. .............................................................................................................................................. [2]",
+    "referenceAnswer": "• If the amount of RAM available is insufficient…\n• …Used to store instructions/data\n• …Using secondary storage.\n• Likely to be loading large image files (which may\nexceed her RAM)\n• Likely to be loading large programs (which may\nexceed her RAM)",
+    "guidance": "",
+    "report": "Most candidates achieved both of the available marks for this question and linked the scenario in well when writing their response.",
+    "exemplar": "",
+    "studentAnswer": "Stores instructions / programs currently\nrunning\n• Stores data currently in use",
+    "marks": 2
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:08:35.661Z",
+  "prompt": {
+    "questionText": "(i) A LAN uses packet switching. Describe one difference between packet switching and circuit switching. ......................................................................................................................................",
+    "referenceAnswer": "• In circuit switching dedicated hardware\nresources are used for each connection\n• In packet switching hardware is used for multiple\ndifferent connections.\n• In circuit switching the data is sent along one\nroute/stream.\n• In packet switching packets of data may be sent\nalong multiple different routes/packets may not\nbe in order\n• Circuit switching is less secure if data is\nintercepted\n• Packet switching, data is more secure if\nintercepted/not all packets will be intercepted",
+    "guidance": "Marks answers in pairs\n",
+    "report": "Many candidates achieved both marks for this question with most of the responses describing the different routes taken by the data. The candidates who did less well on this question did not understand differences between packet switching and circuit switching.",
+    "exemplar": "",
+    "studentAnswer": "If the amount of RAM available is insufficient…\n•\n…Used to store instructions/data\n•\n…Using secondary storage.\n• Likely to be loading large image files (which may\nexceed her RAM)\n• Likely to be loading large programs (which may\nexceed her RAM)",
+    "marks": 2
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:08:36.775Z",
+  "prompt": {
+    "questionText": "(ii) Explain why packet switching is more suitable for a computer network than circuit switching. ......................................................................................................................................",
+    "referenceAnswer": "• Computer networks would involve multiple\nconnections happening concurrently\n• In packet switching hardware is not tied up with\neach unique connection // can handle multiple\nconnections simultaneously\n• Computers pass vast amounts of data which\nmay encounter transmission errors\n• Packet switching means only resending\nindividual packets instead of the whole data\nstream\n• Computers may be transmitting business critical\ndata\n• Packet switching means any network hardware\nfailures can be mitigated by routing around it.",
+    "guidance": "",
+    "report": "Many candidates lost marks for the second part of Question 6 (a) (ii), despite achieving both marks for the first part 6 (a) (i). A lot of incorrect answers gave a very similar response to the first part of the question instead of explaining why the differences that packet switching has, make it more suitable for a computer network. Common correct answers explained that packet switching can route around hardware failures as the data is not sent along a single route.",
+    "exemplar": "",
+    "studentAnswer": "In circuit switching dedicated hardware\nresources are used for each connection\n• In packet switching hardware is used for multiple\ndifferent connections.",
+    "marks": 2
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:08:38.449Z",
+  "prompt": {
+    "questionText": "* Zac has hired a company that will advise him on what type of LAN he should set up. Discuss how Zac could set up a peer-to-peer network and a client-server network. You should refer to the following in your answer: • how the computers in each type are connected • the benefits of each type • the drawbacks of each type • the suitability of each type. .............................................................................................................................................. [9] END OF QUESTION PAPER",
+    "referenceAnswer": "Mark Band 3–High Level\n(7-9 marks)\nThe candidate demonstrates a thorough knowledge and\nunderstanding of both peer to peer and client server\nand can give valid application of both in this scenario.\nAll detail are generally accurate and relevant\nThe candidate is able to apply their knowledge and\nunderstanding directly and consistently to the context\nprovided. Evidence/examples will be explicitly relevant\nto the explanation.\nThere is a well-developed line of reasoning which is\nclear and logically structured. The information\npresented is relevant and substantiated.\nMark Band 2-Mid Level\n(4-6 marks)\nThe candidate demonstrates reasonable knowledge\nand understanding of client server and peer to peer; the\nmaterial is generally accurate but at times\nunderdeveloped. The candidate may not have applied\nboth to this scenario.\nThe candidate is able to apply their knowledge and\nunderstanding directly to the context provided although\none or two opportunities are missed.\nEvidence/examples are for the most part implicitly\nrelevant to the explanation.\nThere is a line of reasoning presented with some\nstructure. The information presented is in the most part\nrelevant and supported by some evidence.\nMark Band 1-Low Level\n(1-3 marks)\nThe candidate demonstrates a basic knowledge of\nclient/server or peer to peer and has made some\nattempt at applying this knowledge. the material is basic\nand contains some inaccuracies.\nThe candidate makes a limited attempt to apply\nacquired knowledge and understanding to the context\nprovided.\nThe candidate provides nothing more than an\nunsupported assertion.\nThe information is basic and communicated in an\nunstructured way. The information is supported by\nlimited evidence and the relationship to the evidence\nmay not be clear.\n0 marks\nNo attempt to answer the question or response is not\nworthy of credit.",
+    "guidance": "AO1\nP2P:\n• Each computer can act independently\n• Each computer is responsible for it’s own\nsecurity and login\n• Each computer will maintain and possibly share\nits own connected hardware (printer/external\nstorage/internet connection)\n• Each computer will maintain and possibly share\nits own secondary storage\n• If a computer is powered down it’s shared\nresources will not be available.\n• There are no resources not shared by a peer\nmachine\n• Adding a machine is simple\n• Very little administration is needed\nClient Server:\n• All network functionality can be provided by\nservers.\n• A server is a process running on a machine,\nusually dedicated to providing these services.\n• A server machine is designed to never be\npowered down.\n• Login/security is handled centrally\n• Shared storage may be managed by a server\n• Shared resources (printer/internet connection\netc) my be managed by a server\n• If a server process or machine fails, network\nfunctionality, including the ability login is lost\n• Adding a new machine can mean installing\nspecialist client software and setting up OS\npolicies.\n• IT skills and a lot of time are needed to\nadminister a client server network\nAO2\nP2P:\n• As Zak is looking to expand his staff, P2P would\noffer flexibility in adding staff ad hoc.\n• Zak’s company is still small and may struggle to\npay for the IT administrator skills needed for a\nclient server\nClient Server:\n• As Zak’s firm is an accountancy firm it will have\nsensitive customer data\n• Client server would allow stronger centralised\nsecurity\n• As Zak is taking on multiple staff, they may wish\nto work collaboratively, which shared storage\nwould allow.\n• Zak could share a single printer/other hardware\nwith all staff and not worry about an individual\ncomputer being switched on.",
+    "report": "Candidates were assessed on the quality of their extended response in this question. Although most candidates were able to give a few advantages and disadvantages of the different types of network, few made suitable links to the scenario. Some candidates discussed different topologies which was not relevant to the question. Candidates that were given high marks for this question focused more on the scenario, and made clear links between this and the benefits and drawbacks of the different solutions.",
+    "exemplar": "The candidate response is well structured. The candidate has firstly highlighted how the computers are connected for each type of network and discussed the advantages and disadvantages. The advantages and disadvantages are well balanced and there are clear links to the scenario throughout. The candidate has made a recommendation on the most suitable type of network for the scenario, highlighting the key advantages and showing clear reasoning. The conclusion emphasises the key points and gives a clear justification.",
+    "studentAnswer": "Computer networks would involve multiple\nconnections happening concurrently\n• In packet switching hardware is not tied up with\neach unique connection // can handle multiple\nconnections simultaneously\n• Computers pass vast amounts of data which\nmay encounter transmission errors\n• Packet switching means only resending\nindividual packets instead of the whole data\nstream\n• Computers may be transmitting business critical\ndata\n• Packet switching means any network hardware\nfailures can be mitigated by routing around it.",
+    "marks": 9
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:08:39.727Z",
+  "prompt": {
+    "questionText": "* Zac has hired a company that will advise him on what type of LAN he should set up. Discuss how Zac could set up a peer-to-peer network and a client-server network. You should refer to the following in your answer: • how the computers in each type are connected • the benefits of each type • the drawbacks of each type • the suitability of each type. .............................................................................................................................................. [9] END OF QUESTION PAPER",
+    "referenceAnswer": "Mark Band 3–High Level\n(7-9 marks)\nThe candidate demonstrates a thorough knowledge and\nunderstanding of both peer to peer and client server\nand can give valid application of both in this scenario.\nAll detail are generally accurate and relevant\nThe candidate is able to apply their knowledge and\nunderstanding directly and consistently to the context\nprovided. Evidence/examples will be explicitly relevant\nto the explanation.\nThere is a well-developed line of reasoning which is\nclear and logically structured. The information\npresented is relevant and substantiated.\nMark Band 2-Mid Level\n(4-6 marks)\nThe candidate demonstrates reasonable knowledge\nand understanding of client server and peer to peer; the\nmaterial is generally accurate but at times\nunderdeveloped. The candidate may not have applied\nboth to this scenario.\nThe candidate is able to apply their knowledge and\nunderstanding directly to the context provided although\none or two opportunities are missed.\nEvidence/examples are for the most part implicitly\nrelevant to the explanation.\nThere is a line of reasoning presented with some\nstructure. The information presented is in the most part\nrelevant and supported by some evidence.\nMark Band 1-Low Level\n(1-3 marks)\nThe candidate demonstrates a basic knowledge of\nclient/server or peer to peer and has made some\nattempt at applying this knowledge. the material is basic\nand contains some inaccuracies.\nThe candidate makes a limited attempt to apply\nacquired knowledge and understanding to the context\nprovided.\nThe candidate provides nothing more than an\nunsupported assertion.\nThe information is basic and communicated in an\nunstructured way. The information is supported by\nlimited evidence and the relationship to the evidence\nmay not be clear.\n0 marks\nNo attempt to answer the question or response is not\nworthy of credit.",
+    "guidance": "AO1\nP2P:\n• Each computer can act independently\n• Each computer is responsible for it’s own\nsecurity and login\n• Each computer will maintain and possibly share\nits own connected hardware (printer/external\nstorage/internet connection)\n• Each computer will maintain and possibly share\nits own secondary storage\n• If a computer is powered down it’s shared\nresources will not be available.\n• There are no resources not shared by a peer\nmachine\n• Adding a machine is simple\n• Very little administration is needed\nClient Server:\n• All network functionality can be provided by\nservers.\n• A server is a process running on a machine,\nusually dedicated to providing these services.\n• A server machine is designed to never be\npowered down.\n• Login/security is handled centrally\n• Shared storage may be managed by a server\n• Shared resources (printer/internet connection\netc) my be managed by a server\n• If a server process or machine fails, network\nfunctionality, including the ability login is lost\n• Adding a new machine can mean installing\nspecialist client software and setting up OS\npolicies.\n• IT skills and a lot of time are needed to\nadminister a client server network\nAO2\nP2P:\n• As Zak is looking to expand his staff, P2P would\noffer flexibility in adding staff ad hoc.\n• Zak’s company is still small and may struggle to\npay for the IT administrator skills needed for a\nclient server\nClient Server:\n• As Zak’s firm is an accountancy firm it will have\nsensitive customer data\n• Client server would allow stronger centralised\nsecurity\n• As Zak is taking on multiple staff, they may wish\nto work collaboratively, which shared storage\nwould allow.\n• Zak could share a single printer/other hardware\nwith all staff and not worry about an individual\ncomputer being switched on.",
+    "report": "Candidates were assessed on the quality of their extended response in this question. Although most candidates were able to give a few advantages and disadvantages of the different types of network, few made suitable links to the scenario. Some candidates discussed different topologies which was not relevant to the question. Candidates that were given high marks for this question focused more on the scenario, and made clear links between this and the benefits and drawbacks of the different solutions.",
+    "exemplar": "The candidate response is well structured. The candidate has firstly highlighted how the computers are connected for each type of network and discussed the advantages and disadvantages. The advantages and disadvantages are well balanced and there are clear links to the scenario throughout. The candidate has made a recommendation on the most suitable type of network for the scenario, highlighting the key advantages and showing clear reasoning. The conclusion emphasises the key points and gives a clear justification.",
+    "studentAnswer": "Computer networks would involve multiple\nconnections happening concurrently\n• In packet switching hardware is not tied up with\neach unique connection // can handle multiple\nconnections simultaneously\n• Computers pass vast amounts of data which\nmay encounter transmission errors\n• Packet switching means only resending\nindividual packets instead of the whole data\nstream\n• Computers may be transmitting business critical\ndata\n• Packet switching means any network hardware\nfailures can be mitigated by routing around it.",
+    "marks": 9
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:08:41.007Z",
+  "prompt": {
+    "questionText": "Describe two factors that affect the performance of the CPU. 1 ................................................................................................................................................ 2 ................................................................................................................................................ [4]",
+    "referenceAnswer": "• Clock Speed …\n• … The speed at which the fetch decode execute\ncycle is completed/ the speed a single core can\nexecute instructions\n• Number of cores/ independent processing units\n…\n• …that can fetch decode execute at the same\ntime\n• Cache size…\n• … memory that contains recently/frequently\nused instructions/data\n• …memory that has a faster R/W speed than\nRAM\n• …memory that is closer to/onboard the CPU",
+    "guidance": "One mark for stating the factor, mark for expanding the\nfactor\n- Accept cycles for “FDE Cycles”",
+    "report": "Most candidates were able to identify two factors that could affect the performance of the CPU, but many were not given all 4 marks as they did not fully describe why each factor would affect the performance. See Exemplar 1, which was given full marks.",
+    "exemplar": "The candidate gives two valid factors that would affect performance and then explains why each of the two factors would affect performance. They use appropriate terminology in their response.",
+    "studentAnswer": "• Clock Speed …\n• … The speed at which the fetch decode execute\ncycle is completed/ the speed a single core can\nexecute instructions\n…that can fetch decode execute at the same\ntime\n• Cache size…\n• … memory that contains recently/frequently\nused instructions/data\n• …memory that has a faster R/W speed than\nRAM\n• …memory that is closer to/onboard the CPU",
+    "marks": 4
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:08:41.956Z",
+  "prompt": {
+    "questionText": "An important design consideration is whether OCRSystems use a CISC processor type or a RISC processor type. Describe one difference between a CISC processor and a RISC processor. .............................................................................................................................................. [2]",
+    "referenceAnswer": "• CISC has a larger instruction set\n• RISC has a smaller instruction set\n• CISC is difficult to pipeline\n• RISC is easier to pipeline\n• CISC tends to have more addressing modes\n• RISC tends to have fewer addressing modes\n• CISC instructions may take multiple clock\ncycles to execute\n• RISC instructions take one clock cycle to\nexecute\n• CISC has complex circuitry/more transistors.\n• RISC has less complex/simple circuitry\n• CISC uses less RAM\n• RISC uses more RAM",
+    "guidance": "Accept any other valid points\nMark in pairs\n",
+    "report": "This question was generally answered well with many candidates describing the number of clock cycles required to execute instructions for RISC and CISC. Some candidates were not given the marks because they did not use the correct terminology.",
+    "exemplar": "",
+    "studentAnswer": "• CISC has a larger instruction set\n• RISC has a smaller instruction set\n• CISC is difficult to pipeline\n• RISC is easier to pipeline",
+    "marks": 2
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:08:43.024Z",
+  "prompt": {
+    "questionText": "OCRSystems are considering using parallel processing in the computer system that will be used for video rendering. Describe how parallel processing would increase the performance of this computer system. .............................................................................................................................................. [3]",
+    "referenceAnswer": "• Parallel processing will allow multiple separate\njobs/instructions/FDE cycles to run concurrently.\n• Longer rendering jobs can be split, shortening\nthe overall time taken.\n• Different CPUs/cores can tackle different\nframes/sections/components of the video\nsimultaneously.",
+    "guidance": "",
+    "report": "To achieve all 3 marks for this question, candidates needed to describe what parallel processing is, and then be clear as to how this would affect the computer system in the question. Many candidates were not given all the available marks as they did not make clear links between parallel processing and the scenario.",
+    "exemplar": "",
+    "studentAnswer": "• CISC has complex circuitry/more transistors.\n• RISC has less complex/simple circuitry\n• CISC uses less RAM\n• RISC uses more RAM",
+    "marks": 3
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:08:44.111Z",
+  "prompt": {
+    "questionText": "The computer system will contain several input and output devices. Explain the role of device drivers when using input and output devices on a computer system. .............................................................................................................................................. [2]",
+    "referenceAnswer": "• A piece of software which allows\nhardware/device to communicate…\n• …with the operating system",
+    "guidance": "",
+    "report": "This question was generally answered well. Some candidates were not given the second mark as they did not make reference to the operating system.",
+    "exemplar": "",
+    "studentAnswer": " Parallel processing will allow multiple separate\njobs/instructions/FDE cycles to run concurrently.\n• Longer rendering jobs can be split, shortening\nthe overall time taken.\n• Different CPUs/cores can tackle different\nframes/sections/components of the video\nsimultaneously.",
+    "marks": 2
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:08:45.172Z",
+  "prompt": {
+    "questionText": "The computer system will contain several input and output devices. Explain the role of device drivers when using input and output devices on a computer system. .............................................................................................................................................. [2]",
+    "referenceAnswer": "• A piece of software which allows\nhardware/device to communicate…\n• …with the operating system",
+    "guidance": "",
+    "report": "This question was generally answered well. Some candidates were not given the second mark as they did not make reference to the operating system.",
+    "exemplar": "",
+    "studentAnswer": " Parallel processing will allow multiple separate\njobs/instructions/FDE cycles to run concurrently.\n• Longer rendering jobs can be split, shortening\nthe overall time taken.\n• Different CPUs/cores can tackle different\nframes/sections/components of the video\nsimultaneously.",
+    "marks": 2
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:08:46.189Z",
+  "prompt": {
+    "questionText": "(i) State two different output devices that could be used when editing the videos. 1 ........................................................................................................................................ 2 ........................................................................................................................................",
+    "referenceAnswer": "• Monitor\n• Speakers//Headphones",
+    "guidance": "Must be output devices.\nMust be suitable for video editing.",
+    "report": "Many candidates answered this question correctly, with most selecting a monitor/screen and headphones/speakers which were both valid responses.",
+    "exemplar": "",
+    "studentAnswer": " A piece of software which allows\nhardware/device to communicate…\n•\n…with the operating system",
+    "marks": 2
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:08:47.608Z",
+  "prompt": {
+    "questionText": "(ii) * A storage device is used to store the individual video elements while they are being captured in different locations and during the video editing process. Discuss the suitability of a flash storage device and a magnetic storage device for storing the different video elements while they are being collected and edited. You should refer to the following in your answer: • the benefits of each type of storage • the drawbacks of each type of storage • the suitability of each type of storage. ......................................................................................................................................",
+    "referenceAnswer": "Mark Band 3–High Level\n(7-9 marks)\nThe candidate will provide a range of accurate benefits and\ndrawbacks of both magnetic and flash devices.\nThe candidate is able to apply their knowledge and\nunderstanding directly and consistently to the context provided.\nEvidence/examples will be explicitly relevant to the explanation.\nThe candidate will come to a clear conclusion that must be\njustified by their comments\nThere is a well-developed line of reasoning which is clear and\nlogically structured. The information presented is relevant and\nsubstantiated.\nMark Band 2-Mid Level\n(4-6 marks)\nThe candidate will provide drawbacks or benefits about both\nmagnetic and flash methods. These will be for the most part\nrelevant. The candidate is able to apply their knowledge and\nunderstanding directly to the context provided although one or\ntwo opportunities are missed.\nEvidence/examples are for the most part implicitly relevant to\nthe explanation.\nThe candidate will attempt to come to a conclusion, although it\nmay not be fully justified by their answer,\nThere is a line of reasoning presented with some structure.\nThe information presented is in the most part relevant and\nsupported by some evidence.\nMark Band 1-Low Level\n(1-3 marks)\nThe candidate has provided some drawbacks or benefits of\nmagnetic or flash methods. The material is basic and contains\nsome inaccuracies.\nThe candidate makes a limited attempt to apply acquired\nknowledge and understanding to the context provided.\nThe candidate provides nothing more than an unsupported\nassertion.\nThe information is basic and communicated in an unstructured\nway. The information is supported by limited evidence and the\nrelationship to the evidence may not be clear.\n0 marks\nNo attempt to answer the question or response is not worthy of\ncredit.",
+    "guidance": "AO1\nMagnetic Benefits:\n• Lower price per GB\n• As standard comes in high capacity\nMagnetic Drawbacks:\n• Lower R/W speed\n• Higher power consumption\n• Moving parts /less durable\nFlash Benefits:\n• Higher R/W speed\n• No moving parts/more durable\n• Lower power consumption\n• Can have a higher capacity.\nFlash Drawbacks:\n• Higher cost per GB\n• At higher capacities prices rise exponentially.\nAO2:\nSuitability of Magnetic:\n• Video files are very large, benefiting magnetics low cost\nper GB\n• Can be used to archive the different video elements after\nit’s been rendered\n• Could possibly get damaged while being transported\nbetween the different filming sites\n• Slow R/W speeds may take it longer to load into the\nsoftware\nSuitability of flash:\n• Very fast R/W speeds therefore reducing the amount of\nloading time during the editing process/giving smoother\nplayback\n• If money is not a barrier, flash can be bought in sufficient\ncapacities for videos.\nAO3:\nCandidates can conclude either method, but to score in the top\nMB must have a clear line of reasoning to justify their choice.",
+    "report": "Candidates were assessed on the quality of their extended response in this question. Most candidates understood the basic differences between flash storage and magnetic storage devices, but did not make clear links to the scenario. Mid-level responses were common, with few candidates giving a balanced discussion and a conclusion with suitable justifications. Assessment for learning Questions with the command word ‘discuss’ require candidates to give a balanced discussion and provided a suitable conclusion which justifies their comments. Opportunities to practise these questions will support candidates to do better on these style questions.",
+    "exemplar": "",
+    "studentAnswer": "• Monitor\n• Speakers//Headphones",
+    "marks": 9
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:08:48.940Z",
+  "prompt": {
+    "questionText": "(ii) * A storage device is used to store the individual video elements while they are being captured in different locations and during the video editing process. Discuss the suitability of a flash storage device and a magnetic storage device for storing the different video elements while they are being collected and edited. You should refer to the following in your answer: • the benefits of each type of storage • the drawbacks of each type of storage • the suitability of each type of storage. ......................................................................................................................................",
+    "referenceAnswer": "Mark Band 3–High Level\n(7-9 marks)\nThe candidate will provide a range of accurate benefits and\ndrawbacks of both magnetic and flash devices.\nThe candidate is able to apply their knowledge and\nunderstanding directly and consistently to the context provided.\nEvidence/examples will be explicitly relevant to the explanation.\nThe candidate will come to a clear conclusion that must be\njustified by their comments\nThere is a well-developed line of reasoning which is clear and\nlogically structured. The information presented is relevant and\nsubstantiated.\nMark Band 2-Mid Level\n(4-6 marks)\nThe candidate will provide drawbacks or benefits about both\nmagnetic and flash methods. These will be for the most part\nrelevant. The candidate is able to apply their knowledge and\nunderstanding directly to the context provided although one or\ntwo opportunities are missed.\nEvidence/examples are for the most part implicitly relevant to\nthe explanation.\nThe candidate will attempt to come to a conclusion, although it\nmay not be fully justified by their answer,\nThere is a line of reasoning presented with some structure.\nThe information presented is in the most part relevant and\nsupported by some evidence.\nMark Band 1-Low Level\n(1-3 marks)\nThe candidate has provided some drawbacks or benefits of\nmagnetic or flash methods. The material is basic and contains\nsome inaccuracies.\nThe candidate makes a limited attempt to apply acquired\nknowledge and understanding to the context provided.\nThe candidate provides nothing more than an unsupported\nassertion.\nThe information is basic and communicated in an unstructured\nway. The information is supported by limited evidence and the\nrelationship to the evidence may not be clear.\n0 marks\nNo attempt to answer the question or response is not worthy of\ncredit.",
+    "guidance": "AO1\nMagnetic Benefits:\n• Lower price per GB\n• As standard comes in high capacity\nMagnetic Drawbacks:\n• Lower R/W speed\n• Higher power consumption\n• Moving parts /less durable\nFlash Benefits:\n• Higher R/W speed\n• No moving parts/more durable\n• Lower power consumption\n• Can have a higher capacity.\nFlash Drawbacks:\n• Higher cost per GB\n• At higher capacities prices rise exponentially.\nAO2:\nSuitability of Magnetic:\n• Video files are very large, benefiting magnetics low cost\nper GB\n• Can be used to archive the different video elements after\nit’s been rendered\n• Could possibly get damaged while being transported\nbetween the different filming sites\n• Slow R/W speeds may take it longer to load into the\nsoftware\nSuitability of flash:\n• Very fast R/W speeds therefore reducing the amount of\nloading time during the editing process/giving smoother\nplayback\n• If money is not a barrier, flash can be bought in sufficient\ncapacities for videos.\nAO3:\nCandidates can conclude either method, but to score in the top\nMB must have a clear line of reasoning to justify their choice.",
+    "report": "Candidates were assessed on the quality of their extended response in this question. Most candidates understood the basic differences between flash storage and magnetic storage devices, but did not make clear links to the scenario. Mid-level responses were common, with few candidates giving a balanced discussion and a conclusion with suitable justifications. Assessment for learning Questions with the command word ‘discuss’ require candidates to give a balanced discussion and provided a suitable conclusion which justifies their comments. Opportunities to practise these questions will support candidates to do better on these style questions.",
+    "exemplar": "",
+    "studentAnswer": "• Monitor\n• Speakers//Headphones",
+    "marks": 9
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:08:50.172Z",
+  "prompt": {
+    "questionText": "(i) Tick one box that describes how a queue operates. Last In First Out First In First Out",
+    "referenceAnswer": "☑ First In First Out",
+    "guidance": "",
+    "report": "Most candidates correctly identified that a queue is a ‘First in First Out’ data structure.",
+    "exemplar": "",
+    "studentAnswer": "First In First Out",
+    "marks": 1
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:08:51.399Z",
+  "prompt": {
+    "questionText": "(ii) The figure below shows a queue data structure that contains a list of names. Alex is at the front of the queue. Alex Kofi Ben Sundip Tom The operations that can be used on the queue are: • enqueue() – This will add data that is passed in as a parameter to the queue. • dequeue() – This will return the first element in the queue. Show the contents of the queue after these operations have been performed: enqueue(\"Charlie\") dequeue() enqueue(\"Ling\") dequeue() enqueue(\"Sara\")",
+    "referenceAnswer": "Ben Sundip Tom Charlie Ling Sara\n1 Mark: Adding, Charlie, Ling and Sara in correct order\n1 Mark: Exclusively removing Alex and Kofi.",
+    "guidance": "Accept:\nBen Sundip Tom Charlie Ling Sara",
+    "report": "This question was generally answered well with most candidates achieving both marks. Some candidates did not correctly dequeue from the front of the queue, or enqueue to the rear.",
+    "exemplar": "",
+    "studentAnswer": "Ben Sundip Tom Charlie Ling Sara",
+    "marks": 2
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:08:52.583Z",
+  "prompt": {
+    "questionText": "(i) Complete the pseudocode function for the pop() operation.",
+    "referenceAnswer": "function pop()\nif top == 0 then\nreturn -1\nelse\nitem = items[top]\ntop = top - 1\nreturn item\nendif\nend function",
+    "guidance": "",
+    "report": "Many candidates were given full marks for this question, although some did not correctly return ‘item’ and incorrectly stated ‘items’ would be returned.",
+    "exemplar": "",
+    "studentAnswer": "function pop()\nif top == 0 then\nreturn -1\nelse\nitem = items[top]\ntop = top - 1\nreturn item\nendif\nend function",
+    "marks": 4
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:08:53.966Z",
+  "prompt": {
+    "questionText": "(ii) A function called reverse uses a stack called theStack to reverse data that is passed in as a parameter called name. For example, the name “Jack” would be returned as “kcaJ” by the function. theStack uses these operations which are already defined as global scope in the program: • push() – This will add data that is passed in as a parameter to the stack. • pop() – This will remove and return the item on top of the stack. Write the function reverse so that it: • accepts the name as a parameter • uses push() to add each character in the name to theStack separately • uses pop() to return each character from theStack and add it to a variable called reverseName • outputs the variable reverseName once all characters have been popped from theStack. You should write your function using pseudocode or program code. ......................................................................................................................................",
+    "referenceAnswer": "• Correctly declaring the function reverse to include\npassing in name as a parameter\n• Correct logic to calculate the number of pushes\nrequired\n• Correct use of a loop to push all characters onto the\nstack separately\n• Creating a local variable reverseName to hold the\nreversed string\n• Correct use of a loop to pop all characters from the\nstack (in the reverse order)\n• Correct logic to add each popped character to the\nreverseName variable\n• Correctly returning the reverseName variable",
+    "guidance": "Example solution\nfunction reverse(name)\nreverseName = \"\"\nfor nameCount = 0 to name.Length-1\ntheStack.push(name[nameCount])\nnext nameCount\nfor nameCount = 0 to name.Length-1\nreverseName = reverseName + theStack.pop()\nnext nameCount\nreturn reverseName\nend function\nGive full marks for alternative solutions that would work fully.\nAllow FT for any duplicate identifiers named incorrectly or\nusing the incorrect case",
+    "report": "Although some candidates answered this question well, others were only given 1 or 2 of the available 7 marks. Many candidates that lost marks did not push and/or pop characters correctly, and many did not return a value for the final mark. Candidates should also be reminded that the correct spelling and case of identifiers are required in questions of this type. Some candidates added spaces in identifier names or used a different case to the identifiers stated in the question and therefore, were not given marks. Assessment for learning Candidates need to understand the importance of maintaining the spelling, case and use of spaces etc in identifiers in questions which ask for functions to be written.",
+    "exemplar": "",
+    "studentAnswer": "Correctly declaring the function reverse to include\npassing in name as a parameter\n• Correct logic to calculate the number of pushes\nrequired\n• Correct use of a loop to push all characters onto the\nstack separately\n• Creating a local variable reverseName to hold the\nreversed string\n• Correct use of a loop to pop all characters from the\nstack (in the reverse order)\n• Correct logic to add each ",
+    "marks": 7
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:08:55.304Z",
+  "prompt": {
+    "questionText": "(ii) A function called reverse uses a stack called theStack to reverse data that is passed in as a parameter called name. For example, the name “Jack” would be returned as “kcaJ” by the function. theStack uses these operations which are already defined as global scope in the program: • push() – This will add data that is passed in as a parameter to the stack. • pop() – This will remove and return the item on top of the stack. Write the function reverse so that it: • accepts the name as a parameter • uses push() to add each character in the name to theStack separately • uses pop() to return each character from theStack and add it to a variable called reverseName • outputs the variable reverseName once all characters have been popped from theStack. You should write your function using pseudocode or program code. ......................................................................................................................................",
+    "referenceAnswer": "• Correctly declaring the function reverse to include\npassing in name as a parameter\n• Correct logic to calculate the number of pushes\nrequired\n• Correct use of a loop to push all characters onto the\nstack separately\n• Creating a local variable reverseName to hold the\nreversed string\n• Correct use of a loop to pop all characters from the\nstack (in the reverse order)\n• Correct logic to add each popped character to the\nreverseName variable\n• Correctly returning the reverseName variable",
+    "guidance": "Example solution\nfunction reverse(name)\nreverseName = \"\"\nfor nameCount = 0 to name.Length-1\ntheStack.push(name[nameCount])\nnext nameCount\nfor nameCount = 0 to name.Length-1\nreverseName = reverseName + theStack.pop()\nnext nameCount\nreturn reverseName\nend function\nGive full marks for alternative solutions that would work fully.\nAllow FT for any duplicate identifiers named incorrectly or\nusing the incorrect case",
+    "report": "Although some candidates answered this question well, others were only given 1 or 2 of the available 7 marks. Many candidates that lost marks did not push and/or pop characters correctly, and many did not return a value for the final mark. Candidates should also be reminded that the correct spelling and case of identifiers are required in questions of this type. Some candidates added spaces in identifier names or used a different case to the identifiers stated in the question and therefore, were not given marks. Assessment for learning Candidates need to understand the importance of maintaining the spelling, case and use of spaces etc in identifiers in questions which ask for functions to be written.",
+    "exemplar": "",
+    "studentAnswer": "Correctly declaring the function reverse to include\npassing in name as a parameter\n• Correct logic to calculate the number of pushes\nrequired\n• Correct use of a loop to push all characters onto the\nstack separately\n• Creating a local variable reverseName to hold the\nreversed string\n• Correct use of a loop to pop all characters from the\nstack (in the reverse order)\n• Correct logic to add each ",
+    "marks": 7
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:08:57.504Z",
+  "prompt": {
+    "questionText": "(ii) A function called reverse uses a stack called theStack to reverse data that is passed in as a parameter called name. For example, the name “Jack” would be returned as “kcaJ” by the function. theStack uses these operations which are already defined as global scope in the program: • push() – This will add data that is passed in as a parameter to the stack. • pop() – This will remove and return the item on top of the stack. Write the function reverse so that it: • accepts the name as a parameter • uses push() to add each character in the name to theStack separately • uses pop() to return each character from theStack and add it to a variable called reverseName • outputs the variable reverseName once all characters have been popped from theStack. You should write your function using pseudocode or program code. ......................................................................................................................................",
+    "referenceAnswer": "• Correctly declaring the function reverse to include\npassing in name as a parameter\n• Correct logic to calculate the number of pushes\nrequired\n• Correct use of a loop to push all characters onto the\nstack separately\n• Creating a local variable reverseName to hold the\nreversed string\n• Correct use of a loop to pop all characters from the\nstack (in the reverse order)\n• Correct logic to add each popped character to the\nreverseName variable\n• Correctly returning the reverseName variable",
+    "guidance": "Example solution\nfunction reverse(name)\nreverseName = \"\"\nfor nameCount = 0 to name.Length-1\ntheStack.push(name[nameCount])\nnext nameCount\nfor nameCount = 0 to name.Length-1\nreverseName = reverseName + theStack.pop()\nnext nameCount\nreturn reverseName\nend function\nGive full marks for alternative solutions that would work fully.\nAllow FT for any duplicate identifiers named incorrectly or\nusing the incorrect case",
+    "report": "Although some candidates answered this question well, others were only given 1 or 2 of the available 7 marks. Many candidates that lost marks did not push and/or pop characters correctly, and many did not return a value for the final mark. Candidates should also be reminded that the correct spelling and case of identifiers are required in questions of this type. Some candidates added spaces in identifier names or used a different case to the identifiers stated in the question and therefore, were not given marks. Assessment for learning Candidates need to understand the importance of maintaining the spelling, case and use of spaces etc in identifiers in questions which ask for functions to be written.",
+    "exemplar": "",
+    "studentAnswer": "Correctly declaring the function reverse to include\npassing in name as a parameter\n• Correct logic to calculate the number of pushes\nrequired\n• Correct use of a loop to push all characters onto the\nstack separately\n• Creating a local variable reverseName to hold the\nreversed string\n• Correct use of a loop to pop all characters from the\nstack (in the reverse order)\n• Correct logic to add each ",
+    "marks": 7
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
+{
+  "timestamp": "2025-04-24T08:08:58.791Z",
+  "prompt": {
+    "questionText": "Describe what is meant by the term ‘character set’. .............................................................................................................................................. [2]",
+    "referenceAnswer": "• List/mapping of characters (that can be\nunderstood by the hardware/software/computer)\n• Each character is given a unique\nbinary/numeric code that is stored instead of the\ncharacter.",
+    "guidance": "Allow a list of letters /symbols",
+    "report": "Most candidates were given at least 1 mark for this question. Some did not gain the second mark as they missed stating that each character has a unique binary value.",
+    "exemplar": "",
+    "studentAnswer": "List/mapping of characters (that can be\nunderstood by the hardware/software/computer)\n• Each character is given a unique\nbinary/numeric code that is stored instead of the\ncharacter",
+    "marks": 2
+  },
+  "result": {
+    "score": 0,
+    "reason": ""
+  }
+},
