@@ -20,7 +20,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const token = req.headers.authorization?.split(" ")[1];
 
   if (!sessionId || !token) {
-    return res.status(400).json({ message: "缺少 sessionId 或 token" });
+    return res.status(400).json({ message: "Missing sessionId or token" });
   }
 
   try {
@@ -29,7 +29,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     const connection = await mysql.createConnection(dbConfig);
 
-    // ✅ 重新计算 fullScore（试卷总分）
+    // Recalculate total score of the paper
     const [fullScoreRows]: any = await connection.query(
       `SELECT SUM(qb.marks) AS total
        FROM exam_session_questions esq
@@ -38,17 +38,18 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       [sessionId]
     );
 
+    // Count total number of questions with marks
     const [questionCountRows]: any = await connection.query(
-        `SELECT COUNT(*) AS total
-         FROM exam_session_questions esq
-         JOIN question_bank qb ON esq.question_id = qb.id
-         WHERE esq.session_id = ? AND qb.marks IS NOT NULL AND qb.marks > 0`,
-        [sessionId]
-      );
+      `SELECT COUNT(*) AS total
+       FROM exam_session_questions esq
+       JOIN question_bank qb ON esq.question_id = qb.id
+       WHERE esq.session_id = ? AND qb.marks IS NOT NULL AND qb.marks > 0`,
+      [sessionId]
+    );
 
     const fullScore = Number(fullScoreRows[0]?.total || 0);
 
-    // 获取学生答题成绩
+    // Calculate student's total score and answered questions
     const [scoreRows]: any = await connection.query(
       `SELECT SUM(score) AS totalScore, COUNT(*) AS questionCount
        FROM student_scores WHERE session_id = ?`,
@@ -58,10 +59,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const totalScore = Number(scoreRows[0]?.totalScore || 0);
     const questionCount = Number(scoreRows[0]?.questionCount || 0);
 
-    // 查询答错题信息（带 reason）
-    const [wrongQuestions]: any = await connection.query(
+    // Query incorrect questions with explanation and eliminate duplicates
+    const [rawWrongRows]: any = await connection.query(
       `SELECT sa.question_id, sa.answer_text AS student_answer, qa.answer AS correct_answer,
-              qb.text AS question_text, ss.gpt_reasoning AS reason,ss.score AS score
+              qb.text AS question_text, ss.gpt_reasoning AS reason, ss.score AS score
        FROM student_scores ss
        JOIN student_answers sa ON ss.session_id = sa.session_id AND ss.question_id = sa.question_id
        JOIN question_answer qa ON ss.question_id = qa.question_bank_id
@@ -70,7 +71,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       [sessionId]
     );
 
-    // 查询知识点统计
+    // Remove duplicate wrong questions by question_id
+    const wrongMap: Record<number, any> = {};
+    rawWrongRows.forEach((row: any) => {
+      if (!wrongMap[row.question_id]) {
+        wrongMap[row.question_id] = row;
+      }
+    });
+    const wrongQuestions = Object.values(wrongMap);
+
+    // Query keypoint accuracy statistics
     const [keypointStatsRows]: any = await connection.query(
       `SELECT qk.keypoint_id, kp.name, COUNT(*) AS total,
               SUM(CASE WHEN ss.score = qa.marks THEN 1 ELSE 0 END) AS correct
@@ -103,7 +113,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       keypointStats,
     });
   } catch (err) {
-    console.error("❌ 获取考试结果失败:", err);
-    return res.status(500).json({ message: "服务器错误" });
+    console.error("\u274C Failed to fetch exam result:", err);
+    return res.status(500).json({ message: "Internal server error" });
   }
 }

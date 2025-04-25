@@ -52,7 +52,7 @@ Respond in the following JSON format:
     });
 
     const raw = gptRes.choices[0]?.message?.content?.trim();
-    console.log("\ud83d\udce4 GPT Raw Output:", raw);
+    //console.log("\ud83d\udce4 GPT Raw Output:", raw);
 
     let parsed = { score: 0, reason: "Unable to parse GPT response." };
     try {

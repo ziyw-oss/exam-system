@@ -131,19 +131,16 @@ export default function ExamResultPage() {
                     </p>
                     
                     <div className="text-sm text-green-700">
-                      <div className="text-base font-semibold mb-1">Correct answer:</div>
-                      
-                      <ReactMarkdown
-                        remarkPlugins={[remarkGfm]}
-                      >
-                        {formatToMarkdown(q.correct_answer)}
-                      </ReactMarkdown>
-
+                      <div className="text-base font-semibold mb-1">Correct answer:</div>                                          
+                        <pre className="whitespace-pre-wrap text-sm text-green-800">
+                         {formatToMarkdown(q.correct_answer)}
+                        </pre>                                                
                     </div>
+                    
 
                     {q.reason && (
                     <p className="text-sm text-gray-700 mt-1 italic border-l-4 border-yellow-400 pl-2 bg-yellow-50 rounded">
-                      🤖 GPT Reason: {q.reason}
+                      <b>Marking Reason:</b> {q.reason}
                     </p>
                     )}
                   </li>

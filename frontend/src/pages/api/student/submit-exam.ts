@@ -148,7 +148,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           };
           
         logGptEvaluation(promptData, { score, reason });
-        
+
         score = result.score;
         reason = result.reason;
       } catch (err) {
@@ -165,7 +165,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           reason,
         });
       }
-      console.log("Ts 文件里的Reason:",reason);
+      //console.log("Ts 文件里的Reason:",reason);
       const keypointId = ans.keypoint_id;
       if (keypointId) {
         if (!keypointStats[keypointId]) {
