@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { jwtDecode } from "jwt-decode";
 import axios from "axios";
+import InProgressExams from "./InProgressExams";
 
 interface DecodedToken {
   id: number;
@@ -23,6 +24,7 @@ export default function Dashboard() {
   const [totalHours, setTotalHours] = useState(0);
   const [totalReward, setTotalReward] = useState(0);
   const [rewards, setRewards] = useState<RewardItem[]>([]);
+  const [showInProgress, setShowInProgress] = useState(false);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -118,6 +120,11 @@ export default function Dashboard() {
             {user.role === "student" && (
               <>
                 <button
+                  onClick={() => setShowInProgress(!showInProgress)}
+                  className="w-full text-center bg-yellow-600 text-white py-2 rounded hover:bg-yellow-700 transition"
+                >📌 Resume Previous Exam</button>
+
+                <button
                   onClick={handleStartExam}
                   className="w-full text-center bg-black text-white py-2 rounded hover:bg-gray-800 transition"
                 >🚀 Start New Exam</button>
@@ -129,6 +136,12 @@ export default function Dashboard() {
               </>
             )}
           </div>
+
+          {showInProgress && (
+            <div className="mt-6">
+              <InProgressExams />
+            </div>
+          )}
         </div>
 
         <div className="text-center">

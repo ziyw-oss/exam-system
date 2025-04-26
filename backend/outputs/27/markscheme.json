@@ -1,0 +1,218 @@
+[
+  {
+    "question_id": "1 (a)",
+    "main": "1",
+    "sub": "a",
+    "subsub": null,
+    "answer": "1 mark per box up to a maximum of 4 marks:",
+    "mark": 4,
+    "guidance": ""
+  },
+  {
+    "question_id": "1 (b)",
+    "main": "1",
+    "sub": "b",
+    "subsub": null,
+    "answer": "1 mark for any of the following bullet points:\n• To write programming code.\n• To debug programming code.\n• To compile/interpret code.",
+    "mark": 1,
+    "guidance": ""
+  },
+  {
+    "question_id": "1 (c)",
+    "main": "1",
+    "sub": "c",
+    "subsub": null,
+    "answer": "1 mark per bullet up to a maximum of 2 marks for each construct (4\nmarks in total), e.g.:\n• Sequence…\n• …e.g. display payment details once a room has been selected\n• …e.g. send confirmation email after successfully entering\npayment details\n• Selection…\n…e.g. if payment details are successful then send\nconfirmation email\n• ...e.g. if a valid date has been entered then display a list of\navailable rooms\n• Iteration….\n• ….e.g. repeat code until a date has been entered\n• ….e.g. repeat code until a room has been selected",
+    "mark": 4,
+    "guidance": "Award 1 mark for stating a construct and then 1\nmark for a suitable example that is relevant to the\ncontext.\nAward a maximum of two marks for each\nprogramming construct."
+  },
+  {
+    "question_id": "1 (d)",
+    "main": "1",
+    "sub": "d",
+    "subsub": null,
+    "answer": "1 mark per bullet up to a maximum of 2 marks, e.g.:\n• Blackbox testing\n• Whitebox testing\n• Alpha testing\n• Beta testing",
+    "mark": 2,
+    "guidance": ""
+  },
+  {
+    "question_id": "1 (e)",
+    "main": "1",
+    "sub": "e",
+    "subsub": null,
+    "answer": "1 mark per bullet up to a maximum of 2 marks:\n• Waterfall lifecycle\n• Agile methodologies\n• Extreme programming\n• Spiral model\n• Rapid Application Development",
+    "mark": 2,
+    "guidance": "Allow RAD as acronym this time"
+  },
+  {
+    "question_id": "1 (f)",
+    "main": "1",
+    "sub": "f",
+    "subsub": null,
+    "answer": "1 mark per bullet up to a maximum of 2 marks for each advantage (4\nmarks in total), e.g.:\n• Saves times (1) as code does not need to be rewritten (1)\n• Code may already be tested (1) which will therefore save\ndevelopment//debugging time (1)\n• More efficient code (1) which will use less memory//be easier\nto maintain (1)\n• May require less technical knowledge (1) as code can used\nrather than written (1)",
+    "mark": 4,
+    "guidance": "Award a maximum of two marks for each\nadvantage.\nAllow other suitable examples."
+  },
+  {
+    "question_id": "2 (a) (i)",
+    "main": "2",
+    "sub": "a",
+    "subsub": "i",
+    "answer": "1 mark per bullet up to a maximum of 4 marks, e.g.:\n• makes use of a (while) loop…\n• ….which will continually check the telephone number….\n• …and repeatedly ask for a telephone number to be re-\nentered….\n• ….until the rules have been met",
+    "mark": 4,
+    "guidance": ""
+  },
+  {
+    "question_id": "2 (a) (ii)",
+    "main": "2",
+    "sub": "a",
+    "subsub": "ii",
+    "answer": "1 mark for stating a suitable procedure name and 1 mark for a\nsuitable purpose (4 marks in total), e.g.:\n• Procedure Name: registerAccount\n• Purpose: To load up the registration page when the user\nwants to create a new account\n• Procedure Name: validateDetails\n• Purpose: To check the suitability of a new username and\npassword entered\n• Procedure Name: checkLogin\n• Purpose: Checks a username and password matches those\nstored when a customer logs in\n• Procedure Name: checkStock\n• Purpose: Checks an item is in stock before the item can be\nadded to a shopping basket",
+    "mark": 4,
+    "guidance": "The procedure name must be relevant to the\ncontext in the question.\nBoth a procedure name and purpose must be stated\nfor 2 marks.\nAllow other suitable examples that are relevant to\nthe context."
+  },
+  {
+    "question_id": "2 (a) (iii)",
+    "main": "2",
+    "sub": "a",
+    "subsub": "iii",
+    "answer": "1 mark per bullet up to a maximum of 4 marks, e.g.:\n• by reference will receive the memory location of where the\ndata/variable is stored\n• by value will receive a copy of the data/variable",
+    "mark": 2,
+    "guidance": "Must cover by reference and by value to be given\nfull marks."
+  },
+  {
+    "question_id": "3 (a)",
+    "main": "3",
+    "sub": "a",
+    "subsub": null,
+    "answer": "1 mark for each correct row up to a maximum of 4 marks.\n89 25 75 37 45\n25 89 75 37 45 1 mark\n25 75 89 37 45 1 mark\n25 75 37 89 45 1 mark\n25 75 37 45 89 1 mark",
+    "mark": 4,
+    "guidance": "Marks should be awarded for correct swapping of\nadjacent items that are out of order. Therefore if the\nprevious step is incorrect but the candidate has\nfollowed through with the correct answer then marks\nshould be awarded."
+  },
+  {
+    "question_id": "3 (b) (i)",
+    "main": "3",
+    "sub": "b",
+    "subsub": "i",
+    "answer": "• Line 5",
+    "mark": 1,
+    "guidance": "Allow line 4 and 12"
+  },
+  {
+    "question_id": "3 (b) (ii)",
+    "main": "3",
+    "sub": "b",
+    "subsub": "ii",
+    "answer": "numbers",
+    "mark": 1,
+    "guidance": ""
+  },
+  {
+    "question_id": "3 (b) (iii)",
+    "main": "3",
+    "sub": "b",
+    "subsub": "iii",
+    "answer": "1 mark per bullet up to a maximum of 2 marks, e.g.:\n• To temporarily hold data…\n• …To allow the contents of two variables to be\nswapped\n• …to ensure that data is not overwritten",
+    "mark": 2,
+    "guidance": ""
+  },
+  {
+    "question_id": "3 (b) (iv)",
+    "main": "3",
+    "sub": "b",
+    "subsub": "iv",
+    "answer": "1 mark per bullet up to a maximum of 2 marks, e.g.:\n• signifies whether or not any swaps have been made\nin a pass\n• if still set to true at the end of a pass, then the list is\nsorted",
+    "mark": 2,
+    "guidance": ""
+  },
+  {
+    "question_id": "4 (a)",
+    "main": "4",
+    "sub": "a",
+    "subsub": null,
+    "answer": "1 mark per bullet up to a maximum of 2 marks, e.g.:\n• = is used as the variable is being assigned\nnumber\na value…\n• …== is not used as the program is not checking if\nthe variable is equal to a value",
+    "mark": 2,
+    "guidance": "Accept:\n• = is an assignment operator\n• == is a comparison operator."
+  },
+  {
+    "question_id": "4 (b)",
+    "main": "4",
+    "sub": "b",
+    "subsub": null,
+    "answer": "• 2,4,6,8",
+    "mark": 1,
+    "guidance": ""
+  },
+  {
+    "question_id": "4 (c)",
+    "main": "4",
+    "sub": "c",
+    "subsub": null,
+    "answer": "• 1,3,5,7",
+    "mark": 1,
+    "guidance": ""
+  },
+  {
+    "question_id": "4 (d)",
+    "main": "4",
+    "sub": "d",
+    "subsub": null,
+    "answer": "1 mark per bullet up to a maximum of 2 marks, e.g.:\n• Modulo division\n• Finds the remainder after a division\n• Used to determine if is an odd or even number\na",
+    "mark": 2,
+    "guidance": ""
+  },
+  {
+    "question_id": "5 (a)",
+    "main": "5",
+    "sub": "a",
+    "subsub": null,
+    "answer": "1 mark per bullet up to a maximum of 3 marks, e.g.:\n• To start from the beginning // first booking slot\n• Search each slot in order // sequentially\n• Search until the first empty slot is found",
+    "mark": 3,
+    "guidance": ""
+  },
+  {
+    "question_id": "5 (b)",
+    "main": "5",
+    "sub": "b",
+    "subsub": null,
+    "answer": "1 mark per bullet up to a maximum of 7 marks, e.g.:\n• Defining the function correctly\nfindFirst\n• Suitable logic for checking the first time slot\n• Suitable logic for checking the next time slot…\n• Suitable loop to check all time slots\n• Suitable logic for returning the available time slot\n• Suitable logic for returning if no time slots\n-1\navailable\n• Suitable use of variable names and indentation",
+    "mark": 7,
+    "guidance": "Example solution:\nfunction findFirst()\ncount = 0\ndo\nfound = false\n\"\"\nif customerID[2, count] == then\nfound = true\nelse\ncount = count + 1\nendif\nuntil count == 10 or found == true\nif found == True\nreturn customerID[0,count]\nelse\nreturn -1\nendif\nendfunction\nThere are many different ways that this function could\nhave been achieved. Therefore other alternative methods\nshould be given credit."
+  },
+  {
+    "question_id": "5 (c) (iii)",
+    "main": "5",
+    "sub": "c",
+    "subsub": "iii",
+    "answer": "A procedure does not return a value / a function will\nreturn a value.",
+    "mark": 1,
+    "guidance": ""
+  },
+  {
+    "question_id": "6 (a)",
+    "main": "6",
+    "sub": "a",
+    "subsub": null,
+    "answer": "1 mark per bullet up to a maximum of 2 marks, e.g.:\n• Line 04 is calling the procedure\n• Line 06 is defining the procedure",
+    "mark": 2,
+    "guidance": ""
+  },
+  {
+    "question_id": "6 (b)",
+    "main": "6",
+    "sub": "b",
+    "subsub": null,
+    "answer": "1 mark per bullet up to a maximum of 2 marks, e.g.:\n• the variable is global (set on line 03)\nchange\n• the value is printed after it has been changed to 0\nby the procedure",
+    "mark": 2,
+    "guidance": ""
+  },
+  {
+    "question_id": "6 (c)",
+    "main": "6",
+    "sub": "c",
+    "subsub": null,
+    "answer": "1 mark per bullet up to a maximum of 3 marks, e.g.:\n• to convert/cast the values\n• …from an integer to a string\n• to allow the values/labels to be joined/concatenated\n// to allow them to be printed together",
+    "mark": 3,
+    "guidance": "Allow “To typecast the variables”"
+  }
+]

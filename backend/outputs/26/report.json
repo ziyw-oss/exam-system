@@ -1,0 +1,86 @@
+{
+  "6(c)": {
+    "text": "Most candidates achieved a few marks, but few achieved the maximum marks available. The question states that pseudocode or program code could be used so a variety of answers were given. The OCR pseudocode guide gives guidance on how to write pseudocode including data structures, constructs, and reading/writing to file. Some candidates wrote neither pseudocode or program code and therefore were given no marks. Many candidates remembered to open the sales file, but many forgot to close the file. Initialising the variables before the loop was also missed by a number of candidates. Increasing the total was included in many responses, although many forgot to cast the total to a numeric data type to enable this to work correctly. Many candidates achieved the last 2 marks for calculating the average and then displaying the calculated values. Some missed the final output as the text was incorrectly concatenated with the variable values.",
+    "exemplar": "“numofdays” and “total”. The second mark has been awarded for the first line, which opens the sales file and closing the file after the loop has finished. The while loop gains the third mark which repeats until the end of the file is reached. The fourth mark is awarded for reading each line of the file correctly. The fifth mark correctly increases total in each iteration. Sale has been correctly converted to a “float” data type beforehand to make this possible. The sixth mark is awarded for calculating the average on the penultimate line. The final mark is awarded for printing the number of days, total sales and the daily average. This has been concatenated correctly with a plus symbol. Some candidates used the comma which was also acceptable. The syntax provided in this example relates to Python whereas some candidates wrote pseudocode or another high-level language. Some candidates lost marks for writing the steps in everyday English which is not what the question stipulated. OCR support The OCR Pseudocode guide shows the format pseudocode will appear in the examined components. This can be downloaded from the OCR Website."
+  },
+  "1(a)": {
+    "text": "This was generally answered well, although some candidates were vague in their response. The concept of the BIOS booting up the Operating System was missed by some, but most candidates mentioned the BIOS checking that the hardware is operational (POST).",
+    "exemplar": "checks hardware and has provided a suitable example. The second mark has been awarded for explaining that the BIOS loads the operating system. Although it was not essential to mention POST (Power-On-Self-Test) this is useful to explain the process that occurs."
+  },
+  "1(b) (i)": {
+    "text": "Round Robin was the most popular answer by far. Most candidates achieved the mark although some used the example in the question. Candidates should be reminded to read the questions carefully here and to not repeat answers already provided."
+  },
+  "1(b) (ii)": {
+    "text": "Few candidates achieved both available marks and most missed the concept of jobs/packets having equal priority."
+  },
+  "1(c)": {
+    "text": "To get both marks, candidates need to be clear that paging and segmentation are about allocating memory. Many candidates were not clear on this and discussed managing data or packets. Candidates should be careful to use the correct terminology for questions of this type in particular."
+  },
+  "1(d) (i)": {
+    "text": "Some candidates were vague in their response and were not clear that Harvard has separate memory blocks. Candidates must be specific in their response."
+  },
+  "1(d) (ii)": {
+    "text": "This question was not answered well. Many candidates repeated their response to the previous question and did not answer the question correctly. Candidates need to read questions carefully."
+  },
+  "1(e) (i)": {
+    "text": "Very few candidates achieved a mark here. Many mentioned that the CPU would be busy but were not specific enough to gain the mark. In questions of this type, examples need to be specific to the question."
+  },
+  "1(e) (ii)": {
+    "text": "Few candidates gained both marks for this question. The concepts of pushing and popping items was mentioned by many candidates although this was often too vague and didn’t link to the question. Candidates needed to use the correct terms for accessing items from a stack to gain the marks in this question."
+  },
+  "2(a)": {
+    "text": "This question was generally answered well. Several candidates wrote brand names which was not an acceptable answer. Some candidates gave an example of a utility which was required for Question 2 (b). To gain both marks, candidates were required to choose a suitable application type which would be useful in the given scenario. Candidates are reminded not to use brand names for questions of this type."
+  },
+  "2(b)": {
+    "text": "This question was generally answered well although many candidates achieved 2 rather than 4 marks. Commonly, two utilities were correctly identified but the explanation to accompany the utility was too vague. Candidates were required to give examples of how the utilities could be used with the given scenario."
+  },
+  "2(c)": {
+    "text": "Candidates were assessed on the quality of their extended response in this question. Most of the candidates were clear on the basic difference between open and closed source software but did not link this in with the scenario. Mid-level responses were common with few candidates having a balanced discussion with coverage of all four of the required sections."
+  },
+  "3(a)": {
+    "text": "This question was answered well."
+  },
+  "3(b) (i)": {
+    "text": "Most candidates achieved both marks for this question. The order of the layers was not important to get both marks and many candidates gave “Transport” and “Network” as the two missing layers. Some candidates gave “Internet” in place of “Network” which was also acceptable."
+  },
+  "3(b) (ii)": {
+    "text": "This question was generally not answered well. Candidates that did gain marks, focused on the concept of layers being independent. Many candidates missed this concept and did not achieve the marks. Candidates should be careful to use the correct terminology for questions of this type."
+  },
+  "3(c)": {
+    "text": "Candidates were assessed on the quality of their extended response in this question. Most candidates understood the basic concept of storing personal details being a violation of customers civil liberties. Few candidates had a balanced discussion and focused too heavily on the negative aspects of this system therefore being restricted to a mid-level mark."
+  },
+  "4(a)": {
+    "text": "This question was generally answered well."
+  },
+  "4(b) (i)": {
+    "text": "To gain the mark, the candidate was required to use all 8 bits. Some used 7 bits and therefore did not achieve the mark. Candidates should be reminded to read through each question carefully."
+  },
+  "4(b) (ii)": {
+    "text": "This question was answered well with most errors relating to a miscalculation."
+  },
+  "4(b) (iii)": {
+    "text": "This was generally answered well although some candidates were confused between two’s complement and sign and magnitude."
+  },
+  "4(b) (iv)": {
+    "text": "As with Question 4 (b) (iii), this was answered well although some candidates gave an answer using two’s complement."
+  },
+  "4(c)": {
+    "text": "This question was worth either 2 or 0 marks. It was generally not answered well with most candidates being too vague."
+  },
+  "4(d)": {
+    "text": "As with the other binary calculation, this was generally answered correctly. Some candidates gave the wrong answer but gained a mark for evidence of a suitable method. The question reminds candidates to show their working and most candidates did."
+  },
+  "5(a)": {
+    "text": "This question was answered well with many candidates achieving all 4 marks. Some completed the table correctly but were not able to simplify the expression appropriately."
+  },
+  "5(b)": {
+    "text": "As with the first part of this question, this was answered well. Most candidates used the same gates that are shown in the mark scheme, although equivalent gates were accepted. Some candidates lost marks for not being clear on the type of gate they had decided on.",
+    "exemplar": "clearly drawn to avoid confusion. Each gate also has the correct number of inputs and outputs in all three instances. Logic gate guidance To make sure full credit is given for the answers provided, it is essential that the drawings are clear enough to distinguish one gate from another. Some gates look similar, so the lines and symbols need to be clear enough to establish which gate has been used."
+  },
+  "6(a)": {
+    "text": "This was generally answered well although some candidates picked Integer for the data type which would not be accurate given that averages are likely to be a decimal value. There are a range of data types that support decimal values, any of which would be acceptable as an answer."
+  },
+  "6(b)": {
+    "text": "This was also answered well although some candidates used the word ‘iteration’ in their answer without going to describe what this means. As this was in the question, further detail was required such as repeating or looping through the text file."
+  }
+}

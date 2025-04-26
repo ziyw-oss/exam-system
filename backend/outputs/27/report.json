@@ -1,0 +1,79 @@
+{
+  "6(c)": {
+    "text": "Most candidates identified that the values needed to be converted from integer to string otherwise an error would be generated because they could not be concatenated. Fewer identified the process as type casting."
+  },
+  "1(a)": {
+    "text": "Candidates needed to apply computational thinking skills to identify the components of the problem presented in the stem of the question and to determine the order of the steps required. Many candidates responded in context and generally answered well, but a significant number either repeated the points they made or repeated steps already given in the diagram."
+  },
+  "1(b)": {
+    "text": "Most candidates showed good recall of knowledge stating that an IDE was used to develop code."
+  },
+  "1(c)": {
+    "text": "Most candidates had factual knowledge of the specification point that lists sequence, iteration and branching as types of programming construct. However, many candidates found it more difficult to demonstrate computational thinking skills to logically break down the problem given in the stem of the question to give relevant examples. Several candidates did confuse programming constructs with either computational thinking concepts such as abstraction and decomposition or with other elements of programming such as procedures, functions or classes."
+  },
+  "1(d)": {
+    "text": "Most candidates responded well with good factual recall of testing strategies. Some candidates did confuse testing strategies with types of test data that could be used within a test strategy or described validation checks that could be performed on input values."
+  },
+  "1(e)": {
+    "text": "Most candidates showed accurate factual recall to identify appropriate software development methodologies. Where Rapid Application Development was selected many candidates gave the acronym RAD which was accepted, but candidates should, in general, be careful to expand all acronyms when they are first given within an answer."
+  },
+  "1(f)": {
+    "text": "Many candidates did not give a clear explanation for a point made, and there were a number of ‘cheaper’ or ‘quicker’ type responses that had no qualification for what was being alluded to as ‘cheaper’ or ‘quicker’.",
+    "exemplar": "A response that shows a clear point being made with a detailed explanatory expansion for both benefits."
+  },
+  "2(a) (i)": {
+    "text": "Most candidates achieved some marks for this question, but few achieved complete responses. Many identified iteration within the first version as key to repeating the sequence until the validation conditions were met. Fewer could explain how version two of the code would allow invalid data to be entered into the system."
+  },
+  "2(a) (ii)": {
+    "text": "Candidates needed to apply computational thinking and show procedural identification. Most scored full marks and identified suitable procedures such as checking login details or adding items to shopping basket with clear descriptions."
+  },
+  "2(a) (iii)": {
+    "text": "More candidates were able to produce accurate definitions of passing by value and passing by reference than in previous series."
+  },
+  "2(b)": {
+    "text": "Candidates continue to struggle with the banded response question on the paper and most responses did not have a clear structure. These questions always require candidates to show knowledge by defining the terms being used, applying knowledge to the specific context given in the question, and then weighing the merits or drawbacks in an evaluation. Few candidates could develop the concept of modularity to the level of interfaces and the need for agreed standards for function calls and return values. Most responses focused on the basics of the use of functions and procedures but did not demonstrate how different modules might be integrated."
+  },
+  "3(a)": {
+    "text": "There were a number of responses that included clear diagrams illustrating the first pass of a bubble sort on the given data. Very few candidates confused bubble sort with other types of sorting algorithm so most achieved full marks for this question."
+  },
+  "3(b) (i)": {
+    "text": "Most candidates had little difficulty identifying line 05 as the obvious response, but some candidates did choose the decision taking place at the end of the do..until loop in line 12."
+  },
+  "3(b) (ii)": {
+    "text": "Nearly all candidates correctly identified numbers as the correct parameter name."
+  },
+  "3(b) (iii)": {
+    "text": "Candidates found it difficult to articulate a response that broke the purpose of the temp variable down in lines 06 to 08 into logical steps with reasons. Many candidates identified it as a temporary store, but few could explain that it allowed the contents of the two array positions to be swapped without erroneously overwriting either value."
+  },
+  "3(b) (iv)": {
+    "text": "Many responses to this question were generalised answers that stated that the sorted variable determined whether the data was sorted or not. This could be an indication that candidates did not have practical experience of implementing a bubble sort with a swap flag. Most candidates did not appreciate the function of the variable during each pass of the bubble sort. Candidates need to be well versed in the different ways of implementing a bubble sort."
+  },
+  "4(a)": {
+    "text": "Most candidates were correctly able to distinguish between assignment and equality."
+  },
+  "4(b)": {
+    "text": "In many cases candidates gave the response 2 and did not iterate through the loop until the initial loop condition was false."
+  },
+  "4(c)": {
+    "text": "Candidates who answered the previous part of the question generally went on to score full credit for a second trace of the algorithm with a different calling argument value."
+  },
+  "4(d)": {
+    "text": "Candidates who successfully identified that a remainder was calculated found it harder to determine that its purpose was to see if the number was even or odd. Misconception Some candidates think that a modulo division calculation resulting in 0 means that there is no remainder. Where the result of modulo division is 0 it means that the remainder is 0."
+  },
+  "5(a)": {
+    "text": "This question was generally not well answered. Candidates found it difficult to articulate a clear and concise set of steps that take place during a linear search. Many responses were vague and not directly related to a linear search being performed on the data presented in the table."
+  },
+  "5(b)": {
+    "text": "A number of candidates started by defining a procedure rather than defining a function. Indentation was not always consistent with the constructs being used. Candidates seemed to have difficulty with referencing two dimensional structures. Algorithms that require two dimensional data frequently appear on this paper and candidates need to have extensive practical programming experience solving problems using these structures.",
+    "exemplar": "A well-structured pseudocode response that uses indentation and variable naming well. The logic of the loop to check each item in sequence for an empty entry is clear, as is the indexing into the 2- Dimensional table structure. To contrast with Exemplar 2, this exemplar shows a lack of pseudocode with a response written mostly in prose English, with inconsistent indentation and a lack of clear variable naming. Assessment for learning Candidates frequently benefit from having extensive practical programming experience when answering pseudocode questions. Past paper questions can provide a context for problems for implementation. For this question candidates could either be asked to code a two dimensional table structure for the data in Fig 1 and to then implement the linear search, or they code be provided with a scaffolded partially complete solution with the table defined and the stem of a function given. Routinely taking past paper questions that can be practically implemented is an effective way to make sure that candidates have relevant experience."
+  },
+  "5(c)": {
+    "text": "Nearly all candidates successfully identified the factual knowledge that a function returns a value."
+  },
+  "6(a)": {
+    "text": "Many candidates responded correctly and could identify the difference between a procedure call and a procedure declaration."
+  },
+  "6(b)": {
+    "text": "Many candidates identified that the procedure would reduce the change to 0 but few identified that it was because change was a global variable which meant that the initial value was being decreased to zero or that line 22 would need to be moved to before line 10 to resolve the error."
+  }
+}

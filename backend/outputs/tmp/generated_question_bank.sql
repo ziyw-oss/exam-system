@@ -1,77 +1,116 @@
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 38, 1);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 39, 2);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 40, 3);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 41, 4);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 42, 5);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 43, 6);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 44, 7);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 45, 8);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 46, 9);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 47, 10);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 48, 1);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 49, 2);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 50, 3);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 51, 4);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 52, 5);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 53, 6);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 54, 7);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 55, 8);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 56, 9);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 57, 1);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 58, 1);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 59, 2);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 60, 3);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 61, 1);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 62, 2);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 63, 3);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 64, 4);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 65, 5);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 66, 6);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 67, 7);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 68, 8);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 69, 9);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 70, 1);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 71, 2);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 72, 3);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 73, 4);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 74, 5);
-INSERT INTO question_codeblock (question_bank_id, code) VALUES (40, '01 procedure bubbleSort(numbers : byRef)
-02 flag = true
-03 for x = 0 to numbers.length – 1
-04 if numbers[x] > numbers[x + 1] then
-05 holdValue = numbers[x]
-06 numbers[x] = numbers[x + 1]
-07 numbers[x + 1] = holdValue
-08 flag = false
-09 endif
-10 next x
-11 endprocedure');
-INSERT INTO question_codeblock (question_bank_id, code) VALUES (41, '(i) Explain why the procedure bubbleSort accepts the array numbers by reference and not by value. ......................................................................................................................................');
-INSERT INTO question_codeblock (question_bank_id, code) VALUES (42, '(ii) The programmer has used a for loop on line 3 in the procedure bubbleSort. A for loop is a count controlled loop. State what is meant by the term ‘count controlled loop’. ......................................................................................................................................');
-INSERT INTO question_codeblock (question_bank_id, code) VALUES (43, '(iii) State the purpose of the variable holdValue in the procedure bubbleSort. ......................................................................................................................................');
-INSERT INTO question_codeblock (question_bank_id, code) VALUES (44, '(iv) The procedure bubbleSort will only partially sort the array numbers into order. Describe what the programmer would need to add to the algorithm to enable it to fully sort the numbers into order. ......................................................................................................................................');
-INSERT INTO question_codeblock (question_bank_id, code) VALUES (48, 'Taylor is designing a program for a client who would like to simulate earthquakes on major cities around the world in 3D. The client would like to be able to view any stage of an earthquake such as: 1. the build-up of the earthquake 2. the earthquake taking place 3. the aftershocks of the earthquake. The client would also like to be able to play the simulation at different speeds. For example, a slow, normal or fast speed.');
-INSERT INTO question_codeblock (question_bank_id, code) VALUES (51, '(i) Identify two different inputs for this program. 1 ........................................................................................................................................ 2 ........................................................................................................................................');
-INSERT INTO question_codeblock (question_bank_id, code) VALUES (52, '(ii) One decision point in the program will be to decide if the user inputs are suitable or not. Identify two other example decision points in this program. 1 ........................................................................................................................................ 2 ........................................................................................................................................');
-INSERT INTO question_codeblock (question_bank_id, code) VALUES (55, '(ii) Give two reasons why the waterfall model is not suitable for Taylor. 1 ......................................................................................................................................... 2 .........................................................................................................................................');
-INSERT INTO question_codeblock (question_bank_id, code) VALUES (58, '25 / 2 = 12 remainder 1
-12 / 2 = 6 remainder 0');
-INSERT INTO question_codeblock (question_bank_id, code) VALUES (60, 'The main program: • asks the user to enter a denary number between 1 and 255 • checks that the input is valid between 1 and 255 • If valid call the function toBinary() and pass the input as a parameter • outputs the return value • If not valid, repeatedly asks the user to input a number until the number is valid. Write the algorithm for the main program. You should write your algorithm using pseudocode or program code. .............................................................................................................................................. [4]');
-INSERT INTO question_codeblock (question_bank_id, code) VALUES (61, '01 total = 1
-02 smallest = 9999
-03 largest = -1
-04 for x = 0 to 21
-05 dataArray[x] = input("Enter a number")
-06 total = total + dataArray[x]
-07 if dataArray[x] < largest then
-08 largest = dataArray[x]
-09 endif
-10 if dataArray[x] < smallest then
-11 smallest = dataArray[x]
+INSERT INTO question_bank (id, level, parent_id, text, question_type, marks) VALUES (111, 'question', NULL, 'Ruhail owns ten different function rooms which can be hired by different business customers to hold meetings. He would like a program to manage the booking process of each room. Customers should be able to enter the date they want to hire a function room, and then a list of available rooms will be displayed. Customers can then select which room they want to hire. Customers can then enter their payment details which are then checked and then a confirmation email is sent to the customer.', 'short_answer', NULL);
+INSERT INTO question_bank (id, level, parent_id, text, question_type, marks) VALUES (112, 'sub_question', 111, 'Complete the structure diagram below to show the different component parts of the problem. Function rooms Choose room Check payment details Check payment Check availability [4]', 'short_answer', 4);
+INSERT INTO question_bank (id, level, parent_id, text, question_type, marks) VALUES (113, 'sub_question', 111, 'Ruhail will make use of an Integrated Development Environment (IDE). State the purpose of an IDE. .............................................................................................................................................. [1]', 'short_answer', 1);
+INSERT INTO question_bank (id, level, parent_id, text, question_type, marks) VALUES (114, 'sub_question', 111, 'State two different programming constructs and give an example of how Ruhail could use each construct when creating his program code. 1 ................................................................................................................................................ 2 ................................................................................................................................................ [4]', 'short_answer', 4);
+INSERT INTO question_bank (id, level, parent_id, text, question_type, marks) VALUES (115, 'sub_question', 111, 'Ruhail will test his program code to make sure that it works correctly. State two test strategies that Ruhail could use. 1 ................................................................................................................................................ 2 ................................................................................................................................................ [2]', 'short_answer', 2);
+INSERT INTO question_bank (id, level, parent_id, text, question_type, marks) VALUES (116, 'sub_question', 111, 'Ruhail will make use of a software development life cycle methodology. State two software development methodologies that Ruhail could consider using. 1 ................................................................................................................................................ 2 ................................................................................................................................................ [2]', 'short_answer', 2);
+INSERT INTO question_bank (id, level, parent_id, text, question_type, marks) VALUES (117, 'sub_question', 111, 'Ruhail has been told to make use of reusable components when creating his program code. Explain two benefits of using reusable components when writing program code. 1 ................................................................................................................................................ 2 ................................................................................................................................................ [4]', 'short_answer', 4);
+INSERT INTO question_bank (id, level, parent_id, text, question_type, marks) VALUES (118, 'question', NULL, 'Logan is writing a program for his customers to be able to buy his gym equipment. In the program, once a customer has selected the items they want to buy, a procedure, checkDetails, will be called. This procedure will check that the customer has input their telephone number and also check that it is at least 11 characters long.', 'short_answer', NULL);
+INSERT INTO question_bank (id, level, parent_id, text, question_type, marks) VALUES (119, 'sub_question', 118, 'Logan has written two possible versions of the procedure that could be used to achieve this. Version One: procedure checkDetails() telephoneNo = input("Enter telephone number") while (telephoneNo == "") or (telephoneNo.length < 11) print("Error, please try again") telephoneNo = input("Enter telephone number") endwhile endprocedure Version Two: procedure checkDetails() telephoneNo = input("Enter telephone number") if (telephoneNo == "") or (telephoneNo.length < 11) then print("Error, please try again") telephoneNo = input("Enter telephone number") endif endprocedure', 'short_answer', NULL);
+INSERT INTO question_bank (id, level, parent_id, text, question_type, marks) VALUES (120, 'subsub_question', 119, '(i) Explain why version one is more effective than version two at making sure that the telephone number entered is at least 11 characters long. ......................................................................................................................................', 'short_answer', 4);
+INSERT INTO question_bank (id, level, parent_id, text, question_type, marks) VALUES (121, 'subsub_question', 119, '(ii) As well as the procedure checkDetails, Logan would like to use additional procedures to expand his program. The program will be expanded to: • allow customers to be able to register an account by setting up a username and password • allow registered users to be able to log-in with their registration details • allow customers, once logged in, to be able to add items that are in stock to their online shopping basket. State two other procedures that Logan could write to meet these requirements, and for each one, state a suitable name and purpose. Procedure 1: Procedure Name:  .............................................................................................................. Purpose:  ............................................................................................................................ Procedure 2: Procedure Name:  .............................................................................................................. Purpose:  ............................................................................................................................', 'short_answer', 4);
+INSERT INTO question_bank (id, level, parent_id, text, question_type, marks) VALUES (122, 'subsub_question', 119, '(iii) When setting up the additional procedures in his program, Logan will use a mixture of parameter passing by reference and by value. State the difference between parameter passing by reference and parameter passing by value. ......................................................................................................................................', 'short_answer', 2);
+INSERT INTO question_bank (id, level, parent_id, text, question_type, marks) VALUES (123, 'sub_question', 118, '* Logan will work in a team with five other programmers and together they will create the programming code for the program. Discuss how modularity can be used to allow the team of programmers to work effectively together on the same program at the same time. .............................................................................................................................................. [9]', 'short_answer', 9);
+INSERT INTO question_bank (id, level, parent_id, text, question_type, marks) VALUES (124, 'question', NULL, 'Trudi would like to sort an array of numbers into order. The numbers before they have been sorted can be seen here. 89 25 75 37', 'short_answer', NULL);
+INSERT INTO question_bank (id, level, parent_id, text, question_type, marks) VALUES (125, 'sub_question', 16, 'Trudi will use a bubble sort to put these numbers into order from smallest to largest. Show the first pass of the bubble sort. You should clearly show each comparison made. .............................................................................................................................................. [4]', 'short_answer', 4);
+INSERT INTO question_bank (id, level, parent_id, text, question_type, marks) VALUES (126, 'sub_question', 16, 'Trudi has written a procedure, bubbleSort.', 'code_block', NULL);
+INSERT INTO question_bank (id, level, parent_id, text, question_type, marks) VALUES (127, 'subsub_question', 126, '(i) Identify a line in the procedure bubbleSort where a decision is taken. ......................................................................................................................................', 'short_answer', 1);
+INSERT INTO question_bank (id, level, parent_id, text, question_type, marks) VALUES (128, 'subsub_question', 126, '(ii) Identify the name of the parameter used in the procedure bubbleSort. ......................................................................................................................................', 'short_answer', 1);
+INSERT INTO question_bank (id, level, parent_id, text, question_type, marks) VALUES (129, 'subsub_question', 126, '(iii) Describe the purpose of the temp variable in the procedure bubbleSort. ......................................................................................................................................', 'short_answer', 2);
+INSERT INTO question_bank (id, level, parent_id, text, question_type, marks) VALUES (130, 'subsub_question', 126, '(iv) Describe the purpose of the sorted variable in the procedure bubbleSort. ......................................................................................................................................', 'short_answer', 2);
+INSERT INTO question_bank (id, level, parent_id, text, question_type, marks) VALUES (131, 'question', NULL, 'Given the following procedure:', 'code_block', NULL);
+INSERT INTO question_bank (id, level, parent_id, text, question_type, marks) VALUES (132, 'sub_question', 131, 'Explain why = is used on line 11 of the procedure generate instead of ==. .............................................................................................................................................. [2]', 'short_answer', 2);
+INSERT INTO question_bank (id, level, parent_id, text, question_type, marks) VALUES (133, 'sub_question', 131, 'State the values printed by the procedure generate when number = 8. .............................................................................................................................................. [1]', 'short_answer', 1);
+INSERT INTO question_bank (id, level, parent_id, text, question_type, marks) VALUES (134, 'sub_question', 131, 'State the values printed by the procedure generate when number = 7. .............................................................................................................................................. [1]', 'short_answer', 1);
+INSERT INTO question_bank (id, level, parent_id, text, question_type, marks) VALUES (135, 'sub_question', 131, 'Describe the purpose of the MOD operator on line 04 of the procedure generate. .............................................................................................................................................. [2]', 'short_answer', 2);
+INSERT INTO question_bank (id, level, parent_id, text, question_type, marks) VALUES (136, 'question', NULL, 'A veterinary surgery uses a two dimensional array to store bookings for customers to bring in their animal to see the vet. There are ten possible booking slots during each day. An example of the two dimensional array is shown in Fig. 1. • The first column stores the booking slot number, ranging between 1 and 10. • The second column stores the time of the appointment. • The third column stores the customerID of the customer who has booked that slot. 1 9:00 5877RC 2 9:30 9655AS 3 10:00 4 10:30 8754TT 5 11:00 6 11:30 8745SD 7 13:00 9635GH 8 13:30 9 14:00 9874PL 10 14:30 9658SV Fig. 1 If a customerID has been entered for a booking slot then the booking slot has been taken. If no customerID has been entered then the booking slot is available for booking.', 'short_answer', NULL);
+INSERT INTO question_bank (id, level, parent_id, text, question_type, marks) VALUES (137, 'sub_question', 136, 'When customers make an appointment they often ask for the first available booking slot. Describe how a linear search could be used for this purpose. .............................................................................................................................................. [3]', 'short_answer', 3);
+INSERT INTO question_bank (id, level, parent_id, text, question_type, marks) VALUES (138, 'sub_question', 136, 'A function findFirst, is used to find the first available appointment. Write the function findFirst that will find the first available appointment and return the booking slot number. If no appointments are available then the function should return "-1". You should write your function using pseudocode or program code. .............................................................................................................................................. [7]', 'short_answer', 7);
+INSERT INTO question_bank (id, level, parent_id, text, question_type, marks) VALUES (139, 'sub_question', 136, 'When an available time slot has been found then a valid customerID must be entered to confirm the booking. This is checked by another function called checkCustomerID. This will return true if the customerID is valid or false if the customerID is not valid. State why a function would be used instead of a procedure for this purpose. .............................................................................................................................................. [1]', 'short_answer', 1);
+INSERT INTO question_bank (id, level, parent_id, text, question_type, marks) VALUES (140, 'question', NULL, 'Kylie buys used games consoles and then sells them to make a profit. She sells her products in multiples of £5 such as £30, £55 and £95. Kylie only accepts £50, £20, £10 and £5 notes from her customers. Kylie has written an algorithm which will calculate the amount of change needed by stating how many £20, £10 and £5 notes are needed. The program should output the minimum number of notes required. For example if £35 change is required then it should output 1 x £20 and 1 x £10 and 1 x £5.  05 06 procedure calculateChange() 07 twenty = 0 08 ten = 0 09 five = 0 10 while change >= 20 //Calculates number of £20 notes needed 11 twenty = twenty + 1 12 change = change – 20 13 endwhile 14 while change >= 10 //Calculates number of £10 notes needed 15 ten = ten + 1 16 change = change – 10 17 endwhile 18 while change >= 5 //Calculates number of £5 notes needed 19 five = five + 1 20 change = change – 5 21 endwhile 22 print("The amount of change you need is £" + str(change)) 23 print("Total £20 Notes:" + str(twenty)) 24 print("Total £10 Notes:" + str(ten)) 25 print("Total £5 Notes:" + str(five)) 26 endprocedure', 'code_block', NULL);
+INSERT INTO question_bank (id, level, parent_id, text, question_type, marks) VALUES (141, 'sub_question', 140, 'Describe how calculateChange() on line 04 is used differently to calculateChange() on line 06. .............................................................................................................................................. [2]', 'short_answer', 2);
+INSERT INTO question_bank (id, level, parent_id, text, question_type, marks) VALUES (142, 'sub_question', 140, 'When line 22 is run, it will always print: The amount of change you need is £0 Explain why this error occurs when line 22 is run. .............................................................................................................................................. [2]', 'short_answer', 2);
+INSERT INTO question_bank (id, level, parent_id, text, question_type, marks) VALUES (143, 'sub_question', 140, 'Explain why Kylie has used str on lines 22 to 25 in her algorithm. .............................................................................................................................................. [3] END OF QUESTION PAPER', 'short_answer', 3);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (27, 111, 1);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (27, 112, 2);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (27, 113, 3);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (27, 114, 4);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (27, 115, 5);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (27, 116, 6);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (27, 117, 7);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (27, 118, 1);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (27, 119, 2);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (27, 120, 3);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (27, 121, 4);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (27, 122, 5);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (27, 123, 6);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (27, 124, 1);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (27, 16, 1);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (27, 125, 2);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (27, 126, 3);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (27, 127, 4);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (27, 128, 5);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (27, 129, 6);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (27, 130, 7);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (27, 131, 1);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (27, 132, 2);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (27, 133, 3);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (27, 134, 4);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (27, 135, 5);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (27, 136, 1);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (27, 137, 2);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (27, 138, 3);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (27, 139, 4);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (27, 140, 1);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (27, 141, 2);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (27, 142, 3);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (27, 143, 4);
+INSERT INTO question_codeblock (question_bank_id, code) VALUES (111, 'Ruhail owns ten different function rooms which can be hired by different business customers to hold meetings. He would like a program to manage the booking process of each room. Customers should be able to enter the date they want to hire a function room, and then a list of available rooms will be displayed. Customers can then select which room they want to hire. Customers can then enter their payment details which are then checked and then a confirmation email is sent to the customer.');
+INSERT INTO question_codeblock (question_bank_id, code) VALUES (118, 'Logan is writing a program for his customers to be able to buy his gym equipment. In the program, once a customer has selected the items they want to buy, a procedure, checkDetails, will be called. This procedure will check that the customer has input their telephone number and also check that it is at least 11 characters long.');
+INSERT INTO question_codeblock (question_bank_id, code) VALUES (119, 'Logan has written two possible versions of the procedure that could be used to achieve this. Version One: procedure checkDetails() telephoneNo = input("Enter telephone number") while (telephoneNo == "") or (telephoneNo.length < 11) print("Error, please try again") telephoneNo = input("Enter telephone number") endwhile endprocedure Version Two: procedure checkDetails() telephoneNo = input("Enter telephone number") if (telephoneNo == "") or (telephoneNo.length < 11) then print("Error, please try again") telephoneNo = input("Enter telephone number") endif endprocedure');
+INSERT INTO question_codeblock (question_bank_id, code) VALUES (121, '(ii) As well as the procedure checkDetails, Logan would like to use additional procedures to expand his program. The program will be expanded to: • allow customers to be able to register an account by setting up a username and password • allow registered users to be able to log-in with their registration details • allow customers, once logged in, to be able to add items that are in stock to their online shopping basket. State two other procedures that Logan could write to meet these requirements, and for each one, state a suitable name and purpose. Procedure 1: Procedure Name:  .............................................................................................................. Purpose:  ............................................................................................................................ Procedure 2: Procedure Name:  .............................................................................................................. Purpose:  ............................................................................................................................');
+INSERT INTO question_codeblock (question_bank_id, code) VALUES (123, '* Logan will work in a team with five other programmers and together they will create the programming code for the program. Discuss how modularity can be used to allow the team of programmers to work effectively together on the same program at the same time. .............................................................................................................................................. [9]');
+INSERT INTO question_codeblock (question_bank_id, code) VALUES (126, '01 procedure bubbleSort(numbers)
+02 do
+03 sorted = true
+04 for count = 0 to numbers.length -2
+05 if numbers[count] > numbers[count+1] then
+06 temp = numbers[count+1]
+07 numbers[count+1] = numbers[count]
+08 numbers[count] = temp
+09 sorted = false
+10 endif
+11 next count
+12 until sorted == true
+13 endprocedure');
+INSERT INTO question_codeblock (question_bank_id, code) VALUES (127, '(i) Identify a line in the procedure bubbleSort where a decision is taken. ......................................................................................................................................');
+INSERT INTO question_codeblock (question_bank_id, code) VALUES (128, '(ii) Identify the name of the parameter used in the procedure bubbleSort. ......................................................................................................................................');
+INSERT INTO question_codeblock (question_bank_id, code) VALUES (129, '(iii) Describe the purpose of the temp variable in the procedure bubbleSort. ......................................................................................................................................');
+INSERT INTO question_codeblock (question_bank_id, code) VALUES (130, '(iv) Describe the purpose of the sorted variable in the procedure bubbleSort. ......................................................................................................................................');
+INSERT INTO question_codeblock (question_bank_id, code) VALUES (131, '01 procedure generate(number)
+02 a = 0
+03 while number > 0
+04 if number MOD 2 == 0 then
+05 a = a + 2
+06 print(a)
+07 number = number – 2
+08 else
+09 a = a + 1
+10 print(a)
+11 number = number – 1
 12 endif
-13 next x
-14 print("Average = " + total * 20)
-15 print("Smallest = " + smallest)
-16 print("Largest = " + largest)');
-INSERT INTO question_codeblock (question_bank_id, code) VALUES (71, 'The program needs to search the array for a number that is input by the user.');
-INSERT INTO question_codeblock (question_bank_id, code) VALUES (72, '(i) Describe how a linear search will search the data in the array for a number that has been input. ......................................................................................................................................');
+13 endwhile
+14 endprocedure');
+INSERT INTO question_codeblock (question_bank_id, code) VALUES (132, 'Explain why = is used on line 11 of the procedure generate instead of ==. .............................................................................................................................................. [2]');
+INSERT INTO question_codeblock (question_bank_id, code) VALUES (133, 'State the values printed by the procedure generate when number = 8. .............................................................................................................................................. [1]');
+INSERT INTO question_codeblock (question_bank_id, code) VALUES (134, 'State the values printed by the procedure generate when number = 7. .............................................................................................................................................. [1]');
+INSERT INTO question_codeblock (question_bank_id, code) VALUES (135, 'Describe the purpose of the MOD operator on line 04 of the procedure generate. .............................................................................................................................................. [2]');
+INSERT INTO question_codeblock (question_bank_id, code) VALUES (136, 'A veterinary surgery uses a two dimensional array to store bookings for customers to bring in their animal to see the vet. There are ten possible booking slots during each day. An example of the two dimensional array is shown in Fig. 1. • The first column stores the booking slot number, ranging between 1 and 10. • The second column stores the time of the appointment. • The third column stores the customerID of the customer who has booked that slot. 1 9:00 5877RC 2 9:30 9655AS 3 10:00 4 10:30 8754TT 5 11:00 6 11:30 8745SD 7 13:00 9635GH 8 13:30 9 14:00 9874PL 10 14:30 9658SV Fig. 1 If a customerID has been entered for a booking slot then the booking slot has been taken. If no customerID has been entered then the booking slot is available for booking.');
+INSERT INTO question_codeblock (question_bank_id, code) VALUES (137, 'When customers make an appointment they often ask for the first available booking slot. Describe how a linear search could be used for this purpose. .............................................................................................................................................. [3]');
+INSERT INTO question_codeblock (question_bank_id, code) VALUES (138, 'A function findFirst, is used to find the first available appointment. Write the function findFirst that will find the first available appointment and return the booking slot number. If no appointments are available then the function should return "-1". You should write your function using pseudocode or program code. .............................................................................................................................................. [7]');
+INSERT INTO question_codeblock (question_bank_id, code) VALUES (139, 'When an available time slot has been found then a valid customerID must be entered to confirm the booking. This is checked by another function called checkCustomerID. This will return true if the customerID is valid or false if the customerID is not valid. State why a function would be used instead of a procedure for this purpose. .............................................................................................................................................. [1]');
+INSERT INTO question_codeblock (question_bank_id, code) VALUES (140, '01 total = input("Enter total price of goods")
+02 paid = input("Enter amount paid”)
+03 global change = paid – total
+04 calculateChange()');
+INSERT INTO question_codeblock (question_bank_id, code) VALUES (142, 'When line 22 is run, it will always print: The amount of change you need is £0 Explain why this error occurs when line 22 is run. .............................................................................................................................................. [2]');
