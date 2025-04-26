@@ -139,7 +139,7 @@ export default function Dashboard() {
 
           {showInProgress && (
             <div className="mt-6">
-              <InProgressExams />
+              <InProgressExams onBack={() => setShowInProgress(false)} />
             </div>
           )}
         </div>

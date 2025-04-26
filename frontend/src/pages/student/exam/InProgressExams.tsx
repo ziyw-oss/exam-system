@@ -11,7 +11,11 @@ interface InProgressExam {
     startedAt: string;
   }
 
-export default function InProgressExams() {
+interface InProgressExamsProps {
+  onBack: () => void;
+}
+
+export default function InProgressExams({ onBack }: InProgressExamsProps) {
   const router = useRouter();
   const [inProgressExams, setInProgressExams] = useState<InProgressExam[]>([]);
   const [loading, setLoading] = useState(true);
@@ -96,7 +100,10 @@ export default function InProgressExams() {
 
         <div className="mt-6">
           <button
-            onClick={() => router.push("/student/exam/dashboard")}
+            onClick={() => {
+              onBack();
+              router.push("/student/exam/dashboard");
+            }}
             className="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700"
           >
             ← Back to Dashboard
