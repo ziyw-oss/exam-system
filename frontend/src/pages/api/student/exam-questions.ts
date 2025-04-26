@@ -36,9 +36,17 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   try {
     const connection = await mysql.createConnection(dbConfig);
 
-    // 查询 session 是否属于该用户
+    // 查询 session 是否属于该用户，连表查询 exams 拿 year 和 paper_type
     const [sessions]: any = await connection.query(
-      `SELECT duration_min, started_at FROM exam_sessions WHERE id = ? AND user_id = ?`,
+      `SELECT 
+        es.duration_min, 
+        es.started_at,
+        es.exam_id,
+        e.year,
+        e.paper_type
+       FROM exam_sessions es
+       JOIN exams e ON es.exam_id = e.id
+       WHERE es.id = ? AND es.user_id = ?`,
       [sessionId, userId]
     );
 
@@ -93,6 +101,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     questions,
     answers,
     remainingTime,
+    examYear: session.year,
+    paperType: session.paper_type,
     });
   } catch (err) {
     console.error("❌ 查询 session 失败:", err);

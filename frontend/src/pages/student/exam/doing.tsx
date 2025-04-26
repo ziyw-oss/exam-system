@@ -19,6 +19,9 @@ export default function ExamDoing() {
     ? router.query.sessionId[0]
     : router.query.sessionId;
 
+  const [examYear, setExamYear] = useState<string>("");
+  const [examType, setExamType] = useState<string>("");
+  
   const [questions, setQuestions] = useState<Question[]>([]);
   const [answers, setAnswers] = useState<Record<number, string>>({});
   const [timeLeft, setTimeLeft] = useState<number>(0);
@@ -45,6 +48,8 @@ export default function ExamDoing() {
         setAnswers(savedAnswers);
         setTimeLeft(res.data.remainingTime);
         setLoading(false);
+        setExamYear(res.data.examYear);
+        setExamType(res.data.paperType);
       } catch (err) {
         console.error("Failed to load exam:", err);
         router.push("/student/exam/start");
@@ -117,7 +122,7 @@ export default function ExamDoing() {
   return (
     <div className="p-6 pb-40 relative min-h-screen">
       <p className="text-lg text-gray-600 mb-2 flex items-center gap-2">
-        <span className="text-base">🧑‍🏫</span> Exam In Progress
+         <span className="text-base">🧑‍🏫</span> Exam In Progress {examYear && `- ${examYear}`} {examType && `(${examType})`}
       </p>
 
       {loading ? <p>Loading...</p> : (
