@@ -3,6 +3,19 @@ import type { AppProps } from "next/app";
 import "../styles/globals.css";
 import '@fontsource/nunito/400.css';
 import '@fontsource/nunito/700.css';
+import axios from "axios";
+import Router from "next/router";
+
+axios.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response?.status === 401) {
+      localStorage.removeItem("token");
+      Router.push("/admin/login");
+    }
+    return Promise.reject(error);
+  }
+);
 
 //console.log("🚀 _app.tsx 正在运行！");
 
