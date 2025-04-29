@@ -1,0 +1,123 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 9.
+
+Question: (ii) * A storage device is used to store the individual video elements while they are being captured in different locations and during the video editing process. Discuss the suitability of a flash storage device and a magnetic storage device for storing the different video elements while they are being collected and edited. You should refer to the following in your answer: • the benefits of each type of storage • the drawbacks of each type of storage • the suitability of each type of storage. ......................................................................................................................................
+Reference Answer: Mark Band 3–High Level
+(7-9 marks)
+The candidate will provide a range of accurate benefits and
+drawbacks of both magnetic and flash devices.
+The candidate is able to apply their knowledge and
+understanding directly and consistently to the context provided.
+Evidence/examples will be explicitly relevant to the explanation.
+The candidate will come to a clear conclusion that must be
+justified by their comments
+There is a well-developed line of reasoning which is clear and
+logically structured. The information presented is relevant and
+substantiated.
+Mark Band 2-Mid Level
+(4-6 marks)
+The candidate will provide drawbacks or benefits about both
+magnetic and flash methods. These will be for the most part
+relevant. The candidate is able to apply their knowledge and
+understanding directly to the context provided although one or
+two opportunities are missed.
+Evidence/examples are for the most part implicitly relevant to
+the explanation.
+The candidate will attempt to come to a conclusion, although it
+may not be fully justified by their answer,
+There is a line of reasoning presented with some structure.
+The information presented is in the most part relevant and
+supported by some evidence.
+Mark Band 1-Low Level
+(1-3 marks)
+The candidate has provided some drawbacks or benefits of
+magnetic or flash methods. The material is basic and contains
+some inaccuracies.
+The candidate makes a limited attempt to apply acquired
+knowledge and understanding to the context provided.
+The candidate provides nothing more than an unsupported
+assertion.
+The information is basic and communicated in an unstructured
+way. The information is supported by limited evidence and the
+relationship to the evidence may not be clear.
+0 marks
+No attempt to answer the question or response is not worthy of
+credit.
+Marking Scheme: AO1
+Magnetic Benefits:
+• Lower price per GB
+• As standard comes in high capacity
+Magnetic Drawbacks:
+• Lower R/W speed
+• Higher power consumption
+• Moving parts /less durable
+Flash Benefits:
+• Higher R/W speed
+• No moving parts/more durable
+• Lower power consumption
+• Can have a higher capacity.
+Flash Drawbacks:
+• Higher cost per GB
+• At higher capacities prices rise exponentially.
+AO2:
+Suitability of Magnetic:
+• Video files are very large, benefiting magnetics low cost
+per GB
+• Can be used to archive the different video elements after
+it’s been rendered
+• Could possibly get damaged while being transported
+between the different filming sites
+• Slow R/W speeds may take it longer to load into the
+software
+Suitability of flash:
+• Very fast R/W speeds therefore reducing the amount of
+loading time during the editing process/giving smoother
+playback
+• If money is not a barrier, flash can be bought in sufficient
+capacities for videos.
+AO3:
+Candidates can conclude either method, but to score in the top
+MB must have a clear line of reasoning to justify their choice.
+Examiner Report: Candidates were assessed on the quality of their extended response in this question. Most candidates understood the basic differences between flash storage and magnetic storage devices, but did not make clear links to the scenario. Mid-level responses were common, with few candidates giving a balanced discussion and a conclusion with suitable justifications. Assessment for learning Questions with the command word ‘discuss’ require candidates to give a balanced discussion and provided a suitable conclusion which justifies their comments. Opportunities to practise these questions will support candidates to do better on these style questions.
+Exemplar Answer: N/A
+Student's Answer: Magnetic Benefits:
+• Lower price per GB
+• As standard comes in high capacity
+Magnetic Drawbacks:
+• Lower R/W speed
+• Higher power consumption
+• Moving parts /less durable
+Flash Benefits:
+• Higher R/W speed
+• No moving parts/more durable
+• Lower power consumption
+• Can have a higher capacity.
+Flash Drawbacks:
+• Higher cost per GB
+• At higher capacities prices rise exponentially.
+Suitability of Magnetic:
+• Video files are very large, benefiting magnetics low cost
+per GB
+• Can be used to archive the different video elements after
+it’s been rendered
+• Could possibly get damaged while being transported
+between the different filming sites
+• Slow R/W speeds may take it longer to load into the
+software
+Suitability of flash:
+• Very fast R/W speeds therefore reducing the amount of
+loading time during the editing process/giving smoother
+playback
+• If money is not a barrier, flash can be bought in sufficient
+capacities for videos.
+
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 9)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

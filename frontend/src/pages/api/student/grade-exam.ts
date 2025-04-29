@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import mysql from "mysql2/promise";
 import jwt from "jsonwebtoken";
-import OpenAI from "openai";
+import { getGptScore } from "@/lib/gptScoring";
 
 const dbConfig = {
   host: "localhost",
@@ -9,10 +9,6 @@ const dbConfig = {
   password: "",
   database: "exam_system",
 };
-
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY!,
-});
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== "POST") {
@@ -67,31 +63,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         }
       } else if (a.question_type === "subjective") {
         // 调用 OpenAI API 进行评分
-        const prompt = `你是一位考试评卷官，请根据以下信息为学生作答评分，满分为 ${a.marks} 分。
-题目：${a.question_text}
-参考答案：${a.correct_answer}
-评分指南：${a.guidance || "无"}
-考官报告：${a.report_text || "无"}
-优秀作答示例：${a.exemplar_text || "无"}
-学生作答：${a.answer_text}
-请直接输出一个数字分数（0-${a.marks}），不要添加解释：`;
-console.log("📤 GPT评分Prompt:\n", prompt); // ✅ 这句会输出到终端
-console.log(`✅ 题目 ${a.question_id} 得分: ${score} / ${a.marks}`);
-
-        const completion = await openai.chat.completions.create({
-          model: "gpt-4o",
-          messages: [
-            {
-              role: "user",
-              content: "Hello, GPT!",
-            },
-          ],
+        const { score: gptScore } = await getGptScore({
+          questionText: a.question_text,
+          referenceAnswer: a.correct_answer,
+          guidance: a.guidance,
+          report: a.report_text,
+          exemplar: a.exemplar_text,
+          studentAnswer: a.answer_text,
+          marks: a.marks,
         });
-        console.log(completion.choices[0].message.content);
-        const reply = completion.choices[0].message?.content || "0";
-        score = parseFloat(reply);
-        if (isNaN(score)) score = 0;
-        score = Math.min(Math.max(score, 0), a.marks);
+        score = gptScore;
       }
 
       scores.push({ question_id: a.question_id, score });

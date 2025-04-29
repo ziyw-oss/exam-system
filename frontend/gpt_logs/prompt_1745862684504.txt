@@ -1,0 +1,24 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 2.
+
+Question: (i) State the difference between a primary key and a foreign key. ......................................................................................................................................
+Reference Answer: • A primary key will only appear once in a
+table/is a unique identifier
+• A foreign key may appear multiple times a
+table/may not be unique
+Marking Scheme: Accept entity for table
+
+Examiner Report: Many candidates were able to state what a primary key is, but did not state the difference between this and a foreign key and therefore did not achieve both marks.
+Exemplar Answer: N/A
+Student's Answer: A primary key will only appear once in a table/is a unique identifier
+A foreign key may appear multiple times a table/may not be unique
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 2)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

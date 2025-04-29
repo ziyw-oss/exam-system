@@ -1,0 +1,29 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 2.
+
+Question: Explain what is meant by the term ‘virtual memory’ and why this may be needed when Amaya is editing her photographs. .............................................................................................................................................. [2]
+Reference Answer: • If the amount of RAM available is insufficient…
+• …Used to store instructions/data
+• …Using secondary storage.
+• Likely to be loading large image files (which may
+exceed her RAM)
+• Likely to be loading large programs (which may
+exceed her RAM)
+Marking Scheme: N/A
+Examiner Report: Most candidates achieved both of the available marks for this question and linked the scenario in well when writing their response.
+Exemplar Answer: N/A
+Student's Answer: If the amount of RAM available is insufficient, virtual memory is used to:
+ store instructions/data
+Using secondary storage.
+Likely to be loading large image files (which may exceed her RAM)
+Likely to be loading large programs (which may exceed her RAM)
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 2)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

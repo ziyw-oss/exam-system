@@ -1,0 +1,28 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 3.
+
+Question: OCRSystems are considering using parallel processing in the computer system that will be used for video rendering. Describe how parallel processing would increase the performance of this computer system. .............................................................................................................................................. [3]
+Reference Answer: • Parallel processing will allow multiple separate
+jobs/instructions/FDE cycles to run concurrently.
+• Longer rendering jobs can be split, shortening
+the overall time taken.
+• Different CPUs/cores can tackle different
+frames/sections/components of the video
+simultaneously.
+Marking Scheme: N/A
+Examiner Report: To achieve all 3 marks for this question, candidates needed to describe what parallel processing is, and then be clear as to how this would affect the computer system in the question. Many candidates were not given all the available marks as they did not make clear links between parallel processing and the scenario.
+Exemplar Answer: N/A
+Student's Answer: The parallel processing maximizing the usage of the computing resources provided by multi-core processors.
+Parallel processing will allow multiple separate jobs/instructions/FDE cycles to run concurrently.
+Longer rendering jobs can be split, shortening the overall time taken.
+Different CPUs/cores can tackle different frames/sections/components of the video simultaneously.
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 3)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

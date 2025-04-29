@@ -43,7 +43,7 @@ export default function ExamSetup() {
   const [selectedSection, setSelectedSection] = useState<number | null>(null);
   const [selectedChapter, setSelectedChapter] = useState<number | null>(null);
   const [selectedKeypoints, setSelectedKeypoints] = useState<number[]>([]);
-  const [duration, setDuration] = useState(60);
+  const [duration, setDuration] = useState(75);
   const [examMode, setExamMode] = useState<string>("");
 
   // ✅ 确保 router 准备好后再设置 mode

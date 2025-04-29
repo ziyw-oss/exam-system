@@ -155,7 +155,7 @@ export default function ExamDoing() {
               {currentQ?.mark > 0 ? (
                 <textarea
                   className="w-full border border-gray-300 p-4 rounded-md shadow focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  style={{ width: "100vw", maxWidth: "100%", minHeight: "120px", boxSizing: "border-box" }}
+                  style={{ width: "100vw", maxWidth: "100%", minHeight: "240px", boxSizing: "border-box" }}
                   disabled={isSubmitting}
                   value={answers[currentQid!] || ""}
                   onChange={(e) => handleAnswerChange(currentQid!, e.target.value)}

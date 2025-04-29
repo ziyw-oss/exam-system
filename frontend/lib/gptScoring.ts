@@ -1,6 +1,8 @@
 // File: src/lib/gptScoring.ts
 
 import OpenAI from "openai";
+import fs from "fs";
+import path from "path";
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
 
@@ -45,9 +47,28 @@ Respond in the following JSON format:
   "reason": "your explanation"
 }`;
 
+  // Save prompt to log file
+  const logsDir = path.resolve(process.cwd(), "gpt_logs");
+  if (!fs.existsSync(logsDir)) {
+    fs.mkdirSync(logsDir);
+  }
+  const logFile = path.join(logsDir, `prompt_${Date.now()}.txt`);
+  fs.writeFileSync(logFile, prompt, "utf-8");
+
+  // Cleanup old log files (older than 10 days)
+  const files = fs.readdirSync(logsDir);
+  const now = Date.now();
+  for (const file of files) {
+    const filePath = path.join(logsDir, file);
+    const stat = fs.statSync(filePath);
+    if (now - stat.mtimeMs > 10 * 24 * 60 * 60 * 1000) { // 10 days in ms
+      fs.unlinkSync(filePath);
+    }
+  }
+
   try {
     const gptRes = await openai.chat.completions.create({
-      model: "gpt-3.5-turbo",
+      model: "gpt-4o",
       messages: [{ role: "user", content: prompt }],
     });
 

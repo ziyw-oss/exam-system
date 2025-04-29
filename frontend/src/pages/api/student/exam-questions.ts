@@ -20,23 +20,23 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   const token = req.headers.authorization?.split(" ")[1];
   if (!token) {
-    return res.status(401).json({ message: "未提供 token" });
+    return res.status(401).json({ message: "Token not provided" });
   }
 
   let userId: number;
   try {
     const decoded: any = jwt.verify(token, process.env.JWT_SECRET || "your-secret-key");
-    console.log("✅ Token 解码成功:", decoded);
+    //console.log("✅ Token decoded successfully:", decoded);
     userId = decoded.id;
   } catch (err) {
-    console.error("❌ Token 解析失败:", err);
+    console.error("❌ Token decoding failed:", err);
     return res.status(401).json({ message: "Token 无效" });
   }
 
   try {
     const connection = await mysql.createConnection(dbConfig);
 
-    // 查询 session 是否属于该用户，连表查询 exams 拿 year 和 paper_type
+    // Query session ownership and join exams to retrieve year and paper_type
     const [sessions]: any = await connection.query(
       `SELECT 
         es.duration_min, 
@@ -51,12 +51,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     );
 
     if (sessions.length === 0) {
-      return res.status(404).json({ message: "未找到考试记录" });
+      return res.status(404).json({ message: "Exam session not found" });
     }
 
     const session = sessions[0];
 
-    // 查询题目信息 + 学生答案 + code_block 内容
+    // Query question information + student answers + code_block content
     const [questions]: any = await connection.query(
         `SELECT 
             qb.id AS question_bank_id,
@@ -106,6 +106,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     });
   } catch (err) {
     console.error("❌ 查询 session 失败:", err);
-    return res.status(500).json({ message: "服务器错误" });
+    return res.status(500).json({ message: "Internal server error" });
   }
 }

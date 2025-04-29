@@ -1,0 +1,24 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 3.
+
+Question: Show the denary value 6.25 as a floating point binary number representing the mantissa and exponent. Both of these should be stored in two’s complement representation. You should use as few bits as possible. Show your working. .............................................................................................................................................. [3]
+Reference Answer: • Fixed point is 0110.01
+• Mantissa becomes 0.11001
+• Exponent of three needed (represented at 011)
+Marking Scheme: Final Answer 011001 011
+Correct answer with any working gets full marks
+Examiner Report: Many candidates were given the first mark by working out the fixed-point equivalent of 6.25 (0110.01) but were not given further marks because they did not read the question correctly. The question states the response must use as few bits as possible. Although some candidates correctly calculated the mantissa, many had extra digits in the exponent which could have been removed. See Exemplar 2 which was given full marks.
+Exemplar Answer: The candidate clearly shows the fixed-point value of 6.25 to gain the first mark. The second mark is given for showing the mantissa with six bits and the final mark for showing the exponent with three bits. All of these values are displayed clearly, and the candidate uses arrows to demonstrate the movement of the decimal point as additional working.
+Student's Answer:  011001 011
+
+
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 3)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

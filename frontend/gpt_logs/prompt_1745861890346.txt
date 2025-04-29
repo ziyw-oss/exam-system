@@ -1,0 +1,38 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 4.
+
+Question: Describe two factors that affect the performance of the CPU. 1 ................................................................................................................................................ 2 ................................................................................................................................................ [4]
+Reference Answer: • Clock Speed …
+• … The speed at which the fetch decode execute
+cycle is completed/ the speed a single core can
+execute instructions
+• Number of cores/ independent processing units
+…
+• …that can fetch decode execute at the same
+time
+• Cache size…
+• … memory that contains recently/frequently
+used instructions/data
+• …memory that has a faster R/W speed than
+RAM
+• …memory that is closer to/onboard the CPU
+Marking Scheme: One mark for stating the factor, mark for expanding the
+factor
+- Accept cycles for “FDE Cycles”
+Examiner Report: Most candidates were able to identify two factors that could affect the performance of the CPU, but many were not given all 4 marks as they did not fully describe why each factor would affect the performance. See Exemplar 1, which was given full marks.
+Exemplar Answer: The candidate gives two valid factors that would affect performance and then explains why each of the two factors would affect performance. They use appropriate terminology in their response.
+Student's Answer: The main factors affecting processor performance are:
+Clock speed: The system clock generates a series of signals, switching between 0 and 1 several million times per second and synchronising CPU operation. Each CPU operation starts as the clock changes from 0 to 1( or in some systems from 1 to 0), and the CPU cannot perform operations faster than the clock cycle (the time the clock takes to go from 0 to 1 and back to 0).  All processor activities begin on a clock pulse, although some activities may take more than one clock cycle to complete. One clock cycle per second = 1 Hertz(Hz); clock speed is measured in Gigahertz(Ghz), about 1 billion cycles per second.
+Number of cores: In a traditional computer, instructions are fetched and executed one at a time in a serial manner. However, many computers nowadays have multiple cores. A dual-core processor has two processors linked together in the same integrated circuit, and a quad-core computer has four linked processors. Each core is theoretically able to process a different instruction at the same time with its own fetch-execute cycle, making the processor two or even four times faster with a quad-core chip. 
+Amount and type of memory: Cache is a small amount of expensive, very fast memory inside the CPU. When an instruction is fetched from main memory, it is copied into the caches, so if it is needed again soon after, it can be fetched from the cache, which is much quicker than going back to main memory. As the cache fills up, unused instructions or data still being held are replaced with more recent ones. There are different levels of cache: Level 1 cache is extremely fast but small(between 2-64 KB); Level 2 cache is fairly fast and medium-sized(256 KB- 2 MB); Some CPUS also have Level 3 cache.
+
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 4)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

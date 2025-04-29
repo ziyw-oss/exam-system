@@ -1,0 +1,144 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 9.
+
+Question: * Zac has hired a company that will advise him on what type of LAN he should set up. Discuss how Zac could set up a peer-to-peer network and a client-server network. You should refer to the following in your answer: • how the computers in each type are connected • the benefits of each type • the drawbacks of each type • the suitability of each type. .............................................................................................................................................. [9] END OF QUESTION PAPER
+Reference Answer: Mark Band 3–High Level
+(7-9 marks)
+The candidate demonstrates a thorough knowledge and
+understanding of both peer to peer and client server
+and can give valid application of both in this scenario.
+All detail are generally accurate and relevant
+The candidate is able to apply their knowledge and
+understanding directly and consistently to the context
+provided. Evidence/examples will be explicitly relevant
+to the explanation.
+There is a well-developed line of reasoning which is
+clear and logically structured. The information
+presented is relevant and substantiated.
+Mark Band 2-Mid Level
+(4-6 marks)
+The candidate demonstrates reasonable knowledge
+and understanding of client server and peer to peer; the
+material is generally accurate but at times
+underdeveloped. The candidate may not have applied
+both to this scenario.
+The candidate is able to apply their knowledge and
+understanding directly to the context provided although
+one or two opportunities are missed.
+Evidence/examples are for the most part implicitly
+relevant to the explanation.
+There is a line of reasoning presented with some
+structure. The information presented is in the most part
+relevant and supported by some evidence.
+Mark Band 1-Low Level
+(1-3 marks)
+The candidate demonstrates a basic knowledge of
+client/server or peer to peer and has made some
+attempt at applying this knowledge. the material is basic
+and contains some inaccuracies.
+The candidate makes a limited attempt to apply
+acquired knowledge and understanding to the context
+provided.
+The candidate provides nothing more than an
+unsupported assertion.
+The information is basic and communicated in an
+unstructured way. The information is supported by
+limited evidence and the relationship to the evidence
+may not be clear.
+0 marks
+No attempt to answer the question or response is not
+worthy of credit.
+Marking Scheme: AO1
+P2P:
+• Each computer can act independently
+• Each computer is responsible for it’s own
+security and login
+• Each computer will maintain and possibly share
+its own connected hardware (printer/external
+storage/internet connection)
+• Each computer will maintain and possibly share
+its own secondary storage
+• If a computer is powered down it’s shared
+resources will not be available.
+• There are no resources not shared by a peer
+machine
+• Adding a machine is simple
+• Very little administration is needed
+Client Server:
+• All network functionality can be provided by
+servers.
+• A server is a process running on a machine,
+usually dedicated to providing these services.
+• A server machine is designed to never be
+powered down.
+• Login/security is handled centrally
+• Shared storage may be managed by a server
+• Shared resources (printer/internet connection
+etc) my be managed by a server
+• If a server process or machine fails, network
+functionality, including the ability login is lost
+• Adding a new machine can mean installing
+specialist client software and setting up OS
+policies.
+• IT skills and a lot of time are needed to
+administer a client server network
+AO2
+P2P:
+• As Zak is looking to expand his staff, P2P would
+offer flexibility in adding staff ad hoc.
+• Zak’s company is still small and may struggle to
+pay for the IT administrator skills needed for a
+client server
+Client Server:
+• As Zak’s firm is an accountancy firm it will have
+sensitive customer data
+• Client server would allow stronger centralised
+security
+• As Zak is taking on multiple staff, they may wish
+to work collaboratively, which shared storage
+would allow.
+• Zak could share a single printer/other hardware
+with all staff and not worry about an individual
+computer being switched on.
+Examiner Report: Candidates were assessed on the quality of their extended response in this question. Although most candidates were able to give a few advantages and disadvantages of the different types of network, few made suitable links to the scenario. Some candidates discussed different topologies which was not relevant to the question. Candidates that were given high marks for this question focused more on the scenario, and made clear links between this and the benefits and drawbacks of the different solutions.
+Exemplar Answer: The candidate response is well structured. The candidate has firstly highlighted how the computers are connected for each type of network and discussed the advantages and disadvantages. The advantages and disadvantages are well balanced and there are clear links to the scenario throughout. The candidate has made a recommendation on the most suitable type of network for the scenario, highlighting the key advantages and showing clear reasoning. The conclusion emphasises the key points and gives a clear justification.
+Student's Answer: P2P:
+• Each computer can act independently
+• Each computer is responsible for it’s own
+security and login
+• Each computer will maintain and possibly share its own connected hardware (printer/external storage/internet connection)
+• Each computer will maintain and possibly shareits own secondary storage
+• If a computer is powered down it’s shared resources will not be available.
+• There are no resources not shared by a peer machine
+• Adding a machine is simple
+• Very little administration is needed
+Client Server:
+• All network functionality can be provided by servers.
+• A server is a process running on a machine, usually dedicated to providing these services.
+• A server machine is designed to never be powered down.
+• Login/security is handled centrally
+• Shared storage may be managed by a server
+• Shared resources (printer/internet connection etc) my be managed by a server
+• If a server process or machine fails, network functionality, including the ability login is lost
+• Adding a new machine can mean installing specialist client software and setting up OS policies.
+• IT skills and a lot of time are needed to administer a client server network
+
+P2P:
+• As Zak is looking to expand his staff, P2P would offer flexibility in adding staff ad hoc.
+• Zak’s company is still small and may struggle to pay for the IT administrator skills needed for a client server
+
+Client Server:
+• As Zak’s firm is an accountancy firm it will have sensitive customer data
+• Client server would allow stronger centralised security
+• As Zak is taking on multiple staff, they may wish to work collaboratively, which shared storage would allow.
+• Zak could share a single printer/other hardware with all staff and not worry about an individual computer being switched on.
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 9)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

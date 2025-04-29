@@ -1,0 +1,46 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 2.
+
+Question: (ii) Explain why packet switching is more suitable for a computer network than circuit switching. ......................................................................................................................................
+Reference Answer: • Computer networks would involve multiple
+connections happening concurrently
+• In packet switching hardware is not tied up with
+each unique connection // can handle multiple
+connections simultaneously
+• Computers pass vast amounts of data which
+may encounter transmission errors
+• Packet switching means only resending
+individual packets instead of the whole data
+stream
+• Computers may be transmitting business critical
+data
+• Packet switching means any network hardware
+failures can be mitigated by routing around it.
+Marking Scheme: N/A
+Examiner Report: Many candidates lost marks for the second part of Question 6 (a) (ii), despite achieving both marks for the first part 6 (a) (i). A lot of incorrect answers gave a very similar response to the first part of the question instead of explaining why the differences that packet switching has, make it more suitable for a computer network. Common correct answers explained that packet switching can route around hardware failures as the data is not sent along a single route.
+Exemplar Answer: N/A
+Student's Answer: •Computer networks would involve multiple connections happening concurrently
+• In packet switching hardware is not tied up with each unique connection // can handle multiple connections simultaneously
+• Computers pass vast amounts of data which may encounter transmission errors
+• Packet switching means only resending individual packets instead of the whole data stream
+• Computers may be transmitting business critical data
+• Packet switching means any network hardware failures can be mitigated by routing around it.
+
+• Each computer can act independently
+• Each computer is responsible for it’s own security and login
+• Each computer will maintain and possibly share its own connected hardware (printer/externalnstorage/internet connection)
+• Each computer will maintain and possibly share its own secondary storage
+• If a computer is powered down it’s shared resources will not be available.
+• There are no resources not shared by a peer machine
+• Adding a machine is simple
+• Very little administration is needed
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 2)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}
