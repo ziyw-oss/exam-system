@@ -1,5 +1,3 @@
-// File: src/pages/student/exam/doing.tsx
-
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
@@ -8,6 +6,9 @@ interface Question {
   question_bank_id: number;
   question_text: string;
   mark: number;
+  level?: string;
+  parent_text?: string;
+  grandparent_text?: string;
   question_type?: string;
   code_block?: string | null;
   student_answer?: string;
@@ -68,6 +69,68 @@ export default function ExamDoing() {
     .filter((i) => i !== -1);
 
   const currentAnswerablePosition = answerableIndexes.findIndex(i => i === currentIndex) + 1;
+
+  // Split formatQuestionNumber logic into separate functions
+  const getMainIndex = (q: Question): string => {
+    let mainIndex = 0;
+    for (let i = 0; i < questions.length; i++) {
+      const item = questions[i];
+      if (item.level === "question") {
+        mainIndex++;
+      }
+      if (item.question_bank_id === q.question_bank_id) {
+        return `${mainIndex}`;
+      }
+    }
+    return "";
+  };
+
+  const getSubIndex = (q: Question): string => {
+    let mainIndex = 0;
+    let subIndex = 0;
+    for (let i = 0; i < questions.length; i++) {
+      const item = questions[i];
+      if (item.level === "question") {
+        mainIndex++;
+        subIndex = 0;
+      }
+      if (item.level === "sub_question") {
+        subIndex++;
+      }
+      if (item.question_bank_id === q.question_bank_id) {
+        // subIndex as letter: a, b, c...
+        return String.fromCharCode(96 + subIndex);
+      }
+    }
+    return "";
+  };
+
+  const getSubSubIndex = (q: Question): string => {
+    let mainIndex = 0;
+    let subIndex = 0;
+    let subSubIndex = 0;
+    const roman = ["(i)", "(ii)", "(iii)", "(iv)", "(v)", "(vi)", "(vii)", "(viii)", "(ix)", "(x)"];
+    for (let i = 0; i < questions.length; i++) {
+      const item = questions[i];
+      if (item.level === "question") {
+        mainIndex++;
+        subIndex = 0;
+        subSubIndex = 0;
+      }
+      if (item.level === "sub_question") {
+        subIndex++;
+        subSubIndex = 0;
+      }
+      if (item.level === "subsub_question") {
+        subSubIndex++;
+      }
+      if (item.question_bank_id === q.question_bank_id) {
+        // subSubIndex as roman numeral
+        return roman[subSubIndex - 1] || "";
+      }
+    }
+    return "";
+  };
 
   const saveCurrentAnswer = async () => {
     const token = localStorage.getItem("token");
@@ -135,14 +198,47 @@ export default function ExamDoing() {
           )}
 
           <div className="border p-4 rounded shadow-sm bg-white w-full max-w-4xl mx-auto">
-            <p className="text-lg font-medium leading-relaxed bg-gray-50 p-4 rounded border-l-4 border-blue-500">
-              {currentQ?.question_text.replace(/Q\d+:\s*/, "").replace(/\.+\s*\[\d+\]$/, "")}
-              {currentQ?.mark > 0 ? (
-                <span className="text-sm text-gray-500 ml-2">({currentQ.mark} marks)</span>
-              ) : (
-                <span className="text-sm text-orange-500 ml-2">(Read carefully before answering sub-questions)</span>
-              )}
-            </p>
+            {/* Render question structure and numbering */}
+            {currentQ?.level === "question" && (
+              <div className="mb-3 text-gray-600 text-base font-semibold whitespace-pre-wrap">
+                {getMainIndex(currentQ)}. {currentQ.question_text}
+                <br /><br />
+              </div>
+            )}
+            {currentQ?.level === "sub_question" && (
+              <>
+                <div className="mb-3 text-gray-500 text-sm whitespace-pre-wrap">
+                  {getMainIndex(currentQ)}. {currentQ.parent_text || ""}
+                  <br /><br />
+                </div>
+                <div className="mb-3 text-gray-600 text-sm whitespace-pre-wrap">
+                  ({getSubIndex(currentQ)}) {currentQ.question_text}
+                  <br /><br />
+                </div>
+              </>
+            )}
+            {currentQ?.level === "subsub_question" && (
+              <>
+                <div className="mb-3 text-gray-500 text-sm whitespace-pre-wrap">
+                  {getMainIndex(currentQ)}. {currentQ.grandparent_text || ""}
+                  <br /><br />
+                </div>
+                <div className="mb-3 text-gray-500 text-sm whitespace-pre-wrap">
+                  ({getSubIndex(currentQ)}) {currentQ.parent_text || ""}
+                  <br /><br />
+                </div>
+                <div className="mb-2 whitespace-pre-wrap">
+                  <span className="font-bold">{getSubSubIndex(currentQ)} </span>
+                  <span className="text-gray-800">{currentQ.question_text.replace(/^\([ivxlcdm]+\)\s*/, "")}</span>
+                </div>
+              </>
+            )}
+            {/* Show marks or info */}
+            <div>
+              {currentQ?.mark > 0
+                ? <span className="text-sm text-gray-500">({currentQ.mark} marks)</span>
+                : <span className="text-sm text-orange-500"></span>}
+            </div>
             <p className="text-sm text-gray-500 mt-2">Time spent on this question: {questionTime} seconds</p>
 
             {currentQ?.question_type === "code_block" && currentQ.code_block && (

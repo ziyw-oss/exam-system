@@ -56,27 +56,39 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     const session = sessions[0];
 
-    // Query question information + student answers + code_block content
+    // Query question information + student answers + code_block content, including parent/grandparent text
     const [questions]: any = await connection.query(
-        `SELECT 
-            qb.id AS question_bank_id,
-            qb.text AS question_text,
-            qb.marks AS mark,
-            qb.question_type,
-            qc.code AS code_block,
-            (
-              SELECT sa.answer_text 
-              FROM student_answers sa
-              WHERE sa.session_id = esq.session_id 
-                AND sa.question_id = esq.question_id
-              LIMIT 1
-            ) AS student_answer
-         FROM exam_session_questions esq
-         JOIN question_bank qb ON esq.question_id = qb.id
-         LEFT JOIN question_codeblock qc ON qb.id = qc.question_bank_id
-         WHERE esq.session_id = ?`,
-        [sessionId]
-      );
+      `SELECT 
+          qb.id AS question_bank_id,
+          qb.text AS question_text,
+          qb.marks AS mark,
+          qb.question_type,
+          qb.level,
+          qb.parent_id,
+          (
+            SELECT text 
+            FROM question_bank 
+            WHERE id = (
+              SELECT parent_id 
+              FROM question_bank 
+              WHERE id = qb.parent_id
+            )
+          ) AS grandparent_text,
+          (SELECT text FROM question_bank WHERE id = qb.parent_id) AS parent_text,
+          qc.code AS code_block,
+          (
+            SELECT sa.answer_text 
+            FROM student_answers sa
+            WHERE sa.session_id = esq.session_id 
+              AND sa.question_id = esq.question_id
+            LIMIT 1
+          ) AS student_answer
+       FROM exam_session_questions esq
+       JOIN question_bank qb ON esq.question_id = qb.id
+       LEFT JOIN question_codeblock qc ON qb.id = qc.question_bank_id
+       WHERE esq.session_id = ?`,
+      [sessionId]
+    );
       
     console.log("🔍 Loaded questions count:", questions.length);
     
