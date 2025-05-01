@@ -27,7 +27,10 @@ export default function ExamDoing() {
   const [answers, setAnswers] = useState<Record<number, string>>({});
   const [timeLeft, setTimeLeft] = useState<number>(0);
   const [loading, setLoading] = useState<boolean>(true);
+  // Only used for numbering, not for navigation
   const [currentIndex, setCurrentIndex] = useState<number>(0);
+  // For navigating only answerable (mark>0) questions
+  const [currentAnswerableIndex, setCurrentAnswerableIndex] = useState<number>(0);
   const [questionTime, setQuestionTime] = useState<number>(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -62,13 +65,14 @@ export default function ExamDoing() {
   useEffect(() => {
     const timer = setInterval(() => setQuestionTime((prev) => prev + 1), 1000);
     return () => clearInterval(timer);
-  }, [currentIndex]);
+  }, [currentAnswerableIndex]);
 
   const answerableIndexes = questions
     .map((q, i) => (q.mark > 0 ? i : -1))
     .filter((i) => i !== -1);
 
-  const currentAnswerablePosition = answerableIndexes.findIndex(i => i === currentIndex) + 1;
+  // For display: current position among answerable questions
+  const currentAnswerablePosition = currentAnswerableIndex + 1;
 
   // Split formatQuestionNumber logic into separate functions
   const getMainIndex = (q: Question): string => {
@@ -136,7 +140,8 @@ export default function ExamDoing() {
     const token = localStorage.getItem("token");
     if (!token || !sessionId) return;
 
-    const currentId = questions[currentIndex]?.question_bank_id;
+    const currentQIndex = answerableIndexes[currentAnswerableIndex];
+    const currentId = questions[currentQIndex]?.question_bank_id;
     if (!currentId) return;
 
     try {
@@ -179,7 +184,8 @@ export default function ExamDoing() {
     }
   };
 
-  const currentQ = questions[currentIndex];
+  const currentQIndex = answerableIndexes[currentAnswerableIndex];
+  const currentQ = questions[currentQIndex];
   const currentQid = currentQ?.question_bank_id;
 
   return (
@@ -191,11 +197,9 @@ export default function ExamDoing() {
       {loading ? <p>Loading...</p> : (
         <>
           <p className="mb-2 text-gray-600">⏱️ Time left: {Math.ceil(timeLeft / 60)} minutes</p>
-          {currentQ?.mark > 0 && (
-            <p className="text-md text-gray-800 mb-2">
-              📌 Question {currentAnswerablePosition} of {answerableIndexes.length}
-            </p>
-          )}
+          <p className="text-md text-gray-800 mb-2">
+            📌 Question {currentAnswerablePosition} of {answerableIndexes.length}
+          </p>
 
           <div className="border p-4 rounded shadow-sm bg-white w-full max-w-4xl mx-auto">
             {/* Render question structure and numbering */}
@@ -233,11 +237,9 @@ export default function ExamDoing() {
                 </div>
               </>
             )}
-            {/* Show marks or info */}
+            {/* Show marks */}
             <div>
-              {currentQ?.mark > 0
-                ? <span className="text-sm text-gray-500">({currentQ.mark} marks)</span>
-                : <span className="text-sm text-orange-500"></span>}
+              <span className="text-sm text-gray-500">({currentQ.mark} marks)</span>
             </div>
             <p className="text-sm text-gray-500 mt-2">Time spent on this question: {questionTime} seconds</p>
 
@@ -248,38 +250,32 @@ export default function ExamDoing() {
             )}
 
             <div className="mt-4 mb-40">
-              {currentQ?.mark > 0 ? (
-                <textarea
-                  className="w-full border border-gray-300 p-4 rounded-md shadow focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  style={{ width: "100vw", maxWidth: "100%", minHeight: "240px", boxSizing: "border-box" }}
-                  disabled={isSubmitting}
-                  value={answers[currentQid!] || ""}
-                  onChange={(e) => handleAnswerChange(currentQid!, e.target.value)}
-                />
-              ) : (
-                <div className="w-full border border-gray-300 p-4 rounded-md shadow text-gray-500 text-sm text-center bg-gray-50"
-                  style={{ width: "100vw", maxWidth: "100%", minHeight: "120px", boxSizing: "border-box" }}>
-                </div>
-              )}
+              <textarea
+                className="w-full border border-gray-300 p-4 rounded-md shadow focus:outline-none focus:ring-2 focus:ring-blue-500"
+                style={{ width: "100vw", maxWidth: "100%", minHeight: "240px", boxSizing: "border-box" }}
+                disabled={isSubmitting}
+                value={answers[currentQid!] || ""}
+                onChange={(e) => handleAnswerChange(currentQid!, e.target.value)}
+              />
             </div>
           </div>
 
           <div className="fixed bottom-6 left-0 w-full flex flex-col items-center z-10 shadow-lg bg-white bg-opacity-95">
             <div className="flex gap-2 mb-2">
               <button
-                disabled={currentIndex === 0}
+                disabled={currentAnswerableIndex === 0}
                 onClick={async () => {
                   await saveCurrentAnswer();
-                  setCurrentIndex(currentIndex - 1);
+                  setCurrentAnswerableIndex(currentAnswerableIndex - 1);
                   setQuestionTime(0);
                 }}
                 className="bg-gray-300 px-4 py-2 rounded disabled:opacity-50"
               >Previous</button>
               <button
-                disabled={currentIndex === questions.length - 1}
+                disabled={currentAnswerableIndex === answerableIndexes.length - 1}
                 onClick={async () => {
                   await saveCurrentAnswer();
-                  setCurrentIndex(currentIndex + 1);
+                  setCurrentAnswerableIndex(currentAnswerableIndex + 1);
                   setQuestionTime(0);
                 }}
                 className="bg-gray-300 px-4 py-2 rounded disabled:opacity-50"
