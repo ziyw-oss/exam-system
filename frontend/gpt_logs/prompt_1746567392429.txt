@@ -1,0 +1,24 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 3.
+
+Question: Give three examples of where abstraction can be used in the design of this program. 1 ................................................................................................................................................ 2 ................................................................................................................................................ 3 ................................................................................................................................................ [3]
+Reference Answer: 1 mark per bullet to max 3
+Any reasonable abstraction
+e.g.
+• will not be to scale not life size
+• will exclude features e.g. people, road markings etc
+• will only show what is relevant e.g. buildings
+Marking Scheme: N/A
+Examiner Report: Most candidates demonstrated that they knew what abstraction was, but a significant number struggled to make clear qualified points. Some candidates gave definitions of abstraction as the removal of unnecessary detail, but this did not answer the question. This was a contextual question that required relevant and qualified points. Responses such as ‘the weather’ were insufficient, whereas ‘removal of the effects of weather’ was a valid qualified point.
+Exemplar Answer: This exemplar shows a response that has unqualified points that do not show how abstraction can be applied. It highlights factors that could be abstracted, but does not tell us how.
+Student's Answer: will not be to scale not life size, will exclude features e.g. people, road markings etc, will only show what is relevant
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 3)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

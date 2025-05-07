@@ -1,0 +1,32 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 4.
+
+Question: Describe how an array can be used to store and access data in a stack data structure. .............................................................................................................................................. [4] END OF QUESTION PAPER
+Reference Answer: 1 mark per bullet to max 4
+• (Stack) Pointer points to the last element added to the stack
+/ top of the stack
+• New data is added to the pointer position // pointer+1…
+• …check for overflow condition
+• …pointer is then incremented
+• Data is removed from pointer/pointer-1 position…
+• …check for underflow condition
+• …pointer is then decremented
+• Elements can be accessed through Push() and Pop()
+methods that are implemented
+Marking Scheme: Note: Answers must relate to an array
+implementation which means that a stack
+pointer must be implemented.
+Examiner Report: Candidates need to be mindful of the fact that an array is a static data structure with a predetermined size. This meant that responses that explained how lists could be used to append and remove items were not given marks. This is an area where candidates who only have programming experience of using lists in Python often struggle. Implementing a stack in an array requires a stack pointer. Those candidates who appreciated this and who clearly had practical experience of modelling push()/pop() operations on a stack were able to articulate how the stack would access array locations at the stack pointer.
+Exemplar Answer: This exemplar was one of the few responses to show a clear insight as to how an array can be used to store and access a stack. It makes it clear that a stack pointer is required and goes on to explain how the stack pointer is manipulated when push()/pop() operations are performed. Misconception Many candidates were not clear about the difference between an array and a list: • An array is a static structure whose size cannot be changed. • Lists are dynamic and support items being removed or appended.
+Student's Answer:  Pointer points to the last element added to the stack, new data is added to the pointer position, check for overflow condition, pointer is then incremented. Data is removed from pointer, and pointer check for underflow condition. Pointer is then decremented. Elements can be accessed through Push() and Pop() 
+methods that are implemented
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 4)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

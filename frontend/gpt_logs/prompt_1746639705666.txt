@@ -1,0 +1,24 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 3.
+
+Question: (i) Explain why the procedure bubbleSort accepts the array numbers by reference and not by value. ......................................................................................................................................
+Reference Answer: 1 mark per bullet
+• by reference will reorder the contents of the array
+• …so the new order can be accessed by the main
+program // so will be saved when the procedure ends
+• by value will change the array only in this procedure
+• … and so would need to return the array.
+Marking Scheme: N/A
+Examiner Report: Many candidates struggled to go beyond recall of definitions for calling by reference and calling by value and struggled to apply it to the code given and to provide a detailed explanation. The bubble sort was defined as a procedure and not a function, so if numbers had been passed by value, a copy of the array would have been passed, and any changes made would not have been kept after the procedure had completed execution.
+Exemplar Answer: N/A
+Student's Answer: sdfsd
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 3)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

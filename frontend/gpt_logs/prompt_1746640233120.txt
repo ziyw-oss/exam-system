@@ -1,0 +1,22 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 3.
+
+Question: When customers make an appointment they often ask for the first available booking slot. Describe how a linear search could be used for this purpose. .............................................................................................................................................. [3]
+Reference Answer: 1 mark per bullet up to a maximum of 3 marks, e.g.:
+• To start from the beginning // first booking slot
+• Search each slot in order // sequentially
+• Search until the first empty slot is found
+Marking Scheme: N/A
+Examiner Report: This question was generally not well answered. Candidates found it difficult to articulate a clear and concise set of steps that take place during a linear search. Many responses were vague and not directly related to a linear search being performed on the data presented in the table.
+Exemplar Answer: N/A
+Student's Answer: sdfs
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 3)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

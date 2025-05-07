@@ -1,0 +1,41 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 9.
+
+Question: (ii) * A storage device is used to store the individual video elements while they are being captured in different locations and during the video editing process. Discuss the suitability of a flash storage device and a magnetic storage device for storing the different video elements while they are being collected and edited. You should refer to the following in your answer: • the benefits of each type of storage • the drawbacks of each type of storage • the suitability of each type of storage. ......................................................................................................................................
+Reference Answer: N/A
+Marking Scheme: N/A
+Examiner Report: N/A
+Exemplar Answer: N/A
+Student's Answer: Flash Storage Device:
+	•	Benefits:
+– Flash storage (e.g., SSDs, USB drives) is fast, with high read/write speeds.
+– It has no moving parts, making it more durable and shock-resistant – ideal for capturing video in different locations.
+– Lightweight and portable, which is useful when moving between filming/editing locations.
+	•	Drawbacks:
+– Generally more expensive per GB compared to magnetic storage.
+– Limited number of write cycles (though usually sufficient for video editing tasks).
+	•	Suitability:
+– Flash storage is highly suitable for capturing video on-location due to speed, durability, and portability. It’s also well-suited for editing, as fast read/write speeds reduce loading and saving times during the editing process.
+
+Magnetic Storage Device:
+	•	Benefits:
+– Magnetic storage (e.g., HDDs) offers large capacity at a lower cost, making it ideal for storing large video files over time.
+– Good for long-term storage of edited footage and backups.
+	•	Drawbacks:
+– Slower read/write speeds compared to flash storage.
+– Contains moving parts, making it more vulnerable to damage from drops or movement.
+– Heavier and less portable.
+	•	Suitability:
+– Magnetic storage is suitable for storing raw video elements and final projects in a central location, but is less practical for mobile use or real-time editing due to slower speeds.
+Conclusion:
+Both flash and magnetic storage devices have their roles. Flash storage is best for portable, high-speed capturing and editing, while magnetic storage is better suited for cost-effective, high-capacity archival storage. Using both in combination offers the best of both worlds.
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 9)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

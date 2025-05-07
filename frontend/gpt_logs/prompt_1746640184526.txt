@@ -1,0 +1,19 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 4.
+
+Question: Complete the structure diagram below to show the different component parts of the problem. Function rooms Choose room Check payment details Check payment Check availability [4]
+Reference Answer: 1 mark per box up to a maximum of 4 marks:
+Marking Scheme: N/A
+Examiner Report: Candidates needed to apply computational thinking skills to identify the components of the problem presented in the stem of the question and to determine the order of the steps required. Many candidates responded in context and generally answered well, but a significant number either repeated the points they made or repeated steps already given in the diagram.
+Exemplar Answer: N/A
+Student's Answer: dsfs
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 4)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

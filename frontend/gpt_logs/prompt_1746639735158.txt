@@ -1,0 +1,22 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 2.
+
+Question: (ii) One decision point in the program will be to decide if the user inputs are suitable or not. Identify two other example decision points in this program. 1 ........................................................................................................................................ 2 ........................................................................................................................................
+Reference Answer: 1 mark per bullet to max 2, e.g.
+• Does the build-up stage need to be shown?
+• Does the earthquake taking place needs to be shown?
+• Does the aftershock stage needs to be shown?
+Marking Scheme: Allow other suitable examples
+Examiner Report: Few candidates were given full marks for this question. There was some repetition of checking user input values, which was given in the stem of the question. There were also many statements of possible calculations rather than clearly expressed conditions or questions. More successful responses included decisions such as ‘have buildings of a certain type survived the earthquake?’.
+Exemplar Answer: N/A
+Student's Answer: sdf
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 2)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

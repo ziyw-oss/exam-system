@@ -238,9 +238,11 @@ export default function ExamDoing() {
               </>
             )}
             {/* Show marks */}
-            <div>
-              <span className="text-sm text-gray-500">({currentQ.mark} marks)</span>
-            </div>
+            {currentQ?.mark !== undefined && (
+              <div>
+                <span className="text-sm text-gray-500">({currentQ.mark} marks)</span>
+              </div>
+            )}
             <p className="text-sm text-gray-500 mt-2">Time spent on this question: {questionTime} seconds</p>
 
             {currentQ?.question_type === "code_block" && currentQ.code_block && (

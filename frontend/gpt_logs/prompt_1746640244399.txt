@@ -1,0 +1,23 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 2.
+
+Question: When line 22 is run, it will always print: The amount of change you need is £0 Explain why this error occurs when line 22 is run. .............................................................................................................................................. [2]
+Reference Answer: 1 mark per bullet up to a maximum of 2 marks, e.g.:
+• the variable is global (set on line 03)
+change
+• the value is printed after it has been changed to 0
+by the procedure
+Marking Scheme: N/A
+Examiner Report: Many candidates identified that the procedure would reduce the change to 0 but few identified that it was because change was a global variable which meant that the initial value was being decreased to zero or that line 22 would need to be moved to before line 10 to resolve the error.
+Exemplar Answer: N/A
+Student's Answer: dfs
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 2)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

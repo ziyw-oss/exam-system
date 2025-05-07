@@ -1,0 +1,26 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 2.
+
+Question: Explain why = is used on line 11 of the procedure generate instead of ==. .............................................................................................................................................. [2]
+Reference Answer: 1 mark per bullet up to a maximum of 2 marks, e.g.:
+• = is used as the variable is being assigned
+number
+a value…
+• …== is not used as the program is not checking if
+the variable is equal to a value
+Marking Scheme: Accept:
+• = is an assignment operator
+• == is a comparison operator.
+Examiner Report: Most candidates were correctly able to distinguish between assignment and equality.
+Exemplar Answer: N/A
+Student's Answer: dsfsd
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 2)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

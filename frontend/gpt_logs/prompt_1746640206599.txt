@@ -1,0 +1,37 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 4.
+
+Question: (ii) As well as the procedure checkDetails, Logan would like to use additional procedures to expand his program. The program will be expanded to: • allow customers to be able to register an account by setting up a username and password • allow registered users to be able to log-in with their registration details • allow customers, once logged in, to be able to add items that are in stock to their online shopping basket. State two other procedures that Logan could write to meet these requirements, and for each one, state a suitable name and purpose. Procedure 1: Procedure Name:  .............................................................................................................. Purpose:  ............................................................................................................................ Procedure 2: Procedure Name:  .............................................................................................................. Purpose:  ............................................................................................................................
+Reference Answer: 1 mark for stating a suitable procedure name and 1 mark for a
+suitable purpose (4 marks in total), e.g.:
+• Procedure Name: registerAccount
+• Purpose: To load up the registration page when the user
+wants to create a new account
+• Procedure Name: validateDetails
+• Purpose: To check the suitability of a new username and
+password entered
+• Procedure Name: checkLogin
+• Purpose: Checks a username and password matches those
+stored when a customer logs in
+• Procedure Name: checkStock
+• Purpose: Checks an item is in stock before the item can be
+added to a shopping basket
+Marking Scheme: The procedure name must be relevant to the
+context in the question.
+Both a procedure name and purpose must be stated
+for 2 marks.
+Allow other suitable examples that are relevant to
+the context.
+Examiner Report: Candidates needed to apply computational thinking and show procedural identification. Most scored full marks and identified suitable procedures such as checking login details or adding items to shopping basket with clear descriptions.
+Exemplar Answer: N/A
+Student's Answer: sdfs
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 4)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

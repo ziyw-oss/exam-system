@@ -1,0 +1,22 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 1.
+
+Question: (ii) State why you would use a linear search rather than a binary search. ......................................................................................................................................
+Reference Answer: 1 mark per bullet
+• If the data is not in any order // binary search requires the
+data to be in order
+• When the number of items to search is small
+Marking Scheme: N/A
+Examiner Report: Many candidates identified the fact that a linear search can operate on an unordered array whereas a binary search cannot. Some candidates alternatively cited the fact that a linear search could be used when the number of items to search was small, which was valid when qualified by the number of items.
+Exemplar Answer: N/A
+Student's Answer: sdfsd
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 1)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

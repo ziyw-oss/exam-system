@@ -1,0 +1,22 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 1.
+
+Question: Ruhail will make use of an Integrated Development Environment (IDE). State the purpose of an IDE. .............................................................................................................................................. [1]
+Reference Answer: 1 mark for any of the following bullet points:
+• To write programming code.
+• To debug programming code.
+• To compile/interpret code.
+Marking Scheme: N/A
+Examiner Report: Most candidates showed good recall of knowledge stating that an IDE was used to develop code.
+Exemplar Answer: N/A
+Student's Answer: dfs
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 1)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

@@ -1,0 +1,23 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 3.
+
+Question: Draw a Logic diagram for the following expression: Q A Q = J(A / B) 0 (C /J D) B C D [3]
+Reference Answer: 1 mark per bullet up to a maximum of 3 marks:
+• An AND gate taking A and B as inputs with the output connecting to a NOT gate
+• An AND gate taking C and the NOT of D as the inputs
+• An OR gate taking the outputs of the NOT and AND gates
+Marking Scheme: Allow NAND gate as
+alternative for BP1
+Examiner Report: As with the first part of this question, this was answered well. Most candidates used the same gates that are shown in the mark scheme, although equivalent gates were accepted. Some candidates lost marks for not being clear on the type of gate they had decided on.
+Exemplar Answer: clearly drawn to avoid confusion. Each gate also has the correct number of inputs and outputs in all three instances. Logic gate guidance To make sure full credit is given for the answers provided, it is essential that the drawings are clear enough to distinguish one gate from another. Some gates look similar, so the lines and symbols need to be clear enough to establish which gate has been used.
+Student's Answer: dfgd
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 3)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

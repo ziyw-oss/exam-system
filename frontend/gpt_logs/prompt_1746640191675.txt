@@ -1,0 +1,36 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 4.
+
+Question: State two different programming constructs and give an example of how Ruhail could use each construct when creating his program code. 1 ................................................................................................................................................ 2 ................................................................................................................................................ [4]
+Reference Answer: 1 mark per bullet up to a maximum of 2 marks for each construct (4
+marks in total), e.g.:
+• Sequence…
+• …e.g. display payment details once a room has been selected
+• …e.g. send confirmation email after successfully entering
+payment details
+• Selection…
+…e.g. if payment details are successful then send
+confirmation email
+• ...e.g. if a valid date has been entered then display a list of
+available rooms
+• Iteration….
+• ….e.g. repeat code until a date has been entered
+• ….e.g. repeat code until a room has been selected
+Marking Scheme: Award 1 mark for stating a construct and then 1
+mark for a suitable example that is relevant to the
+context.
+Award a maximum of two marks for each
+programming construct.
+Examiner Report: Most candidates had factual knowledge of the specification point that lists sequence, iteration and branching as types of programming construct. However, many candidates found it more difficult to demonstrate computational thinking skills to logically break down the problem given in the stem of the question to give relevant examples. Several candidates did confuse programming constructs with either computational thinking concepts such as abstraction and decomposition or with other elements of programming such as procedures, functions or classes.
+Exemplar Answer: N/A
+Student's Answer: sdfs
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 4)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

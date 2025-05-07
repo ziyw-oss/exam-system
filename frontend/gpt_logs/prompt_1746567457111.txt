@@ -1,0 +1,46 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 6.
+
+Question: Write the function toBinary(). You should write your function using pseudocode or program code. .............................................................................................................................................. [6]
+Reference Answer: 1 mark per bullet to max 6
+• function header taking parameter
+• looping appropriately e.g. until value is 0
+• dividing by 2 and finding remainder e.g. MOD
+• adding 1 or 0 correctly
+• …appending to a value to be returned // final string
+reversed
+• reducing value to use within loop
+• returning calculated value
+e.g.
+function toBinary(denary)
+binaryValue=""
+while denary > 0
+temp = denary MOD 2
+if temp == 1 then
+binaryValue = "1" + binaryValue
+else
+binaryValue = "0" + binaryValue
+endif
+denary = denary DIV 2
+endwhile
+return binaryValue
+endfunction
+Marking Scheme: Award a recursive algorithm as equivalent
+Examiner Report: Very few candidates were able to produce a working function, but many gained some marks. Some candidates had little idea of the concept of a function and struggled to define one. Many omitted the definition statement or omitted the required parameter and then asked for user input instead. The standard of pseudocode/code was quite weak. Indentation of constructs was often missing or hard to follow. Mid-range marks were achieved when candidates effectively utilised MOD to determine if the remainder on division by two was odd or even, and then using DIV to find the next term in the sequence. More successful responses demonstrated an ability to problem solve, think logically, and present clear working functions.
+Exemplar Answer: N/A
+Student's Answer: denary = -1 
+while denary < 1 or denary > 255 
+denary = input("Enter denary value between 1 
+and 255") 
+endwhile 
+print(toBinary(denary))
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 6)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

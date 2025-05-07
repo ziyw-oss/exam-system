@@ -1,0 +1,27 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 2.
+
+Question: (ii) Give one benefit and one drawback of declaring dataArray as a local variable in the main program. Benefit  ............................................................................................................................... Drawback  ..........................................................................................................................
+Reference Answer: 1 mark for benefit
+e.g.
+• Increases data integrity
+• More efficient memory usage
+• Stops other subroutines accidently altering variable
+1 mark for drawback
+e.g.
+• Cannot be accessed directly by other subroutines
+• It has to be passed into a subroutine as a parameter
+Marking Scheme: N/A
+Examiner Report: Some candidates confused the terms local variable and global variable and gave definitions the wrong way round. A significant number of responses demonstrated conceptual misconceptions. The contents of dataArray could be used in other parts of the program if it was passed as a parameter to a function/procedure, but could not be referenced directly. Responses such as giving ‘can’t be used anywhere else in the program’ as a disadvantage were, therefore, incorrect.
+Exemplar Answer: N/A
+Student's Answer: dfs
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 2)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

@@ -1,41 +1,41 @@
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 38, 1);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 39, 2);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 40, 3);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 41, 4);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 42, 5);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 43, 6);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 44, 7);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 45, 8);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 46, 9);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 47, 10);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 48, 1);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 49, 2);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 50, 3);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 51, 4);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 52, 5);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 53, 6);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 54, 7);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 55, 8);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 56, 9);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 57, 1);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 58, 1);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 59, 2);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 60, 3);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 61, 1);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 62, 2);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 63, 3);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 64, 4);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 65, 5);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 66, 6);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 67, 7);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 68, 8);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 69, 9);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 70, 1);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 71, 2);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 72, 3);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 73, 4);
-INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 74, 5);
-INSERT INTO question_codeblock (question_bank_id, code) VALUES (40, '01 procedure bubbleSort(numbers : byRef)
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 217, 1);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 218, 2);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 219, 3);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 220, 4);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 221, 5);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 222, 6);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 223, 7);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 224, 8);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 225, 9);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 226, 10);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 227, 1);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 228, 2);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 229, 3);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 230, 4);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 231, 5);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 232, 6);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 233, 7);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 234, 8);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 235, 9);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 236, 1);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 237, 1);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 238, 2);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 239, 3);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 240, 1);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 241, 2);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 242, 3);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 243, 4);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 244, 5);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 245, 6);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 246, 7);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 247, 8);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 248, 9);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 249, 1);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 250, 2);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 251, 3);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 252, 4);
+INSERT IGNORE INTO exam_questions (exam_id, question_bank_id, sort_order) VALUES (25, 253, 5);
+INSERT INTO question_codeblock (question_bank_id, code) VALUES (219, '01 procedure bubbleSort(numbers : byRef)
 02 flag = true
 03 for x = 0 to numbers.length – 1
 04 if numbers[x] > numbers[x + 1] then
@@ -46,18 +46,18 @@ INSERT INTO question_codeblock (question_bank_id, code) VALUES (40, '01 procedur
 09 endif
 10 next x
 11 endprocedure');
-INSERT INTO question_codeblock (question_bank_id, code) VALUES (41, '(i) Explain why the procedure bubbleSort accepts the array numbers by reference and not by value. ......................................................................................................................................');
-INSERT INTO question_codeblock (question_bank_id, code) VALUES (42, '(ii) The programmer has used a for loop on line 3 in the procedure bubbleSort. A for loop is a count controlled loop. State what is meant by the term ‘count controlled loop’. ......................................................................................................................................');
-INSERT INTO question_codeblock (question_bank_id, code) VALUES (43, '(iii) State the purpose of the variable holdValue in the procedure bubbleSort. ......................................................................................................................................');
-INSERT INTO question_codeblock (question_bank_id, code) VALUES (44, '(iv) The procedure bubbleSort will only partially sort the array numbers into order. Describe what the programmer would need to add to the algorithm to enable it to fully sort the numbers into order. ......................................................................................................................................');
-INSERT INTO question_codeblock (question_bank_id, code) VALUES (48, 'Taylor is designing a program for a client who would like to simulate earthquakes on major cities around the world in 3D. The client would like to be able to view any stage of an earthquake such as: 1. the build-up of the earthquake 2. the earthquake taking place 3. the aftershocks of the earthquake. The client would also like to be able to play the simulation at different speeds. For example, a slow, normal or fast speed.');
-INSERT INTO question_codeblock (question_bank_id, code) VALUES (51, '(i) Identify two different inputs for this program. 1 ........................................................................................................................................ 2 ........................................................................................................................................');
-INSERT INTO question_codeblock (question_bank_id, code) VALUES (52, '(ii) One decision point in the program will be to decide if the user inputs are suitable or not. Identify two other example decision points in this program. 1 ........................................................................................................................................ 2 ........................................................................................................................................');
-INSERT INTO question_codeblock (question_bank_id, code) VALUES (55, '(ii) Give two reasons why the waterfall model is not suitable for Taylor. 1 ......................................................................................................................................... 2 .........................................................................................................................................');
-INSERT INTO question_codeblock (question_bank_id, code) VALUES (58, '25 / 2 = 12 remainder 1
+INSERT INTO question_codeblock (question_bank_id, code) VALUES (220, '(i) Explain why the procedure bubbleSort accepts the array numbers by reference and not by value. ......................................................................................................................................');
+INSERT INTO question_codeblock (question_bank_id, code) VALUES (221, '(ii) The programmer has used a for loop on line 3 in the procedure bubbleSort. A for loop is a count controlled loop. State what is meant by the term ‘count controlled loop’. ......................................................................................................................................');
+INSERT INTO question_codeblock (question_bank_id, code) VALUES (222, '(iii) State the purpose of the variable holdValue in the procedure bubbleSort. ......................................................................................................................................');
+INSERT INTO question_codeblock (question_bank_id, code) VALUES (223, '(iv) The procedure bubbleSort will only partially sort the array numbers into order. Describe what the programmer would need to add to the algorithm to enable it to fully sort the numbers into order. ......................................................................................................................................');
+INSERT INTO question_codeblock (question_bank_id, code) VALUES (227, 'Taylor is designing a program for a client who would like to simulate earthquakes on major cities around the world in 3D. The client would like to be able to view any stage of an earthquake such as: 1. the build-up of the earthquake 2. the earthquake taking place 3. the aftershocks of the earthquake. The client would also like to be able to play the simulation at different speeds. For example, a slow, normal or fast speed.');
+INSERT INTO question_codeblock (question_bank_id, code) VALUES (230, '(i) Identify two different inputs for this program. 1 ........................................................................................................................................ 2 ........................................................................................................................................');
+INSERT INTO question_codeblock (question_bank_id, code) VALUES (231, '(ii) One decision point in the program will be to decide if the user inputs are suitable or not. Identify two other example decision points in this program. 1 ........................................................................................................................................ 2 ........................................................................................................................................');
+INSERT INTO question_codeblock (question_bank_id, code) VALUES (234, '(ii) Give two reasons why the waterfall model is not suitable for Taylor. 1 ......................................................................................................................................... 2 .........................................................................................................................................');
+INSERT INTO question_codeblock (question_bank_id, code) VALUES (237, '25 / 2 = 12 remainder 1
 12 / 2 = 6 remainder 0');
-INSERT INTO question_codeblock (question_bank_id, code) VALUES (60, 'The main program: • asks the user to enter a denary number between 1 and 255 • checks that the input is valid between 1 and 255 • If valid call the function toBinary() and pass the input as a parameter • outputs the return value • If not valid, repeatedly asks the user to input a number until the number is valid. Write the algorithm for the main program. You should write your algorithm using pseudocode or program code. .............................................................................................................................................. [4]');
-INSERT INTO question_codeblock (question_bank_id, code) VALUES (61, '01 total = 1
+INSERT INTO question_codeblock (question_bank_id, code) VALUES (239, 'The main program: • asks the user to enter a denary number between 1 and 255 • checks that the input is valid between 1 and 255 • If valid call the function toBinary() and pass the input as a parameter • outputs the return value • If not valid, repeatedly asks the user to input a number until the number is valid. Write the algorithm for the main program. You should write your algorithm using pseudocode or program code. .............................................................................................................................................. [4]');
+INSERT INTO question_codeblock (question_bank_id, code) VALUES (240, '01 total = 1
 02 smallest = 9999
 03 largest = -1
 04 for x = 0 to 21
@@ -73,5 +73,5 @@ INSERT INTO question_codeblock (question_bank_id, code) VALUES (61, '01 total = 
 14 print("Average = " + total * 20)
 15 print("Smallest = " + smallest)
 16 print("Largest = " + largest)');
-INSERT INTO question_codeblock (question_bank_id, code) VALUES (71, 'The program needs to search the array for a number that is input by the user.');
-INSERT INTO question_codeblock (question_bank_id, code) VALUES (72, '(i) Describe how a linear search will search the data in the array for a number that has been input. ......................................................................................................................................');
+INSERT INTO question_codeblock (question_bank_id, code) VALUES (250, 'The program needs to search the array for a number that is input by the user.');
+INSERT INTO question_codeblock (question_bank_id, code) VALUES (251, '(i) Describe how a linear search will search the data in the array for a number that has been input. ......................................................................................................................................');

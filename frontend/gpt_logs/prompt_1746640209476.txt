@@ -1,0 +1,23 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 2.
+
+Question: (iii) When setting up the additional procedures in his program, Logan will use a mixture of parameter passing by reference and by value. State the difference between parameter passing by reference and parameter passing by value. ......................................................................................................................................
+Reference Answer: 1 mark per bullet up to a maximum of 4 marks, e.g.:
+• by reference will receive the memory location of where the
+data/variable is stored
+• by value will receive a copy of the data/variable
+Marking Scheme: Must cover by reference and by value to be given
+full marks.
+Examiner Report: More candidates were able to produce accurate definitions of passing by value and passing by reference than in previous series.
+Exemplar Answer: N/A
+Student's Answer: sdfs
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 2)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

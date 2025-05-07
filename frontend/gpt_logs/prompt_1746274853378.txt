@@ -1,0 +1,22 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 2.
+
+Question: The computer system will contain several input and output devices. Explain the role of device drivers when using input and output devices on a computer system. .............................................................................................................................................. [2]
+Reference Answer: N/A
+Marking Scheme: N/A
+Examiner Report: N/A
+Exemplar Answer: N/A
+Student's Answer: Explain the role of device drivers when using input and output devices on a computer system:
+	•	A device driver is a piece of software that allows hardware devices to communicate with the operating system.
+	•	It translates OS commands into device-specific instructions and enables the OS to control and interact with input/output devices.
+
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 2)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

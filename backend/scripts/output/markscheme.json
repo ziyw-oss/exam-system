@@ -1,0 +1,245 @@
+[
+  {
+    "question_id": "1 (a)",
+    "main": "1",
+    "sub": "a",
+    "subsub": null,
+    "answer": "1 mark per bullet up to a maximum of 2 marks, e.g:\n• Stored in ROM\n• Tests hardware/components (are working)\n• Boots up the operating system",
+    "mark": 2,
+    "guidance": "Accept description of POST/Power On Self Test\nfor BP2\nAccept loads up instead of boots up (BP3)"
+  },
+  {
+    "question_id": "1 (b) (i)",
+    "main": "1",
+    "sub": "b",
+    "subsub": "i",
+    "answer": "1 mark for any of the following bullet points:\n• Round Robin\n• Multi-level feedback queues\n• Shortest job first\n• Shortest time remaining",
+    "mark": 1,
+    "guidance": "Do not Allow:\n• First come First Served"
+  },
+  {
+    "question_id": "1 (b) (ii)",
+    "main": "1",
+    "sub": "b",
+    "subsub": "ii",
+    "answer": "1 mark per bullet up to a maximum of 2 marks, e.g:\n• Jobs dispatched on a FIFO basis\n• Each job/packet is equal priority\n• Each job/packet switch has the same processing\ntime",
+    "mark": 2,
+    "guidance": "Accept processed instead of dispatched (Bp1)\nDo not accept task/data instead of jobs (BP1 to 3)"
+  },
+  {
+    "question_id": "1 (c)",
+    "main": "1",
+    "sub": "c",
+    "subsub": null,
+    "answer": "1 mark per bullet up to a maximum of 2 marks, e.g:\n• Paging uses physical addressing….\n• ….Segmentation uses logical addressing\n• Paging uses fixed size memory blocks….\n• …. Segmentation uses variable length memory\nblocks",
+    "mark": 2,
+    "guidance": "Answer must cover paging and segmentation for 2\nmarks.\nDo not accept data instead of memory"
+  },
+  {
+    "question_id": "1 (d) (i)",
+    "main": "1",
+    "sub": "d",
+    "subsub": "i",
+    "answer": "1 mark per bullet up to a maximum of 2 marks, e.g:\n• Uses separate memory blocks for instructions and\ndata\n• Has separate buses (data and address) for data and\ninstructions\n• Has fixed memory sizes for data and Instructions\n• Instruction memory may be ROM",
+    "mark": 2,
+    "guidance": "Accept unit instead of blocks (BP1)"
+  },
+  {
+    "question_id": "1 (d) (ii)",
+    "main": "1",
+    "sub": "d",
+    "subsub": "ii",
+    "answer": "1 mark per bullet up to a maximum of 2 marks, e.g:\n• Fixed instruction size\n• No need for memory to be shared between data and\ninstructions\n• Removes need for secondary storage\n• Instructions would never be changed",
+    "mark": 2,
+    "guidance": ""
+  },
+  {
+    "question_id": "1 (e) (i)",
+    "main": "1",
+    "sub": "e",
+    "subsub": "i",
+    "answer": "1 mark for any of the following points, e.g:\n• GUI will need to remove open file manager windows\n• OS will need to remove open files/release locks\n• Inform the CPU to cease transferring files",
+    "mark": 1,
+    "guidance": "Allow other suitable alternative answers."
+  },
+  {
+    "question_id": "1 (e) (ii)",
+    "main": "1",
+    "sub": "e",
+    "subsub": "ii",
+    "answer": "1 mark per bullet up to a maximum of 2 marks, e.g:\n• Stacks use LIFO/FILO storage\n• As processes are halted by an ISR they are pushed\non the stack\n• When they are returned, they are popped from the\ntop of the stack\n• So they are returned to in correct order",
+    "mark": 2,
+    "guidance": ""
+  },
+  {
+    "question_id": "2 (a)",
+    "main": "2",
+    "sub": "a",
+    "subsub": null,
+    "answer": "1 mark per bullet up to a maximum of 2 marks, e.g:\n• Word Processing\no Writing letters to customers\n• Spreadsheets\no Completing accounts\n• Presentation Software\no Create\\Show business plans\n• DTP\no Creating marketing literature\n• Graphics Package\no Editing photographs of procedures/marketing\nphotos",
+    "mark": 2,
+    "guidance": "1 Mark for a suitable package and 1 mark for a\nrelevant example for that package.\nDo not allow:\n• Non-business software (E.g. games)\n• Brand names (e.g Word/ Excel)\n• Database software"
+  },
+  {
+    "question_id": "2 (b)",
+    "main": "2",
+    "sub": "b",
+    "subsub": null,
+    "answer": "1 mark per bullet up to a maximum of 2 marks, e.g:\n• Disk Defragmentation…\n• …To keep optimal r/w speed for her HDD\n• File management…\n• …To allow easy access to her file system\n• Disk Drivers…\n• … To allow her to use new peripheral devices\n• System Clean-up…\n• … to keep her system free of redundant files\n• Anti-Virus/Malware…\n• … to find and remove/quarantine viruses/malware (A\nworms/trojans etc)",
+    "mark": 4,
+    "guidance": "1 Mark for a suitable utility and 1 mark for a\nrelevant example for that utility.\nDo not accept task manager\nAccept:\n• Compression Software …\n• … to make the file size smaller\n• Backup Software …\n• … to make copies of files\n"
+  },
+  {
+    "question_id": "2 (c)",
+    "main": "2",
+    "sub": "c",
+    "subsub": null,
+    "answer": "Mark Band 3–High Level\n(7-9 marks)\nThe candidate demonstrates a thorough knowledge and\nunderstanding of open and closed source software; the\nmaterial is generally accurate and detailed.\nThe candidate has covered all 4 sections of cost, usability,\nsecurity and Support available and for the top of this mark\nband will have covered all 4 well. Evidence/examples will be\nexplicitly relevant to the explanation.\nThere is a well-developed line of reasoning which is clear\nand logically structured. The information presented is\nrelevant and substantiated.\nMark Band 2-Mid Level\n(4-6 marks)\nThe candidate demonstrates reasonable knowledge and\nunderstanding of open and closed source software; the\nmaterial is generally accurate but at times underdeveloped.\nThe candidate has covered all at least 2 of the 4 sections of\ncost, usability, security and Support available.\nEvidence/examples are for the most part implicitly relevant to\nthe explanation.\nThere is a line of reasoning presented with some structure.\nThe information presented is in the most part relevant and\nsupported by some evidence.\nMark Band 1-Low Level\n(1-3 marks)\nThe candidate demonstrates a basic knowledge of how the\nlayers of open and closed source software; the material is\nbasic and contains some inaccuracies.\nThe candidate makes a limited attempt to apply acquired\nknowledge and understanding to the context provided.\nThe candidate provides nothing more than an unsupported\nassertion.\nThe information is basic and communicated in an\nunstructured way. The information is supported by limited\nevidence and the relationship to the evidence may not be\nclear.\n0 marks\nNo attempt to answer the question or response is not worthy\nof credit.",
+    "mark": 9,
+    "guidance": "Knowledge:\nCost\nOpen Source\n• (generally) free to use\n• May have to purchase maintenance\ncontracts\n• Staff training if “non-standard”\nClosed Source\n• (sometimes) have to pay to license the\nsoftware\n• If paid will (usually) it will come with some\nlevel of support\nUsability/extensibility\nOpen Source\n• Tends to have a lower focus on UI\n• Source code released (under license)\n• Source can be edited\n• Can be redistributed (under license)\nClosed Source\n• Professionally developed\n• Distributed with a restrictive license\n• Only executable/object code is\ndistributed//source code not distributed\n• Cannot be redistributed\nSecurity\nOpen Source\n• potentially massive bank of volunteer\ndevelopers working on the product\n• Many of the contributors may not be\nprofessional\n• Code available to be scrutinised by\nanyone…\n• …but this may include people with\nmalicious intentions\nClosed Source\n• Closed teams of developers\n• More work scrutiny for code\n• security fixes usually addressed quicker\nSupport Available\nOpen Source\n• Source code released (under license)\n• Source can be edited\n• Open communities mean lots of support\noptions could be available\nClosed Source\n• Support may be available from the\ncompany producing the software.\n•\nApplication:\nCost\nOpen Source\n• Lower overheads to company\n• Extra staff training and hardware cost could\nlead to total cost of ownership being higher\nClosed Source\n• Support from vendor can lead to quicker\nfixes.\nUsability\nOpen Source\n• The ability to edit source code means\nbespoke functionality can be developed in\nhouse\n• Lower focus on UI can mean a harder to\nuse product (leading to higher training\ncosts)\nClosed Source\n• Due to professional development, finish\ntends to be a higher standard"
+  },
+  {
+    "question_id": "3 (a)",
+    "main": "3",
+    "sub": "a",
+    "subsub": null,
+    "answer": "• A set of rules (for communication)",
+    "mark": 1,
+    "guidance": "Do not accept instructions instead of rules"
+  },
+  {
+    "question_id": "3 (b) (i)",
+    "main": "3",
+    "sub": "b",
+    "subsub": "i",
+    "answer": "1 mark for each completed row up to a maximum of 2\nmarks:\nApplication\nTransport\nNetwork\nLink",
+    "mark": 2,
+    "guidance": "- Accept in any order\n- Accept Internet instead of Network"
+  },
+  {
+    "question_id": "3 (b) (ii)",
+    "main": "3",
+    "sub": "b",
+    "subsub": "ii",
+    "answer": "1 mark per bullet up to a maximum of 2 marks, e.g:\n• Allows different layers to be worked on\nindependently\n• Allows layers to be replaced/upgraded without\naffecting others\n• Allows for layers from different providers to be\nused interchangeably",
+    "mark": 2,
+    "guidance": ""
+  },
+  {
+    "question_id": "3 (c)",
+    "main": "3",
+    "sub": "c",
+    "subsub": null,
+    "answer": "Mark Band 3–High Level\n(7-9 marks)\nThe candidate has weighed up benefits and drawbacks\nof the technology and has applied the moral, legal and\nethical issues to both the customer and the business;\nthe material is generally accurate and detailed.\nThe candidate is able to apply their knowledge and\nunderstanding directly and consistently to the context\nprovided. Evidence/examples will be explicitly relevant\nto the explanation.\nThe candidate will have come to a fully justified\nconclusion.\nThere is a well-developed line of reasoning which is\nclear and logically structured. The information\npresented is relevant and substantiated.\nMark Band 2-Mid Level\n(4-6 marks)\nThe candidate has weighed up benefits and drawbacks\nof the technology. They will have explored some of the\nmoral, legal and ethical issues but they may not be\nequally spread across both the customer and the\nbusiness; the material is generally accurate but at times\nunderdeveloped.\nThe candidate is able to apply their knowledge and\nunderstanding directly to the context provided although\none or two opportunities are missed.\nEvidence/examples are for the most part implicitly\nrelevant to the explanation.\nThe candidate will have come to a conclusion although\nthey may not fully justify it.\nThere is a line of reasoning presented with some\nstructure. The information presented is in the most part\nrelevant and supported by some evidence.\nMark Band 1-Low Level\n(1-3 marks)\nThe candidate identifies some of the benefits and\ndrawbacks, though they have probably shown little\nconsideration of the legal, ethical and moral issues; the\nmaterial is basic and contains some inaccuracies.\nThe candidate makes a limited attempt to apply\nacquired knowledge and understanding to the context\nprovided.\nThe candidate may not reach a recognisable\nconclusion.\nThe information is basic and communicated in an\nunstructured way. The information is supported by\nlimited evidence and the relationship to the evidence\nmay not be clear.\n0 marks\nNo attempt to answer the question or response is not\nworthy of credit.",
+    "mark": 9,
+    "guidance": "Knowledge:\nBenefits\nCustomer:\n• Personalised offers\nBusiness:\n• Targeted adverts\n• Able to track movement habits of\ncustomers\n• Provide more personalised shopping\nexperiences.\nDrawbacks\nCustomer:\n• Personal intrusion\n• Invasion of privacy\n• Pressured selling\nBusiness:\n• Cost of infra structure\n• Viewed as invading personal privacy\nMoral and Ethical issues\n• Violation of civil liberties\n• Recording people on the street who are not\ngoing into the shop\nLegal issues:\n• under data protection laws the shop would need\nto\no Keep any data recorded secure\no Personal data should be accurate and up\nto date\nApplication:\nBenefits\nCustomer:\n• Personalised experience will lead to\nmore convenient shopping trips\n• Staff will give personalised service\nBusiness:\n• Tracking movement of customers means\nable to identify best opening times\n• Tracking customers around shop allows\nbetter analysis of popular products\n• Use of modern technology will make the\nshop be seen as forward thinking.\nDrawbacks\nCustomer:\n• Customers may not want to be\n“pressured” meaning they decide not to\nshop there anymore.\n• Tracking data could be hacked and used\nby criminals\nBusiness:\n• Extra hardware costs may lead to higher\nprices/competitors undercut them.\n• Customers who feel their privacy has\nbeen invaded may “vote with their feet”\nMoral and Ethical issues\n• Abuse of civil liberties could damage\nreputation of shop\nLegal issues:\n• Shop may need to add extra software to\nblur out faces of non-customers\n• Shop will need to spend more money on\ndata protection compliance, leading to\nhigher costs.\nEvaluation:\nBenefits\n• Increased revenue from directed sales\noffset extra costs from hardware/legal\nobligations"
+  },
+  {
+    "question_id": "4 (a)",
+    "main": "4",
+    "sub": "a",
+    "subsub": null,
+    "answer": "1 mark for any of the following bullet points, e.g:\n• Computers use binary logic for on/off or 1/0\n• Computer systems are based on\nswitches/transistors\n• Binary is high tolerance",
+    "mark": 1,
+    "guidance": ""
+  },
+  {
+    "question_id": "4 (b) (i)",
+    "main": "4",
+    "sub": "b",
+    "subsub": "i",
+    "answer": "• 0110 0001",
+    "mark": 1,
+    "guidance": "Must get the whole answer right for the mark to be\nawarded."
+  },
+  {
+    "question_id": "4 (b) (ii)",
+    "main": "4",
+    "sub": "b",
+    "subsub": "ii",
+    "answer": "• AB",
+    "mark": 1,
+    "guidance": "Must get the whole answer right for the mark to be\nawarded."
+  },
+  {
+    "question_id": "4 (b) (iii)",
+    "main": "4",
+    "sub": "b",
+    "subsub": "iii",
+    "answer": "• 1001 1111",
+    "mark": 1,
+    "guidance": "Must get the whole answer right for the mark to be\nawarded."
+  },
+  {
+    "question_id": "4 (b) (iv)",
+    "main": "4",
+    "sub": "b",
+    "subsub": "iv",
+    "answer": "• 1001 0001",
+    "mark": 1,
+    "guidance": "Must get the whole answer right for the mark to be\nawarded."
+  },
+  {
+    "question_id": "4 (c)",
+    "main": "4",
+    "sub": "c",
+    "subsub": null,
+    "answer": "- Can be easily used in binary arithmetic\nor\n- Increased range of numbers available",
+    "mark": 2,
+    "guidance": "Award 0 or 2 marks"
+  },
+  {
+    "question_id": "4 (d) (i)",
+    "main": "4",
+    "sub": "d",
+    "subsub": "i",
+    "answer": "1 mark per bullet up to a maximum of 2 marks, e.g:\n• (1) 0110 0100\n• suitable working out",
+    "mark": 2,
+    "guidance": "Award mark for bullet point one with or without the\noverflow stated."
+  },
+  {
+    "question_id": "5 (a)",
+    "main": "5",
+    "sub": "a",
+    "subsub": null,
+    "answer": "Solution:\nAB AB AB AB\n00 01 11 10\nCD 00 0 0 1 1\nCD 01 0 0 1 1\nCD 11 1 1 1 1\nCD 10 0 0 1 1\n1 mark per bullet up to a maximum of 4 marks:\n• 1 mark for filling in the table correctly\n• 1 mark for the group shown in red\n• 1 mark for the group shown in green\n• 1 mark for the simplified expression 𝐴∨(𝐶∧𝐷)",
+    "mark": 4,
+    "guidance": "Brackets are not required for the\nsimplified expression"
+  },
+  {
+    "question_id": "5 (b)",
+    "main": "5",
+    "sub": "b",
+    "subsub": null,
+    "answer": "1 mark per bullet up to a maximum of 3 marks:\n• An AND gate taking A and B as inputs with the output connecting to a NOT gate\n• An AND gate taking C and the NOT of D as the inputs\n• An OR gate taking the outputs of the NOT and AND gates",
+    "mark": 3,
+    "guidance": "Allow NAND gate as\nalternative for BP1"
+  },
+  {
+    "question_id": "6 (a)",
+    "main": "6",
+    "sub": "a",
+    "subsub": null,
+    "answer": "1 mark per bullet up to a maximum of 2 marks, e.g:\n• Float/real/double/single/decimal/currency…\n• …because the values in the text file contain a\ndecimal space…\n• …representing monetary values…\n• ….the values will be used in calculations",
+    "mark": 2,
+    "guidance": ""
+  },
+  {
+    "question_id": "6 (b)",
+    "main": "6",
+    "sub": "b",
+    "subsub": null,
+    "answer": "1 mark per bullet up to a maximum of 2 marks, e.g:\n• To setup a loop…\n• To repeat (the same block of code)\n• for each line in the text file // until each value\nhas been read",
+    "mark": 2,
+    "guidance": ""
+  },
+  {
+    "question_id": "6 (c)",
+    "main": "6",
+    "sub": "c",
+    "subsub": null,
+    "answer": "1 mark per bullet up to a maximum of 7 marks:\n• Suitable logic for initialising variables outside of\nloop\n• Suitable logic for opening and closing Sales.txt\n• Suitable use of a loop which ends when the last\nline has been reached in Sales.txt\n• Suitable logic for reading each line of data from\nfile variable\n• Suitable logic for increasing total (and count)\nincluding conversion from string to numeric data\ntype\n• Suitable logic for calculating averages by\ndividing total by count\n• Suitable logic for printing the number of days,\nthe total sales and the daily average",
+    "mark": 7,
+    "guidance": "Some points (for example 5 & 6) can be combined onto\none line.\nExample Solution:\nprocedure salesAnalysis():\ndayCount = 0\nsalesTotal = 0\ndailySales = openRead(\"Sales.txt\")\nwhile NOT dailySales.endOfFile()\ndailySaleFigure = float\n(percentageFile.readLine())\nsalesTotal += dailySaleFigure\ndayCount += 1\nendwhile\ndailyAverage = salesTotal /dayCount\nprint(\"Over “ + dayCount + “ days there was a\ntotal sales of £“ _+ salesTotal + “ and an average daily\nsale of £” + dailyAverage)\ndailySales.close()\nendprocedure\nThere are many different ways that this procedure could\nhave been achieved. Therefore other alternative\nmethods should be given credit."
+  }
+]

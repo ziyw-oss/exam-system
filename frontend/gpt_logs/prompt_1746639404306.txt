@@ -1,0 +1,23 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 2.
+
+Question: Describe what is meant by the term ‘character set’. .............................................................................................................................................. [2]
+Reference Answer: • List/mapping of characters (that can be
+understood by the hardware/software/computer)
+• Each character is given a unique
+binary/numeric code that is stored instead of the
+character.
+Marking Scheme: Allow a list of letters /symbols
+Examiner Report: Most candidates were given at least 1 mark for this question. Some did not gain the second mark as they missed stating that each character has a unique binary value.
+Exemplar Answer: N/A
+Student's Answer: sdf
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 2)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

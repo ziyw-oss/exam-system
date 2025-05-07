@@ -1,0 +1,31 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 2.
+
+Question: One customer can order as many different products as they like in the same order. A customer can also place as many orders as they like. One product can be ordered multiple times in the same order or ordered by multiple different customers. Complete the entity relationship diagram to show the relationships between the Product, Customer and Order entities. [2] Customer Product Order
+Reference Answer: 1 mark for each bullet point to max 2 marks:
+• One customer to many orders
+• Many orders to many products // One order to
+many orderLines and many orderLines to one
+product
+Solution 1:
+Solution 2:
+Marking Scheme: Ignore any relationship between customer and product.
+Accept any suitable alternative name for the OrderLine
+entity.
+Additional guidance:
+For MP2, candidates may have avoided the use of
+many-to-many relationships, due to the information in
+part c). Therefore, allow one product to many orders.
+Examiner Report: This question required candidates to correctly draw the relationships between the entities as explained in the question. Candidates were expected to indicate the relationships. Some candidates used either words or other symbols to indicate the relationships, therefore not achieving either of the available marks. Some candidates used a link entity to avoid a many to many relationship between product and order or indicated a relationship of one product to many orders. Either of these responses were acceptable. Assessment for learning Appendices 5c in the specification shows the symbols used for entities and their relationships. Students need to be taught these to use in the exam.
+Exemplar Answer: N/A
+Student's Answer: fsd
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 2)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

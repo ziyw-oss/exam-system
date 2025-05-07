@@ -1,0 +1,23 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 2.
+
+Question: Describe the purpose of the MOD operator on line 04 of the procedure generate. .............................................................................................................................................. [2]
+Reference Answer: 1 mark per bullet up to a maximum of 2 marks, e.g.:
+• Modulo division
+• Finds the remainder after a division
+• Used to determine if is an odd or even number
+a
+Marking Scheme: N/A
+Examiner Report: Candidates who successfully identified that a remainder was calculated found it harder to determine that its purpose was to see if the number was even or odd. Misconception Some candidates think that a modulo division calculation resulting in 0 means that there is no remainder. Where the result of modulo division is 0 it means that the remainder is 0.
+Exemplar Answer: N/A
+Student's Answer: dfs
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 2)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

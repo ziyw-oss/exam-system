@@ -1,0 +1,21 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 2.
+
+Question: (i) State two different output devices that could be used when editing the videos. 1 ........................................................................................................................................ 2 ........................................................................................................................................
+Reference Answer: N/A
+Marking Scheme: N/A
+Examiner Report: N/A
+Exemplar Answer: N/A
+Student's Answer: Two different output devices that could be used when editing the videos:
+	1.	Monitor – used to display the video content during editing
+	2.	Speakers / Headphones – used to listen to the audio tracks or sound effects in the video
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 2)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

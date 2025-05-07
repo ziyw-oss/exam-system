@@ -1,0 +1,24 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 4.
+
+Question: (i) Explain why version one is more effective than version two at making sure that the telephone number entered is at least 11 characters long. ......................................................................................................................................
+Reference Answer: 1 mark per bullet up to a maximum of 4 marks, e.g.:
+• makes use of a (while) loop…
+• ….which will continually check the telephone number….
+• …and repeatedly ask for a telephone number to be re-
+entered….
+• ….until the rules have been met
+Marking Scheme: N/A
+Examiner Report: Most candidates achieved some marks for this question, but few achieved complete responses. Many identified iteration within the first version as key to repeating the sequence until the validation conditions were met. Fewer could explain how version two of the code would allow invalid data to be entered into the system.
+Exemplar Answer: N/A
+Student's Answer: sdfs
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 4)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

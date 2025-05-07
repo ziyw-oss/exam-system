@@ -1,0 +1,1484 @@
+[
+  {
+    "exam_id": 27,
+    "number": 1,
+    "text": "................................................................................................................................................",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 2,
+    "text": "................................................................................................................................................",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": [
+      {
+        "letter": "",
+        "text": " [4]",
+        "question_type": "short_answer",
+        "marks": 4,
+        "keypoints": [],
+        "extensions": {
+          "code_block": [],
+          "table_data": {},
+          "trace_steps": [],
+          "diagram_ref": "",
+          "options": [],
+          "structure_type": ""
+        },
+        "subsub_questions": []
+      },
+      {
+        "letter": "d",
+        "text": "Ruhail will test his program code to make sure that it works correctly. State two test strategies that Ruhail could use.",
+        "question_type": "short_answer",
+        "marks": null,
+        "keypoints": [],
+        "extensions": {
+          "code_block": [],
+          "table_data": {},
+          "trace_steps": [],
+          "diagram_ref": "",
+          "options": [],
+          "structure_type": ""
+        },
+        "subsub_questions": []
+      }
+    ]
+  },
+  {
+    "exam_id": 27,
+    "number": 1,
+    "text": "................................................................................................................................................",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 2,
+    "text": "................................................................................................................................................",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": [
+      {
+        "letter": "",
+        "text": " [2]",
+        "question_type": "short_answer",
+        "marks": 2,
+        "keypoints": [],
+        "extensions": {
+          "code_block": [],
+          "table_data": {},
+          "trace_steps": [],
+          "diagram_ref": "",
+          "options": [],
+          "structure_type": ""
+        },
+        "subsub_questions": []
+      },
+      {
+        "letter": "e",
+        "text": "Ruhail will make use of a software development life cycle methodology. State two software development methodologies that Ruhail could consider using.",
+        "question_type": "short_answer",
+        "marks": null,
+        "keypoints": [],
+        "extensions": {
+          "code_block": [],
+          "table_data": {},
+          "trace_steps": [],
+          "diagram_ref": "",
+          "options": [],
+          "structure_type": ""
+        },
+        "subsub_questions": []
+      }
+    ]
+  },
+  {
+    "exam_id": 27,
+    "number": 1,
+    "text": "................................................................................................................................................",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 2,
+    "text": "................................................................................................................................................",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": [
+      {
+        "letter": "",
+        "text": " [2]",
+        "question_type": "short_answer",
+        "marks": 2,
+        "keypoints": [],
+        "extensions": {
+          "code_block": [],
+          "table_data": {},
+          "trace_steps": [],
+          "diagram_ref": "",
+          "options": [],
+          "structure_type": ""
+        },
+        "subsub_questions": []
+      },
+      {
+        "letter": "f",
+        "text": "Ruhail has been told to make use of reusable components when creating his program code. Explain two benefits of using reusable components when writing program code.",
+        "question_type": "short_answer",
+        "marks": null,
+        "keypoints": [],
+        "extensions": {
+          "code_block": [],
+          "table_data": {},
+          "trace_steps": [],
+          "diagram_ref": "",
+          "options": [],
+          "structure_type": ""
+        },
+        "subsub_questions": []
+      }
+    ]
+  },
+  {
+    "exam_id": 27,
+    "number": 1,
+    "text": "................................................................................................................................................",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 2,
+    "text": "................................................................................................................................................",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": [
+      {
+        "letter": "",
+        "text": " [4] Logan is writing a program for his customers to be able to buy his gym equipment. In the program, once a customer has selected the items they want to buy, a procedure, checkDetails, will be called. This procedure will check that the customer has input their telephone number and also check that it is at least 11 characters long.",
+        "question_type": "short_answer",
+        "marks": 4,
+        "keypoints": [],
+        "extensions": {
+          "code_block": [
+            "[4] Logan is writing a program for his customers to be able to buy his gym equipment. In the program, once a customer has selected the items they want to buy, a procedure, checkDetails, will be called. This procedure will check that the customer has input their telephone number and also check that it is at least 11 characters long."
+          ],
+          "table_data": {},
+          "trace_steps": [],
+          "diagram_ref": "",
+          "options": [],
+          "structure_type": ""
+        },
+        "subsub_questions": []
+      },
+      {
+        "letter": "a",
+        "text": "Logan has written two possible versions of the procedure that could be used to achieve this. Version One: procedure checkDetails() telephoneNo = input(\"Enter telephone number\") while (telephoneNo == \"\") or (telephoneNo.length < 11) print(\"Error, please try again\") telephoneNo = input(\"Enter telephone number\") endwhile endprocedure Version Two: procedure checkDetails() telephoneNo = input(\"Enter telephone number\") if (telephoneNo == \"\") or (telephoneNo.length < 11) then print(\"Error, please try again\") telephoneNo = input(\"Enter telephone number\") endif endprocedure",
+        "question_type": "short_answer",
+        "marks": null,
+        "keypoints": [],
+        "extensions": {
+          "code_block": [
+            "Logan has written two possible versions of the procedure that could be used to achieve this. Version One: procedure checkDetails() telephoneNo = input(\"Enter telephone number\") while (telephoneNo == \"\") or (telephoneNo.length < 11) print(\"Error, please try again\") telephoneNo = input(\"Enter telephone number\") endwhile endprocedure Version Two: procedure checkDetails() telephoneNo = input(\"Enter telephone number\") if (telephoneNo == \"\") or (telephoneNo.length < 11) then print(\"Error, please try again\") telephoneNo = input(\"Enter telephone number\") endif endprocedure"
+          ],
+          "table_data": {},
+          "trace_steps": [],
+          "diagram_ref": "",
+          "options": [],
+          "structure_type": ""
+        },
+        "subsub_questions": [
+          {
+            "roman": "i",
+            "text": "(i) Explain why version one is more effective than version two at making sure that the telephone number entered is at least 11 characters long. ...................................................................................................................................... [4]",
+            "question_type": "short_answer",
+            "marks": null,
+            "keypoints": [],
+            "extensions": {
+              "code_block": [],
+              "table_data": {},
+              "trace_steps": [],
+              "diagram_ref": "",
+              "options": [],
+              "structure_type": ""
+            }
+          },
+          {
+            "roman": "ii",
+            "text": "(ii) As well as the procedure checkDetails, Logan would like to use additional procedures to expand his program. The program will be expanded to: • allow customers to be able to register an account by setting up a username and password • allow registered users to be able to log-in with their registration details • allow customers, once logged in, to be able to add items that are in stock to their online shopping basket. State two other procedures that Logan could write to meet these requirements, and for each one, state a suitable name and purpose. Procedure 1: Procedure Name:  .............................................................................................................. Purpose:  ............................................................................................................................ Procedure 2: Procedure Name:  .............................................................................................................. Purpose:  ............................................................................................................................ [4]",
+            "question_type": "short_answer",
+            "marks": null,
+            "keypoints": [],
+            "extensions": {
+              "code_block": [
+                "(ii) As well as the procedure checkDetails, Logan would like to use additional procedures to expand his program. The program will be expanded to: • allow customers to be able to register an account by setting up a username and password • allow registered users to be able to log-in with their registration details • allow customers, once logged in, to be able to add items that are in stock to their online shopping basket. State two other procedures that Logan could write to meet these requirements, and for each one, state a suitable name and purpose. Procedure 1: Procedure Name:  .............................................................................................................. Purpose:  ............................................................................................................................ Procedure 2: Procedure Name:  .............................................................................................................. Purpose:  ............................................................................................................................ [4]"
+              ],
+              "table_data": {},
+              "trace_steps": [],
+              "diagram_ref": "",
+              "options": [],
+              "structure_type": ""
+            }
+          },
+          {
+            "roman": "iii",
+            "text": "(iii) When setting up the additional procedures in his program, Logan will use a mixture of parameter passing by reference and by value. State the difference between parameter passing by reference and parameter passing by value. ...................................................................................................................................... [2]",
+            "question_type": "short_answer",
+            "marks": null,
+            "keypoints": [],
+            "extensions": {
+              "code_block": [],
+              "table_data": {},
+              "trace_steps": [],
+              "diagram_ref": "",
+              "options": [],
+              "structure_type": ""
+            }
+          }
+        ]
+      },
+      {
+        "letter": "b",
+        "text": "* Logan will work in a team with five other programmers and together they will create the programming code for the program. Discuss how modularity can be used to allow the team of programmers to work effectively together on the same program at the same time. .............................................................................................................................................. [9] Trudi would like to sort an array of numbers into order. The numbers before they have been sorted can be seen here. Show the first pass of the bubble sort. You should clearly show each comparison made. .............................................................................................................................................. [4]",
+        "question_type": "short_answer",
+        "marks": 9,
+        "keypoints": [],
+        "extensions": {
+          "code_block": [
+            "* Logan will work in a team with five other programmers and together they will create the programming code for the program. Discuss how modularity can be used to allow the team of programmers to work effectively together on the same program at the same time. .............................................................................................................................................. [9] Trudi would like to sort an array of numbers into order. The numbers before they have been sorted can be seen here. Show the first pass of the bubble sort. You should clearly show each comparison made. .............................................................................................................................................. [4]"
+          ],
+          "table_data": {},
+          "trace_steps": [],
+          "diagram_ref": "",
+          "options": [],
+          "structure_type": ""
+        },
+        "subsub_questions": []
+      }
+    ]
+  },
+  {
+    "exam_id": 27,
+    "number": 1,
+    "text": "1  procedure bubbleSort(numbers)",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [
+        "1  procedure bubbleSort(numbers)"
+      ],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 2,
+    "text": "2       do",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 3,
+    "text": "3             sorted = true",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 4,
+    "text": "4              for count = 0 to numbers.length -2",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [
+        "4              for count = 0 to numbers.length -2"
+      ],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 5,
+    "text": "5                   if numbers[count] > numbers[count+1] then",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [
+        "5                   if numbers[count] > numbers[count+1] then"
+      ],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 6,
+    "text": "6                         temp = numbers[count+1]",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 7,
+    "text": "7                         numbers[count+1] = numbers[count]",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 8,
+    "text": "8                         numbers[count] = temp",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 9,
+    "text": "9                         sorted = false",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 10,
+    "text": "endif",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [
+        "endif"
+      ],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 11,
+    "text": "next count",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [
+        "next count"
+      ],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 12,
+    "text": "until sorted == true",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 13,
+    "text": "endprocedure",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [
+        "endprocedure"
+      ],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": [
+      {
+        "letter": "",
+        "text": "",
+        "question_type": "short_answer",
+        "marks": null,
+        "keypoints": [],
+        "extensions": {
+          "code_block": [],
+          "table_data": {},
+          "trace_steps": [],
+          "diagram_ref": "",
+          "options": [],
+          "structure_type": ""
+        },
+        "subsub_questions": [
+          {
+            "roman": "i",
+            "text": "(i) Identify a line in the procedure bubbleSort where a decision is taken. ...................................................................................................................................... [1]",
+            "question_type": "short_answer",
+            "marks": null,
+            "keypoints": [],
+            "extensions": {
+              "code_block": [
+                "(i) Identify a line in the procedure bubbleSort where a decision is taken. ...................................................................................................................................... [1]"
+              ],
+              "table_data": {},
+              "trace_steps": [],
+              "diagram_ref": "",
+              "options": [],
+              "structure_type": ""
+            }
+          },
+          {
+            "roman": "ii",
+            "text": "(ii) Identify the name of the parameter used in the procedure bubbleSort. ...................................................................................................................................... [1]",
+            "question_type": "short_answer",
+            "marks": null,
+            "keypoints": [],
+            "extensions": {
+              "code_block": [
+                "(ii) Identify the name of the parameter used in the procedure bubbleSort. ...................................................................................................................................... [1]"
+              ],
+              "table_data": {},
+              "trace_steps": [],
+              "diagram_ref": "",
+              "options": [],
+              "structure_type": ""
+            }
+          },
+          {
+            "roman": "iii",
+            "text": "(iii) Describe the purpose of the temp variable in the procedure bubbleSort. ...................................................................................................................................... [2]",
+            "question_type": "short_answer",
+            "marks": null,
+            "keypoints": [],
+            "extensions": {
+              "code_block": [
+                "(iii) Describe the purpose of the temp variable in the procedure bubbleSort. ...................................................................................................................................... [2]"
+              ],
+              "table_data": {},
+              "trace_steps": [],
+              "diagram_ref": "",
+              "options": [],
+              "structure_type": ""
+            }
+          },
+          {
+            "roman": "iv",
+            "text": "(iv) Describe the purpose of the sorted variable in the procedure bubbleSort. ...................................................................................................................................... [2] Given the following procedure:",
+            "question_type": "short_answer",
+            "marks": null,
+            "keypoints": [],
+            "extensions": {
+              "code_block": [
+                "(iv) Describe the purpose of the sorted variable in the procedure bubbleSort. ...................................................................................................................................... [2] Given the following procedure:"
+              ],
+              "table_data": {},
+              "trace_steps": [],
+              "diagram_ref": "",
+              "options": [],
+              "structure_type": ""
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "exam_id": 27,
+    "number": 1,
+    "text": "1 procedure generate(number)",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [
+        "1 procedure generate(number)"
+      ],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 2,
+    "text": "2        a = 0",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 3,
+    "text": "3        while number > 0",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [
+        "3        while number > 0"
+      ],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 4,
+    "text": "4              if number MOD 2 == 0 then",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [
+        "4              if number MOD 2 == 0 then"
+      ],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 5,
+    "text": "5                   a = a + 2",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 6,
+    "text": "6                   print(a)",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [
+        "6                   print(a)"
+      ],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 7,
+    "text": "7                   number = number – 2",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 8,
+    "text": "8              else",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 9,
+    "text": "9                   a = a + 1",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 10,
+    "text": "print(a)",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [
+        "print(a)"
+      ],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 11,
+    "text": "number = number – 1",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 12,
+    "text": "endif",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [
+        "endif"
+      ],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 13,
+    "text": "endwhile",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 14,
+    "text": "endprocedure",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [
+        "endprocedure"
+      ],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": [
+      {
+        "letter": "a",
+        "text": "Explain why = is used on line 11 of the procedure generate instead of ==. .............................................................................................................................................. [2]",
+        "question_type": "short_answer",
+        "marks": 2,
+        "keypoints": [],
+        "extensions": {
+          "code_block": [
+            "Explain why = is used on line 11 of the procedure generate instead of ==. .............................................................................................................................................. [2]"
+          ],
+          "table_data": {},
+          "trace_steps": [],
+          "diagram_ref": "",
+          "options": [],
+          "structure_type": ""
+        },
+        "subsub_questions": []
+      },
+      {
+        "letter": "b",
+        "text": "State the values printed by the procedure generate when number = 8. .............................................................................................................................................. [1]",
+        "question_type": "short_answer",
+        "marks": 1,
+        "keypoints": [],
+        "extensions": {
+          "code_block": [
+            "State the values printed by the procedure generate when number = 8. .............................................................................................................................................. [1]"
+          ],
+          "table_data": {},
+          "trace_steps": [],
+          "diagram_ref": "",
+          "options": [],
+          "structure_type": ""
+        },
+        "subsub_questions": []
+      },
+      {
+        "letter": "c",
+        "text": "State the values printed by the procedure generate when number = 7. .............................................................................................................................................. [1]",
+        "question_type": "short_answer",
+        "marks": 1,
+        "keypoints": [],
+        "extensions": {
+          "code_block": [
+            "State the values printed by the procedure generate when number = 7. .............................................................................................................................................. [1]"
+          ],
+          "table_data": {},
+          "trace_steps": [],
+          "diagram_ref": "",
+          "options": [],
+          "structure_type": ""
+        },
+        "subsub_questions": []
+      },
+      {
+        "letter": "d",
+        "text": "Describe the purpose of the MOD operator on line 04 of the procedure generate. .............................................................................................................................................. [2] A veterinary surgery uses a two dimensional array to store bookings for customers to bring in their animal to see the vet. There are ten possible booking slots during each day. An example of the two dimensional array is shown in Fig. 1. • The first column stores the booking slot number, ranging between 1 and 10. • The second column stores the time of the appointment. • The third column stores the customerID of the customer who has booked that slot. 9:00 5877RC 9:30 9655AS 10:00 10:30 8754TT 11:00 11:30 8745SD 13:00 9635GH 13:30 14:00 9874PL 14:30 9658SV Fig. 1 If a customerID has been entered for a booking slot then the booking slot has been taken. If no customerID has been entered then the booking slot is available for booking. Describe how a linear search could be used for this purpose. .............................................................................................................................................. [3] Write the function findFirst that will find the first available appointment and return the booking slot number. If no appointments are available then the function should return \"-1\". You should write your function using pseudocode or program code. .............................................................................................................................................. [7] confirm the booking. This is checked by another function called checkCustomerID. This will return true if the customerID is valid or false if the customerID is not valid. State why a function would be used instead of a procedure for this purpose. .............................................................................................................................................. [1] Kylie buys used games consoles and then sells them to make a profit. She sells her products in multiples of £5 such as £30, £55 and £95. Kylie only accepts £50, £20, £10 and £5 notes from her customers. Kylie has written an algorithm which will calculate the amount of change needed by stating how many £20, £10 and £5 notes are needed. The program should output the minimum number of notes required. For example if £35 change is required then it should output 1 x £20 and 1 x £10 and 1 x £5.",
+        "question_type": "short_answer",
+        "marks": 2,
+        "keypoints": [],
+        "extensions": {
+          "code_block": [
+            "Describe the purpose of the MOD operator on line 04 of the procedure generate. .............................................................................................................................................. [2] A veterinary surgery uses a two dimensional array to store bookings for customers to bring in their animal to see the vet. There are ten possible booking slots during each day. An example of the two dimensional array is shown in Fig. 1. • The first column stores the booking slot number, ranging between 1 and 10. • The second column stores the time of the appointment. • The third column stores the customerID of the customer who has booked that slot. 9:00 5877RC 9:30 9655AS 10:00 10:30 8754TT 11:00 11:30 8745SD 13:00 9635GH 13:30 14:00 9874PL 14:30 9658SV Fig. 1 If a customerID has been entered for a booking slot then the booking slot has been taken. If no customerID has been entered then the booking slot is available for booking. Describe how a linear search could be used for this purpose. .............................................................................................................................................. [3] Write the function findFirst that will find the first available appointment and return the booking slot number. If no appointments are available then the function should return \"-1\". You should write your function using pseudocode or program code. .............................................................................................................................................. [7] confirm the booking. This is checked by another function called checkCustomerID. This will return true if the customerID is valid or false if the customerID is not valid. State why a function would be used instead of a procedure for this purpose. .............................................................................................................................................. [1] Kylie buys used games consoles and then sells them to make a profit. She sells her products in multiples of £5 such as £30, £55 and £95. Kylie only accepts £50, £20, £10 and £5 notes from her customers. Kylie has written an algorithm which will calculate the amount of change needed by stating how many £20, £10 and £5 notes are needed. The program should output the minimum number of notes required. For example if £35 change is required then it should output 1 x £20 and 1 x £10 and 1 x £5."
+          ],
+          "table_data": {},
+          "trace_steps": [],
+          "diagram_ref": "",
+          "options": [],
+          "structure_type": ""
+        },
+        "subsub_questions": []
+      }
+    ]
+  },
+  {
+    "exam_id": 27,
+    "number": 1,
+    "text": "1 total = input(\"Enter total price of goods\")",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [
+        "1 total = input(\"Enter total price of goods\")"
+      ],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 2,
+    "text": "2 paid = input(\"Enter amount paid”)",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [
+        "2 paid = input(\"Enter amount paid”)"
+      ],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 3,
+    "text": "3 global change = paid – total",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 4,
+    "text": "4 calculateChange()",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 6,
+    "text": "6 procedure calculateChange()",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [
+        "6 procedure calculateChange()"
+      ],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 7,
+    "text": "7      twenty = 0",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 8,
+    "text": "8      ten = 0",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 9,
+    "text": "9      five = 0",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 10,
+    "text": "while change >= 20 //Calculates number of £20 notes needed",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [
+        "while change >= 20 //Calculates number of £20 notes needed"
+      ],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 11,
+    "text": "twenty = twenty + 1",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 12,
+    "text": "change = change – 20",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 13,
+    "text": "endwhile",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 14,
+    "text": "while change >= 10 //Calculates number of £10 notes needed",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [
+        "while change >= 10 //Calculates number of £10 notes needed"
+      ],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 15,
+    "text": "ten = ten + 1",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 16,
+    "text": "change = change – 10",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 17,
+    "text": "endwhile",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 18,
+    "text": "while change >= 5 //Calculates number of £5 notes needed",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [
+        "while change >= 5 //Calculates number of £5 notes needed"
+      ],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 19,
+    "text": "five = five + 1",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 20,
+    "text": "change = change – 5",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 21,
+    "text": "endwhile",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 22,
+    "text": "print(\"The amount of change you need is £\" + str(change))",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [
+        "print(\"The amount of change you need is £\" + str(change))"
+      ],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 23,
+    "text": "print(\"Total £20 Notes:\" + str(twenty))",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [
+        "print(\"Total £20 Notes:\" + str(twenty))"
+      ],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 24,
+    "text": "print(\"Total £10 Notes:\" + str(ten))",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [
+        "print(\"Total £10 Notes:\" + str(ten))"
+      ],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 25,
+    "text": "print(\"Total £5 Notes:\" + str(five))",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [
+        "print(\"Total £5 Notes:\" + str(five))"
+      ],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": []
+  },
+  {
+    "exam_id": 27,
+    "number": 26,
+    "text": "endprocedure",
+    "question_type": "short_answer",
+    "marks": null,
+    "keypoints": [],
+    "extensions": {
+      "code_block": [
+        "endprocedure"
+      ],
+      "table_data": {},
+      "trace_steps": [],
+      "diagram_ref": "",
+      "options": [],
+      "structure_type": ""
+    },
+    "sub_questions": [
+      {
+        "letter": "a",
+        "text": "Describe how calculateChange() on line 04 is used differently to calculateChange() on line 06. .............................................................................................................................................. [2]",
+        "question_type": "short_answer",
+        "marks": 2,
+        "keypoints": [],
+        "extensions": {
+          "code_block": [],
+          "table_data": {},
+          "trace_steps": [],
+          "diagram_ref": "",
+          "options": [],
+          "structure_type": ""
+        },
+        "subsub_questions": []
+      },
+      {
+        "letter": "b",
+        "text": "When line 22 is run, it will always print: The amount of change you need is £0 Explain why this error occurs when line 22 is run. .............................................................................................................................................. [2]",
+        "question_type": "short_answer",
+        "marks": 2,
+        "keypoints": [],
+        "extensions": {
+          "code_block": [
+            "When line 22 is run, it will always print: The amount of change you need is £0 Explain why this error occurs when line 22 is run. .............................................................................................................................................. [2]"
+          ],
+          "table_data": {},
+          "trace_steps": [],
+          "diagram_ref": "",
+          "options": [],
+          "structure_type": ""
+        },
+        "subsub_questions": []
+      },
+      {
+        "letter": "c",
+        "text": "Explain why Kylie has used str on lines 22 to 25 in her algorithm. .............................................................................................................................................. [3] END OF QUESTION PAPER ADDITIONAL ANSWER SPACE If additional space is required, you should use the following lined page(s). The question number(s) must be clearly shown in the margin(s).",
+        "question_type": "short_answer",
+        "marks": 3,
+        "keypoints": [],
+        "extensions": {
+          "code_block": [
+            "Explain why Kylie has used str on lines 22 to 25 in her algorithm. .............................................................................................................................................. [3] END OF QUESTION PAPER ADDITIONAL ANSWER SPACE If additional space is required, you should use the following lined page(s). The question number(s) must be clearly shown in the margin(s)."
+          ],
+          "table_data": {},
+          "trace_steps": [],
+          "diagram_ref": "",
+          "options": [],
+          "structure_type": ""
+        },
+        "subsub_questions": []
+      }
+    ]
+  }
+]

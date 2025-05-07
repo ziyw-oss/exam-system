@@ -1,6 +1,6 @@
 // 文件路径：frontend/src/pages/_app.tsx
 import type { AppProps } from "next/app";
-import "../styles/globals.css";
+import "@/styles/globals.css";
 import '@fontsource/nunito/400.css';
 import '@fontsource/nunito/700.css';
 import axios from "axios";
@@ -11,7 +11,7 @@ axios.interceptors.response.use(
   (error) => {
     if (error.response?.status === 401) {
       localStorage.removeItem("token");
-      Router.push("/admin/login");
+      Router.push("/student/exam/login");
     }
     return Promise.reject(error);
   }

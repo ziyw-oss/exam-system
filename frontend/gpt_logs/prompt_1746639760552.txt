@@ -1,0 +1,30 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 4.
+
+Question: The algorithm that Layla has written has many errors. Identify the line number of four different errors and write the corrected line of code. Error 1 line number ...................... Error 1 correction  ...................................................................................................................... Error 2 line number ...................... Error 2 correction  ...................................................................................................................... Error 3 line number ...................... Error 3 correction  ...................................................................................................................... Error 4 line number ...................... Error 4 correction  ...................................................................................................................... [4]
+Reference Answer: 1 mark for each line and correction
+• Line 01
+total = 0
+• Line 02
+• smallest = dataArray[0]
+• Line 04
+for x = 0 to 19 (accept 20)
+• Line 07
+if dataArray[x] > largest then
+• Line 14
+print("Average = " + total / 20)
+Marking Scheme: Do not award a mark for the line number
+alone without correction.
+Examiner Report: Most candidates were given some marks, but fewer achieved full marks. The context of the question indicated that the numbers input were positive integers, but candidates did not always appreciate this.
+Exemplar Answer: N/A
+Student's Answer: fsdf
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 4)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

@@ -1,10 +1,14 @@
-// File: src/pages/student/exam/review.tsx
-
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
 import { formatToMarkdown } from "@/lib/formatToMarkdown";
 
+function extractCurrentLevelLabel(fullLabel: string): string {
+  const matches = fullLabel.match(/\([a-z]+\)|\d+\./gi);
+  if (!matches || matches.length === 0) return fullLabel;
+  const last = matches[matches.length - 1];
+  return last.endsWith(".") ? last : `(${last.replace(/[()]/g, "")})`;
+}
 
 interface Question {
   question_id: number;
@@ -12,6 +16,11 @@ interface Question {
   student_answer: string;
   correct_answer: string;
   gpt_reasoning?: string;
+  parent_text?: string;
+  grandparent_text?: string;
+  level?: "question" | "sub_question" | "subsub_question";
+  parent_id?: number;
+  label?: string;
 }
 
 export default function ReviewWrongQuestions() {
@@ -19,6 +28,7 @@ export default function ReviewWrongQuestions() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loading, setLoading] = useState(true);
   const [reAnswers, setReAnswers] = useState<Record<number, string>>({});
+  const [message, setMessage] = useState<string | null>(null);
   const router = useRouter();
 
   useEffect(() => {
@@ -34,7 +44,27 @@ export default function ReviewWrongQuestions() {
         const res = await axios.get("/api/student/wrong-questions", {
           headers: { Authorization: `Bearer ${token}` },
         });
-        setQuestions(res.data || []);
+
+        const questionsWithLabels = await Promise.all(
+          (res.data || []).map(async (q: any) => {
+            try {
+              const labelRes = await axios.get(`/api/student/debug-question-label?qid=${q.question_id}`);
+              return {
+                ...q,
+                label: labelRes.data.fullLabel || "?",
+                parent_id: q.parent_id,
+                level: q.level,
+                question_text: q.question_text || "",
+              };
+            } catch {
+              return { ...q, label: "?", question_text: q.question_text || "" };
+            }
+          })
+        );
+
+        console.log("🧩 labelInfo enriched:", questionsWithLabels);
+        setQuestions(questionsWithLabels);
+        console.log("📦 loaded questions:", res.data);
       } catch (err) {
         console.error("Failed to load incorrect answers:", err);
       } finally {
@@ -50,6 +80,10 @@ export default function ReviewWrongQuestions() {
   };
 
   const current = questions[currentIndex];
+  console.log("👉 current question:", current);
+  if (!current) {
+    return <div className="p-6">Loading question...</div>;
+  }
 
   return (
     <div className="p-6 font-sans bg-gray-50 min-h-screen text-gray-800">
@@ -65,8 +99,34 @@ export default function ReviewWrongQuestions() {
             <p className="text-gray-600 text-sm">Question {currentIndex + 1} of {questions.length}</p>
 
             <div className="border p-4 rounded shadow-sm bg-white">
+              {(() => {
+                const grandparent = questions.find(q => q.question_id === questions.find(p => p.question_id === current.parent_id)?.parent_id);
+                return grandparent ? (
+                  <p className="text-xs text-gray-500 italic mb-1">
+                    {current.level === "subsub_question"
+                      ? extractCurrentLevelLabel(grandparent.label || "?")
+                      : grandparent.label || "?"} {grandparent.question_text}
+                  </p>
+                ) : null;
+              })()}
+              {(() => {
+                const parent = questions.find(q => q.question_id === current.parent_id);
+                return parent ? (
+                  <p className="text-xs text-gray-500 italic mb-1">
+                    {current.level === "subsub_question"
+                      ? extractCurrentLevelLabel(parent.label || "?")
+                      : parent.label || "?"} {parent.question_text}
+                  </p>
+                ) : null;
+              })()}
               <p className="text-lg font-medium leading-relaxed bg-gray-50 p-4 rounded border-l-4 border-blue-500">
-                {current.question_text}
+                {(() => {
+                  const match = current.label?.match(/\(([^)]+)\)$/);
+                  const digitMatch = current.label?.match(/^(\d+\.)$/);
+                  if (match) return `(${match[1]})`;
+                  if (digitMatch) return digitMatch[1];
+                  return current.label || "?";
+                })()} {current.question_text.replace(/^\s*\(?[a-zivx]+\)?\s*/i, "")}
               </p>
 
               <p className="text-sm mt-2 text-red-600">Your Answer: {current.student_answer || "Not answered"}</p>
@@ -83,7 +143,34 @@ export default function ReviewWrongQuestions() {
                 value={reAnswers[current.question_id] || ""}
                 onChange={(e) => handleAnswerChange(current.question_id, e.target.value)}
               />
+              <button
+                className="mt-2 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
+                onClick={async () => {
+                  try {
+                    const answer = reAnswers[current.question_id] || "";
+                    const res = await axios.post("/api/student/recheck-answer", {
+                      question_id: current.question_id,
+                      answer,
+                    });
+
+                    if (res.data.correct) {
+                      setQuestions(prev => prev.filter(q => q.question_id !== current.question_id));
+                      setCurrentIndex(0);
+                      setMessage("✅ Correct! Removed from review list.");
+                    } else {
+                      setMessage("❌ Still incorrect. Try again.");
+                    }
+                  } catch (err) {
+                    setMessage("⚠️ Error submitting answer.");
+                    console.error(err);
+                  }
+                }}
+              >
+                Submit Answer
+              </button>
             </div>
+
+            {message && <p className="text-sm mt-2 text-blue-700">{message}</p>}
 
             <div className="flex justify-between mt-4">
               <button
@@ -102,7 +189,8 @@ export default function ReviewWrongQuestions() {
               </button>
             </div>
 
-            <div className="mt-6 flex justify-center">
+            <p className="mt-4">&nbsp;</p>
+            <div className="mt-12 flex justify-center">
               <button
                 onClick={() => router.push("/student/exam/dashboard")}
                 className="bg-black hover:bg-gray-800 text-white px-4 py-2 rounded transition"

@@ -1,0 +1,19 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 1.
+
+Question: State the values printed by the procedure generate when number = 8. .............................................................................................................................................. [1]
+Reference Answer: • 2,4,6,8
+Marking Scheme: N/A
+Examiner Report: In many cases candidates gave the response 2 and did not iterate through the loop until the initial loop condition was false.
+Exemplar Answer: N/A
+Student's Answer: dfsd
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 1)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

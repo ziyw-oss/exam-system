@@ -1,0 +1,36 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 4.
+
+Question: The main program: • asks the user to enter a denary number between 1 and 255 • checks that the input is valid between 1 and 255 • If valid call the function toBinary() and pass the input as a parameter • outputs the return value • If not valid, repeatedly asks the user to input a number until the number is valid. Write the algorithm for the main program. You should write your algorithm using pseudocode or program code. .............................................................................................................................................. [4]
+Reference Answer: 1 mark per bullet to max 4
+• taking value as input
+• looping until valid between 1 and 255
+• calling function with correct parameter
+• outputting return value
+denary = -1
+while denary < 1 or denary > 255
+denary = input("Enter denary value between 1
+and 255")
+endwhile
+print(toBinary(denary))
+Marking Scheme: Allow other checks for a valid number. For
+example
+denary.isInteger == False
+Examiner Report: Candidates found Question 4 (b) easier to approach than Question 4 (a). Most could write pseudocode to accept a user input. When validating the input to be a value between 1 and 255, there was incorrect use of relational operators with off-by-one errors on occasion. There was also incorrect use of logical operators where or was used instead of and, and vice-versa. When candidates called toBinary(inputVal), the result was not always stored for later use. Assessment for learning When preparing candidates for the examination, they will benefit from a wide range of programming experience. Questions such as 4 (a) and 4 (b) present an ideal opportunity for developing coded solutions to test and discuss before looking at how the algorithms could be presented as pseudocode.
+Exemplar Answer: N/A
+Student's Answer: denary = -1 
+while denary < 1 or denary > 255 
+denary = input("Enter denary value between 1 
+and 255") 
+endwhile 
+print(toBinary(denary)) 
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 4)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

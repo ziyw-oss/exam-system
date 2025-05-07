@@ -1,0 +1,19 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 1.
+
+Question: (ii) The programmer has used a for loop on line 3 in the procedure bubbleSort. A for loop is a count controlled loop. State what is meant by the term ‘count controlled loop’. ......................................................................................................................................
+Reference Answer: • A loop that repeats a fixed / set number of times
+Marking Scheme: N/A
+Examiner Report: Most candidates could accurately define a ‘count controlled loop’ as one that repeated a predefined number of times, although some candidates gave an ambiguous response that was equally applicable to a conditional loop.
+Exemplar Answer: N/A
+Student's Answer: dfs
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 1)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

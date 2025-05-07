@@ -1,0 +1,44 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 7.
+
+Question: (ii) A function called reverse uses a stack called theStack to reverse data that is passed in as a parameter called name. For example, the name “Jack” would be returned as “kcaJ” by the function. theStack uses these operations which are already defined as global scope in the program: • push() – This will add data that is passed in as a parameter to the stack. • pop() – This will remove and return the item on top of the stack. Write the function reverse so that it: • accepts the name as a parameter • uses push() to add each character in the name to theStack separately • uses pop() to return each character from theStack and add it to a variable called reverseName • outputs the variable reverseName once all characters have been popped from theStack. You should write your function using pseudocode or program code. ......................................................................................................................................
+Reference Answer: • Correctly declaring the function reverse to include
+passing in name as a parameter
+• Correct logic to calculate the number of pushes
+required
+• Correct use of a loop to push all characters onto the
+stack separately
+• Creating a local variable reverseName to hold the
+reversed string
+• Correct use of a loop to pop all characters from the
+stack (in the reverse order)
+• Correct logic to add each popped character to the
+reverseName variable
+• Correctly returning the reverseName variable
+Marking Scheme: Example solution
+function reverse(name)
+reverseName = ""
+for nameCount = 0 to name.Length-1
+theStack.push(name[nameCount])
+next nameCount
+for nameCount = 0 to name.Length-1
+reverseName = reverseName + theStack.pop()
+next nameCount
+return reverseName
+end function
+Give full marks for alternative solutions that would work fully.
+Allow FT for any duplicate identifiers named incorrectly or
+using the incorrect case
+Examiner Report: Although some candidates answered this question well, others were only given 1 or 2 of the available 7 marks. Many candidates that lost marks did not push and/or pop characters correctly, and many did not return a value for the final mark. Candidates should also be reminded that the correct spelling and case of identifiers are required in questions of this type. Some candidates added spaces in identifier names or used a different case to the identifiers stated in the question and therefore, were not given marks. Assessment for learning Candidates need to understand the importance of maintaining the spelling, case and use of spaces etc in identifiers in questions which ask for functions to be written.
+Exemplar Answer: N/A
+Student's Answer: sdfs
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 7)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

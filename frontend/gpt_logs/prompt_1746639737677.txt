@@ -1,0 +1,28 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 4.
+
+Question: (i) Describe the difference between the spiral model and the waterfall model. ......................................................................................................................................
+Reference Answer: 1 mark per bullet to max 4, e.g.
+• spiral works on a small set of requirements…
+• …waterfall starts with all requirements
+• spiral repeats from the start of the cycle each time…
+• …waterfall to repeat needs to reverse through previous
+stages first
+• Spiral focuses on risk mitigation…
+• … Waterfall focuses on the delivery of the project as a
+whole.
+Marking Scheme: Max 2 marks if no explicit differences
+identified between the models.
+Examiner Report: Most candidates were able to display some knowledge of either the waterfall model or the spiral model of software development and were given some marks for identifying relevant points. However, fewer could analyse the factor they gave and then describe the difference between the two models for that factor.
+Exemplar Answer: N/A
+Student's Answer: dfds
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 4)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

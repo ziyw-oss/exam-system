@@ -133,6 +133,13 @@ export default function Dashboard() {
                   onClick={handleReviewWrong}
                   className="w-full text-center bg-yellow-500 text-white py-2 rounded hover:bg-yellow-600 transition"
                 >🔁 Review Incorrect Answers</button>
+
+                <button
+                  onClick={() => router.push("/student/exam/setup")}
+                  className="w-full text-center bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700 transition"
+                >
+                  📘 Practice by Knowledge Point
+                </button>
               </>
             )}
           </div>

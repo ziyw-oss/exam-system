@@ -1,0 +1,34 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 2.
+
+Question: An important design consideration is whether OCRSystems use a CISC processor type or a RISC processor type. Describe one difference between a CISC processor and a RISC processor. .............................................................................................................................................. [2]
+Reference Answer: • CISC has a larger instruction set
+• RISC has a smaller instruction set
+• CISC is difficult to pipeline
+• RISC is easier to pipeline
+• CISC tends to have more addressing modes
+• RISC tends to have fewer addressing modes
+• CISC instructions may take multiple clock
+cycles to execute
+• RISC instructions take one clock cycle to
+execute
+• CISC has complex circuitry/more transistors.
+• RISC has less complex/simple circuitry
+• CISC uses less RAM
+• RISC uses more RAM
+Marking Scheme: Accept any other valid points
+Mark in pairs
+
+Examiner Report: This question was generally answered well with many candidates describing the number of clock cycles required to execute instructions for RISC and CISC. Some candidates were not given the marks because they did not use the correct terminology.
+Exemplar Answer: N/A
+Student's Answer: sdfdsf
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 2)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

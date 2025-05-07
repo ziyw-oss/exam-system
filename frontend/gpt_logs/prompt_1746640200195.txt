@@ -1,0 +1,29 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 4.
+
+Question: Ruhail has been told to make use of reusable components when creating his program code. Explain two benefits of using reusable components when writing program code. 1 ................................................................................................................................................ 2 ................................................................................................................................................ [4]
+Reference Answer: 1 mark per bullet up to a maximum of 2 marks for each advantage (4
+marks in total), e.g.:
+• Saves times (1) as code does not need to be rewritten (1)
+• Code may already be tested (1) which will therefore save
+development//debugging time (1)
+• More efficient code (1) which will use less memory//be easier
+to maintain (1)
+• May require less technical knowledge (1) as code can used
+rather than written (1)
+Marking Scheme: Award a maximum of two marks for each
+advantage.
+Allow other suitable examples.
+Examiner Report: Many candidates did not give a clear explanation for a point made, and there were a number of ‘cheaper’ or ‘quicker’ type responses that had no qualification for what was being alluded to as ‘cheaper’ or ‘quicker’.
+Exemplar Answer: A response that shows a clear point being made with a detailed explanatory expansion for both benefits.
+Student's Answer: sdfs
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 4)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

@@ -58,20 +58,26 @@ def build_question_id_map_by_structure(exam_id: int, cursor) -> dict:
 
     for r in rows:
         if r["level"] == "question" and not r["parent_id"]:
+            print(f"➡️ 主问题遍历: id={r['id']} text={r['text'][:30]}")
             main_key = str(main_counter)
             final_map[main_key] = r["id"]
             sub_counter = 0
             for sub in sorted(r["children"], key=lambda x: x["id"]):
                 sub_key = f"{main_key}.{int_to_letter(sub_counter)}"
                 final_map[sub_key] = sub["id"]
+                print(f"    ↪️ 子题映射: {sub_key} → {sub['text'][:30]} (id={sub['id']})")
                 subsub_counter = 0
                 for subsub in sorted(sub["children"], key=lambda x: x["id"]):
                     subsub_key = f"{sub_key}.{int_to_roman(subsub_counter)}"
                     final_map[subsub_key] = subsub["id"]
+                    print(f"      ↪️ 子子题映射: {subsub_key} → {subsub['text'][:30]} (id={subsub['id']})")
                     subsub_counter += 1
                 sub_counter += 1
             main_counter += 1
 
+    print("🧭 构建的题号映射如下:")
+    for k, v in final_map.items():
+        print(f"  {k} → question_bank_id={v}")
     return final_map
 
 
@@ -435,6 +441,9 @@ def save_answers_to_db(exam_id: int, marks_data: List[dict]):
         cursor.execute(sql, params)
 
     question_map = build_question_id_map_by_structure(exam_id, cursor)
+    print(f"📋 题号映射总数: {len(question_map)}")
+    for k, v in question_map.items():
+        print(f"  🧾 {k} → question_bank_id={v}")
     print("🧭 当前卷题号映射 keys:", list(question_map.keys()))
 
     for item in marks_data:
@@ -450,6 +459,7 @@ def save_answers_to_db(exam_id: int, marks_data: List[dict]):
 
         if qid:
             print(f"✅ 匹配成功: {key} → qid={qid}")
+            print(f"📝 插入题目: 标准化题号={key}, DB题号ID={qid}, 答案预览={item.get('answer', '')[:30]!r}")
             insert_answer(
                 qid,
                 item.get("answer", ""),

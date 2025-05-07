@@ -22,7 +22,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   const form = formidable({ multiples: false, uploadDir, keepExtensions: true });
 
-  form.parse(req, async (err, fields, files) => {
+  form.parse(req, async (err: Error | null, fields: formidable.Fields, files: formidable.Files) => {
     if (err) return res.status(500).json({ error: 'Form parse error' });
 
     const paper = Array.isArray(files.paper) ? files.paper[0] : files.paper;
@@ -69,6 +69,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const finalOutputDir = path.join(serverRoot, 'backend', 'outputs', examId);
     fs.mkdirSync(finalOutputDir, { recursive: true });
 
+    let stdout = '', stderr = '';
+
     const markResult = spawnSync(pythonPath, ['backend/scripts/parse_markscheme.py', finalMarkPath, finalOutputDir, examId.toString()], {
       cwd: serverRoot,
     });
@@ -81,8 +83,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       cwd: serverRoot,
       env: { ...process.env, PYTHONUNBUFFERED: '1' },
     }); 
-
-    let stdout = '', stderr = '';
 
     python.stdout.on('data', (data) => {
       stdout += data.toString();
@@ -98,6 +98,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         return res.status(500).json({ error: '❌ parse_pdf 执行失败', detail: stderr || '未知错误' });
       }
 
+      console.log("📤 parse_pdf stdout:", stdout);
+
       const reportResult = spawnSync(pythonPath, ['backend/scripts/parse_report.py', finalReportPath, finalOutputDir, examId.toString()], {
         cwd: serverRoot,
       });
@@ -112,7 +114,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           structured,
           uuid: examId,
           logs: {
-            parse_pdf: stderr,
+            parse_pdf_stdout: stdout,
+            parse_pdf_stderr: stderr,
             parse_markscheme: markstderr,
             parse_report: reportstderr
           }
@@ -122,7 +125,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           error: '读取结构化数据失败',
           detail: e.message,
           logs: {
-            parse_pdf: stderr,
+            parse_pdf_stdout: stdout,
+            parse_pdf_stderr: stderr,
             parse_markscheme: markstderr,
             parse_report: reportstderr
           }

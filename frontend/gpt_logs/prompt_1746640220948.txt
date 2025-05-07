@@ -1,0 +1,23 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 2.
+
+Question: (iv) Describe the purpose of the sorted variable in the procedure bubbleSort. ......................................................................................................................................
+Reference Answer: 1 mark per bullet up to a maximum of 2 marks, e.g.:
+• signifies whether or not any swaps have been made
+in a pass
+• if still set to true at the end of a pass, then the list is
+sorted
+Marking Scheme: N/A
+Examiner Report: Many responses to this question were generalised answers that stated that the sorted variable determined whether the data was sorted or not. This could be an indication that candidates did not have practical experience of implementing a bubble sort with a swap flag. Most candidates did not appreciate the function of the variable during each pass of the bubble sort. Candidates need to be well versed in the different ways of implementing a bubble sort.
+Exemplar Answer: N/A
+Student's Answer: sdfsd
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 2)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

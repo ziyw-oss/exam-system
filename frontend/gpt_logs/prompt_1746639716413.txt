@@ -1,0 +1,19 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 1.
+
+Question: (i) The array numbers contains 356 numbers to be sorted by the bubble sort algorithm. State the maximum number of passes a bubble sort would need to complete to sort 356 numbers into order. ......................................................................................................................................
+Reference Answer: • 355
+Marking Scheme: N/A
+Examiner Report: Many candidates did not appreciate that a bubble sort will require a maximum of n-1 passes in the worst case since the first item in the list will be in position after that number of passes and so would not require an additional pass. The most common incorrect responses were 356, and 3562 which confused the worst case time complexity O(n2) with the number of passes.
+Exemplar Answer: N/A
+Student's Answer: sdf
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 1)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

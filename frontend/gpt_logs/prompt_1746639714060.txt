@@ -1,0 +1,21 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 2.
+
+Question: (iv) The procedure bubbleSort will only partially sort the array numbers into order. Describe what the programmer would need to add to the algorithm to enable it to fully sort the numbers into order. ......................................................................................................................................
+Reference Answer: • Add a (second outer) loop
+• That will repeat for each pass // repeat until the flag is
+set to true at the end of a pass
+Marking Scheme: N/A
+Examiner Report: Many candidates found it challenging to apply knowledge of a bubble sort to the code given. While a pleasing number identified the need to have an outer loop, there were far fewer who were able to expand on this to explain that this was required to repeat the process for the required number of passes, or until no swaps had occurred during a pass.
+Exemplar Answer: N/A
+Student's Answer: fdfs
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 2)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

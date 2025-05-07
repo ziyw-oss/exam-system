@@ -1,0 +1,19 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 1.
+
+Question: State the values printed by the procedure generate when number = 7. .............................................................................................................................................. [1]
+Reference Answer: • 1,3,5,7
+Marking Scheme: N/A
+Examiner Report: Candidates who answered the previous part of the question generally went on to score full credit for a second trace of the algorithm with a different calling argument value.
+Exemplar Answer: N/A
+Student's Answer: fsdf
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 1)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

@@ -73,7 +73,7 @@ def filter_page_noise(lines: List[str], debug: bool = False, is_last_page: bool 
     return cleaned
 
 # 模块：合并题号（如 '1'）与其后的题干（如 'Describe...') 成一行
-def merge_question_number_and_text(lines: List[str], debug: bool = True) -> List[str]:
+def merge_question_number_and_text(lines: List[str], debug: bool = False) -> List[str]:
     """
     合并题号行与其后的题干行（主问题结构分行），例如：
         '1' + 'Describe two factors...' => '1 Describe two factors...'
@@ -88,13 +88,37 @@ def merge_question_number_and_text(lines: List[str], debug: bool = True) -> List
         - 子题格式 (a)，或
         - 子子题格式 (i)，或
         - 混合结构 (a)(i) + 题干
+    增强：支持主问题含“numbers/values/table/data”关键词时，后续纯数字行自动并入主问题。
     """
-    
+
     merged_lines = []
     idx = 0
+    in_number_collect_mode = False
+    number_keywords = ["numbers", "values", "table", "data"]
     while idx < len(lines):
         current = lines[idx].strip()
 
+        if debug:
+            print(f"🔎 行[{idx}]: '{current}', in_number_collect_mode={in_number_collect_mode}")
+
+        # number collect mode: 若处于数字收集模式且当前行是纯数字，则追加到上一主问题
+        if in_number_collect_mode and re.fullmatch(r"\d+", current):
+            if debug:
+                print(f"➕ 附加数字行到主问题: {current} (in_number_collect_mode)")
+            merged_lines[-1] += f" {current}"
+            idx += 1
+            continue
+
+        # 检查是否需要退出数字收集模式: 仅检测新题号模式
+        if in_number_collect_mode:
+            # 仅当出现明确的新题号模式时退出数字收集模式
+            if re.match(r"^(\([a-z]\)|\([ivxlcdm]+\)|\d+[\s.])", current, re.IGNORECASE):
+                in_number_collect_mode = False
+                if debug:
+                    print(f"⛔️ 检测到新题号模式，退出数字收集模式: '{current}'")
+                # 不 return/continue，继续处理本行
+
+        # 检查主问题+关键词，决定是否进入数字收集模式
         if (
             re.fullmatch(r"\d{1,2}", current) and
             idx + 1 < len(lines)
@@ -115,8 +139,33 @@ def merge_question_number_and_text(lines: List[str], debug: bool = True) -> List
                 if debug:
                     print(f"✅ 合并题号行: '{current}' + '{next_line}' -> '{merged}'")
                 merged_lines.append(merged)
+                # 检查合并后的主问题文本是否包含关键词，决定是否进入数字收集模式
+                q_text = next_line
+                if any(kw in q_text.lower() for kw in number_keywords):
+                    in_number_collect_mode = True
+                    if debug:
+                        print(f"🔍 主问题含关键词，进入数字收集模式: {merged}")
+                else:
+                    in_number_collect_mode = False
                 idx += 2
                 continue
+            # 如果下一行不是题干，但主问题后面有关键词，也考虑进入数字收集模式
+            # 例如: 3 Trudi would like to sort an array of numbers into order.
+            # 这里主问题和题干在同一行，不会走此分支
+
+        # 标准主问题格式：如 "3 Trudi would like to sort an array of numbers into order."
+        m_main = re.match(r"^(\d+)\s+(.+)", current)
+        if m_main:
+            q_text = m_main.group(2)
+            merged_lines.append(current)
+            if any(kw in q_text.lower() for kw in number_keywords):
+                in_number_collect_mode = True
+                if debug:
+                    print(f"🔍 主问题含关键词，进入数字收集模式: {current}")
+            else:
+                in_number_collect_mode = False
+            idx += 1
+            continue
 
         # 默认情况：不合并
         merged_lines.append(current)
@@ -195,10 +244,35 @@ def parse_line_structure(line: str) -> dict:
 # ✅ 模块：提取 PDF 文件中的试题文本内容（支持题号识别与结构分割）
 def extract_text_from_pdf(pdf_path: str, debug=False) -> str:
     import fitz  # PyMuPDF
+    import pdfplumber
     doc = fitz.open(pdf_path)
     questions = [] # 存储提取的题目文本
     current_question = [] # 当前题目文本
     in_question = False # 是否在题目文本中
+
+    # --- 新增：提取所有表格数字项 ---
+    def extract_tables_as_flat_text(pdf) -> set[str]:
+        import re
+        table_text_items = set()
+        for page in pdf.pages:
+            try:
+                tables = page.extract_tables()
+                for table in tables:
+                    for row in table:
+                        if row:
+                            for cell in row:
+                                text = str(cell).strip()
+                                if text and re.fullmatch(r"\d+", text):
+                                    table_text_items.add(text)
+            except:
+                continue
+        return table_text_items
+
+    # 用 pdfplumber 打开 PDF，提取表格内纯数字项
+    with pdfplumber.open(pdf_path) as pdf_plumber_obj:
+        table_numbers = extract_tables_as_flat_text(pdf_plumber_obj)
+    if debug:
+        print(f"🟦 表格内纯数字项: {table_numbers}")
 
     for i, page in enumerate(doc):# 遍历每一页
         if debug:
@@ -225,13 +299,56 @@ def extract_text_from_pdf(pdf_path: str, debug=False) -> str:
                 break
 
         cleaned_lines = filter_page_noise(original_lines, debug=True, is_last_page=(i == len(doc) - 1))
+        # === 提前数字收集逻辑 ===
+        def apply_number_inclusive_mode(lines: list[str], table_numbers: set[str], debug=False) -> tuple[list[str], set[str]]:
+            import re
+            updated_lines = []
+            collected_number_lines = set()
+            number_keywords = ["numbers", "values", "table", "data"]
+            idx = 0
+            while idx < len(lines):
+                line = lines[idx]
+                if re.match(r"^\d+\s", line):  # 主问题格式
+                    q_text = line.split(maxsplit=1)[1] if ' ' in line else ''
+                    updated_lines.append(line)
+                    idx += 1
+                    # 检查是否包含关键词
+                    if any(kw in q_text.lower() for kw in number_keywords):
+                        while idx < len(lines) and re.fullmatch(r"\d+", lines[idx]) and lines[idx] not in table_numbers:
+                            if debug:
+                                print(f"➕ 提前附加纯数字行: {lines[idx]}")
+                            updated_lines[-1] += f" {lines[idx]}"
+                            collected_number_lines.add(lines[idx])
+                            idx += 1
+                        else:
+                            if debug and idx < len(lines):
+                                print(f"⛔️ 停止数字追加，当前行: {lines[idx]}")
+                else:
+                    updated_lines.append(line)
+                    idx += 1
+            return updated_lines, collected_number_lines
+
+        # NOTE: 此处移除 apply_number_inclusive_mode 对 cleaned_lines 的调用，推迟到 merge 后
+
+        # 新增：打印第 5~7 页清理后内容
+        if 4 <= i <= 6:
+            print(f"\n🧹 第 {i+1} 页清理后内容：")
+            if not cleaned_lines:
+                print("⚠️ 此页清理后为空")
+            for line in cleaned_lines:
+                print(f"  {line}")
         if debug:    
             print(f"📄 清洗后行数: {len(cleaned_lines)}")
         if not cleaned_lines:
             continue
 
-        merged_lines = merge_question_number_and_text(cleaned_lines, debug=False)
-        #print(f"📄 合并后行数: {len(merged_lines)}")
+        merged_lines = merge_question_number_and_text(cleaned_lines, debug=True)
+
+        # 应用数字追加逻辑（现在在合并后调用）
+        merged_lines, collected_number_lines = apply_number_inclusive_mode(merged_lines, table_numbers, debug=True)
+
+        # --- 新增：过滤表格中的纯数字行和提前追加到主问题中的数字行 ---
+        filtered_lines = [line for line in merged_lines if line.strip() not in table_numbers and line.strip() not in collected_number_lines]
 
         def start_new_question(line):
             nonlocal found_new_question, current_question, questions, seen_score
@@ -271,7 +388,8 @@ def extract_text_from_pdf(pdf_path: str, debug=False) -> str:
             current_question = []
             seen_score = False
 
-        for line in merged_lines:
+        # --- 下方所有处理都使用 filtered_lines 替代 merged_lines ---
+        for line in filtered_lines:
             line = line.strip()
             if re.search(r"\[\d+\]", line):
                 seen_score = True
@@ -365,7 +483,7 @@ def extract_text_from_pdf(pdf_path: str, debug=False) -> str:
     #for idx, q in enumerate(questions, 1):
         #print(f"{idx:02d}: {q}")
 
-    return "\n".join(questions)
+    return "\n".join(questions), collected_number_lines
 
 def extract_marks(text: str) -> int | None:
     match = re.search(r"\[(\d+)\]", text)
@@ -444,21 +562,34 @@ def convert_to_structured_json(parsed_questions: list, exam_id: int) -> list[dic
 # ✅ 标准结构分析函数（主结构入口）
 # - 支持主 + 子 + 子子层级
 # - 使用标准字段：sub_questions + subsub_questions
-def parse_questions(text: str, debug=False) -> List[Dict[str, Any]]:
+def parse_questions(text: str, table_numbers: set[str] = set(), debug=False) -> List[Dict[str, Any]]:
     lines = text.strip().split("\n")
     questions = []
     current_q, current_sub, current_subsub = None, None, None
     last_q_number = None  # ✅ 新增：追踪上一个题号，防止重复
     seen_sub_letters = set()  # ✅ 当前题内子题去重
+    # --- number_inclusive_mode additions ---
+    number_inclusive_mode = False
+    number_keywords = ["numbers", "values", "table"]
 
+    # 用于数字收集模式的缓冲区
+    number_buffer = []
     for line in lines:
         line = line.strip()
         if not line:
             continue
 
+        # 跳过表格中的纯数字行
+        if re.fullmatch(r"\d{1,2}", line):
+            if line in table_numbers:
+                if debug:
+                    print(f"⛔️ 忽略表格中纯数字 '{line}'")
+                continue
+
         # 主+子组合，如 "3 (a) Describe..."
         m_combo = re.match(r"^(\d+)\s+\(([a-z])\)\s+(.*)", line)
         if m_combo:
+            number_inclusive_mode = False  # 自动终止数字收集模式
             q_number = int(m_combo.group(1))
             if current_q and last_q_number != q_number:
                 questions.append(current_q)
@@ -482,6 +613,7 @@ def parse_questions(text: str, debug=False) -> List[Dict[str, Any]]:
 
         # ✅ 标准主问题，如 "3 Describe..."
         if re.match(r"^\d+\s+", line):
+            number_inclusive_mode = False  # 自动终止数字收集模式
             q_number = int(line.split()[0])
             q_text = line[len(str(q_number)):].strip()
             if current_q and last_q_number != q_number:
@@ -492,6 +624,13 @@ def parse_questions(text: str, debug=False) -> List[Dict[str, Any]]:
                 "text": q_text,
                 "sub_questions": []
             }
+            # Enable number_inclusive_mode if keywords are found in main question text
+            if any(kw in q_text.lower() for kw in number_keywords):
+                number_inclusive_mode = True
+                if debug:
+                    print(f"🔍 进入数字收集模式: 主问题 {q_number} 包含关键词")
+                # 初始化缓冲区
+                number_buffer = []
             seen_sub_letters = set()
             current_sub, current_subsub = None, None
             if debug:
@@ -501,6 +640,7 @@ def parse_questions(text: str, debug=False) -> List[Dict[str, Any]]:
         # ✅ 主问题变种：如 "3* Some long question"
         m_main_star = re.match(r"^(\d+)\*\s+(.*)", line)
         if m_main_star:
+            number_inclusive_mode = False  # 自动终止数字收集模式
             q_number = int(m_main_star.group(1))
             q_text = m_main_star.group(2).strip()
             if current_q and last_q_number != q_number:
@@ -511,6 +651,13 @@ def parse_questions(text: str, debug=False) -> List[Dict[str, Any]]:
                 "text": q_text,
                 "sub_questions": []
             }
+            # Enable number_inclusive_mode if keywords are found in main question text
+            if any(kw in q_text.lower() for kw in number_keywords):
+                number_inclusive_mode = True
+                if debug:
+                    print(f"🔍 进入数字收集模式: 主问题 {q_number} 包含关键词")
+                # 初始化缓冲区
+                number_buffer = []
             seen_sub_letters = set()
             current_sub, current_subsub = None, None
             if debug:
@@ -519,6 +666,7 @@ def parse_questions(text: str, debug=False) -> List[Dict[str, Any]]:
 
         # ✅ 单独编号行（如 "3"）表示新主问题（下一行是题干或子题）
         if re.fullmatch(r"\d{1,2}", line):
+            number_inclusive_mode = False  # 自动终止数字收集模式
             q_number = int(line)
             if current_q and last_q_number != q_number:
                 questions.append(current_q)
@@ -537,6 +685,7 @@ def parse_questions(text: str, debug=False) -> List[Dict[str, Any]]:
         # 子+子子结构，如 "(a) (i) text"
         m_combo_sub = re.match(r"^\(([a-z])\)\s+\(([ivxlcdm]+)\)\s+(.*)", line, re.IGNORECASE)
         if m_combo_sub and current_q:
+            number_inclusive_mode = False  # 自动终止数字收集模式
             letter = m_combo_sub.group(1)
             if letter in seen_sub_letters:
                 continue  # ✅ 重复子题跳过
@@ -557,6 +706,7 @@ def parse_questions(text: str, debug=False) -> List[Dict[str, Any]]:
         # 子题结构，例如 "(a) Describe..."
         m_sub = re.match(r"^\(([a-z])\)\s*(.*)", line)
         if m_sub and current_q:
+            number_inclusive_mode = False  # 自动终止数字收集模式
             if m_sub.group(1).lower() == "i":
                 pass  # ✅ 忽略 (i)，由子子题逻辑处理
             else:
@@ -585,6 +735,7 @@ def parse_questions(text: str, debug=False) -> List[Dict[str, Any]]:
 
             matches = list(re.finditer(r"\(([ivxlcdm]+)\)\s*", line, re.IGNORECASE))
             if matches:
+                number_inclusive_mode = False  # 自动终止数字收集模式
                 for i in range(len(matches)):
                     start = matches[i].end()
                     end = matches[i + 1].start() if i + 1 < len(matches) else len(line)
@@ -596,13 +747,20 @@ def parse_questions(text: str, debug=False) -> List[Dict[str, Any]]:
                         "roman": roman,
                         "text": f"({roman}) {content.strip()}",
                         "raw": line,  # ✅ 保存原始行（含分数）
-                        
-                        #"raw": line[start:end].strip()  # ✅ 加入原始未清洗的行
                     }
                     current_sub["subsub_questions"].append(current_subsub)
                 continue
 
-        # 文本追加：多行子子题支持
+        # 数字追加模式：识别纯数字行
+        if number_inclusive_mode:
+            if debug:
+                print(f"🔍 当前处于数字收集模式: {line}")
+            if re.fullmatch(r"\d+", line):
+                if current_q:
+                    if debug:
+                        print(f"➕ 附加数字行到主问题: {line}")
+                    current_q["text"] += f" {line}"
+                continue
         if current_subsub:
             current_subsub["text"] += " " + line
         elif current_sub:
@@ -742,22 +900,24 @@ def generate_question_bank_sql(structured: List[Dict[str, Any]],cursor) -> str:
     def escape(text):
         return text.replace("'", "''") if text else ""
 
-    def insert_question(level: str, parent_id: int | None, text: str, qtype: str, marks: int | None) -> int:
+    def insert_question(level: str, parent_id: int | None, text: str, qtype: str, marks: int | None, exam_id: int) -> int:
         nonlocal bank_id_counter
         key = (level, parent_id or 0, text.strip())
-        
         # ✅ 内存缓存：避免同一轮重复插入
         if key in question_bank_map:
             return question_bank_map[key]
 
-        # ✅ 查询数据库中是否已存在
+        # 恢复查询已存在题目的逻辑
         cursor.execute("""
-            SELECT id FROM question_bank
-            WHERE level = %s AND text = %s AND (parent_id = %s OR (parent_id IS NULL AND %s IS NULL))
+            SELECT qb.id FROM question_bank qb
+            JOIN exam_questions eq ON eq.question_bank_id = qb.id
+            WHERE qb.level = %s AND qb.text = %s
+              AND (qb.parent_id = %s OR (qb.parent_id IS NULL AND %s IS NULL))
+              AND eq.exam_id = %s
             LIMIT 1
-        """, (level, text, parent_id, parent_id))
+        """, (level, text, parent_id, parent_id, exam_id))
         result = cursor.fetchone()
-        
+
         if result:
             qid = result[0]  # ✅ 复用已存在的 ID
         else:
@@ -770,8 +930,6 @@ def generate_question_bank_sql(structured: List[Dict[str, Any]],cursor) -> str:
                 f"({qid}, '{level}', {parent_id if parent_id is not None else 'NULL'}, "
                 f"'{escape(text)}', '{qtype}', {marks if marks is not None else 'NULL'});"
             )
-        
-        question_bank_map[key] = qid
         return qid
     def link_question_to_exam(exam_id: int, bank_id: int, sort_order: int):
         exam_sqls.append(
@@ -788,21 +946,25 @@ def generate_question_bank_sql(structured: List[Dict[str, Any]],cursor) -> str:
 
     for q in structured:
         sort_counter = 1
-        q_id = insert_question('question', None, q['text'], q['question_type'], q.get('marks'))
+        # ✅ 忽略“伪主问题”：题干为空且无子题
+        if not q['text'].strip() and not q.get('sub_questions'):
+            continue
+
+        q_id = insert_question('question', None, q['text'], q['question_type'], q.get('marks'), q['exam_id'])
         link_question_to_exam(q['exam_id'], q_id, sort_counter)
         sort_counter += 1
         if q['extensions'].get('code_block'):
             insert_codeblock(q_id, q['extensions']['code_block'])
 
         for sq in q.get('sub_questions', []):
-            sq_id = insert_question('sub_question', q_id, sq['text'], sq['question_type'], sq.get('marks'))
+            sq_id = insert_question('sub_question', q_id, sq['text'], sq['question_type'], sq.get('marks'), q['exam_id'])
             link_question_to_exam(q['exam_id'], sq_id, sort_counter)
             sort_counter += 1
             if sq['extensions'].get('code_block'):
                 insert_codeblock(sq_id, sq['extensions']['code_block'])
 
             for ssq in sq.get('subsub_questions', []):
-                ssq_id = insert_question('subsub_question', sq_id, ssq['text'], ssq['question_type'], ssq.get('marks'))
+                ssq_id = insert_question('subsub_question', sq_id, ssq['text'], ssq['question_type'], ssq.get('marks'), q['exam_id'])
                 link_question_to_exam(q['exam_id'], ssq_id, sort_counter)
                 sort_counter += 1
                 if ssq['extensions'].get('code_block'):
@@ -907,13 +1069,63 @@ if __name__ == "__main__":
 
     # 2. 结构化解析题目
     year, paper_type = infer_year_and_paper_type_from_path(pdf_path)
-    full_text = extract_text_from_pdf(pdf_path, debug=False)
+    full_text, collected_number_lines = extract_text_from_pdf(pdf_path, debug=True)
 
     with open(os.path.join(output_dir, "output.txt"), "w", encoding="utf-8") as f:
         f.write(full_text)
     print("📄 已保存到 output.txt")
 
-    parsed = parse_questions(full_text)
+    # 获取表格内纯数字项
+    with pdfplumber.open(pdf_path) as pdf_plumber_obj:
+        def extract_tables_as_flat_text(pdf) -> set[str]:
+            import re
+            table_text_items = set()
+            for page in pdf.pages:
+                try:
+                    tables = page.extract_tables()
+                    for table in tables:
+                        for row in table:
+                            if row:
+                                for cell in row:
+                                    text = str(cell).strip()
+                                    if text and re.fullmatch(r"\d+", text):
+                                        table_text_items.add(text)
+                except:
+                    continue
+            return table_text_items
+        table_numbers = extract_tables_as_flat_text(pdf_plumber_obj)
+
+    parsed = parse_questions(full_text, table_numbers, debug=True)
+
+    # ===== 新增：将 collected_number_lines 按主问题编号分组并插入主问题 =====
+    # 1. 先构建 number_lines_map: { "3": ["89", "25", ...], ... }
+    import re
+    number_lines_map = {}
+    for line in collected_number_lines:
+        # 在 full_text 中找出 line 所在的主问题编号
+        # 假设主问题格式为 "3 ..."，line 紧跟其后
+        # 可用正则查找主问题编号
+        # 遍历 full_text 的每一行，找到包含 line 的主问题编号
+        # 这里采用简单策略：只要某主问题题干包含 line，就归属该编号
+        matches = list(re.finditer(r"^(\d+)\s", full_text, re.MULTILINE))
+        for idx, m in enumerate(matches):
+            q_number = m.group(1)
+            start = m.end()
+            end = matches[idx+1].start() if idx+1 < len(matches) else len(full_text)
+            q_text = full_text[start:end]
+            if re.search(rf"\b{re.escape(line)}\b", q_text):
+                number_lines_map.setdefault(q_number, []).append(line)
+                break
+
+    # 2. 把 number_lines_map 的内容插入对应主问题
+    for q in parsed:
+        num_str = str(q["number"])
+        if num_str in number_lines_map:
+            # 避免重复插入
+            for n in number_lines_map[num_str]:
+                if n not in q["text"]:
+                    q["text"] += " " + n
+
     structured = convert_to_structured_json(parsed, insert_exam(year, paper_type))
 
     save_json(structured, os.path.join(output_dir, "output.json"))

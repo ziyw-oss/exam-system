@@ -1,0 +1,25 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 2.
+
+Question: (iii) Name and describe one other model of software development. Name  ................................................................................................................................. Description  ........................................................................................................................
+Reference Answer: 1 mark for name 1 mark for description
+e.g.
+• agile/rapid application development
+• building/use of prototypes
+• extreme programming
+• type of agile // has subsequent releases of new features
+Marking Scheme: Accept any sensible methodology and
+description,
+Examiner Report: Many candidates successfully identified another model of software development. The most popular responses were Agile and Rapid Application Development. Fewer candidates were then able to go on to describe features of the model they had selected.
+Exemplar Answer: N/A
+Student's Answer: fsd
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 2)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

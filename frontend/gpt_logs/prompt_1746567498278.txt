@@ -1,0 +1,22 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 2.
+
+Question: (i) Identify two different inputs for this program. 1 ........................................................................................................................................ 2 ........................................................................................................................................
+Reference Answer: 1 mark per bullet e.g.
+• stage (e.g. stage 1, stage 2, stage 3)
+• city name (e.g. London)
+• speed (e.g. slow, normal, fast)
+Marking Scheme: N/A
+Examiner Report: Most candidates successfully identified the relevant potential inputs of city/stage/speed from the given scenario. Some candidates suggested alternative inputs such as ‘magnitude of earthquake’ which were also given marks as they were valid inputs for a simulation relating to earthquakes.
+Exemplar Answer: N/A
+Student's Answer: stage, speed
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 2)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

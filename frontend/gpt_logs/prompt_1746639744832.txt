@@ -1,0 +1,100 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 9.
+
+Question: Nina is writing a computer game using an Integrated Development Environment (IDE). Her friend, James, is writing a computer game using a text-editor which will allow James to create and edit text. James will use a separate compiler. Discuss the differences between writing and debugging a program using an IDE and a text-editor. You should include the following in your answer: • features that are used when writing code • features that are used when debugging code • the benefits of using an IDE instead of a text-editor. ..................................................................................................................................................... [9]
+Reference Answer: Mark Band 3–High Level
+(7-9 marks)
+The candidate demonstrates thorough knowledge and
+understanding of IDEs; the material is generally accurate and
+detailed.
+The candidate is able to apply their knowledge and
+understanding directly and consistently to the context provided.
+Evidence/examples will be explicitly relevant to the explanation.
+The candidate provides a thorough discussion which is well-
+balanced. Evaluative comments are consistently relevant and
+well-considered.
+There is a well-developed line of reasoning which is clear and
+logically structured. The information presented is relevant and
+substantiated.
+Mark Band 2-Mid Level
+(4-6 marks)
+The candidate demonstrates reasonable knowledge and
+understanding of IDEs; the material is generally accurate but at
+times underdeveloped.
+The candidate is able to apply their knowledge and
+understanding directly to the context provided although one or
+two opportunities are missed. Evidence/examples are for the
+most part implicitly relevant to the explanation.
+The candidate provides a reasonable discussion, the majority
+of which is focused. Evaluative comments are for the most part
+appropriate, although one or two opportunities for development
+are missed.
+There is a line of reasoning presented with some structure. The
+information presented is in the most part relevant and
+supported by some evidence.
+Mark Band 1-Low Level
+(1-3 marks)
+The candidate demonstrates a basic knowledge of IDEs, with
+limited understanding shown; the material is basic and contains
+some inaccuracies. The candidate makes a limited attempt to
+apply acquired knowledge and understanding to the context
+provided.
+The candidate provides a limited discussion which is narrow in
+focus. Judgments if made are weak and unsubstantiated.
+The information is basic and communicated in an unstructured
+way. The information is supported by limited evidence and the
+relationship to the evidence may not be clear.
+0 marks
+No attempt to answer the question or response is not worthy of
+credit.
+Marking Scheme: AO1: Knowledge and Understanding
+e.g.
+IDE:
+• pretty print / syntax highlighting
+• auto-complete
+• auto-correction
+• breakpoints
+• stepping
+Editor:
+• no helpful writing/debugging features
+• no excess features/interface
+AO2.1: Application
+e.g.
+IDE
+• identify syntax errors as writing
+• …saves trying to find them
+• easier debugging as can step through a program
+• auto-indenting avoids errors from incorrect
+indentation
+• May have built in unit testing to automate testing
+and avoid new errors being introduced.
+Editor
+• does not offer suggestions on code corrections
+• Has a lower footprint on memory/CPU which
+may be suited to quick alterations or working on
+lowed spec’d systems.
+• May be better when learning to program as it
+forces the user to type everything in full / doesn’t
+give suggestions, helping things stick in
+memory.
+AO3.3: Evaluation
+e.g.
+• IDE is helpful in reducing original errors
+• IDE is helpful in finding and correcting errors
+• Editor is a simpler system to use e.g. less
+memory needed to run it, does not try and auto-
+correct incorrectly or introduce errors that the
+programmer has not made.
+Examiner Report: A pleasing number of candidates could identify and describe a range of features of an IDE, with most being able to demonstrate sufficient knowledge to achieve mark band Level 2. Few candidates displayed a level of evaluative reasoning of sufficient depth to achieve mark band Level 3. More successful responses clearly explained how relevant debugging tools in an IDE led to much greater productivity than a text editor because of the way that they could assist with finding logical errors in code through the use of stepping and tracing. An acknowledgement of the amount of system resources and the complexity of some IDE environments was less often evaluated. Candidates need to focus on making clear logical arguments with evidence of evaluation (AO3) to be able to achieve mark band 3.
+Exemplar Answer: N/A
+Student's Answer: dfd
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 9)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

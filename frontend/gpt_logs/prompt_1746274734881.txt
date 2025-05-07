@@ -1,0 +1,39 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 3.
+
+Question: Show the denary value 6.25 as a floating point binary number representing the mantissa and exponent. Both of these should be stored in two’s complement representation. You should use as few bits as possible. Show your working. .............................................................................................................................................. [3]
+Reference Answer: N/A
+Marking Scheme: N/A
+Examiner Report: N/A
+Exemplar Answer: N/A
+Student's Answer: Step 1: Convert 6.25 to binary
+	•	6 = 110
+	•	0.25 = 0.01
+	•	So 6.25 = 110.01
+Step 2: Normalize binary number
+	•	Normalized form: 1.1001 \times 2^2
+→ Move decimal point 2 places left.
+Step 3: Represent mantissa in two’s complement
+	•	Normalized mantissa (drop leading 1): 1001
+	•	But mantissa needs the leading 1 in the answer.
+	•	So mantissa = 1.1001, represented as 0.11001 (we use 5 bits including sign and leading fractional bits).
+	•	In two’s complement, the mantissa is positive, so the sign bit is 0.
+
+Mantissa (5 bits): 0.11001
+Step 4: Represent exponent in two’s complement
+	•	Exponent = 2 → in 3-bit two’s complement: 010
+
+Exponent (3 bits): 010
+✅ Final Answer
+	•	Mantissa: 0.11001
+	•	Exponent: 010
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 3)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

@@ -1,0 +1,28 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 4.
+
+Question: (i) Complete the pseudocode function for the pop() operation.
+Reference Answer: function pop()
+if top == 0 then
+return -1
+else
+item = items[top]
+top = top - 1
+return item
+endif
+end function
+Marking Scheme: N/A
+Examiner Report: Many candidates were given full marks for this question, although some did not correctly return ‘item’ and incorrectly stated ‘items’ would be returned.
+Exemplar Answer: N/A
+Student's Answer: 0,top, 1, item
+
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 4)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

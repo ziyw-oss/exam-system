@@ -1,0 +1,20 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 1.
+
+Question: (i) State what is meant by a ‘local variable’. ......................................................................................................................................
+Reference Answer: it can only be accessed within the subroutine//block in which it is
+declared
+Marking Scheme: N/A
+Examiner Report: Few candidates were able to clearly define the term 'local variable'. The concept of scope of variables appeared to be poorly understood, with few able to define that a local variable’s scope was that of the function/procedure in which it was declared.
+Exemplar Answer: N/A
+Student's Answer: dfs
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 1)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

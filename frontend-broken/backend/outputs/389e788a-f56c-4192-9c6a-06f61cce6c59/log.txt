@@ -1,3 +1,0 @@
-
-
-/Library/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python: can't open file '/Users/arthurwang/Projects/exam-system/frontend/backend/scripts/parse_pdf.py': [Errno 2] No such file or directory

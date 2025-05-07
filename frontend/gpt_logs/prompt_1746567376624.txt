@@ -1,0 +1,23 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 3.
+
+Question: (iii) State the purpose of the variable holdValue in the procedure bubbleSort. ......................................................................................................................................
+Reference Answer: • To temporarily hold a value (for numbers[x])…
+• …while it is being transferred from one position to
+another…
+• ….in the array numbers
+• To stop values over writing each other
+Marking Scheme: N/A
+Examiner Report: Many candidates found it difficult to explain the purpose of the holdValue variable in context. Where candidates achieved some of the marks, they most frequently identified holdValue as a temporary store that was required to prevent accidental overwriting of data during the swap process. Relatively few were able to accurately describe how the variable allowed the contents of dataArray[x] and dataArray[x+1] to be swapped.
+Exemplar Answer: This exemplar very clearly states exactly how and why the variable holdValue is required.
+Student's Answer: To temporarily hold a value while it is being transferred from one position to another
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 3)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}

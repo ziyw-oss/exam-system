@@ -1,0 +1,27 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 5.
+
+Question: (i) Describe how a linear search will search the data in the array for a number that has been input. ......................................................................................................................................
+Reference Answer: 1 mark per bullet
+• Start with the first element
+• Compare it to the number input
+• If it is equal, return the index // True
+• If not equal, move to the next element and repeat
+• Repeat until it is found, or the end of the array is reached
+• If found, return the index where the data was found
+• If the end of the list was reached, return -1 // False // “not
+found” message
+Marking Scheme: N/A
+Examiner Report: A pleasingly high number of candidates demonstrated a clear understanding of how a linear search operated and used clear and accurate language. More candidates were clearer in the way that they articulated the steps of the search than in previous series. However, there were still a number of candidates who gave vague responses such as ‘check each value until the value input is found’ that did not articulate the required steps. Some candidates gave advantages or disadvantages of using a linear search but such responses did not answer the question.
+Exemplar Answer: N/A
+Student's Answer: dfsd
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Return:
+- "score": the numerical score (0 to 5)
+- "reason": a short explanation for why this score was given.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation"
+}
