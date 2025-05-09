@@ -1,5 +1,3 @@
-// File: src/pages/api/student/submit-exam.ts
-
 import type { NextApiRequest, NextApiResponse } from "next";
 import mysql from "mysql2/promise";
 import jwt from "jsonwebtoken";
@@ -36,14 +34,14 @@ async function saveLearningProgress(
   sessionId: number,
   userId: number,
   questionId: number,
-  keypointId: number | null,
+  // keypointId: number | null,
   answerText: string,
   score: number
 ) {
   await connection.execute(
-    `REPLACE INTO learning_progress (session_id, user_id, question_id, keypoint_id, answer_text, score)
-     VALUES (?, ?, ?, ?, ?, ?)`,
-    [sessionId, userId, questionId, keypointId, answerText, score]
+    `REPLACE INTO learning_progress (session_id, user_id, question_id, answer_text, score)
+     VALUES (?, ?, ?, ?, ?)`,
+    [sessionId, userId, questionId, answerText, score]
   );
 }
 
@@ -99,16 +97,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         qa.marks,
         qr.report_text,
         qr.exemplar_text,
-        qb.question_type,
-        qk.keypoint_id,
-        kp.name AS keypoint_name
+        qb.question_type
       FROM student_answers sa
       JOIN question_bank qb ON sa.question_id = qb.id
       LEFT JOIN question_answer qa ON qb.id = qa.question_bank_id
       LEFT JOIN question_report qr ON qb.id = qr.question_bank_id
-      LEFT JOIN question_keypoints qk ON qb.id = qk.question_id
-      LEFT JOIN keypoints kp ON qk.keypoint_id = kp.id
-      WHERE sa.session_id = ?`,
+      WHERE sa.session_id = ?
+      GROUP BY sa.question_id`,
       [sessionId]
     );
 
@@ -117,17 +112,24 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     let totalQuestions = 0;
 
     const wrongQuestions = [];
-    const keypointStats: Record<number, { name: string; total: number; correct: number; correctRate?: number }> = {};
-    const suggestedKeypoints: number[] = [];
+    // const keypointStats: Record<number, { name: string; total: number; correct: number; correctRate?: number }> = {};
+    // const suggestedKeypoints: number[] = [];
 
     for (const ans of answers) {
       if (!ans.answer_text?.trim() || !ans.marks || ans.marks <= 0) continue;
 
       answeredQuestions++;
 
+      console.log("📝 GPT评分中:", {
+        id: ans.question_id,
+        text: ans.question_text?.substring(0, 100),
+        answer: ans.answer_text?.substring(0, 100),
+      });
+
       let score = 0;
       let reason = "";
       try {
+        const start = Date.now();
         const result = await getGptScore({
           questionText: ans.question_text,
           referenceAnswer: ans.correct_answer,
@@ -137,6 +139,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           studentAnswer: ans.answer_text,
           marks: ans.marks,
         });
+        const end = Date.now();
+        console.log(`✅ GPT评分完成: Q${ans.question_id} 用时 ${end - start}ms`);
         const promptData = {
             questionText: ans.question_text,
             referenceAnswer: ans.correct_answer,
@@ -152,7 +156,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         score = result.score;
         reason = result.reason;
       } catch (err) {
-        console.error("评分失败:", err);
+        console.error(`❌ GPT评分失败: Q${ans.question_id}`, err);
       }
 
       totalScore += score;
@@ -166,23 +170,23 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         });
       }
       //console.log("Ts 文件里的Reason:",reason);
-      const keypointId = ans.keypoint_id;
-      if (keypointId) {
-        if (!keypointStats[keypointId]) {
-          keypointStats[keypointId] = { name: ans.keypoint_name || "", total: 0, correct: 0 };
-        }
-        keypointStats[keypointId].total += 1;
-        if (score === ans.marks) {
-          keypointStats[keypointId].correct += 1;
-        }
-      }
+      // const keypointId = ans.keypoint_id;
+      // if (keypointId) {
+      //   if (!keypointStats[keypointId]) {
+      //     keypointStats[keypointId] = { name: ans.keypoint_name || "", total: 0, correct: 0 };
+      //   }
+      //   keypointStats[keypointId].total += 1;
+      //   if (score === ans.marks) {
+      //     keypointStats[keypointId].correct += 1;
+      //   }
+      // }
 
       await connection.execute(
         `REPLACE INTO student_scores (session_id, question_id, score, gpt_reasoning) VALUES (?, ?, ?, ?)`,
         [sessionId, ans.question_id, score, reason]
       );
 
-      await saveLearningProgress(connection, sessionId, userId, ans.question_id, ans.keypoint_id, ans.answer_text, score);
+      await saveLearningProgress(connection, sessionId, userId, ans.question_id, ans.answer_text, score);
     }
 
     const [qCountRows]: any = await connection.query(
@@ -193,13 +197,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     );
     totalQuestions = qCountRows[0]?.total || 0;
 
-    for (const keypointId in keypointStats) {
-      const stat = keypointStats[+keypointId];
-      stat.correctRate = (stat.correct / stat.total) * 100;
-      if (stat.correctRate < 60) {
-        suggestedKeypoints.push(+keypointId);
-      }
-    }
+    // for (const keypointId in keypointStats) {
+    //   const stat = keypointStats[+keypointId];
+    //   stat.correctRate = (stat.correct / stat.total) * 100;
+    //   if (stat.correctRate < 60) {
+    //     suggestedKeypoints.push(+keypointId);
+    //   }
+    // }
 
     const percent = fullScore > 0 ? (totalScore / fullScore) * 100 : 0;
 
@@ -216,9 +220,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       percent,
       questionCount: answeredQuestions,
       totalQuestions,
-      keypointStats,
+      // keypointStats,
       wrongQuestions,
-      suggestedKeypoints,
+      // suggestedKeypoints,
     };
 
     //console.log("📤 返回给前端的数据:", result);

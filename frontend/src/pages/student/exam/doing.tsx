@@ -203,40 +203,116 @@ export default function ExamDoing() {
 
           <div className="border p-4 rounded shadow-sm bg-white w-full max-w-4xl mx-auto">
             {/* Render question structure and numbering */}
-            {currentQ?.level === "question" && (
-              <div className="mb-3 text-gray-600 text-base font-semibold whitespace-pre-wrap">
-                {getMainIndex(currentQ)}. {currentQ.question_text}
-                <br /><br />
-              </div>
-            )}
-            {currentQ?.level === "sub_question" && (
-              <>
-                <div className="mb-3 text-gray-500 text-sm whitespace-pre-wrap">
-                  {getMainIndex(currentQ)}. {currentQ.parent_text || ""}
-                  <br /><br />
+            {currentQ?.level === "question" && (() => {
+              const parts = currentQ.question_text.split(/【图示：见 (\/static\/question_images\/[^】]+)】/);
+              return (
+                <div className="mb-3 text-gray-600 text-base font-semibold whitespace-pre-wrap">
+                  {getMainIndex(currentQ)}.{" "}
+                  {parts.map((part, idx) => {
+                    if (idx % 2 === 1) {
+                      return (
+                        <div key={idx} className="my-4">
+                          <img src={part} alt="illustration" className="max-w-full max-h-[400px] border rounded" />
+                        </div>
+                      );
+                    }
+                    return <span key={idx}>{part}</span>;
+                  })}
                 </div>
-                <div className="mb-3 text-gray-600 text-sm whitespace-pre-wrap">
-                  ({getSubIndex(currentQ)}) {currentQ.question_text}
-                  <br /><br />
-                </div>
-              </>
-            )}
-            {currentQ?.level === "subsub_question" && (
-              <>
-                <div className="mb-3 text-gray-500 text-sm whitespace-pre-wrap">
-                  {getMainIndex(currentQ)}. {currentQ.grandparent_text || ""}
-                  <br /><br />
-                </div>
-                <div className="mb-3 text-gray-500 text-sm whitespace-pre-wrap">
-                  ({getSubIndex(currentQ)}) {currentQ.parent_text || ""}
-                  <br /><br />
-                </div>
-                <div className="mb-2 whitespace-pre-wrap">
-                  <span className="font-bold">{getSubSubIndex(currentQ)} </span>
-                  <span className="text-gray-800">{currentQ.question_text.replace(/^\([ivxlcdm]+\)\s*/, "")}</span>
-                </div>
-              </>
-            )}
+              );
+            })()}
+            {currentQ?.level === "sub_question" && (() => {
+              const parts = currentQ.question_text.split(/【图示：见 (\/static\/question_images\/[^】]+)】/);
+              const parentParts = (currentQ.parent_text || "").split(/【图示：见 (\/static\/question_images\/[^】]+)】/);
+              return (
+                <>
+                  <div className="mb-3 text-gray-500 text-sm whitespace-pre-wrap">
+                    {getMainIndex(currentQ)}.{" "}
+                    {parentParts.map((part, idx) => {
+                      if (idx % 2 === 1) {
+                        return (
+                          <div key={idx} className="my-4">
+                            <img src={part} alt="illustration" className="max-w-full max-h-[400px] border rounded" />
+                          </div>
+                        );
+                      }
+                      return <span key={idx}>{part}</span>;
+                    })}
+                    <br /><br />
+                  </div>
+                  <div className="mb-3 text-gray-600 text-sm whitespace-pre-wrap">
+                    ({getSubIndex(currentQ)}){" "}
+                    {parts.map((part, idx) => {
+                      if (idx % 2 === 1) {
+                        return (
+                          <div key={idx} className="my-4">
+                            <img src={part} alt="illustration" className="max-w-full max-h-[400px] border rounded" />
+                          </div>
+                        );
+                      }
+                      return (
+                        <span key={idx}>{part}</span>
+                      );
+                    })}
+                    <br /><br />
+                  </div>
+                </>
+              );
+            })()}
+            {currentQ?.level === "subsub_question" && (() => {
+              const parts = currentQ.question_text.split(/【图示：见 (\/static\/question_images\/[^】]+)】/);
+              const grandparentParts = (currentQ.grandparent_text || "").split(/【图示：见 (\/static\/question_images\/[^】]+)】/);
+              const parentParts = (currentQ.parent_text || "").split(/【图示：见 (\/static\/question_images\/[^】]+)】/);
+              return (
+                <>
+                  <div className="mb-3 text-gray-500 text-sm whitespace-pre-wrap">
+                    {getMainIndex(currentQ)}.{" "}
+                    {grandparentParts.map((part, idx) => {
+                      if (idx % 2 === 1) {
+                        return (
+                          <div key={idx} className="my-4">
+                            <img src={part} alt="illustration" className="max-w-full max-h-[400px] border rounded" />
+                          </div>
+                        );
+                      }
+                      return <span key={idx}>{part}</span>;
+                    })}
+                    <br /><br />
+                  </div>
+                  <div className="mb-3 text-gray-500 text-sm whitespace-pre-wrap">
+                    ({getSubIndex(currentQ)}){" "}
+                    {parentParts.map((part, idx) => {
+                      if (idx % 2 === 1) {
+                        return (
+                          <div key={idx} className="my-4">
+                            <img src={part} alt="illustration" className="max-w-full max-h-[400px] border rounded" />
+                          </div>
+                        );
+                      }
+                      return <span key={idx}>{part}</span>;
+                    })}
+                    <br /><br />
+                  </div>
+                  <div className="mb-2 whitespace-pre-wrap">
+                    <span className="font-bold">{getSubSubIndex(currentQ)} </span>
+                    <span className="text-gray-800">
+                      {parts.map((part, idx) => {
+                        if (idx % 2 === 1) {
+                          return (
+                            <div key={idx} className="my-4">
+                              <img src={part} alt="illustration" className="max-w-full max-h-[400px] border rounded" />
+                            </div>
+                          );
+                        }
+                        return (
+                          <span key={idx}>{part.replace(/^\([ivxlcdm]+\)\s*/, "")}</span>
+                        );
+                      })}
+                    </span>
+                  </div>
+                </>
+              );
+            })()}
             {/* Show marks */}
             {currentQ?.mark !== undefined && (
               <div>
