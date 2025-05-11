@@ -1,0 +1,39 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 2.
+
+Question: (ii) Explain why packet switching is more suitable for a computer network than circuit switching. ......................................................................................................................................
+Reference Answer: • Computer networks would involve multiple
+connections happening concurrently
+• In packet switching hardware is not tied up with
+each unique connection // can handle multiple
+connections simultaneously
+• Computers pass vast amounts of data which
+may encounter transmission errors
+• Packet switching means only resending
+individual packets instead of the whole data
+stream
+• Computers may be transmitting business critical
+data
+• Packet switching means any network hardware
+failures can be mitigated by routing around it.
+Marking Scheme: N/A
+Examiner Report: Many candidates lost marks for the second part of Question 6 (a) (ii), despite achieving both marks for the first part 6 (a) (i). A lot of incorrect answers gave a very similar response to the first part of the question instead of explaining why the differences that packet switching has, make it more suitable for a computer network. Common correct answers explained that packet switching can route around hardware failures as the data is not sent along a single route.
+Exemplar Answer: N/A
+Student's Answer: 按时
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Rewrite the "correct answer" in a concise, easy-to-remember format that focuses on scoring points. 
+Use numbered points (1., 2., etc.) with one key idea per line. 
+Avoid unnecessary details or expansions that students don't need to write in exams. 
+Example: Use "BIOS" instead of "BIOS (Basic Input Output System)". 
+The answer should be short and clear enough to memorize quickly for handwritten response.
+Step 3: Return:
+- "score": the numerical score (0 to 2)
+- "reason": a short explanation for why this score was given.
+- "correctAnswer": your version of the ideal answer.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation",
+  "correctAnswer": "your rewritten ideal answer"
+}

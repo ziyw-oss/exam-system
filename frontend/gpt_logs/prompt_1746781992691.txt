@@ -1,0 +1,25 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 1.
+
+Question: (i) One example of an interrupt would be removing an external hard disk drive from a computer. State why this would need to interrupt the current fetch-decode-execute cycle of the CPU. .....................................................................................................................................
+Reference Answer: 1 mark for any of the following points, e.g:
+• GUI will need to remove open file manager windows
+• OS will need to remove open files/release locks
+• Inform the CPU to cease transferring files
+Marking Scheme: Allow other suitable alternative answers.
+Examiner Report: Very few candidates achieved a mark here. Many mentioned that the CPU would be busy but were not specific enough to gain the mark. In questions of this type, examples need to be specific to the question.
+Exemplar Answer: N/A
+Student's Answer: GUI will need to remove open file manager windows
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Rewrite the "correct answer" in a concise, easy-to-remember format that reflects the scoring points. Avoid unnecessary expansions (e.g., "BIOS (Basic Input Output System)" can be shortened to just "BIOS").
+Step 3: Return:
+- "score": the numerical score (0 to 1)
+- "reason": a short explanation for why this score was given.
+- "correctAnswer": your version of the ideal answer.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation",
+  "correctAnswer": "your rewritten ideal answer"
+}

@@ -1,0 +1,32 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 2.
+
+Question: (i) Complete the table below to show the 4 layers in the TCP/IP stack. Application Link 【图示：见 /static/question_images/94.png】
+Reference Answer: 1 mark for each completed row up to a maximum of 2
+marks:
+Application
+Transport
+Network
+Link
+Marking Scheme: - Accept in any order
+- Accept Internet instead of Network
+Examiner Report: Most candidates achieved both marks for this question. The order of the layers was not important to get both marks and many candidates gave “Transport” and “Network” as the two missing layers. Some candidates gave “Internet” in place of “Network” which was also acceptable.
+Exemplar Answer: N/A
+Student's Answer: application, transport, network, link
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Rewrite the "correct answer" in a concise, easy-to-remember format that focuses on scoring points. 
+Use numbered points (1., 2., etc.) with one key idea per line. 
+Avoid unnecessary details or expansions that students don't need to write in exams. 
+Example: Use "BIOS" instead of "BIOS (Basic Input Output System)". 
+The answer should be short and clear enough to memorize quickly for handwritten response.
+Step 3: Return:
+- "score": the numerical score (0 to 2)
+- "reason": a short explanation for why this score was given.
+- "correctAnswer": your version of the ideal answer.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation",
+  "correctAnswer": "your rewritten ideal answer"
+}

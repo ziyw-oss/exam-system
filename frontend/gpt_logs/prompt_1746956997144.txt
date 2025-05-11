@@ -1,0 +1,29 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 2.
+
+Question: (ii) The figure below shows a queue data structure that contains a list of names. Alex is at the front of the queue. Alex Kofi Ben Sundip Tom The operations that can be used on the queue are: • enqueue() – This will add data that is passed in as a parameter to the queue. • dequeue() – This will return the first element in the queue. Show the contents of the queue after these operations have been performed: enqueue("Charlie") dequeue() enqueue("Ling") dequeue() enqueue("Sara") 【图示：见 /static/question_images/158.png】
+Reference Answer: Ben Sundip Tom Charlie Ling Sara
+1 Mark: Adding, Charlie, Ling and Sara in correct order
+1 Mark: Exclusively removing Alex and Kofi.
+Marking Scheme: Accept:
+Ben Sundip Tom Charlie Ling Sara
+Examiner Report: This question was generally answered well with most candidates achieving both marks. Some candidates did not correctly dequeue from the front of the queue, or enqueue to the rear.
+Exemplar Answer: N/A
+Student's Answer: 手打
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Rewrite the "correct answer" in a concise, easy-to-remember format that focuses on scoring points. 
+Use numbered points (1., 2., etc.) with one key idea per line. 
+Avoid unnecessary details or expansions that students don't need to write in exams. 
+Example: Use "BIOS" instead of "BIOS (Basic Input Output System)". 
+The answer should be short and clear enough to memorize quickly for handwritten response.
+Step 3: Return:
+- "score": the numerical score (0 to 2)
+- "reason": a short explanation for why this score was given.
+- "correctAnswer": your version of the ideal answer.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation",
+  "correctAnswer": "your rewritten ideal answer"
+}

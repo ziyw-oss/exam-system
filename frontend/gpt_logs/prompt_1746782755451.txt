@@ -1,0 +1,32 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 2.
+
+Question: (ii) Explain one advantage of using layers in the protocol TCP/IP. .....................................................................................................................................
+Reference Answer: 1 mark per bullet up to a maximum of 2 marks, e.g:
+• Allows different layers to be worked on
+independently
+• Allows layers to be replaced/upgraded without
+affecting others
+• Allows for layers from different providers to be
+used interchangeably
+Marking Scheme: N/A
+Examiner Report: This question was generally not answered well. Candidates that did gain marks, focused on the concept of layers being independent. Many candidates missed this concept and did not achieve the marks. Candidates should be careful to use the correct terminology for questions of this type.
+Exemplar Answer: N/A
+Student's Answer: Allows different layers to be worked on independently, allows layers to be replaced without affecting others
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Rewrite the "correct answer" in a concise, easy-to-remember format that focuses on scoring points. 
+Use bullet points (•) with one key idea per line. 
+Avoid unnecessary details or expansions that students don't need to write in exams. 
+Example: Use "BIOS" instead of "BIOS (Basic Input Output System)". 
+The answer should be short and clear enough to memorize quickly for handwritten response.
+Step 3: Return:
+- "score": the numerical score (0 to 2)
+- "reason": a short explanation for why this score was given.
+- "correctAnswer": your version of the ideal answer.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation",
+  "correctAnswer": "your rewritten ideal answer"
+}

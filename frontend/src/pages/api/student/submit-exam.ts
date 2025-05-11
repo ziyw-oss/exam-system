@@ -124,6 +124,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         id: ans.question_id,
         text: ans.question_text?.substring(0, 100),
         answer: ans.answer_text?.substring(0, 100),
+        correctAnswer: ans.correct_answer?.substring(0, 100),
       });
 
       let score = 0;
@@ -153,8 +154,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           
         logGptEvaluation(promptData, { score, reason });
 
-        score = result.score;
-        reason = result.reason;
+        const { score: gptScore, reason: gptReason, correctAnswer } = result;
+        score = gptScore;
+        reason = gptReason;
+
+        if (correctAnswer) {
+          await connection.execute(
+            `UPDATE question_answer SET correct_answer_markdown = ? WHERE question_bank_id = ?`,
+            [correctAnswer, ans.question_id]
+          );
+        }
       } catch (err) {
         console.error(`❌ GPT评分失败: Q${ans.question_id}`, err);
       }

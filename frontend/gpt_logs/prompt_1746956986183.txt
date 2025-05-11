@@ -1,0 +1,41 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 4.
+
+Question: Describe two factors that affect the performance of the CPU. 1 ................................................................................................................................................ 2 ................................................................................................................................................ [4]
+Reference Answer: • Clock Speed …
+• … The speed at which the fetch decode execute
+cycle is completed/ the speed a single core can
+execute instructions
+• Number of cores/ independent processing units
+…
+• …that can fetch decode execute at the same
+time
+• Cache size…
+• … memory that contains recently/frequently
+used instructions/data
+• …memory that has a faster R/W speed than
+RAM
+• …memory that is closer to/onboard the CPU
+Marking Scheme: One mark for stating the factor, mark for expanding the
+factor
+- Accept cycles for “FDE Cycles”
+Examiner Report: Most candidates were able to identify two factors that could affect the performance of the CPU, but many were not given all 4 marks as they did not fully describe why each factor would affect the performance. See Exemplar 1, which was given full marks.
+Exemplar Answer: The candidate gives two valid factors that would affect performance and then explains why each of the two factors would affect performance. They use appropriate terminology in their response.
+Student's Answer: 方式电风扇
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Rewrite the "correct answer" in a concise, easy-to-remember format that focuses on scoring points. 
+Use numbered points (1., 2., etc.) with one key idea per line. 
+Avoid unnecessary details or expansions that students don't need to write in exams. 
+Example: Use "BIOS" instead of "BIOS (Basic Input Output System)". 
+The answer should be short and clear enough to memorize quickly for handwritten response.
+Step 3: Return:
+- "score": the numerical score (0 to 4)
+- "reason": a short explanation for why this score was given.
+- "correctAnswer": your version of the ideal answer.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation",
+  "correctAnswer": "your rewritten ideal answer"
+}

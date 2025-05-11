@@ -1,0 +1,33 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 2.
+
+Question: One role of an operating system is to manage the computer’s memory. Two types of memory management are paging and segmentation. Describe one difference between paging and segmentation. .............................................................................................................................................  [2]
+Reference Answer: 1 mark per bullet up to a maximum of 2 marks, e.g:
+• Paging uses physical addressing….
+• ….Segmentation uses logical addressing
+• Paging uses fixed size memory blocks….
+• …. Segmentation uses variable length memory
+blocks
+Marking Scheme: Answer must cover paging and segmentation for 2
+marks.
+Do not accept data instead of memory
+Examiner Report: To get both marks, candidates need to be clear that paging and segmentation are about allocating memory. Many candidates were not clear on this and discussed managing data or packets. Candidates should be careful to use the correct terminology for questions of this type in particular.
+Exemplar Answer: N/A
+Student's Answer: paging uses fixed sized memory blocks and segmentation uses variavle length memory blocks
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Rewrite the "correct answer" in a concise, easy-to-remember format that focuses on scoring points. 
+Use numbered points (1., 2., etc.) with one key idea per line. 
+Avoid unnecessary details or expansions that students don't need to write in exams. 
+Example: Use "BIOS" instead of "BIOS (Basic Input Output System)". 
+The answer should be short and clear enough to memorize quickly for handwritten response.
+Step 3: Return:
+- "score": the numerical score (0 to 2)
+- "reason": a short explanation for why this score was given.
+- "correctAnswer": your version of the ideal answer.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation",
+  "correctAnswer": "your rewritten ideal answer"
+}

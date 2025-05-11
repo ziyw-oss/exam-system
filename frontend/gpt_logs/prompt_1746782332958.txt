@@ -1,0 +1,128 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 9.
+
+Question: * Charlie will use database management software to store customers’ personal and appointment details. Charlie is considering both open source and closed source database software. Compare the differences between open source software and closed source software and recommend which type of database software Charlie should use. You should refer to the following in your answer: • Cost • Usability • Extensibility • Security • Support available .............................................................................................................................................  [9]
+Reference Answer: Mark Band 3–High Level
+(7-9 marks)
+The candidate demonstrates a thorough knowledge and
+understanding of open and closed source software; the
+material is generally accurate and detailed.
+The candidate has covered all 4 sections of cost, usability,
+security and Support available and for the top of this mark
+band will have covered all 4 well. Evidence/examples will be
+explicitly relevant to the explanation.
+There is a well-developed line of reasoning which is clear
+and logically structured. The information presented is
+relevant and substantiated.
+Mark Band 2-Mid Level
+(4-6 marks)
+The candidate demonstrates reasonable knowledge and
+understanding of open and closed source software; the
+material is generally accurate but at times underdeveloped.
+The candidate has covered all at least 2 of the 4 sections of
+cost, usability, security and Support available.
+Evidence/examples are for the most part implicitly relevant to
+the explanation.
+There is a line of reasoning presented with some structure.
+The information presented is in the most part relevant and
+supported by some evidence.
+Mark Band 1-Low Level
+(1-3 marks)
+The candidate demonstrates a basic knowledge of how the
+layers of open and closed source software; the material is
+basic and contains some inaccuracies.
+The candidate makes a limited attempt to apply acquired
+knowledge and understanding to the context provided.
+The candidate provides nothing more than an unsupported
+assertion.
+The information is basic and communicated in an
+unstructured way. The information is supported by limited
+evidence and the relationship to the evidence may not be
+clear.
+0 marks
+No attempt to answer the question or response is not worthy
+of credit.
+Marking Scheme: Knowledge:
+Cost
+Open Source
+• (generally) free to use
+• May have to purchase maintenance
+contracts
+• Staff training if “non-standard”
+Closed Source
+• (sometimes) have to pay to license the
+software
+• If paid will (usually) it will come with some
+level of support
+Usability/extensibility
+Open Source
+• Tends to have a lower focus on UI
+• Source code released (under license)
+• Source can be edited
+• Can be redistributed (under license)
+Closed Source
+• Professionally developed
+• Distributed with a restrictive license
+• Only executable/object code is
+distributed//source code not distributed
+• Cannot be redistributed
+Security
+Open Source
+• potentially massive bank of volunteer
+developers working on the product
+• Many of the contributors may not be
+professional
+• Code available to be scrutinised by
+anyone…
+• …but this may include people with
+malicious intentions
+Closed Source
+• Closed teams of developers
+• More work scrutiny for code
+• security fixes usually addressed quicker
+Support Available
+Open Source
+• Source code released (under license)
+• Source can be edited
+• Open communities mean lots of support
+options could be available
+Closed Source
+• Support may be available from the
+company producing the software.
+•
+Application:
+Cost
+Open Source
+• Lower overheads to company
+• Extra staff training and hardware cost could
+lead to total cost of ownership being higher
+Closed Source
+• Support from vendor can lead to quicker
+fixes.
+Usability
+Open Source
+• The ability to edit source code means
+bespoke functionality can be developed in
+house
+• Lower focus on UI can mean a harder to
+use product (leading to higher training
+costs)
+Closed Source
+• Due to professional development, finish
+tends to be a higher standard
+Examiner Report: Candidates were assessed on the quality of their extended response in this question. Most of the candidates were clear on the basic difference between open and closed source software but did not link this in with the scenario. Mid-level responses were common with few candidates having a balanced discussion with coverage of all four of the required sections.
+Exemplar Answer: N/A
+Student's Answer: open source is generally free to uses, needs staff training if ‘no standard’
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Rewrite the "correct answer" in a concise, easy-to-remember format that reflects the scoring points. Each key point should be on a new line as a bullet (•), to make it easier for students to read and memorize. Avoid unnecessary expansions (e.g., "BIOS (Basic Input Output System)" can be shortened to just "BIOS").
+Step 3: Return:
+- "score": the numerical score (0 to 9)
+- "reason": a short explanation for why this score was given.
+- "correctAnswer": your version of the ideal answer.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation",
+  "correctAnswer": "your rewritten ideal answer"
+}

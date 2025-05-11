@@ -1,0 +1,46 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 4.
+
+Question: Charlie’s computer has firewall utility software already installed. Explain two other pieces of utility software that Charlie should install on her computer. 1 ................................................................................................................................................ 2 ................................................................................................................................................ [4]
+Reference Answer: 1 mark per bullet up to a maximum of 2 marks, e.g:
+• Disk Defragmentation…
+• …To keep optimal r/w speed for her HDD
+• File management…
+• …To allow easy access to her file system
+• Disk Drivers…
+• … To allow her to use new peripheral devices
+• System Clean-up…
+• … to keep her system free of redundant files
+• Anti-Virus/Malware…
+• … to find and remove/quarantine viruses/malware (A
+worms/trojans etc)
+Marking Scheme: 1 Mark for a suitable utility and 1 mark for a
+relevant example for that utility.
+Do not accept task manager
+Accept:
+• Compression Software …
+• … to make the file size smaller
+• Backup Software …
+• … to make copies of files
+
+Examiner Report: This question was generally answered well although many candidates achieved 2 rather than 4 marks. Commonly, two utilities were correctly identified but the explanation to accompany the utility was too vague. Candidates were required to give examples of how the utilities could be used with the given scenario.
+Exemplar Answer: N/A
+Student's Answer: disc defragmentation: to keep optical r/w speed for her HDD;
+file management: to allow easy access to her file system
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Rewrite the "correct answer" in a concise, easy-to-remember format that focuses on scoring points. 
+Use numbered points (1., 2., etc.) with one key idea per line. 
+Avoid unnecessary details or expansions that students don't need to write in exams. 
+Example: Use "BIOS" instead of "BIOS (Basic Input Output System)". 
+The answer should be short and clear enough to memorize quickly for handwritten response.
+Step 3: Return:
+- "score": the numerical score (0 to 4)
+- "reason": a short explanation for why this score was given.
+- "correctAnswer": your version of the ideal answer.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation",
+  "correctAnswer": "your rewritten ideal answer"
+}

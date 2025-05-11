@@ -1,0 +1,31 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 1.
+
+Question: (i) State the name of one other scheduling algorithm. .....................................................................................................................................
+Reference Answer: 1 mark for any of the following bullet points:
+• Round Robin
+• Multi-level feedback queues
+• Shortest job first
+• Shortest time remaining
+Marking Scheme: Do not Allow:
+• First come First Served
+Examiner Report: Round Robin was the most popular answer by far. Most candidates achieved the mark although some used the example in the question. Candidates should be reminded to read the questions carefully here and to not repeat answers already provided.
+Exemplar Answer: N/A
+Student's Answer: round robin
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Rewrite the "correct answer" in a concise, easy-to-remember format that focuses on scoring points. 
+Use numbered points (1., 2., etc.) with one key idea per line. 
+Avoid unnecessary details or expansions that students don't need to write in exams. 
+Example: Use "BIOS" instead of "BIOS (Basic Input Output System)". 
+The answer should be short and clear enough to memorize quickly for handwritten response.
+Step 3: Return:
+- "score": the numerical score (0 to 1)
+- "reason": a short explanation for why this score was given.
+- "correctAnswer": your version of the ideal answer.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation",
+  "correctAnswer": "your rewritten ideal answer"
+}

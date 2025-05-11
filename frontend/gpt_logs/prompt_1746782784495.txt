@@ -1,0 +1,76 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 7.
+
+Question: Write a procedure called salesAnalysis that will meet the rules of George’s program. You should write your procedure using pseudocode or program code. .............................................................................................................................................  [7] END OF QUESTION PAPER
+Reference Answer: 1 mark per bullet up to a maximum of 7 marks:
+• Suitable logic for initialising variables outside of
+loop
+• Suitable logic for opening and closing Sales.txt
+• Suitable use of a loop which ends when the last
+line has been reached in Sales.txt
+• Suitable logic for reading each line of data from
+file variable
+• Suitable logic for increasing total (and count)
+including conversion from string to numeric data
+type
+• Suitable logic for calculating averages by
+dividing total by count
+• Suitable logic for printing the number of days,
+the total sales and the daily average
+Marking Scheme: Some points (for example 5 & 6) can be combined onto
+one line.
+Example Solution:
+procedure salesAnalysis():
+dayCount = 0
+salesTotal = 0
+dailySales = openRead("Sales.txt")
+while NOT dailySales.endOfFile()
+dailySaleFigure = float
+(percentageFile.readLine())
+salesTotal += dailySaleFigure
+dayCount += 1
+endwhile
+dailyAverage = salesTotal /dayCount
+print("Over “ + dayCount + “ days there was a
+total sales of £“ _+ salesTotal + “ and an average daily
+sale of £” + dailyAverage)
+dailySales.close()
+endprocedure
+There are many different ways that this procedure could
+have been achieved. Therefore other alternative
+methods should be given credit.
+Examiner Report: Most candidates achieved a few marks, but few achieved the maximum marks available. The question states that pseudocode or program code could be used so a variety of answers were given. The OCR pseudocode guide gives guidance on how to write pseudocode including data structures, constructs, and reading/writing to file. Some candidates wrote neither pseudocode or program code and therefore were given no marks. Many candidates remembered to open the sales file, but many forgot to close the file. Initialising the variables before the loop was also missed by a number of candidates. Increasing the total was included in many responses, although many forgot to cast the total to a numeric data type to enable this to work correctly. Many candidates achieved the last 2 marks for calculating the average and then displaying the calculated values. Some missed the final output as the text was incorrectly concatenated with the variable values.
+Exemplar Answer: “numofdays” and “total”. The second mark has been awarded for the first line, which opens the sales file and closing the file after the loop has finished. The while loop gains the third mark which repeats until the end of the file is reached. The fourth mark is awarded for reading each line of the file correctly. The fifth mark correctly increases total in each iteration. Sale has been correctly converted to a “float” data type beforehand to make this possible. The sixth mark is awarded for calculating the average on the penultimate line. The final mark is awarded for printing the number of days, total sales and the daily average. This has been concatenated correctly with a plus symbol. Some candidates used the comma which was also acceptable. The syntax provided in this example relates to Python whereas some candidates wrote pseudocode or another high-level language. Some candidates lost marks for writing the steps in everyday English which is not what the question stipulated. OCR support The OCR Pseudocode guide shows the format pseudocode will appear in the examined components. This can be downloaded from the OCR Website.
+Student's Answer: procedure salesAnalysis () :
+dayCount = 0
+salesTotal = 0
+dailySales = openRead ("Sales.txt")
+while NOT dailySales.endOfFile ()
+dailySaleFigure = float
+(percentageFile. readLine ())
+salesTotal += dailySaleFigure dayCount += 1
+endwhile
+dailyAverage = salesTotal /dayCount
+print ("Over " + dayCount + " days there was a
+total sales of £"
++ salesTotal + " and an average daily
+sale of £" + dailyAverage)
+dailySales.close ()
+endprocedure
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Rewrite the "correct answer" in a concise, easy-to-remember format that focuses on scoring points. 
+Use bullet points (•) with one key idea per line. 
+Avoid unnecessary details or expansions that students don't need to write in exams. 
+Example: Use "BIOS" instead of "BIOS (Basic Input Output System)". 
+The answer should be short and clear enough to memorize quickly for handwritten response.
+Step 3: Return:
+- "score": the numerical score (0 to 7)
+- "reason": a short explanation for why this score was given.
+- "correctAnswer": your version of the ideal answer.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation",
+  "correctAnswer": "your rewritten ideal answer"
+}

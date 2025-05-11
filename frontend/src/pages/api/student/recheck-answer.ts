@@ -43,7 +43,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     await connection.end();
 
-    res.status(200).json({ correct: isCorrect });
+    res.status(200).json({
+      correct: isCorrect,
+      score: gptResult.score,
+      reason: gptResult.reason,
+      correctAnswer: gptResult.correctAnswer
+    });
   } catch (err) {
     console.error("Error rechecking answer:", err);
     res.status(500).json({ error: "Server error" });

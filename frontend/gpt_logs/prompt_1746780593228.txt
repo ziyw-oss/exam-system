@@ -1,0 +1,24 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 2.
+
+Question: State one advantage of using two’s complement instead of sign and magnitude. .............................................................................................................................................  [2]
+Reference Answer: - Can be easily used in binary arithmetic
+or
+- Increased range of numbers available
+Marking Scheme: Award 0 or 2 marks
+Examiner Report: This question was worth either 2 or 0 marks. It was generally not answered well with most candidates being too vague.
+Exemplar Answer: N/A
+Student's Answer: Can be easily used in binary arithmetic 
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Rewrite the "correct answer" in a clear, concise and complete format based on the above reference materials.
+Step 3: Return:
+- "score": the numerical score (0 to 2)
+- "reason": a short explanation for why this score was given.
+- "correctAnswer": your version of the ideal answer.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation",
+  "correctAnswer": "your rewritten ideal answer"
+}

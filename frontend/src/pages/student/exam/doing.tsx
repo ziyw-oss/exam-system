@@ -189,7 +189,7 @@ export default function ExamDoing() {
   const currentQid = currentQ?.question_bank_id;
 
   return (
-    <div className="p-6 pb-40 relative min-h-screen">
+    <div className="p-6 pb-60 relative min-h-screen overflow-y-auto max-h-screen">
       <p className="text-lg text-gray-600 mb-2 flex items-center gap-2">
          <span className="text-base">🧑‍🏫</span> Exam In Progress {examYear && `- ${examYear}`} {examType && `(${examType})`}
       </p>
@@ -201,7 +201,7 @@ export default function ExamDoing() {
             📌 Question {currentAnswerablePosition} of {answerableIndexes.length}
           </p>
 
-          <div className="border p-4 rounded shadow-sm bg-white w-full max-w-4xl mx-auto">
+          <div className="border p-4 rounded shadow-sm bg-white w-full max-w-4xl mx-auto pb-48">
             {/* Render question structure and numbering */}
             {currentQ?.level === "question" && (() => {
               const parts = currentQ.question_text.split(/【图示：见 (\/static\/question_images\/[^】]+)】/);
@@ -327,7 +327,7 @@ export default function ExamDoing() {
               </pre>
             )}
 
-            <div className="mt-4 mb-40">
+            <div className="mt-4">
               <textarea
                 className="w-full border border-gray-300 p-4 rounded-md shadow focus:outline-none focus:ring-2 focus:ring-blue-500"
                 style={{ width: "100vw", maxWidth: "100%", minHeight: "240px", boxSizing: "border-box" }}
@@ -338,7 +338,7 @@ export default function ExamDoing() {
             </div>
           </div>
 
-          <div className="fixed bottom-6 left-0 w-full flex flex-col items-center z-10 shadow-lg bg-white bg-opacity-95">
+          <div className="sticky bottom-0 left-0 w-full flex flex-col items-center z-10 shadow-lg bg-white bg-opacity-95 pt-4">
             <div className="flex gap-2 mb-2">
               <button
                 disabled={currentAnswerableIndex === 0}

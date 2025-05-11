@@ -1,0 +1,26 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 2.
+
+Question: George will use iteration to read through the values in the text file. Describe how George can use iteration when reading from the text file. .............................................................................................................................................  [2]
+Reference Answer: 1 mark per bullet up to a maximum of 2 marks, e.g:
+• To setup a loop…
+• To repeat (the same block of code)
+• for each line in the text file // until each value
+has been read
+Marking Scheme: N/A
+Examiner Report: This was also answered well although some candidates used the word ‘iteration’ in their answer without going to describe what this means. As this was in the question, further detail was required such as repeating or looping through the text file.
+Exemplar Answer: N/A
+Student's Answer: To setup a loop zfor each line in the text file, until each value has been read
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Rewrite the "correct answer" in a clear, concise and complete format based on the above reference materials.
+Step 3: Return:
+- "score": the numerical score (0 to 2)
+- "reason": a short explanation for why this score was given.
+- "correctAnswer": your version of the ideal answer.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation",
+  "correctAnswer": "your rewritten ideal answer"
+}

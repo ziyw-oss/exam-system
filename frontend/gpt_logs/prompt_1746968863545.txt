@@ -1,0 +1,32 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 2.
+
+Question: (ii) Arnold has a smart washing machine. Explain why the Harvard architecture is suitable for a device like this. .....................................................................................................................................
+Reference Answer: 1 mark per bullet up to a maximum of 2 marks, e.g:
+• Fixed instruction size
+• No need for memory to be shared between data and
+instructions
+• Removes need for secondary storage
+• Instructions would never be changed
+Marking Scheme: N/A
+Examiner Report: This question was not answered well. Many candidates repeated their response to the previous question and did not answer the question correctly. Candidates need to read questions carefully.
+Exemplar Answer: N/A
+Student's Answer: because it has fixed instruction size 
+and there's no need for memory to be shared between data and instructions
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Rewrite the "correct answer" in a concise, easy-to-remember format that focuses on scoring points. 
+Use numbered points (1., 2., etc.) with one key idea per line. 
+Avoid unnecessary details or expansions that students don't need to write in exams. 
+Example: Use "BIOS" instead of "BIOS (Basic Input Output System)". 
+The answer should be short and clear enough to memorize quickly for handwritten response.
+Step 3: Return:
+- "score": the numerical score (0 to 2)
+- "reason": a short explanation for why this score was given.
+- "correctAnswer": your version of the ideal answer.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation",
+  "correctAnswer": "your rewritten ideal answer"
+}

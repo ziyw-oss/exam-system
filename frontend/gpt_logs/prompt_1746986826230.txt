@@ -1,0 +1,28 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 2.
+
+Question: Arnold has a PC which has a Basic Input Output System (BIOS). Describe what is meant by the term ‘BIOS’. .............................................................................................................................................  [2]
+Reference Answer: N/A
+Marking Scheme: N/A
+Examiner Report: N/A
+Exemplar Answer: N/A
+Student's Answer: Stored in ROM
+
+Note: Do not penalize valid answers like "Round Robin" unless they are explicitly stated in the question text itself. Refer to the Marking Scheme as authoritative.
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Rewrite the "correct answer" in a concise, easy-to-remember format that focuses on scoring points. 
+Use numbered points (1., 2., etc.) with one key idea per line. 
+Avoid unnecessary details or expansions that students don't need to write in exams. 
+Example: Use "BIOS" instead of "BIOS (Basic Input Output System)". 
+The answer should be short and clear enough to memorize quickly for handwritten response.
+Step 3: Return:
+- "score": the numerical score (0 to 2)
+- "reason": a short explanation for why this score was given.
+- "correctAnswer": your version of the ideal answer.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation",
+  "correctAnswer": "your rewritten ideal answer"
+}

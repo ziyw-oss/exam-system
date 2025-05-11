@@ -21,6 +21,7 @@ interface Question {
   level?: "question" | "sub_question" | "subsub_question";
   parent_id?: number;
   label?: string;
+  correct_answer_markdown?: string;
 }
 
 export default function ReviewWrongQuestions() {
@@ -55,9 +56,10 @@ export default function ReviewWrongQuestions() {
                 parent_id: q.parent_id,
                 level: q.level,
                 question_text: q.question_text || "",
+                correct_answer_markdown: q.correct_answer_markdown,
               };
             } catch {
-              return { ...q, label: "?", question_text: q.question_text || "" };
+              return { ...q, label: "?", question_text: q.question_text || "", correct_answer_markdown: q.correct_answer_markdown };
             }
           })
         );
@@ -136,6 +138,16 @@ export default function ReviewWrongQuestions() {
                 <p className="text-sm text-blue-700 mt-2">GPT Feedback: {current.gpt_reasoning}</p>
               )}
 
+              {current.correct_answer_markdown && (
+                <div className="text-sm text-gray-700 mt-2">
+                  <p className="font-semibold mb-1">Suggested Answer:</p>
+                  <div
+                    className="prose prose-sm"
+                    dangerouslySetInnerHTML={{ __html: current.correct_answer_markdown }}
+                  />
+                </div>
+              )}
+
               <textarea
                 className="w-full border border-gray-300 p-4 mt-4 rounded-md shadow focus:outline-none focus:ring-2 focus:ring-blue-500"
                 style={{ width: "100vw", maxWidth: "100%", minHeight: "100px", boxSizing: "border-box" }}
@@ -158,6 +170,12 @@ export default function ReviewWrongQuestions() {
                       setCurrentIndex(0);
                       setMessage("✅ Correct! Removed from review list.");
                     } else {
+                      const newReason = res.data.reason || "No explanation provided.";
+                      setQuestions(prev =>
+                        prev.map(q =>
+                          q.question_id === current.question_id ? { ...q, gpt_reasoning: newReason } : q
+                        )
+                      );
                       setMessage("❌ Still incorrect. Try again.");
                     }
                   } catch (err) {

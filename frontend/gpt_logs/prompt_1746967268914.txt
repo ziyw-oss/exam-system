@@ -1,0 +1,173 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 9.
+
+Question: * Many technologists predict that in the future, shops on the high street will use facial recognition to identify customers before they walk into a shop. Discuss the possible benefits and drawbacks of technology being used in this way. You should refer to the following in your answer: • The benefits and drawbacks to both the customers and businesses • Moral and ethical issues • Legal issues .............................................................................................................................................  [9]
+Reference Answer: Mark Band 3–High Level
+(7-9 marks)
+The candidate has weighed up benefits and drawbacks
+of the technology and has applied the moral, legal and
+ethical issues to both the customer and the business;
+the material is generally accurate and detailed.
+The candidate is able to apply their knowledge and
+understanding directly and consistently to the context
+provided. Evidence/examples will be explicitly relevant
+to the explanation.
+The candidate will have come to a fully justified
+conclusion.
+There is a well-developed line of reasoning which is
+clear and logically structured. The information
+presented is relevant and substantiated.
+Mark Band 2-Mid Level
+(4-6 marks)
+The candidate has weighed up benefits and drawbacks
+of the technology. They will have explored some of the
+moral, legal and ethical issues but they may not be
+equally spread across both the customer and the
+business; the material is generally accurate but at times
+underdeveloped.
+The candidate is able to apply their knowledge and
+understanding directly to the context provided although
+one or two opportunities are missed.
+Evidence/examples are for the most part implicitly
+relevant to the explanation.
+The candidate will have come to a conclusion although
+they may not fully justify it.
+There is a line of reasoning presented with some
+structure. The information presented is in the most part
+relevant and supported by some evidence.
+Mark Band 1-Low Level
+(1-3 marks)
+The candidate identifies some of the benefits and
+drawbacks, though they have probably shown little
+consideration of the legal, ethical and moral issues; the
+material is basic and contains some inaccuracies.
+The candidate makes a limited attempt to apply
+acquired knowledge and understanding to the context
+provided.
+The candidate may not reach a recognisable
+conclusion.
+The information is basic and communicated in an
+unstructured way. The information is supported by
+limited evidence and the relationship to the evidence
+may not be clear.
+0 marks
+No attempt to answer the question or response is not
+worthy of credit.
+Marking Scheme: Knowledge:
+Benefits
+Customer:
+• Personalised offers
+Business:
+• Targeted adverts
+• Able to track movement habits of
+customers
+• Provide more personalised shopping
+experiences.
+Drawbacks
+Customer:
+• Personal intrusion
+• Invasion of privacy
+• Pressured selling
+Business:
+• Cost of infra structure
+• Viewed as invading personal privacy
+Moral and Ethical issues
+• Violation of civil liberties
+• Recording people on the street who are not
+going into the shop
+Legal issues:
+• under data protection laws the shop would need
+to
+o Keep any data recorded secure
+o Personal data should be accurate and up
+to date
+Application:
+Benefits
+Customer:
+• Personalised experience will lead to
+more convenient shopping trips
+• Staff will give personalised service
+Business:
+• Tracking movement of customers means
+able to identify best opening times
+• Tracking customers around shop allows
+better analysis of popular products
+• Use of modern technology will make the
+shop be seen as forward thinking.
+Drawbacks
+Customer:
+• Customers may not want to be
+“pressured” meaning they decide not to
+shop there anymore.
+• Tracking data could be hacked and used
+by criminals
+Business:
+• Extra hardware costs may lead to higher
+prices/competitors undercut them.
+• Customers who feel their privacy has
+been invaded may “vote with their feet”
+Moral and Ethical issues
+• Abuse of civil liberties could damage
+reputation of shop
+Legal issues:
+• Shop may need to add extra software to
+blur out faces of non-customers
+• Shop will need to spend more money on
+data protection compliance, leading to
+higher costs.
+Evaluation:
+Benefits
+• Increased revenue from directed sales
+offset extra costs from hardware/legal
+obligations
+Examiner Report: Candidates were assessed on the quality of their extended response in this question. Most candidates understood the basic concept of storing personal details being a violation of customers civil liberties. Few candidates had a balanced discussion and focused too heavily on the negative aspects of this system therefore being restricted to a mid-level mark.
+Exemplar Answer: N/A
+Student's Answer: Benefits 
+Customer: 
+• Personalised offers 
+Business: 
+• Targeted adverts 
+• Able to track movement habits of 
+customers 
+• Provide more personalised shopping 
+experiences. 
+Drawbacks 
+Customer: 
+• Personal intrusion 
+• Invasion of privacy 
+• Pressured selling 
+Business: 
+• Cost of infra structure 
+• Viewed as invading personal privacy 
+Moral and Ethical issues 
+• Violation of civil liberties 
+• Recording people on the street who are not 
+going into the shop 
+Legal issues: 
+• under data protection laws the shop would need 
+to 
+o Keep any data recorded secure 
+o Personal data should be accurate and up 
+to date 
+Application: 
+Benefits 
+Customer: 
+• Personalised experience will lead to 
+more convenient shopping trips
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Rewrite the "correct answer" in a concise, easy-to-remember format that focuses on scoring points. 
+Use numbered points (1., 2., etc.) with one key idea per line. 
+Avoid unnecessary details or expansions that students don't need to write in exams. 
+Example: Use "BIOS" instead of "BIOS (Basic Input Output System)". 
+The answer should be short and clear enough to memorize quickly for handwritten response.
+Step 3: Return:
+- "score": the numerical score (0 to 9)
+- "reason": a short explanation for why this score was given.
+- "correctAnswer": your version of the ideal answer.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation",
+  "correctAnswer": "your rewritten ideal answer"
+}

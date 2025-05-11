@@ -1,5 +1,3 @@
-// File: src/pages/student/exam/result.tsx
-
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
@@ -14,6 +12,8 @@ interface WrongQuestion {
   correct_answer: string;
   reason: string; // ✅ 新增 GPT 给出的评分解释
   score: number;   // ✅ 新增字段
+  correct_answer_markdown: string; // ✅ GPT整理后的标准答案
+  mark?: number; // ✅ 新增字段
 }
 
 interface KeypointStat {
@@ -35,7 +35,7 @@ export default function ExamResultPage() {
     keypointStats: Record<string, KeypointStat>;
   } | null>(null);
 
-  const [questionsPerPage, setQuestionsPerPage] = useState(5);
+  const [questionsPerPage, setQuestionsPerPage] = useState(1);
   const [currentPage, setCurrentPage] = useState(1);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -58,19 +58,19 @@ export default function ExamResultPage() {
     if (sessionId) fetchResult();
   }, [sessionId]);
 
-  useEffect(() => {
-    const updatePageSize = () => {
-      if (containerRef.current) {
-        const height = containerRef.current.clientHeight;
-        const questionHeight = 200;
-        const count = Math.floor(height / questionHeight);
-        setQuestionsPerPage(Math.max(count, 1));
-      }
-    };
-    updatePageSize();
-    window.addEventListener("resize", updatePageSize);
-    return () => window.removeEventListener("resize", updatePageSize);
-  }, []);
+  // useEffect(() => {
+  //   const updatePageSize = () => {
+  //     if (containerRef.current) {
+  //       const height = containerRef.current.clientHeight;
+  //       const questionHeight = 200;
+  //       const count = Math.floor(height / questionHeight);
+  //       setQuestionsPerPage(Math.max(count, 1));
+  //     }
+  //   };
+  //   updatePageSize();
+  //   window.addEventListener("resize", updatePageSize);
+  //   return () => window.removeEventListener("resize", updatePageSize);
+  // }, []);
 
   if (!data) return <div className="p-6">Loading...</div>;
 
@@ -84,7 +84,7 @@ export default function ExamResultPage() {
     <div className="p-6 bg-gray-50 min-h-screen font-sans text-gray-900">
       <div className="max-w-4xl mx-auto bg-white p-6 rounded shadow space-y-6" ref={containerRef}>
         <div>
-          <h3 className="text-xl font-semibold mb-2">📊 Exam Summary</h3>
+          <h3 className="text-xl font-semibold mb-2">Exam Summary</h3>
           <div className="space-y-1 text-base">
             <p>Your Score: <span className="font-semibold">{data.totalScore}</span></p>
             <p>Full Score: <span className="font-semibold">{data.fullScore}</span></p>
@@ -95,53 +95,70 @@ export default function ExamResultPage() {
         </div>
 
         <div>
-          <h4 className="text-lg font-semibold mb-2">📚 Keypoint Accuracy</h4>
-          {Object.entries(data.keypointStats).length === 0 ? (
-            <p className="text-gray-500">No keypoint stats available.</p>
-          ) : (
-            <div className="space-y-2">
-              {Object.entries(data.keypointStats).map(([id, stat]) => (
-                <div key={id} className="bg-gray-50 p-3 rounded border-l-4 border-blue-500">
-                  <p className="text-base">
-                    {stat.name || `Keypoint ${id}`}: Accuracy {stat.correctRate.toFixed(1)}%
-                  </p>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-
-        <div>
-          <h4 className="text-lg font-semibold mb-2">❌ Incorrect Answers</h4>
+          <h4 className="text-lg font-semibold mb-2">Incorrect Answers</h4>
           {data.wrongQuestions.length === 0 ? (
             <p className="text-green-600">All answers correct!</p>
           ) : (
             <>
               <ul className="space-y-4">
                 {pagedQuestions.map((q) => (
-                  <li key={q.question_id} className="bg-red-50 p-4 rounded border border-red-300">
-                    <p className="font-medium mb-2">
-                      {q.question_text}{" "}
-                      <span style={{ color: "red", fontWeight: "bold" }}>[{q.score}]</span>
+                  <li
+                    key={q.question_id}
+                    className="border border-[#cfe2ff] bg-[#e9f5ff] rounded p-4 font-sans text-gray-900"
+                  >
+                    <p className="font-semibold text-base mb-2 text-gray-800 flex justify-between items-center">
+                      <span className="flex items-center gap-2">
+                        {q.question_text}
+                        <span
+                          className={`text-xs px-2 py-0.5 rounded-full font-semibold ${
+                            q.score === q.mark
+                              ? "bg-green-100 text-green-800"
+                              : "bg-red-100 text-red-700"
+                          }`}
+                        >
+                          {q.score === q.mark ? "✅" : ""}
+                        </span>
+                      </span>
+                      <span className="font-bold">
+                        [<span className="text-red-600">{q.score}</span> / {q.mark ?? "?"}]
+                      </span>
                     </p>
 
-                    <p className="text-sm text-red-600">
-                      Your answer: {q.student_answer || "N/A"}
+                    <p className="text-base text-gray-800 font-normal mt-2">
                       
+                      <strong>Your Answer:</strong>
+                      <span className="bg-[#e0f2fe] px-2 py-0.5 rounded ml-1">{q.student_answer || "N/A"}</span>
                     </p>
-                    
-                    <div className="text-sm text-green-700">
-                      <div className="text-base font-semibold mb-1">Correct answer:</div>                                          
-                        <pre className="whitespace-pre-wrap text-sm text-green-800">
-                         {formatToMarkdown(q.correct_answer)}
-                        </pre>                                                
-                    </div>
-                    
+
+                    {q.correct_answer_markdown ? (
+                      <div className="text-base text-gray-800 font-normal mt-4">
+                        <div className="flex items-start gap-2">
+                          
+                          <span className="font-medium text-gray-700">🧠 Try to REMEMBER this answer</span>
+                        </div>
+                        <div className="prose prose-sm">
+                          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                            {q.correct_answer_markdown}
+                          </ReactMarkdown>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="text-base text-gray-800 font-normal mt-4">
+                        <div className="flex items-start gap-2">
+                          
+                          <span className="font-medium text-gray-700">🧠 Try to REMEMBER this answer</span>
+                        </div>
+                        <pre className="whitespace-pre-wrap text-base text-gray-800 font-normal">
+                          {formatToMarkdown(q.correct_answer)}
+                        </pre>
+                      </div>
+                    )}
 
                     {q.reason && (
-                    <p className="text-sm text-gray-700 mt-1 italic border-l-4 border-yellow-400 pl-2 bg-yellow-50 rounded">
-                      <b>Marking Reason:</b> {q.reason}
-                    </p>
+                      <p className="text-base text-gray-700 font-normal italic mt-2 border-l-4 border-blue-400 pl-3 bg-blue-50 rounded">
+                        <span className="mr-1">➕</span>
+                        <b>Marking Reason:</b> {q.reason}
+                      </p>
                     )}
                   </li>
                 ))}
@@ -150,7 +167,7 @@ export default function ExamResultPage() {
                 <button
                   disabled={currentPage === 1}
                   onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
-                  className="px-4 py-2 bg-gray-200 rounded disabled:opacity-50"
+                  className="px-4 py-2 bg-primary hover:bg-primary-dark text-white rounded disabled:opacity-50"
                 >
                   ← Prev
                 </button>
@@ -160,7 +177,7 @@ export default function ExamResultPage() {
                 <button
                   disabled={currentPage === totalPages}
                   onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
-                  className="px-4 py-2 bg-gray-200 rounded disabled:opacity-50"
+                  className="px-4 py-2 bg-primary hover:bg-primary-dark text-white rounded disabled:opacity-50"
                 >
                   Next →
                 </button>
@@ -172,7 +189,7 @@ export default function ExamResultPage() {
         <div className="flex gap-4">
           <button
             onClick={() => router.push("/student/exam/dashboard")}
-            className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+            className="bg-primary text-white px-4 py-2 rounded hover:bg-primary-dark"
           >
             ← Back to Dashboard
           </button>
@@ -180,7 +197,7 @@ export default function ExamResultPage() {
           {data.wrongQuestions.length > 0 && (
             <button
               onClick={() => router.push("/student/exam/review")}
-              className="bg-yellow-600 text-white px-4 py-2 rounded hover:bg-yellow-700"
+              className="bg-theme-blue text-white px-4 py-2 rounded hover:bg-primary-dark"
             >
               🔁 Review Incorrect Answers
             </button>

@@ -1,0 +1,31 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 2.
+
+Question: (ii) State two reasons why a programmer would prefer to use hexadecimal numbers rather than binary numbers. 1 ........................................................................................................................................ 2 ........................................................................................................................................
+Reference Answer: • Hexadecimal values are shorter than binary as 4
+bits/nibble can be represented by one hex
+character.
+• Hexadecimal values are faster / more reliable to
+communicate / enter / write down / read.
+Marking Scheme: Do not accept Hexadecimal is “easy”
+communicate/enter etc…
+Examiner Report: Many candidates achieved 1 mark for this question. Many candidates correctly stated that hexadecimal numbers are easier/faster to read/write, but were not given the second mark as they didn’t state that hexadecimal numbers are shorter than binary numbers.
+Exemplar Answer: N/A
+Student's Answer: 是多少
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Rewrite the "correct answer" in a concise, easy-to-remember format that focuses on scoring points. 
+Use numbered points (1., 2., etc.) with one key idea per line. 
+Avoid unnecessary details or expansions that students don't need to write in exams. 
+Example: Use "BIOS" instead of "BIOS (Basic Input Output System)". 
+The answer should be short and clear enough to memorize quickly for handwritten response.
+Step 3: Return:
+- "score": the numerical score (0 to 2)
+- "reason": a short explanation for why this score was given.
+- "correctAnswer": your version of the ideal answer.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation",
+  "correctAnswer": "your rewritten ideal answer"
+}

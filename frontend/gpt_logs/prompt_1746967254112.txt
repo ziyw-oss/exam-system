@@ -1,0 +1,32 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 2.
+
+Question: (i) Describe the Harvard architecture. .....................................................................................................................................
+Reference Answer: 1 mark per bullet up to a maximum of 2 marks, e.g:
+• Uses separate memory blocks for instructions and
+data
+• Has separate buses (data and address) for data and
+instructions
+• Has fixed memory sizes for data and Instructions
+• Instruction memory may be ROM
+Marking Scheme: Accept unit instead of blocks (BP1)
+Examiner Report: Some candidates were vague in their response and were not clear that Harvard has separate memory blocks. Candidates must be specific in their response.
+Exemplar Answer: N/A
+Student's Answer: Harvard architecture uses separate memory blocks for instructions and data, has separate data and address buses for data and instructions
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Rewrite the "correct answer" in a concise, easy-to-remember format that focuses on scoring points. 
+Use numbered points (1., 2., etc.) with one key idea per line. 
+Avoid unnecessary details or expansions that students don't need to write in exams. 
+Example: Use "BIOS" instead of "BIOS (Basic Input Output System)". 
+The answer should be short and clear enough to memorize quickly for handwritten response.
+Step 3: Return:
+- "score": the numerical score (0 to 2)
+- "reason": a short explanation for why this score was given.
+- "correctAnswer": your version of the ideal answer.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation",
+  "correctAnswer": "your rewritten ideal answer"
+}

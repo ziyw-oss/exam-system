@@ -1,0 +1,27 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 2.
+
+Question: Arnold has a PC which has a Basic Input Output System (BIOS). Describe what is meant by the term ‘BIOS’. .............................................................................................................................................  [2]
+Reference Answer: 1 mark per bullet up to a maximum of 2 marks, e.g:
+• Stored in ROM
+• Tests hardware/components (are working)
+• Boots up the operating system
+Marking Scheme: Accept description of POST/Power On Self Test
+for BP2
+Accept loads up instead of boots up (BP3)
+Examiner Report: This was generally answered well, although some candidates were vague in their response. The concept of the BIOS booting up the Operating System was missed by some, but most candidates mentioned the BIOS checking that the hardware is operational (POST).
+Exemplar Answer: checks hardware and has provided a suitable example. The second mark has been awarded for explaining that the BIOS loads the operating system. Although it was not essential to mention POST (Power-On-Self-Test) this is useful to explain the process that occurs.
+Student's Answer: basic input/output system
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Rewrite the "correct answer" in a clear, concise and complete format based on the above reference materials.
+Step 3: Return:
+- "score": the numerical score (0 to 2)
+- "reason": a short explanation for why this score was given.
+- "correctAnswer": your version of the ideal answer.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation",
+  "correctAnswer": "your rewritten ideal answer"
+}

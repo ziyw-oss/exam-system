@@ -39,16 +39,17 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       // ✅ 仅正式考试才参与得分奖励计算
       if (session.mode === "exam") {
         const [scoreRows]: any[] = await pool.query(
-          `SELECT SUM(score) AS total_score FROM student_scores WHERE session_id = ?`,
+          `SELECT SUM(score) AS total_score, COUNT(*) AS questionCount
+          FROM student_scores WHERE session_id = ?`,
           [session.id]
         );
         const totalScore = scoreRows[0]?.total_score || 0;
 
         const [fullRows]: any[] = await pool.query(
           `SELECT SUM(qb.marks) AS full_score
-           FROM student_scores ss
-           JOIN question_bank qb ON ss.question_id = qb.id
-           WHERE ss.session_id = ?`,
+          FROM exam_session_questions esq
+          JOIN question_bank qb ON esq.question_id = qb.id
+          WHERE esq.session_id = ? AND qb.marks IS NOT NULL AND qb.marks > 0`,
           [session.id]
         );
         const fullScore = fullRows[0]?.full_score || 0;

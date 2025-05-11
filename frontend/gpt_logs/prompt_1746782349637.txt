@@ -1,0 +1,26 @@
+You are a professional exam grader. Please evaluate the student's answer based on the following materials. The maximum score is 1.
+
+Question: State why computer systems store data in binary. .............................................................................................................................................  [1]
+Reference Answer: 1 mark for any of the following bullet points, e.g:
+• Computers use binary logic for on/off or 1/0
+• Computer systems are based on
+switches/transistors
+• Binary is high tolerance
+Marking Scheme: N/A
+Examiner Report: This question was generally answered well.
+Exemplar Answer: N/A
+Student's Answer: Computers use binary logic for on/off
+
+Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
+Step 2: Rewrite the "correct answer" in a concise, easy-to-remember format that reflects the scoring points. Each key point should be on a new line as a bullet (•), to make it easier for students to read and memorize. Avoid unnecessary expansions (e.g., "BIOS (Basic Input Output System)" can be shortened to just "BIOS").
+Step 3: Return:
+- "score": the numerical score (0 to 1)
+- "reason": a short explanation for why this score was given.
+- "correctAnswer": your version of the ideal answer.
+
+Respond in the following JSON format:
+{
+  "score": number,
+  "reason": "your explanation",
+  "correctAnswer": "your rewritten ideal answer"
+}

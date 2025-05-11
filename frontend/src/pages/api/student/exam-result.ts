@@ -59,7 +59,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const questionCount = Number(scoreRows[0]?.questionCount || 0);
 
     const [rawWrongRows]: any = await connection.query(
-      `SELECT sa.question_id, sa.answer_text AS student_answer, qa.answer AS correct_answer,
+      `SELECT sa.question_id, sa.answer_text AS student_answer, qa.answer AS correct_answer,qa.marks AS mark,
+              qa.correct_answer_markdown,
               qb.text AS question_text, ss.gpt_reasoning AS reason, ss.score AS score
        FROM student_scores ss
        JOIN student_answers sa ON ss.session_id = sa.session_id AND ss.question_id = sa.question_id

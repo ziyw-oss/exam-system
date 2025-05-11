@@ -16,7 +16,7 @@ interface GptScoreInput {
   marks: number;
 }
 
-export async function getGptScore(input: GptScoreInput): Promise<{ score: number; reason: string }> {
+export async function getGptScore(input: GptScoreInput): Promise<{ score: number; reason: string; correctAnswer?: string }> {
   const {
     questionText,
     referenceAnswer,
@@ -36,15 +36,24 @@ Examiner Report: ${report || "N/A"}
 Exemplar Answer: ${exemplar || "N/A"}
 Student's Answer: ${studentAnswer || "N/A"}
 
+Note: Do not penalize valid answers like "Round Robin" unless they are explicitly stated in the question text itself. Refer to the Marking Scheme as authoritative.
+
 Step 1: Evaluate the student's answer in terms of relevance, accuracy, and completeness.
-Step 2: Return:
-- \"score\": the numerical score (0 to ${marks})
-- \"reason\": a short explanation for why this score was given.
+Step 2: Rewrite the "correct answer" in a concise, easy-to-remember format that focuses on scoring points. 
+Use numbered points (1., 2., etc.) with one key idea per line. 
+Avoid unnecessary details or expansions that students don't need to write in exams. 
+Example: Use "BIOS" instead of "BIOS (Basic Input Output System)". 
+The answer should be short and clear enough to memorize quickly for handwritten response.
+Step 3: Return:
+- "score": the numerical score (0 to ${marks})
+- "reason": a short explanation for why this score was given.
+- "correctAnswer": your version of the ideal answer.
 
 Respond in the following JSON format:
 {
   "score": number,
-  "reason": "your explanation"
+  "reason": "your explanation",
+  "correctAnswer": "your rewritten ideal answer"
 }`;
 
   // Save prompt to log file
@@ -75,7 +84,7 @@ Respond in the following JSON format:
     const raw = gptRes.choices[0]?.message?.content?.trim();
     //console.log("\ud83d\udce4 GPT Raw Output:", raw);
 
-    let parsed = { score: 0, reason: "Unable to parse GPT response." };
+    let parsed = { score: 0, reason: "Unable to parse GPT response.", correctAnswer: "" };
     try {
       if (raw) {
         const match = raw.match(/\{[\s\S]*?\}/); // 尝试提取 JSON
@@ -89,6 +98,6 @@ Respond in the following JSON format:
     return parsed;
   } catch (err) {
     console.error("\u274c GPT Scoring failed:", err);
-    return { score: 0, reason: "GPT scoring error." };
+    return { score: 0, reason: "GPT scoring error.", correctAnswer: "" };
   }
 }
